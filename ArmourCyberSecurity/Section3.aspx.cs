@@ -29,7 +29,7 @@ namespace ArmourCyberSecurity
 
         private void GetUserId()
         {
-            userId = Session["userId"].ToString();
+            userId = Session["questionnaire_userId"].ToString();
         }
 
         private void LoadPreviousState()

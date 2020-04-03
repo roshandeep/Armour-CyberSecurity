@@ -35,7 +35,7 @@ namespace ArmourCyberSecurity
             DAL dal = new DAL();
             Guid obj = Guid.NewGuid();
             string userId = obj.ToString();
-            Session["userId"] = userId;
+            Session["userIdL1"] = userId;
 
             foreach (DataRow row in dt.Rows)
             {

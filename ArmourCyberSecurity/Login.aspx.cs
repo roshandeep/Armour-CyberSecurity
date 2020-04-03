@@ -18,22 +18,26 @@ namespace ArmourCyberSecurity
     public partial class Login : System.Web.UI.Page
     {
         //RDSS Local
-        string connetionString = @"Server=LAPTOP-HM18U6J6; Database=ArmourCyberSecurity;Integrated Security=true;";
+        string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
+        //Tyler Local
+        //string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
+
+        //string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(Request.Params["logout"]))
             {
                 FormsAuthentication.SignOut();
-                Response.Redirect("~/Level1/LandingPage.aspx");
+                Response.Redirect("~/Level1/LandingPage.aspx", false);
             }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (ValidateUser(Login1.UserName, Login1.Password))
             {
-                //FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-                Response.Redirect("~/Section1.aspx", false);
+                Session["L2emailId"] = Login1.UserName;
+                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
             }
 
             else

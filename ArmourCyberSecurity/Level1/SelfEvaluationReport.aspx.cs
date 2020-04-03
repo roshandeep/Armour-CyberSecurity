@@ -44,7 +44,17 @@ namespace ArmourCyberSecurity
             {
                 Session["industry"] = txt_industry.Text;
             }
-            dal.SaveUser(Session["user_mail"].ToString(), Session["userId"].ToString());
+            //Check if user is premium user and already had a level2 Id
+            int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
+            if (premium > 0)
+            {
+                string L2userId = dal.GetL2UserId(Session["user_mail"].ToString());
+                dal.UpdateL2User(L2userId);
+            }
+            else
+            {
+                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString());
+            }
             CreatePdf(Convert.ToInt32(Session["overall"]), Convert.ToInt32(Session["pcq"]), Convert.ToInt32(Session["rrq"]), Convert.ToInt32(Session["peq"]), Convert.ToInt32(Session["dcq"]), Convert.ToInt32(Session["cq"]), Convert.ToInt32(Session["irq"]), Session["overall_cmt"].ToString(), Session["pcq_cmt"].ToString(), Session["rrq_cmt"].ToString(), Session["peq_cmt"].ToString(), Session["dcq_cmt"].ToString(), Session["cq_cmt"].ToString(), Session["irq_cmt"].ToString(), Session["overall_status"].ToString(), Session["pcq_status"].ToString(), Session["rrq_status"].ToString(), Session["peq_status"].ToString(), Session["dcq_status"].ToString(), Session["cq_status"].ToString(), Session["irq_status"].ToString());
         }
 
@@ -545,7 +555,7 @@ namespace ArmourCyberSecurity
 
                         /* Introduction */
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Global Data Privacy Regulation Compliance \n Self - Assessment", FontFactory.GetFont("Arial", 16, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Global Data Privacy Regulation Compliance \n Self - Assessment", FontFactory.GetFont("Arial", 13, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.Colspan = 2;
                         cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -556,7 +566,7 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Your clients’ data is your greatest asset. If the data is breached you will lose money, time, and credibility. Breaches can be avoided with good cyber security practices and compliance with regulations. Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines." + "\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Your clients’ data is your greatest asset. If the data is breached you will lose money, time, and credibility. Breaches can be avoided with good cyber security practices and compliance with regulations. Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines." + "\n", FontFactory.GetFont("Arial", 11, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -600,23 +610,24 @@ namespace ArmourCyberSecurity
                             overall_img.ScaleAbsolute(75f, 75f);
                             cell = new PdfPCell(overall_img);
                         }
-                        cell.BorderColor = BaseColor.WHITE;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.PaddingBottom = 0f;
                         cell.PaddingTop = 5f;
                         cell.Border = PdfPCell.NO_BORDER;
+                        cell.BackgroundColor = new BaseColor(99, 99, 99);
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Your Compliance Readiness Score is : " + overall + " ( " + overall_status + " )" + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(overall_cmt + "\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Your Compliance Readiness Score is : " + overall + " ( " + overall_status + " )" + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.WHITE)));
+                        phrase.Add(new Chunk(overall_cmt + "\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.WHITE)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.NO_BORDER;
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
+                        cell.BackgroundColor = new BaseColor(99, 99, 99);
                         table.AddCell(cell);
 
                         /* Introduction */
@@ -1138,7 +1149,7 @@ namespace ArmourCyberSecurity
 
         public DataTable GetReport()
         {
-            string userId = Session["userId"].ToString();
+            string userId = Session["userIdL1"].ToString();
             //string userId = "264acaab-3998-48ea-980e-b527e26a103d";
             DataTable dt = new DataTable();
             dt = dal.GetUserReport(userId);
@@ -1196,5 +1207,4 @@ namespace ArmourCyberSecurity
             cb.Stroke();
         }
     }
-
 }

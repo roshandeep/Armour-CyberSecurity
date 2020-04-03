@@ -4,13 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ArmourCyberSecurity
 {
     public class DAL
     {
         //RDSS Local
-        string connetionString = @"Server=LAPTOP-HM18U6J6; Database=ArmourCyberSecurity;Integrated Security=true;";
+        string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
+        //Tyler Local
+        //string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
+
+        //string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
         SqlCommand cmd;
 
@@ -25,6 +30,86 @@ namespace ArmourCyberSecurity
             da.Fill(ds);
             cnn.Close();
             return ds.Tables[0];
+        }
+
+        public int ChkLevel2User(string emailId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT COUNT(*) FROM ar_sec_users WHERE email_id = @email_Id AND premium_member = @premium_member AND subscriber = @subscriber";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "1"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "1"));
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            return count;
+        }
+
+        public string GetL1UserId(string emailId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT userId FROM ar_sec_users WHERE email_id = @email_Id AND premium_member = @premium_member AND subscriber = @subscriber";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
+            string userId = cmd.ExecuteScalar().ToString();
+            cnn.Close();
+            return userId;
+        }
+
+        public int ChkLevel1User(string emailId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT COUNT(*) FROM ar_sec_users WHERE email_id = @email_Id AND premium_member = @premium_member AND subscriber = @subscriber";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@email_id", emailId));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            return count;
+        }
+
+        public void UpdateL2User(string l2userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "UPDATE ar_sec_users SET level1_complete = @level1_complete WHERE userId = @userId ;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", l2userId));
+            cmd.Parameters.Add(new SqlParameter("@level1_complete", "1"));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public void UpdateL1User(string l1userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "UPDATE ar_sec_users SET level2_complete = @level2_complete WHERE userId = @userId ;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", l1userId));
+            cmd.Parameters.Add(new SqlParameter("@level2_complete", "1"));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public string GetL2UserId(string emailId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT userId FROM ar_sec_users WHERE email_id = @email_Id AND premium_member = @premium_member AND subscriber = @subscriber";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
+            string userId = cmd.ExecuteScalar().ToString();
+            cnn.Close();
+            return userId;
         }
 
         public DataTable LoadSectionState(int section, string userId)
@@ -82,7 +167,7 @@ namespace ArmourCyberSecurity
             return ds.Tables[0];
         }
 
-        public void SaveUser(string emailId, string userId)
+        public void SaveUserL1(string emailId, string userId)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
@@ -93,8 +178,25 @@ namespace ArmourCyberSecurity
             cmd.Parameters.Add(new SqlParameter("@email_id", emailId));
             cmd.Parameters.Add(new SqlParameter("@level1_complete", "1"));
             cmd.Parameters.Add(new SqlParameter("@level2_complete", "0"));
-            cmd.Parameters.Add(new SqlParameter("@subscriber", "1"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
             cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public void SaveUserL2(string emailId, string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "INSERT INTO ar_sec_users(userId, userName, email_id, level1_complete, level2_complete, subscriber, premium_member) VALUES (@userId, @userName, @email_id, @level1_complete, @level2_complete, @subscriber, @premium_member);";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            cmd.Parameters.Add(new SqlParameter("@userName", emailId));
+            cmd.Parameters.Add(new SqlParameter("@email_id", emailId));
+            cmd.Parameters.Add(new SqlParameter("@level1_complete", "0"));
+            cmd.Parameters.Add(new SqlParameter("@level2_complete", "1"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "1"));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "1"));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
