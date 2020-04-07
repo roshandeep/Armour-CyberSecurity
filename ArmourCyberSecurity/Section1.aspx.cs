@@ -36,7 +36,7 @@ namespace ArmourCyberSecurity
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (row["question_type"].ToString() == "Privacy Culture Questions")
+                    if (row["question_type"].ToString() == "Regional Specific Questions")
                     {
                         var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["question_id"].ToString());
                         if (ddl != null)
@@ -44,6 +44,29 @@ namespace ArmourCyberSecurity
                             ddl.SelectedValue = row["answer_wt"].ToString();
                         }
 
+                        var chk = (CheckBoxList)this.Master.FindControl("ContentPlaceHolder1").FindControl("chkbxAns" + row["question_id"].ToString());
+                        if (chk != null)
+                        {
+                            DAL obj = new DAL();
+                            DataTable dt_region = new DataTable();
+                            dt_region = dal.LoadRegionL2();
+                            foreach(DataRow region in dt_region.Rows)
+                            {
+                                if(row["ans_Text"].ToString().Contains(region["region_name"].ToString()))
+                                {
+                                    chk.Items.FindByText(region["region_name"].ToString()).Selected = true;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    if (row["question_type"].ToString() == "Roles")
+                    {
+                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["question_id"].ToString());
+                        if (ddl != null)
+                        {
+                            ddl.SelectedValue = row["answer_wt"].ToString();
+                        }
                     }
                 }
             }
@@ -70,17 +93,40 @@ namespace ArmourCyberSecurity
             dt = dal.LoadLevel2Questions();
             foreach (DataRow row in dt.Rows)
             {
-                var label = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl("lblQues" + row["question_id"].ToString());
+                var label = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl("lblQues" + row["sec_ref_id"].ToString());
                 if (label != null)
                 {
                     label.Text = row["question"].ToString();
                 }
 
-                if (row["question_type"].ToString() == "Privacy Culture Questions")
+                if (row["question_type"].ToString() == "Regional Specific Questions")
                 {
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["question_id"].ToString());
+                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                        if (ddl != null)
+                        {
+                            ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
+                            ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                        }
+                    }
+                    if (row["ctrl_type"].ToString() == "chk")
+                    {
+                        var chkbx = (CheckBoxList)this.Master.FindControl("ContentPlaceHolder1").FindControl("chkbxAns" + row["sec_ref_id"].ToString());
+                        if (chkbx != null)
+                        {
+                            LoadRegions(chkbx);
+                        }
+                    }
+                }
+                else
+                if (row["question_type"].ToString() == "Roles")
+                {
+                    if (row["ctrl_type"].ToString() == "dd4")
+                    {
+                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
                         if (ddl != null)
                         {
                             ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -90,7 +136,20 @@ namespace ArmourCyberSecurity
                         }
                     }
                 }
+
             }
+        }
+
+        private void LoadRegions(CheckBoxList checkBoxList)
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadRegionL2();
+
+            checkBoxList.DataSource = dt;
+            checkBoxList.DataTextField = "region_name";
+            checkBoxList.DataValueField = "region_id";
+            checkBoxList.DataBind();
         }
 
         protected void btn_Save1_Click(object sender, EventArgs e)
@@ -110,14 +169,66 @@ namespace ArmourCyberSecurity
             foreach (DataRow row in dt.Rows)
             {
                 string quesType = string.Empty, answerWt = string.Empty, answer = string.Empty;
-                int quesId;
+                int quesId, secQuesId;
 
-                if (row["question_type"].ToString() == "Privacy Culture Questions")
+                if (row["question_type"].ToString() == "Regional Specific Questions")
                 {
 
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = ((DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["question_id"].ToString()));
+                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                        if (ddl != null)
+                        {
+                            quesId = Convert.ToInt32(row["question_id"].ToString());
+                            if (ddl.SelectedIndex == -1)
+                            {
+
+                                answer = ddl.SelectedIndex.ToString();
+                                answerWt = ddl.SelectedIndex.ToString();
+                                quesType = row["question_type"].ToString();
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
+                            }
+                            else
+                            {
+                                answer = ddl.SelectedItem.Text.ToString();
+                                answerWt = ddl.SelectedItem.Value.ToString();
+                                quesType = row["question_type"].ToString();
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
+                            }
+                        }
+                    }
+                    else
+                    if (row["ctrl_type"].ToString() == "chk")
+                    {
+                        var chkbx = (CheckBoxList)this.Master.FindControl("ContentPlaceHolder1").FindControl("chkbxAns" + row["sec_ref_id"].ToString());
+                        if (chkbx != null)
+                        {
+                            quesId = Convert.ToInt32(row["question_id"].ToString());
+                            if (chkbx.SelectedIndex != -1)
+                            {
+                                for (int i = 0; i < chkbx.Items.Count; i++)
+                                {
+                                    if (chkbx.Items[i].Selected == true)
+                                    {
+                                        answer = answer + chkbx.Items[i].Text + " ,";
+                                    }
+                                }
+                                answerWt = chkbx.Items.Count.ToString();
+                                quesType = row["question_type"].ToString();
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
+                            }
+
+                        }
+                    }
+                }
+                if (row["question_type"].ToString() == "Roles")
+                {
+                    if (row["ctrl_type"].ToString() == "dd4")
+                    {
+                        var ddl = ((DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString()));
                         if (ddl != null)
                         {
                             quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -126,19 +237,31 @@ namespace ArmourCyberSecurity
                                 answer = ddl.SelectedIndex.ToString();
                                 answerWt = ddl.SelectedIndex.ToString();
                                 quesType = row["question_type"].ToString();
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1);
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
                             }
                             else
                             {
                                 answer = ddl.SelectedItem.Text.ToString();
                                 answerWt = ddl.SelectedItem.Value.ToString();
                                 quesType = row["question_type"].ToString();
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1);
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
                             }
                         }
                     }
                 }
             }
+        }
+
+        protected void chkbxAns1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void chkbxAns2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

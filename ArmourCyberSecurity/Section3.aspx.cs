@@ -100,7 +100,7 @@ namespace ArmourCyberSecurity
             foreach (DataRow row in dt.Rows)
             {
                 string quesType = string.Empty, answerWt = string.Empty, answer = string.Empty;
-                int quesId;
+                int quesId, secQuesId;
 
                 if (row["question_type"].ToString() == "Privacy Engineering")
                 {
@@ -116,14 +116,16 @@ namespace ArmourCyberSecurity
                                 answer = ddl.SelectedIndex.ToString();
                                 answerWt = ddl.SelectedIndex.ToString();
                                 quesType = row["question_type"].ToString();
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 2);
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 2, secQuesId);
                             }
                             else
                             {
                                 answer = ddl.SelectedItem.Text.ToString();
                                 answerWt = ddl.SelectedItem.Value.ToString();
                                 quesType = row["question_type"].ToString();
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 2);
+                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 2, secQuesId);
                             }
                         }
                     }
