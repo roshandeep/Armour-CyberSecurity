@@ -167,11 +167,11 @@ namespace ArmourCyberSecurity
             return ds.Tables[0];
         }
 
-        public void SaveUserL1(string emailId, string userId)
+        public void SaveUserL1(string emailId, string userId, string industry)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "INSERT INTO ar_sec_users(userId, userName, email_id, level1_complete, level2_complete, subscriber, premium_member) VALUES (@userId, @userName, @email_id, @level1_complete, @level2_complete, @subscriber, @premium_member);";
+            string sql = "INSERT INTO ar_sec_users(userId, userName, email_id, level1_complete, level2_complete, subscriber, premium_member, industry_name) VALUES (@userId, @userName, @email_id, @level1_complete, @level2_complete, @subscriber, @premium_member, @industry_name);";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
             cmd.Parameters.Add(new SqlParameter("@userName", emailId));
@@ -180,6 +180,7 @@ namespace ArmourCyberSecurity
             cmd.Parameters.Add(new SqlParameter("@level2_complete", "0"));
             cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
             cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
+            cmd.Parameters.Add(new SqlParameter("@industry_name", industry));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
@@ -272,7 +273,7 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT DISTINCT COUNT(stagesCompleted) FROM ar_sec_User_Feedback_Collection_Level2 WHERE userid = @userid";
+            string sql = "SELECT COUNT(DISTINCT(stagesCompleted)) FROM ar_sec_User_Feedback_Collection_Level2 WHERE userid = @userid";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userid", userId));
             int noOfSec = Convert.ToInt32(cmd.ExecuteScalar());

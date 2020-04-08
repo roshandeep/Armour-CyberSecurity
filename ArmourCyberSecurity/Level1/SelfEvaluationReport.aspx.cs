@@ -23,6 +23,7 @@ namespace ArmourCyberSecurity
         DAL dal = new DAL();
         int pcq = 0, rsq = 0, rfq = 0, peq = 0, dcq = 0, cq = 0, irq = 0, overall = 0, rrq = 0;
         string overall_cmt = string.Empty, pcq_cmt = string.Empty, rrq_cmt = string.Empty, rfq_cmt = string.Empty, peq_cmt = string.Empty, dcq_cmt = string.Empty, cq_cmt = string.Empty, irq_cmt = string.Empty;
+        string industry = string.Empty;
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -43,6 +44,7 @@ namespace ArmourCyberSecurity
             if (txt_industry.Text != null)
             {
                 Session["industry"] = txt_industry.Text;
+                industry = txt_industry.Text;
             }
             //Check if user is premium user and already had a level2 Id
             int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
@@ -53,7 +55,7 @@ namespace ArmourCyberSecurity
             }
             else
             {
-                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString());
+                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), industry);
             }
             CreatePdf(Convert.ToInt32(Session["overall"]), Convert.ToInt32(Session["pcq"]), Convert.ToInt32(Session["rrq"]), Convert.ToInt32(Session["peq"]), Convert.ToInt32(Session["dcq"]), Convert.ToInt32(Session["cq"]), Convert.ToInt32(Session["irq"]), Session["overall_cmt"].ToString(), Session["pcq_cmt"].ToString(), Session["rrq_cmt"].ToString(), Session["peq_cmt"].ToString(), Session["dcq_cmt"].ToString(), Session["cq_cmt"].ToString(), Session["irq_cmt"].ToString(), Session["overall_status"].ToString(), Session["pcq_status"].ToString(), Session["rrq_status"].ToString(), Session["peq_status"].ToString(), Session["dcq_status"].ToString(), Session["cq_status"].ToString(), Session["irq_status"].ToString());
         }

@@ -65,15 +65,13 @@
             var v19 = document.getElementById("<%=reqAns19.ClientID%>");
             var v20 = document.getElementById("<%=reqAns20.ClientID%>");
             var v21 = document.getElementById("<%=reqAns21.ClientID%>");
-            var v22 = document.getElementById("<%=reqAns22.ClientID%>");
             ValidatorValidate(v16);
             ValidatorValidate(v17);
             ValidatorValidate(v18);
             ValidatorValidate(v19);
             ValidatorValidate(v20);
             ValidatorValidate(v21);
-            ValidatorValidate(v22);
-            if (v16.isvalid && v17.isvalid && v18.isvalid && v19.isvalid && v20.isvalid && v21.isvalid && v22.isvalid) {
+            if (v16.isvalid && v17.isvalid && v18.isvalid && v19.isvalid && v20.isvalid && v21.isvalid) {
                 $("#sec3Div").slideUp(1000);
                 $("#sec4Div").slideDown(1000);
             }
@@ -296,10 +294,9 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <asp:RequiredFieldValidator runat="server" ID="reqAns24" ControlToValidate="ddlAns24" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
-            <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
+            
 
             <asp:Button ID="btn_Save2" runat="server" Text="Save" OnClick="btn_Save2_Click" />
-             <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click"/>
         </div>
     </div>
 </asp:Content>

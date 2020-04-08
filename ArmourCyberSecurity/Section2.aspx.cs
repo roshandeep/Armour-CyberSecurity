@@ -296,19 +296,5 @@ namespace ArmourCyberSecurity
                 }
             }
         }
-
-        protected void btn_Submit_Click(object sender, EventArgs e)
-        {
-            DAL dal = new DAL();
-            int noOfSec = dal.CheckAllSections(userId);
-            if (noOfSec == 2)
-            {
-                //Response.Redirect("~/CustomRoadMapReport.aspx", false);
-            }
-            else
-            {
-                lbl_warning.Text = "Complete All Sections";
-            }
-        }
     }
 }

@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon" />
     <meta name="description" content="Site Creator Description" />
+    <a href="LandingPage.aspx">LandingPage.aspx</a>
 
     <title>Cyber Assesment</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css" />

@@ -23,5 +23,20 @@ namespace ArmourCyberSecurity
         {
             Response.Redirect("~/Section2.aspx", false);
         }
+
+        protected void btn_Submit_Click(object sender, EventArgs e)
+        {
+            DAL dal = new DAL();
+            int noOfSec = dal.CheckAllSections(Session["questionnaire_userId"].ToString());
+            if (noOfSec == 2)
+            {
+                lbl_warning.Text = "Good Job! All Sections Completed";
+                //Response.Redirect("~/CustomRoadMapReport.aspx", false);
+            }
+            else
+            {
+                lbl_warning.Text = "Complete All Sections";
+            }
+        }
     }
 }
