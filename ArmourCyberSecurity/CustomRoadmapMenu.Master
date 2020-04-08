@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="btn_Sec1" runat="server" Text="Section 1" OnClick="btn_Sec1_Click" CausesValidation="false"/>
-            <asp:Button ID="btn_Sec2" runat="server" Text="Section 2" OnClick="btn_Sec2_Click" CausesValidation="false"/>
+            <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false"/>
+            <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false"/>
         </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

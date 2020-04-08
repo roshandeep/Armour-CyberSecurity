@@ -41,39 +41,42 @@ namespace ArmourCyberSecurity
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (row["question_type"].ToString() == "Privacy by Design")
+                    if (Convert.ToInt32(row["stagesCompleted"]) == 2)
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        if (row["question_type"].ToString() == "Privacy by Design")
                         {
-                            ddl.SelectedValue = row["answer_wt"].ToString();
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.SelectedValue = row["answer_wt"].ToString();
+                            }
                         }
-                    }
-                    else
-                    if (row["question_type"].ToString() == "Data Categorization")
-                    {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        else
+                        if (row["question_type"].ToString() == "Data Categorization")
                         {
-                            ddl.SelectedValue = row["answer_wt"].ToString();
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.SelectedValue = row["answer_wt"].ToString();
+                            }
                         }
-                    }
-                    else
-                    if (row["question_type"].ToString() == "Vendor Management")
-                    {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        else
+                        if (row["question_type"].ToString() == "Vendor Management")
                         {
-                            ddl.SelectedValue = row["answer_wt"].ToString();
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.SelectedValue = row["answer_wt"].ToString();
+                            }
                         }
-                    }
-                    else
-                    if (row["question_type"].ToString() == "Privacy Impact Assessment")
-                    {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        else
+                        if (row["question_type"].ToString() == "Privacy Impact Assessment")
                         {
-                            ddl.SelectedValue = row["answer_wt"].ToString();
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.SelectedValue = row["answer_wt"].ToString();
+                            }
                         }
                     }
                 }
@@ -87,67 +90,70 @@ namespace ArmourCyberSecurity
             dt = dal.LoadLevel2Questions();
             foreach (DataRow row in dt.Rows)
             {
-                var label = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl("lblQues" + row["sec_ref_id"].ToString());
-                if (label != null)
+                if (Convert.ToInt32(row["section"]) == 2)
                 {
-                    label.Text = row["question"].ToString();
-                }
-                if (row["question_type"].ToString() == "Privacy by Design")
-                {
-                    if (row["ctrl_type"].ToString() == "dd4")
+                    var label = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl("lblQues" + row["sec_ref_id"].ToString());
+                    if (label != null)
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        label.Text = row["question"].ToString();
+                    }
+                    if (row["question_type"].ToString() == "Privacy by Design")
+                    {
+                        if (row["ctrl_type"].ToString() == "dd4")
                         {
-                            ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
-                            ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
-                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
-                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
+                                ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                                ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                                ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            }
                         }
                     }
-                }
-                else
-                if (row["question_type"].ToString() == "Data Categorization")
-                {
-                    if (row["ctrl_type"].ToString() == "dd4")
+                    else
+                    if (row["question_type"].ToString() == "Data Categorization")
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        if (row["ctrl_type"].ToString() == "dd4")
                         {
-                            ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
-                            ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
-                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
-                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
+                                ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                                ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                                ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            }
                         }
                     }
-                }
-                else
-                if (row["question_type"].ToString() == "Vendor Management")
-                {
-                    if (row["ctrl_type"].ToString() == "dd4")
+                    else
+                    if (row["question_type"].ToString() == "Vendor Management")
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        if (row["ctrl_type"].ToString() == "dd4")
                         {
-                            ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
-                            ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
-                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
-                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
+                                ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                                ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                                ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            }
                         }
                     }
-                }
-                else
-                if (row["question_type"].ToString() == "Privacy Impact Assessment")
-                {
-                    if (row["ctrl_type"].ToString() == "dd4")
+                    else
+                    if (row["question_type"].ToString() == "Privacy Impact Assessment")
                     {
-                        var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                        if (ddl != null)
+                        if (row["ctrl_type"].ToString() == "dd4")
                         {
-                            ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
-                            ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
-                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
-                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
+                            if (ddl != null)
+                            {
+                                ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
+                                ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                                ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                                ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            }
                         }
                     }
                 }
@@ -293,16 +299,16 @@ namespace ArmourCyberSecurity
 
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
-            //DAL dal = new DAL();
-            //int noOfSec = dal.CheckAllSections(userId);
-            //if(noOfSec == 2)
-            //{
+            DAL dal = new DAL();
+            int noOfSec = dal.CheckAllSections(userId);
+            if (noOfSec == 2)
+            {
 
-            //}
-            //else
-            //{
-            //    lbl_warning.Text = "Complete All Sections";
-            //}
+            }
+            else
+            {
+                lbl_warning.Text = "Complete All Sections";
+            }
         }
     }
 }

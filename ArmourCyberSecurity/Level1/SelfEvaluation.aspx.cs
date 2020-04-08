@@ -626,6 +626,11 @@ namespace ArmourCyberSecurity
                                     ddlAns8.Visible = false;
                                     reqAns8.Enabled = false;
                                     Ques8Div.Visible = false;
+
+                                    lblQues12.Visible = false;
+                                    ddlAns12.Visible = false;
+                                    reqAns12.Enabled = false;
+                                    Ques8Div.Visible = false;
                                 }
                             }
                         }

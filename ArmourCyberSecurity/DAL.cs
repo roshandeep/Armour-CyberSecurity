@@ -116,7 +116,7 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT question_id, question_type, ans_Text, answer_wt, sec_ref_id FROM ar_sec_User_Feedback_Collection_Level2 WHERE stagesCompleted = @stagesCompleted AND userid = @userid";
+            string sql = "SELECT question_id, question_type, ans_Text, answer_wt, sec_ref_id, stagesCompleted FROM ar_sec_User_Feedback_Collection_Level2 WHERE stagesCompleted = @stagesCompleted AND userid = @userid";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@stagesCompleted", section));
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
@@ -143,7 +143,7 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT question_id, question, question_type, ctrl_type, question_wt_yes, question_wt_no, question_wt_somewhat, question_wt_unsure, sec_ref_id FROM [ar_sec_Feedback_Questions_level2]";
+            string sql = "SELECT question_id, question, question_type, ctrl_type, question_wt_yes, question_wt_no, question_wt_somewhat, question_wt_unsure, sec_ref_id, section FROM [ar_sec_Feedback_Questions_level2]";
             //string sql = "SELECT question_id, question, question_type, ctrl_type, question_wt_yes, question_wt_no, question_wt_somewhat, question_wt_unsure FROM [ar_sec_Feedback_Questions_level2]";
             cmd = new SqlCommand(sql, cnn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
