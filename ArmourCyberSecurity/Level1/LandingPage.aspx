@@ -75,7 +75,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="#">
-                            <img src="..assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
+                            <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
                         </a>
                     </span>
                     <span class="navbar-caption-wrap">
@@ -249,8 +249,8 @@
         </h2>
 
         <div class="container">
-            <div class="media-container-row">
-                <form id="form1" runat="server" class="form">
+            <%--<div class="media-container-row">--%>
+                <form id="form1" runat="server" class="form media-container-row">
                     <div class="card p-3 col-12 col-md-6 col-lg-4">
                         <div class="card-wrapper">
                             <div class="card-img">
@@ -319,7 +319,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            <%--</div>--%>
         </div>
     </section>
     <section class="testimonials1 cid-rSx8bkc1tj" id="testimonials1-5">

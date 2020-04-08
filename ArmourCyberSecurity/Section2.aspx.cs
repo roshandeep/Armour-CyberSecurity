@@ -303,7 +303,7 @@ namespace ArmourCyberSecurity
             int noOfSec = dal.CheckAllSections(userId);
             if (noOfSec == 2)
             {
-
+                //Response.Redirect("~/CustomRoadMapReport.aspx", false);
             }
             else
             {
