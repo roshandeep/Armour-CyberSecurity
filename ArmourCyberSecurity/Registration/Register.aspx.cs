@@ -83,15 +83,20 @@ namespace ArmourCyberSecurity
                         // Add user in RDSS user table
                         if (exsists > 0)
                         {
-                            //Update status of Level1 user to Level 2 user
+                            //Update status of Level1 user to Level 2 user, UNPAID USER
                             dal.UpdateL1User(Session["userId"].ToString()); 
                         }
                         else
                         {
-                            //Adding user to the DB who has not completed level 1 
+                            //Adding user to the DB who has not completed level 1, NEW USER 
                             dal.SaveUserL2(txtEmail.Text.Trim(), Session["userId"].ToString());
                         }
-                        
+
+                        if(txt_industry.Text != "")
+                        {
+                            dal.AddIndustry(Session["userId"].ToString(), txt_industry.Text.Trim());
+                        }
+
                         registered = true;
                         break;
                 }

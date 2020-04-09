@@ -53,6 +53,12 @@
             <asp:Literal runat="server" ID="FailureText" EnableViewState="False"></asp:Literal>
         </div>
 
+        <div class="txtb">
+            <asp:TextBox ID="txt_industry" runat="server" placeholder="Industry" />
+            <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txt_industry" runat="server" />
+        </div>
+
+
         <asp:Button Text="Submit" runat="server" OnClick="RegisterUser" class="logbtn" />
     </form>
 </body>

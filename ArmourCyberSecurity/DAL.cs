@@ -98,6 +98,18 @@ namespace ArmourCyberSecurity
             cnn.Close();
         }
 
+        public void AddIndustry(string userId, string industry)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "UPDATE Users SET industry = @industry WHERE userId = @userId ;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            cmd.Parameters.Add(new SqlParameter("@industry", industry));
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public string GetL2UserId(string emailId)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
