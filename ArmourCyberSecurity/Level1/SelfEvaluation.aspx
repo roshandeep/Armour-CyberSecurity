@@ -378,7 +378,7 @@
 
 
             <div id='sec1Div'>
-                <h2>PrivacyCulture</h2>
+                <h2>Privacy Culture</h2>
                 <div id="PrivacyCulture" style="height: 18rem;">
 
                     <div id="float_left" style="float: left; width: 37%; margin-left: 4rem; padding-left: 2rem;">
@@ -437,7 +437,7 @@
 
 
                 <div id="RegionalSpecific">
-                    <h2>RegionalSpecific</h2>
+                    <h2>Regional Specific</h2>
                     <asp:Label ID="lblQues6" runat="server" Text="" Style="margin-left: 6rem;" />
                     <asp:CheckBoxList ID="chkbxAns6" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns6_SelectedIndexChanged1" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
@@ -459,7 +459,7 @@
             <div id='sec2Div'>
 
                 <div id="RegionalSpecificReflexive" style="height: 15rem;">
-                    <h2>RegionalSpecificReflexive</h2>
+                    <h2>Regional Specific </h2>
                     <div id="Ques8Div" runat="server">
                         <div style="float: left; width: 35%; padding-left: 4rem; padding-bottom: 1rem">
                             <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
@@ -519,7 +519,7 @@
 
 
                 <div id="RegionalFines" style="height: 15rem">
-                    <h2>RegionalFines</h2>
+                    <h2>Regional Fines</h2>
                     <div id="Ques12Div" runat="server">
                         <div style="float: left; width: 40%; padding-left: 4rem;">
                             <asp:Label ID="lblQues12" runat="server" Text="" Visible="false" />
@@ -579,7 +579,7 @@
 
 
             <div id='sec3Div'>
-                <h2>PrivacyEngg</h2>
+                <h2>Privacy Engineering</h2>
                 <div id="PrivacyEngg" style="height: 18rem;">
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
                         <asp:Label ID="lblQues16" runat="server" Text="" /><br />
@@ -642,7 +642,7 @@
 
 
                 <div id="DataControl" style="height: 18rem;">
-                    <h2>DataControl</h2>
+                    <h2>Data Control</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
                         <asp:Label ID="lblQues22" runat="server" Text="" />
                     </div>
@@ -698,7 +698,7 @@
 
 
                 <div id="IncidentResp">
-                    <h2>IncidentResp</h2>
+                    <h2>Incident Response</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
                         <asp:Label ID="lblQues26" runat="server" Text="" /><br />
                         <br />
@@ -741,7 +741,7 @@
                 </div>
 
 
-                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" />
+                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" Style="padding: 1rem 3rem; border-radius: 50px!important; background: transparent; color: white; border-color: #149dcc !important; font-weight: 600; align-self: center; width: 100%"/>
             </div>
         </div>
 

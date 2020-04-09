@@ -41,6 +41,8 @@ namespace ArmourCyberSecurity
         protected void btnHide_Click(object sender, EventArgs e)
         {
             Session["user_mail"] = txt_EmalId.Text.ToString();
+            //For testing use this
+            //Session["user_mail"] = "roshandeep1995@gmail.com";
             if (txt_industry.Text != null)
             {
                 Session["industry"] = txt_industry.Text;
@@ -524,21 +526,22 @@ namespace ArmourCyberSecurity
                         cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 0f;
+                        cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.NO_BORDER;
                         cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 0f;
+                        cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
@@ -861,21 +864,22 @@ namespace ArmourCyberSecurity
                         cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 0f;
+                        cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.NO_BORDER;
                         cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 0f;
+                        cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
@@ -1152,7 +1156,7 @@ namespace ArmourCyberSecurity
         public DataTable GetReport()
         {
             string userId = Session["userIdL1"].ToString();
-            //string userId = "264acaab-3998-48ea-980e-b527e26a103d";
+            //string userId = "c56d93d9-faa4-4efa-ae7d-4cf16c2c9697";
             DataTable dt = new DataTable();
             dt = dal.GetUserReport(userId);
             return dt;

@@ -9,21 +9,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         .modalBackground {
-            background-color: Black;
+            background-image: linear-gradient(120deg,#3498db,#224ee3,#3498db);
             filter: alpha(opacity=40);
-            opacity: 0.7;
+            opacity: 0.95;
         }
 
         .modalPopup {
             background-color: #FFFFFF;
-            width: 300px;
+            width: 400px;
             border: 3px solid #0DA9D0;
+            height: auto;
         }
 
             .modalPopup .header {
-                background-color: #2FBDF1;
                 height: 30px;
-                color: White;
                 line-height: 30px;
                 text-align: center;
                 font-weight: bold;
@@ -132,12 +131,63 @@
             display: table;
         }
 
-          .zoom:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    transition: transform .3s;
-  }
+        .zoom:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            transition: transform .3s;
+        }
 
+        .txtbx {
+            position: relative;
+            margin: 50px 0;
+        }
+
+
+        #txt_EmalId {
+            font-size: 15px;
+            color: #333;
+            border: none;
+            width: 80%;
+            outline: none;
+            background: none;
+            height: 40px;
+            border-bottom: 2px solid #adadad;
+        }
+
+        #txt_industry {
+            font-size: 15px;
+            color: #333;
+            border: none;
+            width: 80%;
+            outline: none;
+            background: none;
+            height: 40px;
+            border-bottom: 2px solid #adadad;
+        }
+
+        #btnHide {
+            display: block;
+            width: 60%;
+            height: 50px;
+            border: none;
+            background: linear-gradient(120deg,#3498db,#224ee3,#3498db);
+            background-size: 200%;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            transition: .5s;
+            margin-left: 4rem;
+        }
+
+            #btnHide:hover {
+                background-position: right;
+            }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            margin-top: 0px;
+        }
     </style>
     <script>
         $(function () {
@@ -162,16 +212,24 @@
 
             <asp:Panel ID="pnlPopup" runat="server" CssClass="modalPopup" Style="display: none">
                 <div class="header">
-                    Register
+                    <img src="../images/newLogo.png" style="width: 58px;">
+                    <h1>Register</h1>
                 </div>
+                <br />
+                <br />
+                <br />
                 <div class="body">
-                    <asp:TextBox ID="txt_EmalId" runat="server" placeholder="Email Address" ClientIDMode="Static"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="regEmailId" runat="server" ControlToValidate="txt_EmalId" ErrorMessage="Please enter valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">  </asp:RegularExpressionValidator>
-                    <br />
-                    <asp:TextBox ID="txt_industry" runat="server" placeholder="Your Industry" ClientIDMode="Static"></asp:TextBox>
+                    <div class="txtbx">
+                        <asp:TextBox ID="txt_EmalId" runat="server" placeholder="Email Address" ClientIDMode="Static"></asp:TextBox><br />
+                        <asp:RegularExpressionValidator ID="regEmailId" runat="server" ControlToValidate="txt_EmalId" ErrorMessage="Please enter valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">  </asp:RegularExpressionValidator>
+                        <br />
+                    </div>
 
+                    <div class="txtbx">
+                        <asp:TextBox ID="txt_industry" runat="server" placeholder="Your Industry" ClientIDMode="Static"></asp:TextBox><br />
+                    </div>
                     <asp:LinkButton ID="lnkDummyCancel" runat="server"></asp:LinkButton>
-                    <asp:Button ID="btnHide" runat="server" Text="Submit" ClientIDMode="Static" Enabled="false" OnClick="btnHide_Click" />
+                    <asp:Button ID="btnHide" runat="server" Text="Submit" ClientIDMode="Static" Enabled="false" OnClick="btnHide_Click" /><br />
                 </div>
             </asp:Panel>
 
@@ -182,7 +240,7 @@
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">
-                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/armor-logo.png" style="width: 100px;"/>
+                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/armor-logo.png" Style="width: 100px;" />
                         </td>
                     </tr>
                     <tr>
@@ -222,7 +280,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_pcq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_pcq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -266,7 +324,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_rsq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_rsq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -311,7 +369,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_peq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_peq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -355,7 +413,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_dcq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_dcq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -399,7 +457,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_cq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_cq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -443,7 +501,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_irq" runat="server" ImageAlign="Middle" style="width: 200px;border-radius: 50%;"/>
+                                        <asp:Image ID="img_irq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -469,7 +527,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
             </div>
         </div>
 
-        <asp:Button ID="Button1" runat="server" Text="Go Back" OnClick="Button1_Click"/>
+        <asp:Button ID="Button1" runat="server" Text="Go Back" OnClick="Button1_Click" />
     </form>
 </body>
 </html>

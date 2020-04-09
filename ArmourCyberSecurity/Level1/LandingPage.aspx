@@ -118,12 +118,12 @@
                     </a>
                     </li>
                 </ul>
-                <div class="navbar-buttons mbr-section-btn">
+          <%--      <div class="navbar-buttons mbr-section-btn">
                     <a class="btn btn-sm btn-primary display-4" href="./navbar/login.html">
-                        <!--                    <span class="mbri-save mbr-iconfont mbr-iconfont-btn "></span>-->
+                        
                         Login
                 </a>
-                </div>
+                </div>--%>
             </div>
 
         </nav>
@@ -272,7 +272,7 @@
                             <div class="mbr-section-btn text-center">
                                 <%--<a href="./" class="btn btn-primary display-4">Start Here 
                                 </a>--%>
-                                <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" OnClick="level1_Click" />
+                                <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" style="border-radius: 50px; margin-right: auto; margin-left: auto;" OnClick="level1_Click" />
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                             <div class="mbr-section-btn text-center">
                                 <%--<a href="#" class="btn btn-primary display-4">Buy Now
                                  </a>--%>
-                                <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" Text="Buy Now" OnClick="level2_Click" />
+                                <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" style="border-radius: 50px;     margin-right: auto; margin-left: auto;" Text="Buy Now" OnClick="level2_Click" />
                             </div>
                         </div>
                     </div>
