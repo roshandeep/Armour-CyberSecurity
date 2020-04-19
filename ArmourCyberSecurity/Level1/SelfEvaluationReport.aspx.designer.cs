@@ -76,13 +76,22 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regEmailId;
         
         /// <summary>
-        /// txt_industry control.
+        /// txt_Firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_industry;
+        protected global::System.Web.UI.WebControls.TextBox txt_Firstname;
+        
+        /// <summary>
+        /// txt_Lastname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Lastname;
         
         /// <summary>
         /// lnkDummyCancel control.
@@ -380,14 +389,5 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label comment7;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

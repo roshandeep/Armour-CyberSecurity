@@ -433,10 +433,6 @@ namespace ArmourCyberSecurity
                         lblQues14.Visible = true;
                         ddlAns14.Visible = true;
                         Ques14Div.Visible = true;
-
-                        lblQues23.Visible = true;
-                        ddlAns23.Visible = true;
-                        Ques23Div.Visible = true;
                     }
                     if (item.Text == "Brazil")
                     {
@@ -447,10 +443,6 @@ namespace ArmourCyberSecurity
                         lblQues15.Visible = true;
                         ddlAns15.Visible = true;
                         Ques15Div.Visible = true;
-
-                        lblQues23.Visible = true;
-                        ddlAns23.Visible = true;
-                        Ques23Div.Visible = true;
                     }
                 }
                 else
@@ -514,11 +506,6 @@ namespace ArmourCyberSecurity
                                     ddlAns10.Visible = false;
                                     reqAns10.Enabled = false;
                                     Ques10Div.Visible = false;
-
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
                                 }
                             }
                         }
@@ -544,11 +531,6 @@ namespace ArmourCyberSecurity
                                     ddlAns15.Visible = false;
                                     reqAns15.Enabled = false;
                                     Ques15Div.Visible = false;
-
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
                                 }
                             }
                         }
@@ -593,9 +575,9 @@ namespace ArmourCyberSecurity
                         ddlAns10.Visible = true;
                         Ques10Div.Visible = true;
 
-                        lblQues23.Visible = true;
-                        ddlAns23.Visible = true;
-                        Ques23Div.Visible = true;
+                        lblQues14.Visible = true;
+                        ddlAns14.Visible = true;
+                        Ques14Div.Visible = true;
                     }
                     if (item.Text == "Brazil")
                     {
@@ -606,10 +588,6 @@ namespace ArmourCyberSecurity
                         lblQues15.Visible = true;
                         ddlAns15.Visible = true;
                         Ques15Div.Visible = true;
-
-                        lblQues23.Visible = true;
-                        ddlAns23.Visible = true;
-                        Ques23Div.Visible = true;
                     }
                 }
                 else
@@ -674,10 +652,10 @@ namespace ArmourCyberSecurity
                                     reqAns10.Enabled = false;
                                     Ques10Div.Visible = false;
 
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
+                                    lblQues14.Visible = false;
+                                    ddlAns14.Visible = false;
+                                    reqAns14.Enabled = false;
+                                    Ques14Div.Visible = false;
                                 }
                             }
                         }
@@ -699,11 +677,6 @@ namespace ArmourCyberSecurity
                                     ddlAns15.Visible = false;
                                     reqAns15.Enabled = false;
                                     Ques15Div.Visible = false;
-
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
                                 }
                             }
                         }

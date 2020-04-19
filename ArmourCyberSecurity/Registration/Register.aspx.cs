@@ -17,8 +17,11 @@ namespace ArmourCyberSecurity
 {
     public partial class Register : System.Web.UI.Page
     {
+        //AWS RDS
+        string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
+
         //RDSS Local
-        string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
+        //string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
         //Tyler Local
         //string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
         //string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
@@ -57,7 +60,7 @@ namespace ArmourCyberSecurity
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@UserID", userId);
-                        cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Username", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@Password", hashSalt.Hash);
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@Salt", hashSalt.Salt);
@@ -92,9 +95,9 @@ namespace ArmourCyberSecurity
                             dal.SaveUserL2(txtEmail.Text.Trim(), Session["userId"].ToString());
                         }
 
-                        if(txt_industry.Text != "")
+                        if(txt_firstName.Text != "" && txt_lastName.Text != "" && txt_phoneNumber.Text != "" && txt_industry.Text != "" && txt_country.Text != "")
                         {
-                            dal.AddIndustry(Session["userId"].ToString(), txt_industry.Text.Trim());
+                            dal.AddOtherInfo(Session["userId"].ToString(), txt_firstName.Text.Trim(), txt_lastName.Text.Trim(), txt_phoneNumber.Text.Trim(), txt_industry.Text.Trim(), txt_country.Text.Trim());
                         }
 
                         registered = true;
@@ -111,11 +114,9 @@ namespace ArmourCyberSecurity
 
         private void SendActivationEmail(string userId)
         {
-            //string constr = ConfigurationManager.ConnectionStrings["main"].ConnectionString;
-            //string constr = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
             string activationCode = Guid.NewGuid().ToString();
             string emailAddress = txtEmail.Text.Trim();
-            string username = txtUsername.Text.Trim();
+            string username = txtEmail.Text.Trim();
             string body = "Hello " + username + ",";
             body += "<br /><br />Please click the following link to activate your account";
             body += "<br /><a href = '" + Request.Url.AbsoluteUri.Replace("Register", "Account_Activation?ActivationCode=" + activationCode) + "'>Click here to activate your account.</a>";
@@ -153,17 +154,6 @@ namespace ArmourCyberSecurity
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
         }
-
-        //private static string CreateSalt(int size)
-        //{
-        //    // Generate a cryptographic random number using the cryptographic 
-        //    // service provider
-        //    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-        //    byte[] buff = new byte[size];
-        //    rng.GetBytes(buff);
-        //    // Return a Base64 string representation of the random number
-        //    return Convert.ToBase64String(buff);
-        //}
 
         public class HashSalt
         {

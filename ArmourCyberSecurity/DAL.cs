@@ -10,8 +10,10 @@ namespace ArmourCyberSecurity
 {
     public class DAL
     {
+        //AWS RDS
+        string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
         //RDSS Local
-        string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
+        //string connetionString = @"Server=LAPTOP-HM18U6J6\SQLEXPRESS; Database=ArmourCyberSecurity;Integrated Security=true;";
         //Tyler Local
         //string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
 
@@ -98,14 +100,18 @@ namespace ArmourCyberSecurity
             cnn.Close();
         }
 
-        public void AddIndustry(string userId, string industry)
+        public void AddOtherInfo(string userId, string firstname, string lastname, string phoneNo, string industry, string country)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "UPDATE Users SET industry = @industry WHERE userId = @userId ;";
+            string sql = "UPDATE Users SET first_name = @first_name, last_name = @last_name, phoneNo = @phoneNo, industry = @industry, country = @country WHERE userId = @userId ;";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            cmd.Parameters.Add(new SqlParameter("@first_name", firstname));
+            cmd.Parameters.Add(new SqlParameter("@last_name", lastname));
+            cmd.Parameters.Add(new SqlParameter("@phoneNo", phoneNo));
             cmd.Parameters.Add(new SqlParameter("@industry", industry));
+            cmd.Parameters.Add(new SqlParameter("@country", country));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
@@ -179,11 +185,11 @@ namespace ArmourCyberSecurity
             return ds.Tables[0];
         }
 
-        public void SaveUserL1(string emailId, string userId, string industry)
+        public void SaveUserL1(string emailId, string userId, string firstName, string lastName)
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "INSERT INTO ar_sec_users(userId, userName, email_id, level1_complete, level2_complete, subscriber, premium_member, industry_name) VALUES (@userId, @userName, @email_id, @level1_complete, @level2_complete, @subscriber, @premium_member, @industry_name);";
+            string sql = "INSERT INTO ar_sec_users(userId, userName, email_id, level1_complete, level2_complete, subscriber, premium_member, first_name, last_name) VALUES (@userId, @userName, @email_id, @level1_complete, @level2_complete, @subscriber, @premium_member, @first_name, @last_name);";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
             cmd.Parameters.Add(new SqlParameter("@userName", emailId));
@@ -192,7 +198,8 @@ namespace ArmourCyberSecurity
             cmd.Parameters.Add(new SqlParameter("@level2_complete", "0"));
             cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
             cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
-            cmd.Parameters.Add(new SqlParameter("@industry_name", industry));
+            cmd.Parameters.Add(new SqlParameter("@first_name", firstName));
+            cmd.Parameters.Add(new SqlParameter("@last_name", lastName));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }

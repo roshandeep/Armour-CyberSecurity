@@ -23,7 +23,7 @@ namespace ArmourCyberSecurity
         DAL dal = new DAL();
         int pcq = 0, rsq = 0, rfq = 0, peq = 0, dcq = 0, cq = 0, irq = 0, overall = 0, rrq = 0;
         string overall_cmt = string.Empty, pcq_cmt = string.Empty, rrq_cmt = string.Empty, rfq_cmt = string.Empty, peq_cmt = string.Empty, dcq_cmt = string.Empty, cq_cmt = string.Empty, irq_cmt = string.Empty;
-        string industry = string.Empty;
+        string firstName = string.Empty, lastname = string.Empty;
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -43,10 +43,21 @@ namespace ArmourCyberSecurity
             Session["user_mail"] = txt_EmalId.Text.ToString();
             //For testing use this
             //Session["user_mail"] = "roshandeep1995@gmail.com";
-            if (txt_industry.Text != null)
+            if (txt_Firstname.Text != null)
             {
-                Session["industry"] = txt_industry.Text;
-                industry = txt_industry.Text;
+                firstName = txt_Firstname.Text;
+            }
+            else
+            {
+                firstName = string.Empty;
+            }
+            if (txt_Lastname.Text != null)
+            {
+                lastname = txt_Lastname.Text;
+            }
+            else
+            {
+                lastname = string.Empty;
             }
             //Check if user is premium user and already had a level2 Id
             int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
@@ -57,7 +68,7 @@ namespace ArmourCyberSecurity
             }
             else
             {
-                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), industry);
+                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), firstName, lastname);
             }
             CreatePdf(Convert.ToInt32(Session["overall"]), Convert.ToInt32(Session["pcq"]), Convert.ToInt32(Session["rrq"]), Convert.ToInt32(Session["peq"]), Convert.ToInt32(Session["dcq"]), Convert.ToInt32(Session["cq"]), Convert.ToInt32(Session["irq"]), Session["overall_cmt"].ToString(), Session["pcq_cmt"].ToString(), Session["rrq_cmt"].ToString(), Session["peq_cmt"].ToString(), Session["dcq_cmt"].ToString(), Session["cq_cmt"].ToString(), Session["irq_cmt"].ToString(), Session["overall_status"].ToString(), Session["pcq_status"].ToString(), Session["rrq_status"].ToString(), Session["peq_status"].ToString(), Session["dcq_status"].ToString(), Session["cq_status"].ToString(), Session["irq_status"].ToString());
         }
@@ -1124,20 +1135,22 @@ namespace ArmourCyberSecurity
 
 
                         //MailMessage mm = new MailMessage("roshandeep810@gmail.com", "roshandeep1995@gmail.com");
-                        MailMessage mm = new MailMessage("roshandeep810@gmail.com", Session["user_mail"].ToString());
+                        MailMessage mm = new MailMessage("david@privacycompliance.group", Session["user_mail"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
+                        smtp.Host = "email-smtp.us-east-1.amazonaws.com";
+                        //smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 587; // for aws
                         smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep810@gmail.com";
-                        NetworkCred.Password = "Simran@3395";
-                        smtp.UseDefaultCredentials = true;
+                        NetworkCred.UserName = "AKIAT7DOZ4XAPQCSZSF5";
+                        NetworkCred.Password = "BP1TGhFCpJf3Rtbj3MRUsm06BJys/swEEbc+lHCWpXZI";
                         smtp.Credentials = NetworkCred;
-                        smtp.Port = 587;
+                        
                         smtp.Send(mm);
                     }
                 }
@@ -1156,6 +1169,8 @@ namespace ArmourCyberSecurity
         public DataTable GetReport()
         {
             string userId = Session["userIdL1"].ToString();
+            //For testing use this
+            //Session["userIdL1"] = "c56d93d9-faa4-4efa-ae7d-4cf16c2c9697";
             //string userId = "c56d93d9-faa4-4efa-ae7d-4cf16c2c9697";
             DataTable dt = new DataTable();
             dt = dal.GetUserReport(userId);

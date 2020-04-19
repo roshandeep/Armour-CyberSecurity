@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomRoadmapMenu.master.cs" Inherits="ArmourCyberSecurity.CustomRoadmapMenu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false"/>
+            <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false"/>
+            
+             <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click"/>
+            <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html> 
