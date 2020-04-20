@@ -267,6 +267,50 @@ Compliance is a large task, but when done properly the first time, it becomes si
 
             </div>
 
+                <%--OVERALL--%>
+            <div class="boxshadow zoom">
+                <table>
+                    <tr style="background-color: #0795d6;">
+                        <th colspan="2" style="text-align: center;">
+                            <h3 style="color: white; font-size: xx-large;">OVERALL SCORE – ARE YOU PRIVACY REGULATION COMPLIANT?</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <asp:Label ID="lbl_overall" runat="server" Text="As a company you are entrusted with protecting data for both your customers and your employees. Putting in place a proper privacy program ensures that you mitigate risk to customers, protect your company’s reputation, and drastically reduces fines. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <asp:Image ID="img_overall" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="scoreAlignment" style="text-align: center;">
+                                        <asp:Label ID="lbl_score" runat="server" Text="" />
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td style="width: 100%; text-align: justify;">
+                            <div class="statemenRow">
+                                <div class="divBullet">
+                                    <asp:Label ID="bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="comment" runat="server" Text="" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
             <%--Privacy Culture Questions--%>
             <div class="boxshadow zoom">
                 <table>

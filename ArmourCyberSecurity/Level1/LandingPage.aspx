@@ -56,6 +56,70 @@
                 content: "legally meeting compliance for your customers?";
             }
         }
+        /* Popup box BEGIN */
+
+        .hover_bkgr_fricc {
+            background: rgba(0, 0, 0, .4);
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+
+            .hover_bkgr_fricc .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .hover_bkgr_fricc > div {
+                background-color: #fff;
+                box-shadow: 10px 10px 60px #555;
+                display: inline-block;
+                height: auto;
+                max-width: 551px;
+                min-height: 100px;
+                vertical-align: middle;
+                width: 60%;
+                position: relative;
+                border-radius: 8px;
+                padding: 15px 5%;
+            }
+
+        .popupCloseButton {
+            background-color: #fff;
+            border: 3px solid #999;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 25px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+            .popupCloseButton:hover {
+                background-color: #ccc;
+            }
+
+        .trigger_popup_fricc {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        /* Popup box BEGIN */
     </style>
 </head>
 <body>
@@ -81,7 +145,7 @@
                     </span>
                     <span class="navbar-caption-wrap">
                         <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
-                    </a>
+                        </a>
                     </span>
                 </div>
             </div>
@@ -91,22 +155,22 @@
                         <a class="nav-link link text-white display-4" href="#features15-9">
                             <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
                             Regulations
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#">
-                            <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
-                            
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#">
+                        <a class="nav-link link text-white display-4" href="#features3-d">
+                            <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
+                            Free Assesment
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="#features3-d">
                             <!--                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>-->
                             Guided Road Map
                     </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="">
+                        <a class="nav-link link text-white display-4" href="#form4-k">
                             <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
                             Contact Us
                     </a>
@@ -118,18 +182,20 @@
                     </a>
                     </li>
                 </ul>
-          <%--      <div class="navbar-buttons mbr-section-btn">
+                <div class="navbar-buttons mbr-section-btn">
                     <a class="btn btn-sm btn-primary display-4" href="./navbar/login.html">
-                        
-                        Login
-                </a>
-                </div>--%>
+                        <span></span>
+                        Sign in
+                    </a>
+                </div>
             </div>
 
         </nav>
     </section>
 
-    <section class="engine"><a href="#">Information Section</a></section>
+    <section class="engine">
+        <a href="#">Information Section</a>
+    </section>
     <section class="header6 cid-rSx82ns3zm mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=36YgDDJ7XSc" id="header6-4">
 
 
@@ -163,13 +229,9 @@
     </section>
 
     <section class="features15 cid-rSx9e7dX8o" id="features15-9">
-
-
-
-
         <div class="container">
             <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Global Privacy Regulations 
-        </h2>
+            </h2>
             <h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style"></h3>
 
             <div class="media-container-row container pt-5 mt-2">
@@ -177,11 +239,11 @@
                 <div class="col-12 col-md-6 mb-4 col-lg-3">
                     <div class="card flip-card p-5 align-center">
                         <div class="card-front card_cont">
-                            <img src="assets/images/CCPA%20logo%20vertical.png" alt="Ccpa_img" />
+                            <img src="assets/images/CCPA_logo_vertical.png" alt="Ccpa_img" />
                         </div>
                         <div class="card_back card_cont">
                             <h4 class="card-title display-5 py-2 mbr-fonts-style">CCPA
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 CCPA (California Consumer Privacy Act) is the data privacy regulation that applies to residents of California.
                        
@@ -194,11 +256,11 @@
 
                     <div class="card flip-card p-5 align-center">
                         <div class="card-front card_cont">
-                            <img src="assets/images/GDPR%20logo%20vertical.png" alt="GDPR_IMG" />
+                            <img src="assets/images/GDPR_logo_vertical.png" alt="GDPR_IMG" />
                         </div>
                         <div class="card_back card_cont">
                             <h4 class="card-title py-2 mbr-fonts-style display-5">GDPR
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 The GDPR (General Data Protection Regulation) is the data privacy regulation that applies both businesses and citizens of the European Union.
                        
@@ -210,11 +272,11 @@
                 <div class="col-12 col-md-6 mb-4 col-lg-3">
                     <div class="card flip-card p-5 align-center">
                         <div class="card-front card_cont">
-                            <img src="assets/images/LGPD%20Logo.png" alt="LGPD_IMG" />
+                            <img src="assets/images/LGPD_Logo.png" alt="LGPD_IMG" />
                         </div>
                         <div class="card_back card_cont">
                             <h4 class="card-title py-2 mbr-fonts-style display-5">LGPD
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 The LGPD (Lei Geral de Proteção de Dados) is the data privacy regulation that applies both businesses and citizens of Brazil.
                        
@@ -226,11 +288,11 @@
                 <div class="col-12 col-md-6 mb-4 col-lg-3">
                     <div class="card flip-card p-5 align-center">
                         <div class="card-front card_cont">
-                            <img src="assets/images/pipeda.png" alt="pipeda_img" />
+                            <img src="assets/images/Pipeda.png" alt="pipeda_img" />
                         </div>
                         <div class="card_back card_cont">
                             <h4 class="card-title py-2 mbr-fonts-style display-5">PIPEDA 
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 PIPEDA (Personal Information Protection and Electronic Documents Act) is the data privacy regulation that applies both businesses and citizens of Canada.
 
@@ -251,75 +313,75 @@
 
         <div class="container">
             <%--<div class="media-container-row">--%>
-                <form id="form1" runat="server" class="form media-container-row">
-                    <div class="card p-3 col-12 col-md-6 col-lg-4">
-                        <div class="card-wrapper">
-                            <div class="card-img">
-                                <img src="assets/images/background3.jpg" alt="Self_Assesment_img">
-                            </div>
-                            <div class="card-box">
-                                <h4 class="card-title mbr-fonts-style display-7">Free Assesment &nbsp;/&nbsp;Self Assesment
+            <form id="form1" runat="server" class="form media-container-row">
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background3.jpg" alt="Self_Assesment_img">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">Free Assesment &nbsp;/&nbsp;Self Assesment
                         </h4>
-                                <p class="mbr-text mbr-fonts-style display-7">
-                                    Fill out this quick questionnaire to get your free compliance preparedness report and score. Find out in which areas you need to focus your resources to get to full privacy regulation compliance.<br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                </p>
-                            </div>
-                            <div class="mbr-section-btn text-center">
-                                <%--<a href="./" class="btn btn-primary display-4">Start Here 
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Fill out this quick questionnaire to get your free compliance preparedness report and score. Find out in which areas you need to focus your resources to get to full privacy regulation compliance.<br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <%--<a href="./" class="btn btn-primary display-4">Start Here 
                                 </a>--%>
-                                <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" style="border-radius: 50px; margin-right: auto; margin-left: auto;" OnClick="level1_Click" />
-                            </div>
+                            <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" OnClick="level1_Click" />
                         </div>
                     </div>
+                </div>
 
-                    <div class="card p-3 col-12 col-md-6 col-lg-4">
-                        <div class="card-wrapper">
-                            <div class="card-img">
-                                <img src="assets/images/background1.jpg" alt="Custom_roadmap_img" />
-                            </div>
-                            <div class="card-box">
-                                <h4 class="card-title mbr-fonts-style display-7">Guided Road Map
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background1.jpg" alt="Custom_roadmap_img" />
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">Guided Road Map
                         </h4>
-                                <p class="mbr-text mbr-fonts-style display-7">
-                                    You are legally obligated to become compliant with data privacy regulations. We can get you there. Using your specialized tool, we guide you through an in depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future.
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                You are legally obligated to become compliant with data privacy regulations. We can get you there. Using your specialized tool, we guide you through an in depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future.
                        
-                                </p>
-                                <br />
-                                <br />
-                            </div>
-                            <div class="mbr-section-btn text-center">
-                                <%--<a href="#" class="btn btn-primary display-4">Buy Now
+                            </p>
+                            <br />
+                            <br />
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <%--<a href="#" class="btn btn-primary display-4">Buy Now
                                  </a>--%>
-                                <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" style="border-radius: 50px;     margin-right: auto; margin-left: auto;" Text="Buy Now" OnClick="level2_Click" />
-                            </div>
+                            <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" Text="Buy Now" OnClick="level2_Click" />
                         </div>
                     </div>
+                </div>
 
-                    <div class="card p-3 col-12 col-md-6 col-lg-4">
-                        <div class="card-wrapper">
-                            <div class="card-img">
-                                <img src="assets/images/background2.jpg" alt="contactus_img" />
-                            </div>
-                            <div class="card-box">
-                                <h4 class="card-title mbr-fonts-style display-7">Custom Privacy Consulting 
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/background2.jpg" alt="contactus_img" />
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">Custom Privacy Consulting 
                         </h4>
-                                <p class="mbr-text mbr-fonts-style display-7">
-                                    Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommening tools that meet your access request needs. Do not hesitate toreach out with any questions or inquiries.
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommening tools that meet your access request needs. Do not hesitate toreach out with any questions or inquiries.
                        
-                                </p>
-                            </div>
-                            <div class="mbr-section-btn text-center">
-                                <a href="#" class="btn btn-primary display-4">Contact Us
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <a href="#" class="btn btn-primary display-4">Contact Us
                         </a>
-                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+            </form>
             <%--</div>--%>
         </div>
     </section>
@@ -332,7 +394,7 @@
             <div class="media-container-row">
                 <div class="title col-12 align-center">
                     <h2 class="pb-3 mbr-fonts-style display-2">Our Team
-                </h2>
+                    </h2>
 
                 </div>
             </div>
@@ -347,18 +409,20 @@
                                 <img src="assets/images/Gilad%20-%2002.jpg" />
                             </div>
 
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                Gilad is a forward-thinking executive with 20 years of experience in enterprise-wide information technology. He brings a background of consulting, delivery, and sales, which he used to build skilled services organizations and deliver complex, multi-million-dollar projects at companies like KPMG and Amdocs—including managing large-scale Canadian cybersecurity initiatives.  
-                       
-                            </p>
-
-                        </div>
-                        <div class="card-footer">
-                            <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                                Gilad Perry
-                       
+                            <div class="card-footer">
+                                <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                                    Gilad Perry
+                                </div>
+                                <!--
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                              Co-Founder Armour Cyber Security
+                        </small>
+-->
                             </div>
 
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Gilad is a forward-thinking executive with 20 years of experience in enterprise-wide information technology. He brings a background of consulting, delivery, and sales, which he used to build skilled services organizations and deliver complex, multi-million-dollar projects at companies like KPMG and Amdocs—including managing large-scale Canadian cybersecurity initiatives.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -370,17 +434,21 @@
                                 <img src="assets/images/Cat%20Coode%20-%202.jpg" />
                             </div>
 
+                            <div class="card-footer">
+                                <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                                    Cat Coode
+                                </div>
+                                <!--
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                               Data Privacy Expert
+                        </small>
+-->
+                            </div>
+
                             <p class="mbr-text mbr-fonts-style display-7">
                                 An engineer and software architect, Cat Coode has spent two decades working at tech companies in roles from software developer to senior management. In 2013, Cat recognized the need for people to better understand the importance of their digital data and how to keep it safe. Combining her love for teaching and her background in tech, Cat launched Binary Tattoo. Binary for all things digital, and Tattoo for the permanence of what we put
-                       
                             </p>
 
-                        </div>
-                        <div class="card-footer">
-                            <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                                Cat Coode
-                       
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -391,38 +459,171 @@
                             <div class="testimonial-photo">
                                 <img src="assets/images/david.jpg" />
                             </div>
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                David brings 20 years of experience and dedication to Armour Cybersecurity. He served as an officer in the elite technology unit of the Israeli Defense Forces intelligence corps for 12 years, with a deep focus on cybersecurity. He has also held subsequent leadership and operational roles in Canada, Europe, and around the globe at companies like Amdocs and NCR. 
-                       
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                                David Chernitzky
-                       
+
+                            <div class="card-footer">
+                                <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                                    David Chernitzky
+                                </div>
+                                <!--
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                               Co-Founder Armour Cyber Security
+                        </small>
+-->
                             </div>
 
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                David brings 20 years of experience and dedication to Armour Cybersecurity. He served as an officer in the elite technology unit of the Israeli Defense Forces intelligence corps for 12 years, with a deep focus on cybersecurity. He has also held subsequent leadership and operational roles in Canada, Europe, and around the globe at companies like Amdocs and NCR.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="mbr-section form4 cid-rVH54LhbOK" id="form4-k" style="background: rgba(52, 152, 219,.3); padding: 2rem 2rem;">
+        <div class="container" style="align-content: center;">
+            <div class="row">
 
+                <div class="col-md-6">
+                    <h2 class="pb-3 align-left mbr-fonts-style display-2">Drop a Line
+                </h2>
+                    <div>
+                        <div class="icon-block pb-3 align-left">
+                            <span class="icon-block__icon">
+                                <span class="mbri-letter mbr-iconfont"></span>
+                            </span>
+                            <h4 class="icon-block__title align-left mbr-fonts-style display-5">Don't hesitate to contact us
+                        </h4>
+                        </div>
+                        <div class="icon-contacts pb-3">
+                            <h5 class="align-left mbr-fonts-style display-7">"Lets Talk about how best we can help you! send us message below about your data privacy ompliance needs and we will get back to you."
+                        </h5>
 
-
-
-
+                        </div>
+                    </div>
+                    <div data-form-type="formoid">
+                        <!---Formbuilder Form--->
+                        <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
+                            <input type="hidden" name="email" data-form-email="true" value="yxxyOpOo6wLgTWBqbLl1zgWO1M2zqSvxtoaFC3nBhmNmPockUbP5tS4iuEK1AzG7ukIBefUUBAF4rVl/zrg1dCQvm3r+V90peQ+y+IplzpBRHkswyz0AMnWJ43g0o5uv" />
+                            <div class="row">
+                                <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                                <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                                </div>
+                            </div>
+                            <div class="dragArea row">
+                                <div class="col-md-6  form-group" data-for="name">
+                                    <input type="text" name="Firstname" placeholder="First Name" data-form-field="Name" required="required" class="form-control input display-7" id="name-form4-k" />
+                                </div>
+                                <div class="col-md-6  form-group" data-for="name">
+                                    <input type="text" name="Lastname" placeholder="Last Name" data-form-field="name" required="required" class="form-control input display-7" id="phone-form4-k" />
+                                </div>
+                                <div data-for="email" class="col-md-12  form-group">
+                                    <input type="text" name="email" placeholder="Email" data-form-field="Email" class="form-control input display-7" required="required" id="email-form4-k" />
+                                </div>
+                                <div data-for="message" class="col-md-12  form-group">
+                                    <textarea name="message" placeholder="Message" data-form-field="Message" class="form-control input display-7" id="message-form4-k"></textarea>
+                                </div>
+                                <div class="col-md-12 input-group-btn  mt-2 align-center">
+                                    <button type="submit" class="btn btn-primary btn-form display-4">SEND MESSAGE</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!---Formbuilder Form--->
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
+    <section class="mbr-section contacts3 cid-rVuUX4SLT3" id="contacts3-i" style="padding-top: 100px; padding-bottom: 90px;">
+        <!---->
+
+        <!---->
+        <!--Overlay-->
+
+        <!--Container-->
+        <div class="container">
+            <div class="row">
+                If You want to chat directly to a representative
+           
+                <div class="title col-12">
+                    <h2 class="align-left mbr-fonts-style display-1">Our Contacts
+                </h2>
+
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="wrapper">
+                                <span class="iconfont-wrapper">
+                                    <span class="amp-iconfont icon fa-thumbs-o-up fa"></span>
+                                </span>
+                                <div class="b-info b-adress">
+                                    <h5 class="align-left mbr-fonts-style display-5">Address:
+                                </h5>
+                                    <p class="mbr-text align-left mbr-fonts-style display-7">
+                                        <a href="https://www.google.com/maps/place/77+Bloor+St+W,+Toronto,+ON+M5S+1M2/@43.6692104,-79.391786,17z/data=!3m1!4b1!4m5!3m4!1s0x882b34afda0ae153:0x6590e00287a6daf6!8m2!3d43.6692104!4d-79.3895973">77 Bloor St West, Suite 600,
+Toronto, ON M5S 1M2</a>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="wrapper">
+                                <span class="iconfont-wrapper">
+                                    <span class="amp-iconfont icon fa-phone fa"></span>
+                                </span>
+                                <div class="b-info b-phone">
+                                    <h5 class="align-left mbr-fonts-style display-5">Phone:
+                                </h5>
+                                    <p class="mbr-text align-left mbr-fonts-style display-7">
+                                        <a href="tel:+1-647-229-2015">(647)-229-2015</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="wrapper">
+                                <span class="iconfont-wrapper">
+                                    <span class="amp-iconfont icon fa-comment-o fa"></span>
+                                </span>
+                                <div class="b-info b-mail">
+                                    <h5 class="align-left mbr-fonts-style display-5">E-mail:
+                                </h5>
+                                    <p class="mbr-text align-left mbr-fonts-style display-7">
+                                        <a href="https://privacy@armourcyber.ca">privacy@privacyregulationsolutions.group</a>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="wrapper">
+                                <span class="iconfont-wrapper">
+                                    <span class="amp-iconfont icon fa-th-large fa"></span>
+                                </span>
+                                <div class="b-info b-mail">
+                                    <h5 class="align-left mbr-fonts-style display-5">Working Hours:
+                                </h5>
+                                    <p class="mbr-text align-left mbr-fonts-style display-7">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fuga labore
+                                    modi natus quos veritatis?
+                               
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
-
-
-
-
-
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
@@ -483,9 +684,11 @@
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br />
-                        Powered By AI HUB<br />
-                        - All Rights Reserved
+                        <br>
+                        Powered By AI HUB
+                        <br>
+                        All Rights Reserved<br>
+                        If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>
                 </div>
@@ -509,6 +712,7 @@
     <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>
     <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
     <script src="assets/theme/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
 </body>

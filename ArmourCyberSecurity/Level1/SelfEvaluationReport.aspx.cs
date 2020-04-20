@@ -276,19 +276,25 @@ namespace ArmourCyberSecurity
                     if (overall < 555)
                     {
                         overall_cmt = row["low_cmt"].ToString();
+                        img_overall.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["overall_status"] = "LOW";
+                        lbl_score.Text = "LOW";
                     }
                     else
                     if (overall >= 555 && overall <= 999)
                     {
                         overall_cmt = row["med_cmt"].ToString();
+                        img_overall.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["overall_status"] = "MEDIUM";
+                        lbl_score.Text = "MEDIUM";
                     }
                     else
                     if (overall >= 1000)
                     {
                         overall_cmt = row["high_cmt"].ToString();
+                        img_overall.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["overall_status"] = "HIGH";
+                        lbl_score.Text = "HIGH";
                     }
                 }
                 if ((row["criteria"].ToString() == "Privacy Culture Questions"))
@@ -298,6 +304,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["low_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["pcq_status"] = "LOW";
+                        lbl_pcq_score.Text = "LOW";
                     }
                     else
                     if(pcq >=100 && pcq <= 199)
@@ -305,6 +312,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["med_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["pcq_status"] = "MEDIUM";
+                        lbl_pcq_score.Text = "MEDIUM";
                     }
                     else
                     if(pcq >= 200)
@@ -312,6 +320,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["high_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["pcq_status"] = "HIGH";
+                        lbl_pcq_score.Text = "HIGH";
                     }
                 }
                 else
@@ -322,6 +331,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["low_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["rrq_status"] = "LOW";
+                        lbl_rsq_score.Text = "LOW";
                     }
                     else
                     if (rrq >= 70 && rrq <= 149)
@@ -329,6 +339,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["med_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["rrq_status"] = "MEDIUM";
+                        lbl_rsq_score.Text = "MEDIUM";
                     }
                     else
                     if (rrq >= 150)
@@ -336,6 +347,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["high_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["rrq_status"] = "HIGH";
+                        lbl_rsq_score.Text = "HIGH";
                     }
                 }
                 
@@ -348,6 +360,7 @@ namespace ArmourCyberSecurity
                         peq_cmt = row["low_cmt"].ToString();
                         img_peq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["peq_status"] = "LOW";
+                        lbl_peq_score.Text = "LOW";
                     }
                     else
                     if (peq >= 215 && peq <= 374)
@@ -355,6 +368,7 @@ namespace ArmourCyberSecurity
                         peq_cmt = row["med_cmt"].ToString();
                         img_peq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["peq_status"] = "MEDIUM";
+                        lbl_peq_score.Text = "MEDIUM";
                     }
                     else
                     if (peq >= 375)
@@ -362,6 +376,7 @@ namespace ArmourCyberSecurity
                         peq_cmt = row["low_cmt"].ToString();
                         img_peq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["peq_status"] = "HIGH";
+                        lbl_peq_score.Text = "HIGH";
                     }
                 }
                 else
@@ -372,6 +387,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["low_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["dcq_status"] = "LOW";
+                        lbl_dcq_score.Text = "LOW";
                     }
                     else
                     if (dcq >= 100 && dcq <= 149)
@@ -379,6 +395,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["med_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["dcq_status"] = "MEDIUM";
+                        lbl_dcq_score.Text = "MEDIUM";
                     }
                     else
                     if (dcq >= 150)
@@ -386,6 +403,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["high_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["dcq_status"] = "HIGH";
+                        lbl_dcq_score.Text = "HIGH";
                     }
                 }
                 else
@@ -396,6 +414,7 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["low_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["cq_status"] = "LOW";
+                        lbl_cq_score.Text = "LOW";
                     }
                     else
                     if (cq >= 40 && cq <= 99)
@@ -403,6 +422,7 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["med_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["cq_status"] = "MEDIUM";
+                        lbl_cq_score.Text = "MEDIUM";
                     }
                     else
                     if (cq >= 100)
@@ -410,8 +430,8 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["high_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["cq_status"] = "HIGH";
+                        lbl_cq_score.Text = "HIGH";
                     }
-
                 }
                 else
                 if (row["criteria"].ToString() == "Incident Response")
@@ -422,6 +442,7 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["low_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["irq_status"] = "LOW";
+                        lbl_irq_score.Text = "LOW";
                     }
                     else
                     if (irq >= 130 && irq <= 224)
@@ -429,6 +450,7 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["med_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["irq_status"] = "MEDIUM";
+                        lbl_irq_score.Text = "MEDIUM";
                     }
                     else
                     if (irq >= 225)
@@ -436,48 +458,51 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["high_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["irq_status"] = "HIGH";
+                        lbl_irq_score.Text = "HIGH";
                     }
 
                 }
             }
 
+            bullet.Text = "\u25C9";
+            comment.Text = overall_cmt;
             Session["overall_cmt"] = overall_cmt;
             Session["overall"] = overall;
 
             bullet1.Text = "\u25C9";
             comment1.Text = pcq_cmt;
             Session["pcq_cmt"] = comment1.Text;
-            lbl_pcq_score.Text = pcq.ToString();
+            //lbl_pcq_score.Text = pcq.ToString();
             Session["pcq"] = pcq;
 
             bullet2.Text = "\u25C9";
             comment2.Text = rrq_cmt;
             Session["rrq_cmt"] = comment2.Text;
-            lbl_rsq_score.Text = rrq.ToString();
+            //lbl_rsq_score.Text = rrq.ToString();
             Session["rrq"] = rrq;
 
             bullet4.Text = "\u25C9";
             comment4.Text = peq_cmt;
             Session["peq_cmt"] = comment4.Text;
-            lbl_peq_score.Text = peq.ToString();
+            //lbl_peq_score.Text = peq.ToString();
             Session["peq"] = peq;
 
             bullet5.Text = "\u25C9";
             comment5.Text = dcq_cmt;
             Session["dcq_cmt"] = comment5.Text;
-            lbl_dcq_score.Text = dcq.ToString();
+            //lbl_dcq_score.Text = dcq.ToString();
             Session["dcq"] = dcq;
 
             bullet6.Text = "\u25C9";
             comment6.Text = cq_cmt;
             Session["cq_cmt"] = comment6.Text;
-            lbl_cq_score.Text = cq.ToString();
+            //lbl_cq_score.Text = cq.ToString();
             Session["cq"] = cq;
 
             bullet7.Text = "\u25C9";
             comment7.Text = irq_cmt;
             Session["irq_cmt"] = comment7.Text;
-            lbl_irq_score.Text = irq.ToString();
+            //lbl_irq_score.Text = irq.ToString();
             Session["irq"] = irq;
 
         }

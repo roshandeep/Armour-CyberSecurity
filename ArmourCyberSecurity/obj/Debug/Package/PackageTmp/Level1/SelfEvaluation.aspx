@@ -678,8 +678,8 @@
                 <div id="Consent" style="height: 15rem;">
                     <h2>Consent</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
-                        <asp:Label ID="lblQues24" runat="server" Text="" />
-                        <asp:Label ID="lblQues25" runat="server" Text="" />
+                        <asp:Label ID="lblQues24" runat="server" Text="" /><br />
+                        <asp:Label ID="lblQues25" runat="server" Text="" /><br />
                     </div>
                     <div style="float: right; width: 40%; margin-right: 3rem">
                         <asp:DropDownList runat="server" ID="ddlAns24">
@@ -687,6 +687,7 @@
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator runat="server" ID="reqAns24" ControlToValidate="ddlAns24" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                         <br />
+
 
                         <asp:DropDownList runat="server" ID="ddlAns25">
                             <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
