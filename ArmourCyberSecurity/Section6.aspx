@@ -1,57 +1,28 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section3.aspx.cs" Inherits="ArmourCyberSecurity.Section3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section6.aspx.cs" Inherits="ArmourCyberSecurity.Section6" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script>
-        $(document).ready(function () {
-            $("#sec2Div").hide();
-        });
-
-        $(document).on('click', '[id*=btn_part1]', function () {
-            var v1 = document.getElementById("<%=reqAns1.ClientID%>");
-            var v2 = document.getElementById("<%=reqAns2.ClientID%>");
-            var v3 = document.getElementById("<%=reqAns3.ClientID%>");
-            var v4 = document.getElementById("<%=reqAns4.ClientID%>");
-            var v5 = document.getElementById("<%=reqAns5.ClientID%>");
-            var v6 = document.getElementById("<%=reqAns6.ClientID%>");
-            var v7 = document.getElementById("<%=reqAns7.ClientID%>");
-            ValidatorValidate(v1);
-            ValidatorValidate(v2);
-            ValidatorValidate(v3);
-            ValidatorValidate(v4);
-            ValidatorValidate(v5);
-            ValidatorValidate(v6);
-            ValidatorValidate(v7);
-            if (v1.isvalid && v2.isvalid && v3.isvalid && v4.isvalid && v5.isvalid && v6.isvalid && v7.isvalid) {
-                $("#sec1Div").slideUp(1000);
-                $("#sec2Div").slideDown(1000);
-            }
-            else {
-                alert("Fill in all the questions before moving ahead");
-            }
-        });
-
-
-    </script>
     <div>
-        <h5>The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
-        <br />
+        <h5>The following questions deal with how you have designed you remployee training program. 
         </h5>
         <h5>SECTION GOAL:
-            <br />
-            To build a system for data control that complies with an individual's rights but also ensures privacy and security levels are high. 
+            <br>
+            To ensure that all employees understand their roles within the company for privacy and compliance.
         </h5>
         <h5>STAKEHOLDERS REQUIRED:
             <br>
             To fill out this section you will need a knowledge of the following:
             <br>
-            the way the data is collected, stored, transefered and processed<br>
-            * the way(s) individuals communicate with the company
+            * the onborading program used at the company
             <br>
-            the method by which individuals are authenticated in the system 
+            * the employee training program around privacy
+            <br>
         </h5>
-        <div id='sec1Div'>
-            <h2>Data Subject Access Requests</h2>
-            <h5>Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+        <div>
+            <h2>
+                Privacy Policy
+            </h2>
+            <h5>
+                In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns1">
@@ -101,14 +72,8 @@
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
-            <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-        </div>
-        <div id='sec2Div'>
-            <h2>Data Retention and Removal
-            </h2>
-            <h5>Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
-            </h5>
-            <asp:Label ID="lblQues8" runat="server" Text="" />
+
+             <asp:Label ID="lblQues8" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns8">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
@@ -164,9 +129,7 @@
             <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
-            <asp:Button ID="btn_Save3" runat="server" Text="Save" OnClick="btn_Save3_Click" />
-
+            <asp:Button ID="btn_Save6" runat="server" Text="Save" OnClick="btn_Save6_Click" />
         </div>
-
     </div>
 </asp:Content>

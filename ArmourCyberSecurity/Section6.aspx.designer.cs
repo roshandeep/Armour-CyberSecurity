@@ -10,7 +10,7 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class Section3 {
+    public partial class Section6 {
         
         /// <summary>
         /// lblQues1 control.
@@ -200,15 +200,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns7;
-        
-        /// <summary>
-        /// btn_part1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_part1;
         
         /// <summary>
         /// lblQues8 control.
@@ -427,12 +418,12 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns15;
         
         /// <summary>
-        /// btn_Save3 control.
+        /// btn_Save6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Save3;
+        protected global::System.Web.UI.WebControls.Button btn_Save6;
     }
 }

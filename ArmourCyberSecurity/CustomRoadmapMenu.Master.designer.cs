@@ -40,6 +40,42 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.Button btn_Sec2;
         
         /// <summary>
+        /// btn_Sec3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec3;
+        
+        /// <summary>
+        /// btn_Sec4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec4;
+        
+        /// <summary>
+        /// btn_Sec5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec5;
+        
+        /// <summary>
+        /// btn_Sec6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec6;
+        
+        /// <summary>
         /// btn_Submit control.
         /// </summary>
         /// <remarks>

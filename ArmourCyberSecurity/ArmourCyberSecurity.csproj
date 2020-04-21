@@ -275,6 +275,9 @@
     <Content Include="Section3.aspx" />
     <Content Include="Level1\SelfEvaluation.aspx" />
     <Content Include="Level1\SelfEvaluationReport.aspx" />
+    <Content Include="Section4.aspx" />
+    <Content Include="Section5.aspx" />
+    <Content Include="Section6.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -360,6 +363,27 @@
     </Compile>
     <Compile Include="Level1\SelfEvaluationReport.aspx.designer.cs">
       <DependentUpon>SelfEvaluationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Section4.aspx.cs">
+      <DependentUpon>Section4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Section4.aspx.designer.cs">
+      <DependentUpon>Section4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Section5.aspx.cs">
+      <DependentUpon>Section5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Section5.aspx.designer.cs">
+      <DependentUpon>Section5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Section6.aspx.cs">
+      <DependentUpon>Section6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Section6.aspx.designer.cs">
+      <DependentUpon>Section6.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

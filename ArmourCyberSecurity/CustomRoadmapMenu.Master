@@ -9,10 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false"/>
-            <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false"/>
-            
-             <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click"/>
+            <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false" />
+            <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false" />
+            <asp:Button ID="btn_Sec3" runat="server" Text="Data Control" OnClick="btn_Sec3_Click" CausesValidation="false" />
+            <asp:Button ID="btn_Sec4" runat="server" Text="Consent" OnClick="btn_Sec4_Click" CausesValidation="false" />
+            <asp:Button ID="btn_Sec5" runat="server" Text="Incident Management" OnClick="btn_Sec5_Click" CausesValidation="false" />
+            <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" />
+
+            <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" />
             <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
         </div>
         <div>
@@ -21,4 +25,4 @@
         </div>
     </form>
 </body>
-</html> 
+</html>

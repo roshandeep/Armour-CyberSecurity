@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ArmourCyberSecurity
 {
-    public partial class Section3 : System.Web.UI.Page
+    public partial class Section6 : System.Web.UI.Page
     {
         string userId = string.Empty;
 
@@ -36,23 +36,14 @@ namespace ArmourCyberSecurity
         {
             DAL dal = new DAL();
             DataTable dt = new DataTable();
-            dt = dal.LoadSectionState(3, userId);
+            dt = dal.LoadSectionState(6, userId);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (Convert.ToInt32(row["stagesCompleted"]) == 3)
+                    if (Convert.ToInt32(row["stagesCompleted"]) == 6)
                     {
-                        if (row["question_type"].ToString() == "Data Subject Access Requests")
-                        {
-                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                            if (ddl != null)
-                            {
-                                ddl.SelectedValue = row["answer_wt"].ToString();
-                            }
-                        }
-                        else
-                        if (row["question_type"].ToString() == "Data Retention and Removal")
+                        if (row["question_type"].ToString() == "Privacy Policy")
                         {
                             var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
                             if (ddl != null)
@@ -72,29 +63,14 @@ namespace ArmourCyberSecurity
             dt = dal.LoadLevel2Questions();
             foreach (DataRow row in dt.Rows)
             {
-                if (Convert.ToInt32(row["section"]) == 3)
+                if (Convert.ToInt32(row["section"]) == 6)
                 {
                     var label = (Label)this.Master.FindControl("ContentPlaceHolder1").FindControl("lblQues" + row["sec_ref_id"].ToString());
                     if (label != null)
                     {
                         label.Text = row["question"].ToString();
                     }
-                    if (row["question_type"].ToString() == "Data Subject Access Requests")
-                    {
-                        if (row["ctrl_type"].ToString() == "dd4")
-                        {
-                            var ddl = (DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString());
-                            if (ddl != null)
-                            {
-                                ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
-                                ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
-                                ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
-                                ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
-                            }
-                        }
-                    }
-                    else
-                    if (row["question_type"].ToString() == "Data Retention and Removal")
+                    if (row["question_type"].ToString() == "Privacy Policy")
                     {
                         if (row["ctrl_type"].ToString() == "dd4")
                         {
@@ -112,7 +88,7 @@ namespace ArmourCyberSecurity
             }
         }
 
-        protected void btn_Save3_Click(object sender, EventArgs e)
+        protected void btn_Save6_Click(object sender, EventArgs e)
         {
             DAL dal = new DAL();
             DataTable dt = new DataTable();
@@ -120,7 +96,6 @@ namespace ArmourCyberSecurity
 
             SaveAnswers(dt);
         }
-
 
         private void SaveAnswers(DataTable dt)
         {
@@ -132,7 +107,7 @@ namespace ArmourCyberSecurity
                 string quesType = string.Empty, answerWt = string.Empty, answer = string.Empty;
                 int quesId, secQuesId;
 
-                if (row["question_type"].ToString() == "Data Subject Access Requests")
+                if (row["question_type"].ToString() == "Privacy Policy")
                 {
 
                     if (row["ctrl_type"].ToString() == "dd4")
@@ -147,7 +122,7 @@ namespace ArmourCyberSecurity
                                 answerWt = ddl.SelectedIndex.ToString();
                                 quesType = row["question_type"].ToString();
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 6, secQuesId);
                             }
                             else
                             {
@@ -155,43 +130,12 @@ namespace ArmourCyberSecurity
                                 answerWt = ddl.SelectedItem.Value.ToString();
                                 quesType = row["question_type"].ToString();
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
-                            }
-                        }
-                    }
-                }
-                else
-                if (row["question_type"].ToString() == "Data Retention and Removal")
-                {
-
-                    if (row["ctrl_type"].ToString() == "dd4")
-                    {
-                        var ddl = ((DropDownList)this.Master.FindControl("ContentPlaceHolder1").FindControl("ddlAns" + row["sec_ref_id"].ToString()));
-                        if (ddl != null)
-                        {
-                            quesId = Convert.ToInt32(row["question_id"].ToString());
-                            if (ddl.SelectedIndex == -1)
-                            {
-                                answer = ddl.SelectedIndex.ToString();
-                                answerWt = ddl.SelectedIndex.ToString();
-                                quesType = row["question_type"].ToString();
-                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
-                            }
-                            else
-                            {
-                                answer = ddl.SelectedItem.Text.ToString();
-                                answerWt = ddl.SelectedItem.Value.ToString();
-                                quesType = row["question_type"].ToString();
-                                secQuesId = Convert.ToInt32(row["sec_ref_id"]);
-                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
+                                dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 6, secQuesId);
                             }
                         }
                     }
                 }
             }
         }
-
-
     }
 }
