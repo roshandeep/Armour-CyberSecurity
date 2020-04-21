@@ -66,7 +66,7 @@
             width: 100%;
         }
 
-        .logbox {
+        .logbox { 
             width: 100%;
         }
     </style>
@@ -94,17 +94,14 @@
 
                                     <tr>
                                         <td class="txtb">
-                                            <span data-placeholder="Username"></span>
-                                            <asp:TextBox runat="server" ID="UserName"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="UserName" placeholder="Usename"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ValidationGroup="Login1" ToolTip="User Name is required." ID="UserNameRequired">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="txtb">
-                                            <span data-placeholder="Password"></span>
-                                            <%--<asp:Label runat="server" AssociatedControlID="Password" ID="PasswordLabel">Password:</asp:Label></td>--%>
-
-                                            <asp:TextBox runat="server" TextMode="Password" ID="Password"></asp:TextBox>
+                                           
+                                            <asp:TextBox runat="server" TextMode="Password" ID="Password" placeholder="Password"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ValidationGroup="Login1" ToolTip="Password is required." ID="PasswordRequired">*</asp:RequiredFieldValidator>
                                         </td>
 

@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section2.aspx.cs" Inherits="ArmourCyberSecurity.Section2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section5.aspx.cs" Inherits="ArmourCyberSecurity.Section5" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
         $(document).ready(function () {
             $("#sec2Div").hide();
-            $("#sec3Div").hide();
-            $("#sec4Div").hide();
         });
 
         $(document).on('click', '[id*=btn_part1]', function () {
@@ -16,23 +14,6 @@
             var v5 = document.getElementById("<%=reqAns5.ClientID%>");
             var v6 = document.getElementById("<%=reqAns6.ClientID%>");
             var v7 = document.getElementById("<%=reqAns7.ClientID%>");
-            ValidatorValidate(v1);
-            ValidatorValidate(v2);
-            ValidatorValidate(v3);
-            ValidatorValidate(v4);
-            ValidatorValidate(v5);
-            ValidatorValidate(v6);
-            ValidatorValidate(v7);
-            if (v1.isvalid && v2.isvalid && v3.isvalid && v4.isvalid && v5.isvalid && v6.isvalid && v7.isvalid) {
-                $("#sec1Div").slideUp(1000);
-                $("#sec2Div").slideDown(1000);
-            }
-            else {
-                alert("Fill in all the questions before moving ahead");
-            }
-        });
-
-        $(document).on('click', '[id*=btn_part2]', function () {
             var v8 = document.getElementById("<%=reqAns8.ClientID%>");
             var v9 = document.getElementById("<%=reqAns9.ClientID%>");
             var v10 = document.getElementById("<%=reqAns10.ClientID%>");
@@ -41,6 +22,18 @@
             var v13 = document.getElementById("<%=reqAns13.ClientID%>");
             var v14 = document.getElementById("<%=reqAns14.ClientID%>");
             var v15 = document.getElementById("<%=reqAns15.ClientID%>");
+            var v16 = document.getElementById("<%=reqAns16.ClientID%>");
+            var v17 = document.getElementById("<%=reqAns17.ClientID%>");
+            var v18 = document.getElementById("<%=reqAns18.ClientID%>");
+            var v19 = document.getElementById("<%=reqAns19.ClientID%>");
+            var v20 = document.getElementById("<%=reqAns20.ClientID%>");
+            ValidatorValidate(v1);
+            ValidatorValidate(v2);
+            ValidatorValidate(v3);
+            ValidatorValidate(v4);
+            ValidatorValidate(v5);
+            ValidatorValidate(v6);
+            ValidatorValidate(v7);
             ValidatorValidate(v8);
             ValidatorValidate(v9);
             ValidatorValidate(v10);
@@ -49,61 +42,42 @@
             ValidatorValidate(v13);
             ValidatorValidate(v14);
             ValidatorValidate(v15);
-            if (v8.isvalid && v9.isvalid && v10.isvalid && v11.isvalid && v12.isvalid && v13.isvalid && v14.isvalid && v15.isvalid) {
-                $("#sec2Div").slideUp(1000);
-                $("#sec3Div").slideDown(1000);
-            }
-            else {
-                alert("Fill in all the questions before moving ahead");
-            }
-        });
-
-        $(document).on('click', '[id*=btn_part3]', function () {
-            var v16 = document.getElementById("<%=reqAns16.ClientID%>");
-            var v17 = document.getElementById("<%=reqAns17.ClientID%>");
-            var v18 = document.getElementById("<%=reqAns18.ClientID%>");
-            var v19 = document.getElementById("<%=reqAns19.ClientID%>");
-            var v20 = document.getElementById("<%=reqAns20.ClientID%>");
-            var v21 = document.getElementById("<%=reqAns21.ClientID%>");
             ValidatorValidate(v16);
             ValidatorValidate(v17);
             ValidatorValidate(v18);
             ValidatorValidate(v19);
             ValidatorValidate(v20);
-            ValidatorValidate(v21);
-            if (v16.isvalid && v17.isvalid && v18.isvalid && v19.isvalid && v20.isvalid && v21.isvalid) {
-                $("#sec3Div").slideUp(1000);
-                $("#sec4Div").slideDown(1000);
+            if (v1.isvalid && v2.isvalid && v3.isvalid && v4.isvalid && v5.isvalid && v6.isvalid && v7.isvalid && v8.isvalid && v9.isvalid && v10.isvalid && v11.isvalid && v12.isvalid && v13.isvalid && v14.isvalid && v15.isvalid && v16.isvalid && v17.isvalid && v18.isvalid && v19.isvalid && v20.isvalid) {
+                $("#sec1Div").slideUp(1000);
+                $("#sec2Div").slideDown(1000);
             }
             else {
                 alert("Fill in all the questions before moving ahead");
             }
         });
+
+
     </script>
     <div>
-        <h5>The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data. 
+        <h5>The following questions deal with how your company responds to and addresses a privacy incident. 
         </h5>
         <h5>SECTION GOAL:
-            <br>
-            To ensure that privacy is at the foundation of your system and services. To evaluate the basis on which data is collected and the security of its processing, transfer and storage. Through this process you eliminate risk by removing any data that is not necessary to system, and add in the secuirty measures needed to protect the data
+            <br />
+            To ensure that your company has an adequate incident response management plan in place before you experience an incident.
         </h5>
         <h5>STAKEHOLDERS REQUIRED:
-            <br>
+            <br />
             To fill out this section you will need a knowledge of the following:
-            <br>
-            the way the data is collected, stored, transefered and processed<br>
-            * the types and cotegories of any perosnal data
-            <br>
-            the third party software and products your company uses with personal data
+            <br />
+            * the stakeholders needed to address an incident
+            <br />
+            * the names of third parties, including legal and forensics, that may be brought in to resolve an issue. 
+            <br />
+            * the existing 'severity one' or incident plans the company has  
         </h5>
-
         <div id='sec1Div'>
-            <h2>Privacy by Design</h2>
-            <h5>Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data.
-            <br>
-                Starting with the foundation of the system or service, you'll need draw or write out the flow of data including collection, transfer and access to the data. [Note: this system and services map is the first step in a Data Privacy Impact Assessment below]
-Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.
-
+            <h2>Incident Response Plan</h2>
+            <h5>All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns1">
@@ -153,14 +127,6 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
-
-            <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-        </div>
-        <div id='sec2Div'>
-            <h2>Data Categorization</h2>
-
-            <h3>To assess your data, you will need to create a data map by listing your current data and reviewing it against necessity for your products/services. [Note: the Data Use Info Sheet is part of the Privacy Impact Assessment below]. Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.
-            </h3>
 
             <asp:Label ID="lblQues8" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns8">
@@ -217,13 +183,6 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
-
-            <asp:Button ID="btn_part2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-        </div>
-        <div id='sec3Div'>
-            <h2>Vendor Management</h2>
-            <h4>If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services, such as cloud storage, for customers and clients. Some regulations require a contract but it is a good idea to have one regardless. 
-            </h4>
             <asp:Label ID="lblQues16" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns16">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
@@ -259,20 +218,21 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <asp:RequiredFieldValidator runat="server" ID="reqAns20" ControlToValidate="ddlAns20" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
+            <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+        </div>
+        <div id='sec2Div'>
+            <h2>Notifications
+            </h2>
+            <h5>Depending on risk of harm, the appropriate data protection authority (or authorities) must be notified
+                <br>
+                Depending on risk of harm, users must be notified individually or by public statement.
+            </h5>
             <asp:Label ID="lblQues21" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns21">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
-
-            <asp:Button ID="btn_part3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-        </div>
-        <div id='sec4Div'>
-            <h2>Privacy Impact Assessment</h2>
-            <h4>All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.<br>
-                The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.
-            </h4>
 
             <asp:Label ID="lblQues22" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns22">
@@ -287,6 +247,7 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
+
             <asp:Label ID="lblQues24" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns24">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
@@ -294,7 +255,14 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <asp:RequiredFieldValidator runat="server" ID="reqAns24" ControlToValidate="ddlAns24" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
-            <asp:Button ID="btn_Save2" runat="server" Text="Save" OnClick="btn_Save2_Click" />
+            <asp:Label ID="lblQues25" runat="server" Text="" />
+            <asp:DropDownList runat="server" ID="ddlAns25">
+                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:RequiredFieldValidator runat="server" ID="reqAns25" ControlToValidate="ddlAns25" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+
+            <asp:Button ID="btn_Save5" runat="server" Text="Save" OnClick="btn_Save5_Click" />
         </div>
     </div>
 </asp:Content>

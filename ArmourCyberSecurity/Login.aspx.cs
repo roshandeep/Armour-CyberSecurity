@@ -34,6 +34,8 @@ namespace ArmourCyberSecurity
                 FormsAuthentication.SignOut();
                 Response.Redirect("~/Level1/LandingPage.aspx", false);
             }
+
+            Login1.FailureText = "";
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -79,7 +81,6 @@ namespace ArmourCyberSecurity
                 }
                 else
                 {
-                    Login1.FailureText += "reader.Read() failed.";
                     return false;
                 }
                

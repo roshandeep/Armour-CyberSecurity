@@ -12,8 +12,11 @@ namespace ArmourCyberSecurity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FormsAuthentication.SignOut();
-            Session.Clear();
+            if (!Page.IsPostBack)
+            {
+                FormsAuthentication.SignOut();
+                Session.Clear();
+            }
         }
 
         protected void level1_Click(object sender, EventArgs e)
