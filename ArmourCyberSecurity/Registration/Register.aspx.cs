@@ -20,8 +20,9 @@ namespace ArmourCyberSecurity
     public partial class Register : System.Web.UI.Page
     {
         //AWS RDS
-        string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;Trusted_Connection=false;";
-
+        //string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+        //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
         DAL dal = new DAL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace ArmourCyberSecurity
                         break;
                     default:
                         message = "Registration successful.\\nAn activation email has been sent.";
-                        SendActivationEmail(userId);
+                        //SendActivationEmail(userId);
                         // Add user in RDSS user table
                         if (exsists > 0)
                         {
@@ -119,21 +120,22 @@ namespace ArmourCyberSecurity
             email_body = email_body + "Privacy Compliance Group<br />" + Environment.NewLine;
             email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
-            MailMessage mm = new MailMessage("AccountVerification@PrivacyComplianceSolutions.com", txtEmail.Text.Trim().ToString())
+            MailMessage mm = new MailMessage("", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Confirm Your Email",
                 Body = email_body,
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.EnableSsl = true;
+            smtp.Host = "relay-hosting.secureserver.net";
+            smtp.Port = 25;
+            smtp.EnableSsl = false;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "roshandeep810@gmail.com";
-            NetworkCred.Password = "Simran@3395";
+            NetworkCred.UserName = "david@privacycompliance.group";
+            NetworkCred.Password = "roshandeep@2895";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
-            smtp.Port = 587;
             smtp.Send(mm);
             using (SqlConnection con = new SqlConnection(connetionString))
             {

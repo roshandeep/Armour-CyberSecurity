@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomRoadmapMenu.master.cs" Inherits="ArmourCyberSecurity.CustomRoadmapMenu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="container-fluid">
+    <form id="form1" runat="server" class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec3" runat="server" Text="Data Control" OnClick="btn_Sec3_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec4" runat="server" Text="Consent" OnClick="btn_Sec4_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec5" runat="server" Text="Incident Management" OnClick="btn_Sec5_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" />
+            </div>
+            <div class="col-sm">
+                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" />
+                <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
+            </div>
+        </div>
+        <div class="row">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

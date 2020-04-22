@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,8 +12,7 @@ namespace ArmourCyberSecurity.Level1
 {
     public partial class Account_Activation : System.Web.UI.Page
     {
-        //AWS RDS
-        string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;Trusted_Connection=false;";
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {

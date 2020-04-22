@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace ArmourCyberSecurity
 {
@@ -23,7 +24,7 @@ namespace ArmourCyberSecurity
 
         protected void Forgot_Password_Click(object sender, EventArgs e)
         {
-            string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
+            string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connetionString))
             {
@@ -76,14 +77,14 @@ namespace ArmourCyberSecurity
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.EnableSsl = true;
+            smtp.Host = "relay-hosting.secureserver.net";
+            smtp.Port = 25;
+            smtp.EnableSsl = false;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "roshandeep810@gmail.com";
-            NetworkCred.Password = "Simran@3395";
+            NetworkCred.UserName = "david@privacycompliance.group";
+            NetworkCred.Password = "roshandeep@2895";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
-            smtp.Port = 587;
             smtp.Send(mm);
 
 

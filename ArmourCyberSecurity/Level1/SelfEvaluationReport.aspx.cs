@@ -1166,16 +1166,14 @@ namespace ArmourCyberSecurity
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "email-smtp.us-east-1.amazonaws.com";
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        smtp.Port = 587; // for aws
-                        smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25; 
+                        smtp.EnableSsl = false;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "AKIAT7DOZ4XAPQCSZSF5";
-                        NetworkCred.Password = "BP1TGhFCpJf3Rtbj3MRUsm06BJys/swEEbc+lHCWpXZI";
+                        NetworkCred.UserName = "david@privacycompliance.group";
+                        NetworkCred.Password = "roshandeep@2895";
                         smtp.Credentials = NetworkCred;
-                        
                         smtp.Send(mm);
                     }
                 }

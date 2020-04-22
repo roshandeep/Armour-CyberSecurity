@@ -18,8 +18,9 @@ namespace ArmourCyberSecurity
     public partial class Login : System.Web.UI.Page
     {
         //AWS RDS
-        string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;Trusted_Connection=false;";
-
+        //string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+        //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
         protected void Page_Load(object sender, EventArgs e)
         {
             Login1.Focus();
