@@ -33,7 +33,8 @@
             <td>
             </td>
             <td>
-                <asp:Button Text="Send Email" runat="server" OnClick="RegisterUser" />
+                <asp:Button Text="Send Email" runat="server" OnClick="Forgot_Password_Click" />
+                <h1><asp:Literal ID="ltMessage" runat="server" /></h1>
             </td>
             <td>
             </td>

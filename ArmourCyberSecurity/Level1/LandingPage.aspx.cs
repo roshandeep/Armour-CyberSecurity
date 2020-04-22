@@ -15,7 +15,7 @@ namespace ArmourCyberSecurity
             if (!Page.IsPostBack)
             {
                 FormsAuthentication.SignOut();
-                Session.Clear();
+				Session.Clear();
             }
         }
 

@@ -19,10 +19,12 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server" class="login-form">
+    <form id="form1" runat="server">
+        <div class="login-form" style="top: 0%; transform: translate(-50%,0);">
         <img src="../Level1/assets/images/Logo.png" style="width: 58px; margin-left: 8rem;" />
         <h1>Sign up</h1>
 
+        
         <div class="txtb">
             <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter Email ID" />
             <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
@@ -54,6 +56,7 @@
 
         <div class="txtb">
             <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="(xxx)-xxx-xxxx" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_phoneNumber" ErrorMessage="Enter 10 digit Phone Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
             <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txt_phoneNumber" runat="server" />
         </div>
 
@@ -69,6 +72,7 @@
 
 
         <asp:Button Text="Submit" runat="server" OnClick="RegisterUser" class="logbtn" />
+            </div>
     </form>
 </body>
 </html>

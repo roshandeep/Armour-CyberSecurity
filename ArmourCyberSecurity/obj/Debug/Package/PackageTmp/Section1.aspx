@@ -97,118 +97,177 @@
             </div>
 
             <div id="Ques3Div" runat="server" class="row">
-                <div>
+                <div class="col-sm-8">
                     <asp:Label ID="lblQues3" runat="server" Text="" Visible="false" />
                 </div>
-                <div>
+                <div class="col-sm-4">
                     <asp:DropDownList runat="server" ID="ddlAns3" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                 </div>
             </div>
-            
-        <br />
 
-        <div id="Ques4Div" runat="server">
-            <asp:Label ID="lblQues4" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns4" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+
+            <div id="Ques4Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues4" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns4" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques5Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues5" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns5" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques6Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues6" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns6" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <h2>Regional Fines</h2>
+            </div>
+
+            <div id="Ques7Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues7" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns7" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques8Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns8" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques9Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques10Div" runat="server" class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns10" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <asp:Button ID="btn_part2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+            </div>
         </div>
-        <br />
 
-        <div id="Ques5Div" runat="server">
-            <asp:Label ID="lblQues5" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns5" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+        <div id='sec3Div' class="container-fluid">
+            <div class="row">
+                <h2>Roles</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues11" runat="server" Text="" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns11">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns11" ControlToValidate="ddlAns11" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues12" runat="server" Text="" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns12">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns12" ControlToValidate="ddlAns12" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues13" runat="server" Text="" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns13">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <asp:Label ID="lblQues14" runat="server" Text="" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:DropDownList runat="server" ID="ddlAns14">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <asp:Button ID="btn_Save1" runat="server" Text="Save" OnClick="btn_Save1_Click" />
+            </div>
         </div>
-        <br />
-
-        <div id="Ques6Div" runat="server">
-            <asp:Label ID="lblQues6" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns6" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        </div>
-        <br />
-
-        <h2>Regional Fines</h2>
-
-        <div id="Ques7Div" runat="server">
-            <asp:Label ID="lblQues7" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns7" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        </div>
-        <br />
-
-        <div id="Ques8Div" runat="server">
-            <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns8" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        </div>
-        <br />
-
-        <div id="Ques9Div" runat="server">
-            <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        </div>
-        <br />
-
-        <div id="Ques10Div" runat="server">
-            <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" />
-            <asp:DropDownList runat="server" ID="ddlAns10" Visible="false">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        </div>
-        <br />
-        <asp:Button ID="btn_part2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-    </div>
-
-    <div id='sec3Div'>
-        <h2>Roles</h2>
-
-        <asp:Label ID="lblQues11" runat="server" Text="" />
-        <asp:DropDownList runat="server" ID="ddlAns11">
-            <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator runat="server" ID="reqAns11" ControlToValidate="ddlAns11" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        <br />
-
-        <asp:Label ID="lblQues12" runat="server" Text="" />
-        <asp:DropDownList runat="server" ID="ddlAns12">
-            <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator runat="server" ID="reqAns12" ControlToValidate="ddlAns12" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        <br />
-
-        <asp:Label ID="lblQues13" runat="server" Text="" />
-        <asp:DropDownList runat="server" ID="ddlAns13">
-            <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        <br />
-
-        <asp:Label ID="lblQues14" runat="server" Text="" />
-        <asp:DropDownList runat="server" ID="ddlAns14">
-            <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-        <br />
-
-        <asp:Button ID="btn_Save1" runat="server" Text="Save" OnClick="btn_Save1_Click" />
-    </div>
     </div>
 </asp:Content>

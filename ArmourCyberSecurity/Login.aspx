@@ -79,9 +79,9 @@
 
             <asp:Login ID="Login1" runat="server"
                 CreateUserText="Create a new user..."
-                CreateUserUrl="newUser.aspx"
+                CreateUserUrl="Registration/Register.aspx" 
                 HelpPageUrl="help.aspx"
-                PasswordRecoveryUrl="getPass.aspx"
+                PasswordRecoveryUrl="Registration/Forgot_Password.aspx" 
                 UserNameLabelText="Email address:"
                 OnLoginError="OnLoginError"
                 PasswordRecoveryText="Forgot your password?"
@@ -129,7 +129,7 @@
                                         <td>
                                             <asp:HyperLink runat="server" NavigateUrl="Registration/Register" ID="CreateUserLink" class="bottom-text">Create a new user...</asp:HyperLink>
                                             <br />
-                                            <asp:HyperLink runat="server" NavigateUrl="getPass.aspx" ID="PasswordRecoveryLink" class="bottom-text">Forgot your password?</asp:HyperLink>
+                                            <asp:HyperLink runat="server" NavigateUrl="Registration/Forgot_Password.aspx" ID="PasswordRecoveryLink">Forgot your password?</asp:HyperLink>
                                         </td>
                                     </tr>
                                 </table>

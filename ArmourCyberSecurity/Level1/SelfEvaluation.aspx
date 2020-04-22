@@ -118,8 +118,6 @@
         #lblQues3,
         #lblQues4,
         #lblQues5,
-        #lblQues6,
-        #lblQues7,
         #lblQues8,
         #lblQues9,
         #lblQues10,
@@ -268,6 +266,143 @@
             .cid-rSxbAyIsnT .media-container-row .row-copirayt p {
                 width: 100%;
             }
+        
+        #PrivacyCulture{
+            height:18rem;
+            
+        }
+        @media (max-width: 1414px) {
+            #PrivacyCulture{
+            height:22rem;
+            
+        }}
+     
+        @media (max-width: 1501px) {
+        #ddlAns3{ 
+            margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 1411px) {
+             #ddlAns2{ 
+            margin-top: 5px;
+            }
+             #ddlAns3{ 
+            margin-top: 25px;
+            }
+             #ddlAns4{ 
+            margin-top: 20px;
+            }
+             #ddlAns5{ 
+            margin-top: 10px;
+            }
+            }
+        
+        
+        @media (max-width: 1405px) {
+             #ddlAns2{ 
+            margin-top: 15px;
+            }
+             #ddlAns3{ 
+            margin-top: 30px;
+            }
+             #ddlAns4{ 
+            margin-top: 30px;
+            }
+             #ddlAns5{ 
+            margin-top: 15px;
+            }
+            }
+        
+        #lblQues6,
+         #lblQues7{
+            padding-left: 8%;
+           color: floralwhite;
+            font-size: large;
+            font-weight: 600;
+            width: 80%;
+            margin: 1em auto;
+        }
+        #ddlAns11{
+           margin-top: -20px;
+        }
+        #Ques8{
+                padding-bottom: 1rem;
+            }
+        @media (max-width: 1408px) {
+            #Ques8{
+                padding-bottom: 0px;
+            }
+        }
+        
+        #Ques9{
+                padding-bottom: 1rem;
+            }
+        @media (max-width: 1408px) {
+            #Ques9{
+                padding-bottom: 0px;
+            }
+        }
+        
+        #PrivacyEngg{
+            height:18rem;
+            
+        }
+        @media (max-width: 1275px) {
+            #PrivacyEngg{
+            height:22rem;
+            
+        }}
+        
+        @media (max-width: 1128px) {
+            #PrivacyEngg{
+            height:25rem;
+            
+        }}
+        
+        
+        
+        @media (max-width: 1411px) {
+             #ddlAns18{ 
+            margin-top: 5px;
+            }
+             #ddlAns21{ 
+            margin-top: 5px;
+            }
+            }
+         
+        @media (max-width: 1101px) {
+             #ddlAns20{ 
+            margin-top: 25px;
+            }
+            #ddlAns21{ 
+            margin-top: 20px;
+            }
+            
+        
+        
+        
+        @media (max-width: 1372px) {
+             #ddlAns27{ 
+            margin-top: 5px;
+            }
+             #ddlAns28{ 
+            margin-top: 10px;
+            }
+             #ddlAns29{ 
+            margin-top: 10px;
+            }
+            }
+         
+        @media (max-width: 1101px) {
+             #ddlAns27{ 
+            margin-top: 25px;
+            }
+            #ddlAns28{ 
+            margin-top: 20px;
+            }
+        
+            }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -379,7 +514,7 @@
 
             <div id='sec1Div'>
                 <h2>Privacy Culture</h2>
-                <div id="PrivacyCulture" style="height: 18rem;">
+                <div id="PrivacyCulture">
 
                     <div id="float_left" style="float: left; width: 37%; margin-left: 4rem; padding-left: 2rem;">
                         <asp:Label ID="lblQues1" runat="server" Text="" /><br />
@@ -438,13 +573,13 @@
 
                 <div id="RegionalSpecific">
                     <h2>Regional Specific</h2>
-                    <asp:Label ID="lblQues6" runat="server" Text="" Style="margin-left: 6rem;" />
+                    <asp:Label ID="lblQues6" runat="server" Text=""/>
                     <asp:CheckBoxList ID="chkbxAns6" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns6_SelectedIndexChanged1" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
                     <asp:CustomValidator runat="server" ID="cvDemoList" ClientValidationFunction="ValidateDemoList" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
                     <br />
 
-                    <asp:Label ID="lblQues7" runat="server" Text="" Style="margin-left: 6rem;" />
+                    <asp:Label ID="lblQues7" runat="server" Text=""/>
                     <asp:CheckBoxList ID="chkbxAns7" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns7_SelectedIndexChanged" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
                     <asp:CustomValidator runat="server" ID="cvDemoList2" ClientValidationFunction="ValidateDemoList2" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
@@ -461,7 +596,7 @@
                 <div id="RegionalSpecificReflexive" style="height: 15rem;">
                     <h2>Regional Specific </h2>
                     <div id="Ques8Div" runat="server">
-                        <div style="float: left; width: 35%; padding-left: 4rem; padding-bottom: 1rem">
+                        <div id="Ques8" style="float: left; width: 35%; padding-left: 4rem;">
                             <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -10px;">
@@ -475,7 +610,7 @@
                     </div>
 
                     <div id="Ques9Div" runat="server">
-                        <div style="float: left; width: 35%; padding-left: 4rem; padding-bottom: 1rem">
+                        <div id="Ques9" style="float: left; width: 35%; padding-left: 4rem;">
                             <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -7px;">
@@ -489,7 +624,7 @@
                     </div>
 
                     <div id="Ques10Div" runat="server">
-                        <div style="float: left; width: 35%; padding-left: 4rem;">
+                        <div id="Ques10" style="float: left; width: 35%; padding-left: 4rem;">
                             <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -7px;">
@@ -534,10 +669,10 @@
                     </div>
 
                     <div id="Ques13Div" runat="server">
-                        <div style="float: left; width: 40%; padding-left: 4rem;">
+                        <div style="width: 40%; padding-left: 4rem;">
                             <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -10px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem;">
                             <asp:DropDownList runat="server" ID="ddlAns13" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -560,7 +695,7 @@
                     </div>
 
                     <div id="Ques15Div" runat="server">
-                        <div style="float: left; width: 40%; padding-left: 4rem;">
+                        <div style="width: 40%; padding-left: 4rem;">
                             <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -10px;">
@@ -580,7 +715,7 @@
 
             <div id='sec3Div'>
                 <h2>Privacy Engineering</h2>
-                <div id="PrivacyEngg" style="height: 18rem;">
+                <div id="PrivacyEngg">
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
                         <asp:Label ID="lblQues16" runat="server" Text="" /><br />
                         <br />
@@ -651,11 +786,10 @@
                             <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                        <br />
                     </div>
-
+                              <br/>
                     <div runat="server" id="Ques23Div">
-                        <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
+                        <div style="width: 35%; margin-left: 4rem; padding-left: 2rem;">
                             <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem">
