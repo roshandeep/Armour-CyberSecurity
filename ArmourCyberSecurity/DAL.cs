@@ -88,10 +88,12 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "UPDATE ar_sec_users SET level2_complete = @level2_complete WHERE userId = @userId ;";
+            string sql = "UPDATE ar_sec_users SET level2_complete = @level2_complete, premium_member = @premium_member, subscriber = @subscriber WHERE userId = @userId ;";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", l1userId));
             cmd.Parameters.Add(new SqlParameter("@level2_complete", "1"));
+            cmd.Parameters.Add(new SqlParameter("@premium_member", "1"));
+            cmd.Parameters.Add(new SqlParameter("@subscriber", "1"));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
@@ -116,11 +118,9 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT userId FROM ar_sec_users WHERE email_id = @email_Id AND premium_member = @premium_member AND subscriber = @subscriber";
+            string sql = "SELECT userId FROM Users WHERE Email = @email_Id";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
-            cmd.Parameters.Add(new SqlParameter("@premium_member", "0"));
-            cmd.Parameters.Add(new SqlParameter("@subscriber", "0"));
             string userId = cmd.ExecuteScalar().ToString();
             cnn.Close();
             return userId;
@@ -213,18 +213,6 @@ namespace ArmourCyberSecurity
             cmd.Parameters.Add(new SqlParameter("@level2_complete", "1"));
             cmd.Parameters.Add(new SqlParameter("@subscriber", "1"));
             cmd.Parameters.Add(new SqlParameter("@premium_member", "1"));
-            cmd.ExecuteNonQuery();
-            cnn.Close();
-        }
-
-        public void SaveFreeUser(string userID, string email)
-        {
-            SqlConnection cnn = new SqlConnection(connetionString);
-            cnn.Open();
-            string sql = "INSERT INTO FreeUsers(userId, Email) VALUES (@userID, @email";
-            cmd = new SqlCommand(sql, cnn);
-            cmd.Parameters.Add(new SqlParameter("@userID", userID));
-            cmd.Parameters.Add(new SqlParameter("@email", email));
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
