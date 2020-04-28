@@ -35,7 +35,7 @@
             margin-top: 4px;
             width: 96%;
             padding-left: 2rem;
-            height: auto;
+            height: 100vh;
         }
 
         h2 {
@@ -323,6 +323,26 @@
             width: 80%;
             margin: 1em auto;
         }
+        
+        
+        @media(max-width:703px){
+           #lblQues6,
+         #lblQues7{
+             font-weight: 0;
+        }
+        }
+        
+        
+            @media(max-width:703px){
+                 #lblQues6,
+                #lblQues7{
+                    font-size: small;
+                    
+                }
+                
+            }
+            
+        
         #ddlAns11{
            margin-top: -20px;
         }
@@ -505,7 +525,7 @@
                     </span>
                     <span class="navbar-caption-wrap" style="padding-top: 2rem;">
                         <a class="navbar-caption text-white display-4" href="#" style="color: white; text-decoration: none;">
-                            <h1>Privacy Regulation Assesment</h1>
+                            <h1>Privacy Regulation Assessment</h1>
                         </a>
                     </span>
                 </div>
@@ -673,7 +693,7 @@
                             <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem;">
-                            <asp:DropDownList runat="server" ID="ddlAns13" Visible="false">
+                            <asp:DropDownList runat="server" ID="ddlAns13" Visible="false" style="margin-top: -40px;">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -698,7 +718,7 @@
                         <div style="width: 40%; padding-left: 4rem;">
                             <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -10px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -30px;">
                             <asp:DropDownList runat="server" ID="ddlAns15" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -793,7 +813,7 @@
                             <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem">
-                            <asp:DropDownList runat="server" ID="ddlAns23" Visible="false">
+                            <asp:DropDownList runat="server" ID="ddlAns23" Visible="false" style="margin-top: -25px;">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -873,75 +893,82 @@
                         <asp:RequiredFieldValidator runat="server" ID="reqAns29" ControlToValidate="ddlAns29" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                         <br />
                     </div>
-                </div>
 
 
-                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" Style="padding: 1rem 3rem; border-radius: 50px!important; background: transparent; color: white; border-color: #149dcc !important; font-weight: 600; align-self: center; width: 100%"/>
-            </div>
-        </div>
 
-        <!-- Footer section-->
-        <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
-            <div class="container">
-                <div class="media-container-row align-center mbr-white">
-                    <div class="row row-links">
-                        <ul class="foot-menu">
-                            <li class="foot-menu-item mbr-fonts-style display-7">
-                                <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Services</a>
-                            </li>
-                            <li class="foot-menu-item mbr-fonts-style display-7">
-                                <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Get In Touch</a>
-                            </li>
-                            <li class="foot-menu-item mbr-fonts-style display-7">
-                                <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Work</a>
-                            </li>
-                        </ul>
+
+
+
                     </div>
-                    <div class="row social-row">
-                        <div class="social-list align-right pb-2">
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
+
+
+                    <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" Style="padding: 1rem 3rem; border-radius: 50px!important; background: transparent; color: white; border-color: #149dcc !important; font-weight: 600; align-self: center; width: 100%" />
+                </div>
+            </div>
+
+            <!-- Footer section-->
+            <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
+                <div class="container">
+                    <div class="media-container-row align-center mbr-white">
+                        <div class="row row-links">
+                            <ul class="foot-menu">
+                                <li class="foot-menu-item mbr-fonts-style display-7">
+                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Services</a>
+                                </li>
+                                <li class="foot-menu-item mbr-fonts-style display-7">
+                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Get In Touch</a>
+                                </li>
+                                <li class="foot-menu-item mbr-fonts-style display-7">
+                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Work</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row social-row">
+                            <div class="social-list align-right pb-2">
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
+                                <div class="soc-item">
+                                    <a href="#" target="_blank">
+                                        <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
-                        <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                            © Copyright 2020 Armour Cyber Security &nbsp;
-                            <br />
-                            Powered By AI HUB<br />
-                            - All Rights Reserved
-                        </p>
+                        <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
+                            <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                                © Copyright 2020 Armour Cyber Security &nbsp;
+                                <br />
+                                Powered By AI HUB
+                                <br />
+                                - All Rights Reserved
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </form>
 </body>
 </html>

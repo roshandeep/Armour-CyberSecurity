@@ -69,10 +69,68 @@ namespace ArmourCyberSecurity
                             if (ddl != null)
                             {
                                 ddl.SelectedValue = row["answer_wt"].ToString();
+                                if(ddl == ddlAns13)
+                                {
+                                    LoadDPAvalues(userId);
+                                }
+                                if (ddl == ddlAns14)
+                                {
+                                    LoadDPALinks(userId);
+                                }
                             }
                         }
                     }
                 }
+            }
+        }
+
+        private void LoadDPAvalues(string userId)
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadDPADetails(userId);
+            if (ddlAns13.SelectedItem.Text == "YES")
+            {
+                txt_Name.Enabled = true;
+                txt_Name.Enabled = true;
+                txt_contact.Enabled = true;
+                txt_phone.Enabled = true;
+                txt_title.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    txt_Name.Text = row["dpa_name"].ToString();
+                    txt_Email.Text = row["dpa_email"].ToString();
+                    txt_phone.Text = row["dpa_phoneNo"].ToString();
+                    txt_title.Text = row["dpa_title"].ToString();
+                    txt_contact.Text = row["dpa_contact"].ToString();
+                }
+            }
+            else
+            {
+                txt_Name.Enabled = false;
+                txt_Name.Enabled = false;
+                txt_contact.Enabled = false;
+                txt_phone.Enabled = false;
+                txt_title.Enabled = false;
+            }
+        }
+
+        private void LoadDPALinks(string userId)
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadDPALinks(userId);
+            if (ddlAns14.SelectedItem.Text == "YES")
+            {
+                txt_dpaLinks.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    txt_dpaLinks.Text = row["dpo_links"].ToString();
+                }
+            }
+            else
+            {
+                txt_dpaLinks.Enabled = false;
             }
         }
 
@@ -121,6 +179,7 @@ namespace ArmourCyberSecurity
                 ddlAns10.Visible = true;
                 Ques10Div.Visible = true;
             }
+            
         }
 
         private void GetUserId()
@@ -300,11 +359,82 @@ namespace ArmourCyberSecurity
                                 quesType = row["question_type"].ToString();
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
+
+                                if(ddl == ddlAns13 && ddl.SelectedItem.Text == "YES")
+                                {
+                                    SaveDPAInfo(userId);
+                                }
+                                if (ddl == ddlAns14 && ddl.SelectedItem.Text == "YES")
+                                {
+                                    SaveDPALinks(userId);
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+
+        private void SaveDPALinks(string userId)
+        {
+            DAL dal = new DAL();
+            string links;
+            if (txt_dpaLinks.Text != null)
+            {
+                links = txt_dpaLinks.Text.Trim();
+            }
+            else
+            {
+                links = "";
+            }
+            dal.SaveDPALinks(userId, links);
+        }
+
+        private void SaveDPAInfo(string userId)
+        {
+            DAL dal = new DAL();
+            string name, email, phone, title, contact;
+            if (txt_Name.Text != null)
+            {
+                name = txt_Name.Text.Trim();
+            }
+            else
+            {
+                name = "";
+            }
+            if (txt_Email.Text != null)
+            {
+                email = txt_Email.Text.Trim();
+            }
+            else
+            {
+                email = "";
+            }
+            if (txt_title.Text != null)
+            {
+                title = txt_title.Text.Trim();
+            }
+            else
+            {
+                title = "";
+            }
+            if (txt_phone.Text != null)
+            {
+                phone = txt_phone.Text.Trim();
+            }
+            else
+            {
+                phone = "";
+            }
+            if (txt_contact != null)
+            {
+                contact = txt_contact.Text.Trim();
+            }
+            else
+            {
+                contact = "";
+            }
+            dal.SaveDPA(userId,name, email, phone, title, contact);
         }
 
         protected void chkbxAns1_SelectedIndexChanged(object sender, EventArgs e)

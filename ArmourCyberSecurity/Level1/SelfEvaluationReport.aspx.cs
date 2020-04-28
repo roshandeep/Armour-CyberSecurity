@@ -117,25 +117,28 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Regional Specific Questions")
                 {
-                    if (row["answer_wt"].ToString() != "-1")
+                    if(row["question_id"].ToString() != "6" && row["question_id"].ToString() != "7")
                     {
-                        rsq = rsq + Convert.ToInt32(row["answer_wt"]);
-                        counter1++;
-                    }
+                        if (row["answer_wt"].ToString() != "-1")
+                        {
+                            rsq = rsq + Convert.ToInt32(row["answer_wt"]);
+                            counter1++;
+                        }
 
-                    if (row["ans_Text"].ToString() == "YES")
-                    {
-                        rsq_high++;
-                    }
-                    else
-                    if (row["ans_Text"].ToString() == "SOMEWHAT")
-                    {
-                        rsq_med++;
-                    }
-                    else
-                    if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
-                    {
-                        rsq_low++;
+                        if (row["ans_Text"].ToString() == "YES")
+                        {
+                            rsq_high++;
+                        }
+                        else
+                        if (row["ans_Text"].ToString() == "SOMEWHAT")
+                        {
+                            rsq_med++;
+                        }
+                        else
+                        if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                        {
+                            rsq_low++;
+                        }
                     }
                 }
                 else
@@ -262,7 +265,7 @@ namespace ArmourCyberSecurity
                 }
             }
 
-            rsq = Convert.ToInt32(rsq / (counter1 - 2));
+            rsq = Convert.ToInt32(rsq / (counter1));
             rfq = Convert.ToInt32(rfq / counter2);
             rrq = rsq + rfq;
             overall = rsq + rfq + peq + dcq + cq + irq;
@@ -278,7 +281,7 @@ namespace ArmourCyberSecurity
                         overall_cmt = row["low_cmt"].ToString();
                         img_overall.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["overall_status"] = "LOW";
-                        lbl_score.Text = "LOW";
+                        lbl_score.Text = "Your Compliance Readiness Score is LOW (" + overall + ")";
                     }
                     else
                     if (overall >= 555 && overall <= 999)
@@ -286,7 +289,7 @@ namespace ArmourCyberSecurity
                         overall_cmt = row["med_cmt"].ToString();
                         img_overall.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["overall_status"] = "MEDIUM";
-                        lbl_score.Text = "MEDIUM";
+                        lbl_score.Text = "Your Compliance Readiness Score is MEDIUM(" + overall + ")";
                     }
                     else
                     if (overall >= 1000)
@@ -294,7 +297,7 @@ namespace ArmourCyberSecurity
                         overall_cmt = row["high_cmt"].ToString();
                         img_overall.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["overall_status"] = "HIGH";
-                        lbl_score.Text = "HIGH";
+                        lbl_score.Text = "Your Compliance Readiness Score is HIGH(" + overall + ")";
                     }
                 }
                 if ((row["criteria"].ToString() == "Privacy Culture Questions"))
@@ -304,7 +307,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["low_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["pcq_status"] = "LOW";
-                        lbl_pcq_score.Text = "LOW";
+                        lbl_pcq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if(pcq >=100 && pcq <= 199)
@@ -312,7 +315,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["med_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["pcq_status"] = "MEDIUM";
-                        lbl_pcq_score.Text = "MEDIUM";
+                        lbl_pcq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if(pcq >= 200)
@@ -320,7 +323,7 @@ namespace ArmourCyberSecurity
                         pcq_cmt = row["high_cmt"].ToString();
                         img_pcq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["pcq_status"] = "HIGH";
-                        lbl_pcq_score.Text = "HIGH";
+                        lbl_pcq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
                 }
                 else
@@ -331,7 +334,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["low_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["rrq_status"] = "LOW";
-                        lbl_rsq_score.Text = "LOW";
+                        lbl_rsq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if (rrq >= 70 && rrq <= 149)
@@ -339,7 +342,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["med_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["rrq_status"] = "MEDIUM";
-                        lbl_rsq_score.Text = "MEDIUM";
+                        lbl_rsq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if (rrq >= 150)
@@ -347,7 +350,7 @@ namespace ArmourCyberSecurity
                         rrq_cmt = row["high_cmt"].ToString();
                         img_rsq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["rrq_status"] = "HIGH";
-                        lbl_rsq_score.Text = "HIGH";
+                        lbl_rsq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
                 }
                 
@@ -360,7 +363,7 @@ namespace ArmourCyberSecurity
                         peq_cmt = row["low_cmt"].ToString();
                         img_peq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["peq_status"] = "LOW";
-                        lbl_peq_score.Text = "LOW";
+                        lbl_peq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if (peq >= 215 && peq <= 374)
@@ -368,15 +371,15 @@ namespace ArmourCyberSecurity
                         peq_cmt = row["med_cmt"].ToString();
                         img_peq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["peq_status"] = "MEDIUM";
-                        lbl_peq_score.Text = "MEDIUM";
+                        lbl_peq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if (peq >= 375)
                     {
-                        peq_cmt = row["low_cmt"].ToString();
-                        img_peq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
+                        peq_cmt = row["high_cmt"].ToString();
+                        img_peq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["peq_status"] = "HIGH";
-                        lbl_peq_score.Text = "HIGH";
+                        lbl_peq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
                 }
                 else
@@ -387,7 +390,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["low_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["dcq_status"] = "LOW";
-                        lbl_dcq_score.Text = "LOW";
+                        lbl_dcq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if (dcq >= 100 && dcq <= 149)
@@ -395,7 +398,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["med_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["dcq_status"] = "MEDIUM";
-                        lbl_dcq_score.Text = "MEDIUM";
+                        lbl_dcq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if (dcq >= 150)
@@ -403,7 +406,7 @@ namespace ArmourCyberSecurity
                         dcq_cmt = row["high_cmt"].ToString();
                         img_dcq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["dcq_status"] = "HIGH";
-                        lbl_dcq_score.Text = "HIGH";
+                        lbl_dcq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
                 }
                 else
@@ -414,7 +417,7 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["low_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["cq_status"] = "LOW";
-                        lbl_cq_score.Text = "LOW";
+                        lbl_cq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if (cq >= 40 && cq <= 99)
@@ -422,7 +425,7 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["med_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["cq_status"] = "MEDIUM";
-                        lbl_cq_score.Text = "MEDIUM";
+                        lbl_cq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if (cq >= 100)
@@ -430,7 +433,7 @@ namespace ArmourCyberSecurity
                         cq_cmt = row["high_cmt"].ToString();
                         img_cq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["cq_status"] = "HIGH";
-                        lbl_cq_score.Text = "HIGH";
+                        lbl_cq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
                 }
                 else
@@ -442,7 +445,7 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["low_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/red.PNG");
                         Session["irq_status"] = "LOW";
-                        lbl_irq_score.Text = "LOW";
+                        lbl_irq_score.Text = "Your Compliance Readiness Score is LOW";
                     }
                     else
                     if (irq >= 130 && irq <= 224)
@@ -450,7 +453,7 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["med_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/yellow.PNG");
                         Session["irq_status"] = "MEDIUM";
-                        lbl_irq_score.Text = "MEDIUM";
+                        lbl_irq_score.Text = "Your Compliance Readiness Score is MEDIUM";
                     }
                     else
                     if (irq >= 225)
@@ -458,7 +461,7 @@ namespace ArmourCyberSecurity
                         irq_cmt = row["high_cmt"].ToString();
                         img_irq.ImageUrl = Page.ResolveUrl("~/images/green.PNG");
                         Session["irq_status"] = "HIGH";
-                        lbl_irq_score.Text = "HIGH";
+                        lbl_irq_score.Text = "Your Compliance Readiness Score is HIGH";
                     }
 
                 }
@@ -631,21 +634,21 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         Image overall_img;
-                        if (overall < 650)
+                        if (overall < 555)
                         {
                             overall_img = Image.GetInstance(imagepath + "/red_circle.png");
                             overall_img.ScaleAbsolute(75f, 75f);
                             cell = new PdfPCell(overall_img);
                         }
                         else
-                        if (overall >= 650 && overall <= 750)
+                        if (overall >= 555 && overall <= 999)
                         {
                             overall_img = Image.GetInstance(imagepath + "/yellow_circle.png");
                             overall_img.ScaleAbsolute(75f, 75f);
                             cell = new PdfPCell(overall_img);
                         }
                         else
-                        if (overall > 751)
+                        if (overall >= 1000)
                         {
                             overall_img = Image.GetInstance(imagepath + "/green_circle.png");
                             overall_img.ScaleAbsolute(75f, 75f);
@@ -1159,7 +1162,7 @@ namespace ArmourCyberSecurity
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        //MailMessage mm = new MailMessage("roshandeep810@gmail.com", "roshandeep1995@gmail.com");
+                        //MailMessage mm = new MailMessage("roshandeep810@gmail.com", Session["user_mail"].ToString());
                         MailMessage mm = new MailMessage("david@privacycompliance.group", Session["user_mail"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
@@ -1167,7 +1170,7 @@ namespace ArmourCyberSecurity
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "relay-hosting.secureserver.net";
-                        smtp.Port = 25; 
+                        smtp.Port = 25;
                         smtp.EnableSsl = false;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();

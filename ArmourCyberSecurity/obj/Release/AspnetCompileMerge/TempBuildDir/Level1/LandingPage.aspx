@@ -7,13 +7,13 @@
     <!--  -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="generator" content="" />
+    <meta name="generator" content="AIHUB/DC">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon" />
-    <meta name="description" content="Site Creator Description" />
+    <meta name="description" />
     <a href="LandingPage.aspx">LandingPage.aspx</a>
 
-    <title>Cyber Assesment</title>
+    <title>Cyber Assessment</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" />
@@ -160,7 +160,7 @@
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="#features3-d">
                             <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
-                            Free Assesment
+                            Free Assessment
                         </a>
                     </li>
                     <li class="nav-item">
@@ -183,7 +183,7 @@
                     </li>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4" href="./navbar/login.html">
+                    <a class="btn btn-sm btn-primary display-4" href="/Login.aspx">
                         <span></span>
                         Sign in
                     </a>
@@ -214,7 +214,7 @@
                
                     </p>
                     <div class="mbr-section-btn align-center">
-                        <a class="btn btn-md btn-primary display-4" href="#features3-d">Take Me to Self Assesment</a>
+                        <a class="btn btn-md btn-primary display-4" href="#features3-d">Take Me to Self Assessment</a>
 
                     </div>
                 </div>
@@ -320,18 +320,16 @@
                             <img src="assets/images/background3.jpg" alt="Self_Assesment_img">
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">Free Assesment &nbsp;/&nbsp;Self Assesment
+                            <h4 class="card-title mbr-fonts-style display-7">Free Assessment &nbsp;/&nbsp;Self Assessment
                         </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Fill out this quick questionnaire to get your free compliance preparedness report and score. Find out in which areas you need to focus your resources to get to full privacy regulation compliance.<br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
+                                Fill out this quick questionnaire to get your free compliance preparedness report and score .&nbsp; Find out in which areas you need to focus your resources to get to full privacy regulation compliance.
+                                
                             </p>
+                            <br/><br />
+                            <br/>
                         </div>
-                        <div class="mbr-section-btn text-center">
+                        <div class="mbr-section-btn text-center" style="margin-top: 2.2rem;">
                             <%--<a href="./" class="btn btn-primary display-4">Start Here 
                                 </a>--%>
                             <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" OnClick="level1_Click" />
@@ -351,8 +349,7 @@
                                 You are legally obligated to become compliant with data privacy regulations. We can get you there. Using your specialized tool, we guide you through an in depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future.
                        
                             </p>
-                            <br />
-                            <br />
+                            <br/><br/>
                         </div>
                         <div class="mbr-section-btn text-center">
                             <%--<a href="#" class="btn btn-primary display-4">Buy Now
@@ -371,11 +368,11 @@
                             <h4 class="card-title mbr-fonts-style display-7">Custom Privacy Consulting 
                         </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommening tools that meet your access request needs. Do not hesitate toreach out with any questions or inquiries.
+                                Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommending tools that meet your access request needs. Do not hesitate to reach out with any questions or inquiries.
                        
                             </p>
                         </div>
-                        <div class="mbr-section-btn text-center">
+                        <div class="mbr-section-btn text-center" style="margin-top: -.2rem;">
                             <a href="#" class="btn btn-primary display-4">Contact Us
                         </a>
                         </div>
@@ -486,18 +483,23 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    <h2 class="pb-3 align-left mbr-fonts-style display-2">Drop a Line
+                <h2 class="pb-3 align-left mbr-fonts-style display-2">
+                    DROP US A LINE
                 </h2>
                     <div>
                         <div class="icon-block pb-3 align-left">
                             <span class="icon-block__icon">
                                 <span class="mbri-letter mbr-iconfont"></span>
                             </span>
-                            <h4 class="icon-block__title align-left mbr-fonts-style display-5">Don't hesitate to contact us
+<!--
+                        <h4 class="icon-block__title align-left mbr-fonts-style display-5">
+                            Don't hesitate to contact us
                         </h4>
+-->
                         </div>
                         <div class="icon-contacts pb-3">
-                            <h5 class="align-left mbr-fonts-style display-7">"Lets Talk about how best we can help you! send us message below about your data privacy ompliance needs and we will get back to you."
+                        <h5 class="align-left mbr-fonts-style display-7">
+                           "send us message below about your data privacy ompliance needs and we will get back to you."
                         </h5>
 
                         </div>
@@ -605,29 +607,41 @@ Toronto, ON M5S 1M2</a>
                                 <span class="iconfont-wrapper">
                                     <span class="amp-iconfont icon fa-th-large fa"></span>
                                 </span>
-                                <div class="b-info b-mail">
-                                    <h5 class="align-left mbr-fonts-style display-5">Working Hours:
+<!--
+                            <div class="b-info b-mail">
+                                <h5 class="align-left mbr-fonts-style display-5">
+                                    Working Hours:
                                 </h5>
-                                    <p class="mbr-text align-left mbr-fonts-style display-7">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fuga labore
+                                <p class="mbr-text align-left mbr-fonts-style display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fuga labore
                                     modi natus quos veritatis?
-                               
-                                    </p>
-                                </div>
+                                </p>
                             </div>
+-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
+    
     <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
+<!--
                     <ul class="foot-menu">
+
+
+
+
+
+                        
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">About us</a>
+                    </li>
 
                         <li class="foot-menu-item mbr-fonts-style display-7">
                             <a class="text-white mbr-bold" href="#" target="_blank">Services</a>
@@ -635,11 +649,16 @@ Toronto, ON M5S 1M2</a>
                         <li class="foot-menu-item mbr-fonts-style display-7">
                             <a class="text-white mbr-bold" href="#" target="_blank">Get In Touch</a>
                         </li>
+                        
+                    <li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">Careers</a>
+                    </li>
 
                         <li class="foot-menu-item mbr-fonts-style display-7">
                             <a class="text-white mbr-bold" href="#" target="_blank">Work</a>
                         </li>
                     </ul>
+-->
                 </div>
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
@@ -684,10 +703,7 @@ Toronto, ON M5S 1M2</a>
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br>
-                        Powered By AI HUB
-                        <br>
-                        All Rights Reserved<br>
+                        <br> All Rights Reserved<br>
                         If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>

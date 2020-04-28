@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section1.aspx.cs" Inherits="ArmourCyberSecurity.Section1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <script>
         $(document).ready(function () {
             $("#sec2Div").hide();
@@ -41,7 +42,50 @@
             }
             args.IsValid = false;
         }
+
+
+        function Enable() {
+            var ddlAns13 = document.getElementById('<%= ddlAns13.ClientID %>');
+            //alert("hi");
+            var Name = document.getElementById('<%= txt_Name.ClientID %>');
+            var Email = document.getElementById('<%= txt_Email.ClientID %>');
+            var phone = document.getElementById('<%= txt_phone.ClientID %>');
+            var title = document.getElementById('<%= txt_title.ClientID %>');
+            var contact = document.getElementById('<%= txt_contact.ClientID %>');
+            //alert(ddlAns13.options[ddlAns13.selectedIndex].innerHTML);
+
+            if (ddlAns13.options[ddlAns13.selectedIndex].innerHTML == 'YES') {
+
+                Name.disabled = false;
+                Email.disabled = false;
+                phone.disabled = false;
+                title.disabled = false;
+                contact.disabled = false;
+            }
+            else {
+
+                Name.disabled = true;
+                Email.disabled = true;
+                phone.disabled = true;
+                title.disabled = true;
+                contact.disabled = true;
+            }
+        }
+
+        function EnableTextArea() {
+            var ddlAns14 = document.getElementById('<%= ddlAns14.ClientID %>');
+            var links = document.getElementById('<%= txt_dpaLinks.ClientID %>');
+
+            if (ddlAns14.options[ddlAns14.selectedIndex].innerHTML == 'YES') {
+                links.disabled = false;
+            }
+            else {
+                links.disabled = true;
+            }
+        }
+
     </script>
+
     <div id="Global Regulations" class="container-fluid">
         <div class="row">
             <h5>The following questions deal with the region in which you do buisness, which includes both where your office resides and where your customers reside.
@@ -104,7 +148,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns3" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
 
@@ -118,7 +162,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns4" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -131,7 +175,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns5" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -144,7 +188,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns6" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -161,7 +205,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns7" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -174,7 +218,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns8" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -187,7 +231,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -200,7 +244,7 @@
                     <asp:DropDownList runat="server" ID="ddlAns10" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />
                 </div>
             </div>
             <br />
@@ -244,13 +288,34 @@
                     <asp:Label ID="lblQues13" runat="server" Text="" />
                 </div>
                 <div class="col-sm-4">
-                    <asp:DropDownList runat="server" ID="ddlAns13">
+                    <asp:DropDownList runat="server" ID="ddlAns13" onChange="Enable()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
                 </div>
             </div>
+            <div class="row" id="DPODetails">
+                <div class="col-sm">
+                    <asp:Label ID="lbl_Name" runat="server" Text="Name : " />
+                    <asp:TextBox ID="txt_Name" runat="server"></asp:TextBox>
+
+                    <asp:Label ID="lbl_Email" runat="server" Text="Email : " />
+                    <asp:TextBox ID="txt_Email" runat="server"></asp:TextBox>
+
+                    <asp:Label ID="lbl_Phone" runat="server" Text="Phone No : " />
+                    <asp:TextBox ID="txt_phone" runat="server"></asp:TextBox>
+
+                    <asp:Label ID="lbl_Title" runat="server" Text="Title : " />
+                    <asp:TextBox ID="txt_title" runat="server"></asp:TextBox>
+
+                    <asp:Label ID="lbl_Contact" runat="server" Text="Other Contact Info : " />
+                    <asp:TextBox ID="txt_contact" runat="server"></asp:TextBox>
+
+                    <br />
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col-sm-8">
@@ -261,6 +326,14 @@
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                </div>
+            </div>
+            <div class="row" id="DPOLinks">
+                <div class="col-sm">
+                    <asp:Label ID="lbl_dpaLinks" runat="server" Text="DPA : " />
+                    <asp:TextBox ID="txt_dpaLinks" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+
                     <br />
                 </div>
             </div>

@@ -92,7 +92,7 @@
 
 
         .scoreAlignment {
-            font-size: 22px;
+            font-size: 20px;
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-weight: bold;
@@ -260,9 +260,7 @@
 
 
                 <p style="text-align: justify; margin: 2px; color: white;">
-                    Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. 
-Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines.
-
+                    Your clients’ data is your greatest asset. If the data is breached you will lose money, time, and credibility. Breaches can be avoided with good cyber security practices and compliance with regulations. Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines.
                 </p>
 
             </div>
@@ -277,7 +275,7 @@ Compliance is a large task, but when done properly the first time, it becomes si
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <asp:Label ID="lbl_overall" runat="server" Text="As a company you are entrusted with protecting data for both your customers and your employees. Putting in place a proper privacy program ensures that you mitigate risk to customers, protect your company’s reputation, and drastically reduces fines. " />
+                            <asp:Label ID="lbl_overall" runat="server" Text="" />
                         </td>
                     </tr>
                     <tr>

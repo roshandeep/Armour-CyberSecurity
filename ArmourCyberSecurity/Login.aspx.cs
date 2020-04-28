@@ -33,6 +33,7 @@ namespace ArmourCyberSecurity
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (ValidateUser(Login1.UserName.Trim().ToString(), Login1.Password.Trim().ToString()))
+            {
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     Session["L2emailId"] = Login1.UserName;
@@ -64,6 +65,7 @@ namespace ArmourCyberSecurity
                     }
                     con.Close();
                 }
+            }
             else
             {
                 Login1.FailureText = "Credentials do not match our records.";
@@ -75,7 +77,6 @@ namespace ArmourCyberSecurity
 
         bool ValidateUser(string user, string pass)
         {
-
             using (SqlConnection conn = new SqlConnection(connetionString))
             {
                 conn.Open();

@@ -170,6 +170,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PlaceHolder.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -177,6 +178,7 @@
     <Content Include="Content\login.css" />
     <Content Include="Content\signup.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CustomRoadmapReport.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -235,6 +237,8 @@
     <Content Include="Level1\assets\web\assets\mobirise-icons\mobirise-icons.css" />
     <Content Include="Level1\assets\web\assets\mobirise-icons\mobirise-icons.svg" />
     <Content Include="Level1\assets\ytplayer\jquery.mb.ytplayer.min.js" />
+    <Content Include="Level1\LandingPage.aspx" />
+    <Content Include="Level1\Level1LandingPage.aspx" />
     <Content Include="Payment\Charge.aspx" />
     <Content Include="Payment\ChargeSuccess.aspx" />
     <Content Include="Payment\Checkout.aspx" />
@@ -263,7 +267,6 @@
     <Content Include="images\red_circle.png" />
     <Content Include="images\yellow.PNG" />
     <Content Include="images\yellow_circle.png" />
-    <Content Include="Level1\LandingPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registration\Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -320,6 +323,13 @@
     <Compile Include="CustomRoadmapMenu.Master.designer.cs">
       <DependentUpon>CustomRoadmapMenu.Master</DependentUpon>
     </Compile>
+    <Compile Include="CustomRoadmapReport.aspx.cs">
+      <DependentUpon>CustomRoadmapReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomRoadmapReport.aspx.designer.cs">
+      <DependentUpon>CustomRoadmapReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -337,6 +347,13 @@
     </Compile>
     <Compile Include="Level1\LandingPage.aspx.designer.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Level1\Level1LandingPage.aspx.cs">
+      <DependentUpon>Level1LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Level1\Level1LandingPage.aspx.designer.cs">
+      <DependentUpon>Level1LandingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -480,9 +497,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

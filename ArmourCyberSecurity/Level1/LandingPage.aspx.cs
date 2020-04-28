@@ -21,12 +21,17 @@ namespace ArmourCyberSecurity
 
         protected void level1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Level1/SelfEvaluation.aspx", false);
+            Response.Redirect("~/Level1/Level1LandingPage.aspx", false);
         }
 
         protected void level2_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Section1.aspx", false);
+        }
+
+        protected void btn_SignIn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx", false);
         }
     }
 }

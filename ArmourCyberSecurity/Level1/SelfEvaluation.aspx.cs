@@ -94,7 +94,7 @@ namespace ArmourCyberSecurity
                         }
                     }
                     else
-                    if (row["ctrl_type"].ToString() == "dd2")
+                    if (row["ctrl_type"].ToString() == "dd4")
                     {
                         var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
@@ -298,13 +298,15 @@ namespace ArmourCyberSecurity
                         }
                     }
                     else
-                    if (row["ctrl_type"].ToString() == "dd2")
+                    if (row["ctrl_type"].ToString() == "dd4")
                     {
                         var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
                         {
                             ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
                             ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                            ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                            ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
                         }
                     }
                 }
@@ -316,6 +318,8 @@ namespace ArmourCyberSecurity
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
                         ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
+                        ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
+                        ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
                     }
                 }
                 else
@@ -433,6 +437,10 @@ namespace ArmourCyberSecurity
                         lblQues14.Visible = true;
                         ddlAns14.Visible = true;
                         Ques14Div.Visible = true;
+
+                        lblQues23.Visible = true;
+                        ddlAns23.Visible = true;
+                        Ques23Div.Visible = true;
                     }
                     if (item.Text == "Brazil")
                     {
@@ -443,6 +451,10 @@ namespace ArmourCyberSecurity
                         lblQues15.Visible = true;
                         ddlAns15.Visible = true;
                         Ques15Div.Visible = true;
+
+                        lblQues23.Visible = true;
+                        ddlAns23.Visible = true;
+                        Ques23Div.Visible = true;
                     }
                 }
                 else
@@ -485,11 +497,6 @@ namespace ArmourCyberSecurity
                                     ddlAns13.Visible = false;
                                     reqAns13.Enabled = false;
                                     Ques13Div.Visible = false;
-
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
                                 }
                             }
                         }
@@ -578,6 +585,10 @@ namespace ArmourCyberSecurity
                         lblQues14.Visible = true;
                         ddlAns14.Visible = true;
                         Ques14Div.Visible = true;
+
+                        lblQues23.Visible = true;
+                        ddlAns23.Visible = true;
+                        Ques23Div.Visible = true;
                     }
                     if (item.Text == "Brazil")
                     {
@@ -588,6 +599,10 @@ namespace ArmourCyberSecurity
                         lblQues15.Visible = true;
                         ddlAns15.Visible = true;
                         Ques15Div.Visible = true;
+
+                        lblQues23.Visible = true;
+                        ddlAns23.Visible = true;
+                        Ques23Div.Visible = true;
                     }
                 }
                 else
@@ -630,11 +645,6 @@ namespace ArmourCyberSecurity
                                     ddlAns13.Visible = false;
                                     reqAns13.Enabled = false;
                                     Ques13Div.Visible = false;
-
-                                    lblQues23.Visible = false;
-                                    ddlAns23.Visible = false;
-                                    reqAns23.Enabled = false;
-                                    Ques23Div.Visible = false;
                                 }
                             }
                         }

@@ -31,11 +31,11 @@ namespace ArmourCyberSecurity
             if (noOfSec == 6)
             {
                 lbl_warning.Text = "Good Job! All Sections Completed";
-                //Response.Redirect("~/CustomRoadMapReport.aspx", false);
+                btn_Report.Enabled = true;
             }
             else
             {
-                lbl_warning.Text = "Complete All Sections";
+                lbl_warning.Text = "Complete All Sections, Assessment Incomplete.";
             }
         }
 
@@ -57,6 +57,11 @@ namespace ArmourCyberSecurity
         protected void btn_Sec6_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Section6.aspx", false);
+        }
+
+        protected void btn_Report_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CustomRoadMapReport.aspx", false);
         }
     }
 }

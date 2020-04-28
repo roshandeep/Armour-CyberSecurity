@@ -10,10 +10,7 @@ namespace ArmourCyberSecurity
 {
     public class DAL
     {
-        //AWS RDS
-        //string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
-        //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
-        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+       string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
         SqlCommand cmd;
 
@@ -321,6 +318,97 @@ namespace ArmourCyberSecurity
             }
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+
+        public void SaveDPA(string userId, string name, string email, string phone, string title, string contact)
+        {
+            string sql = string.Empty;
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_dpa WHERE userid = @userId ";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int AnsExists = Convert.ToInt32(cmd.ExecuteScalar());
+            if (AnsExists > 0)
+            { 
+                sql = "UPDATE ar_sec_dpa SET dpa_name = @dpa_name, dpa_email = @dpa_email, dpa_phoneNo = @dpa_phoneNo, dpa_title = @dpa_title, dpa_contact = @dpa_contact WHERE userId = @userId;";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                cmd.Parameters.Add(new SqlParameter("@dpa_name", name));
+                cmd.Parameters.Add(new SqlParameter("@dpa_email", email));
+                cmd.Parameters.Add(new SqlParameter("@dpa_phoneNo", phone));
+                cmd.Parameters.Add(new SqlParameter("@dpa_title", title));
+                cmd.Parameters.Add(new SqlParameter("@dpa_contact", contact));
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                sql = "INSERT INTO ar_sec_dpa(userId, dpa_name, dpa_email, dpa_phoneNo, dpa_title, dpa_contact) VALUES (@userId, @dpa_name, @dpa_email, @dpa_phoneNo, @dpa_title, @dpa_contact);";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                cmd.Parameters.Add(new SqlParameter("@dpa_name", name));
+                cmd.Parameters.Add(new SqlParameter("@dpa_email", email));
+                cmd.Parameters.Add(new SqlParameter("@dpa_phoneNo", phone));
+                cmd.Parameters.Add(new SqlParameter("@dpa_title", title));
+                cmd.Parameters.Add(new SqlParameter("@dpa_contact", contact));
+                cmd.ExecuteNonQuery();
+            }
+            cnn.Close();
+        }
+
+        public DataTable LoadDPADetails(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT userId, dpa_name, dpa_email, dpa_phoneNo, dpa_title, dpa_contact FROM ar_sec_dpa WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
+        }
+
+        public void SaveDPALinks(string userId, string links)
+        {
+            string sql = string.Empty;
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_dpaLinks WHERE userid = @userId ";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int AnsExists = Convert.ToInt32(cmd.ExecuteScalar());
+            if (AnsExists > 0)
+            {
+                sql = "UPDATE ar_sec_dpaLinks SET dpo_links = @dpo_links WHERE userId = @userId;";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cnn.Close();
+            }
+            else
+            {
+                sql = "INSERT INTO ar_sec_dpaLinks(userId, dpo_links) VALUES (@userId, @dpo_links);";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cnn.Close();
+            }
+        }
+
+        public DataTable LoadDPALinks(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT userId, dpo_links FROM ar_sec_dpaLinks WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
         }
 
         public DataTable GetReportComments()

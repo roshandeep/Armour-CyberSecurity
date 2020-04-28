@@ -127,7 +127,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:HyperLink runat="server" NavigateUrl="Registration/Register" ID="CreateUserLink" class="bottom-text">Create a new user...</asp:HyperLink>
+                                            <asp:HyperLink runat="server" NavigateUrl="Registration/Register" ID="CreateUserLink" >Create a new user...</asp:HyperLink>
                                             <br />
                                             <asp:HyperLink runat="server" NavigateUrl="Registration/Forgot_Password.aspx" ID="PasswordRecoveryLink">Forgot your password?</asp:HyperLink>
                                         </td>

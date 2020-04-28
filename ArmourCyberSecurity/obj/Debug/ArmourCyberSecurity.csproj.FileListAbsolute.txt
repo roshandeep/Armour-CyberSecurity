@@ -206,4 +206,3 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\Ar
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csproj.CopyComplete
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.pdb
-C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csprojAssemblyReference.cache
