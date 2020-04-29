@@ -5,6 +5,189 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .modalBackground {
+            background-image: linear-gradient(120deg,#3498db,#224ee3,#3498db);
+            filter: alpha(opacity=40);
+            opacity: 0.95;
+        }
+
+        .modalPopup {
+            background-color: #FFFFFF;
+            width: 400px;
+            border: 3px solid #0DA9D0;
+            height: auto;
+        }
+
+            .modalPopup .header {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .modalPopup .body {
+                min-height: 50px;
+                line-height: 30px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        #backdrop {
+            width: initial;
+            color: #FFFFFF;
+            background-color: #0795d6;
+            border-radius: 25px;
+            padding: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .Logo {
+            border-radius: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #reportTitle {
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #scoreValue {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #scoreTable {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            align-content: center;
+            table-layout: auto;
+            width: 475px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #reportdetail {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            align-content: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+
+
+        .scoreAlignment {
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+
+        .boxshadow {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            align-content: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 1100px;
+            min-height: 300px;
+            overflow-y: hidden;
+            -webkit-box-shadow: 5px 5px 8px 8px rgba(0, 0, 0, 0.50);
+            font-size: larger;
+        }
+
+        .divBullet {
+            width: 5%;
+            float: left;
+            /*display: block;*/
+            display: table-cell;
+        }
+
+        .divLabel {
+            width: 95%;
+            float: right;
+            /*display: block;*/
+            display: table-cell;
+        }
+
+        .statemenRow {
+            /*display:flex;*/
+            display: table;
+        }
+
+        .zoom:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            transition: transform .3s;
+        }
+
+        .txtbx {
+            position: relative;
+            margin: 50px 0;
+        }
+
+
+        #txt_EmalId, #txt_Firstname, #txt_Lastname {
+            font-size: 15px;
+            color: #333;
+            border: none;
+            width: 80%;
+            outline: none;
+            background: none;
+            height: 40px;
+            border-bottom: 2px solid #adadad;
+        }
+
+        #txt_industry {
+            font-size: 15px;
+            color: #333;
+            border: none;
+            width: 80%;
+            outline: none;
+            background: none;
+            height: 40px;
+            border-bottom: 2px solid #adadad;
+        }
+
+        #btnHide {
+            display: block;
+            width: 60%;
+            height: 50px;
+            border: none;
+            background: linear-gradient(120deg,#3498db,#224ee3,#3498db);
+            background-size: 200%;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            transition: .5s;
+            margin-left: 4rem;
+        }
+
+            #btnHide:hover {
+                background-position: right;
+            }
+
+        h3, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -37,7 +220,7 @@
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
-                            <h3 style="color: white;">Global Regulations</h3>
+                            <h3 style="color: white; font-size: xx-large;">Global Regulations</h3>
                         </th>
                     </tr>
                     <tr>
@@ -52,7 +235,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>SECTION GOAL: </b></h5>
+                            <h3><b>SECTION GOAL: </b></h3>
                             <p>
                                 To establish which legislations are required, determined by both your company location and that of your customers.
                                 <br />
@@ -64,16 +247,16 @@
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>REGULATIONS </b></h5>
+                            <h3><b>REGULATIONS </b></h3>
                             <p>
                                 Regulations vary by geographical region. Additionally, some apply to the location of the company and others to the location of the individual.
                                 <br />
-                                For example, GDPR applies:
-                                ●	If the company is in the EU
-                                ●	If the company does business with some subjects in the EU
-                                ●	If the company is in a country that also follows GDPR (ex Brazil)
-                                ●	If the data subject is 'in the union'. This is intentionally vague and could cover either residents by address or citizens so long as some action takes place in the EU.
- 
+                                For example, GDPR applies:<br />
+                                ●	If the company is in the EU<br />
+                                ●	If the company does business with some subjects in the EU<br />
+                                ●	If the company is in a country that also follows GDPR (ex Brazil)<br />
+                                ●	If the data subject is 'in the union'. This is intentionally vague and could cover either residents by address or citizens so long as some action takes place in the EU.<br />
+                                <br />
                                 According to your input, your company falls under the following legislations:
 
                             </p>
@@ -88,7 +271,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>Data Protection Authorities</b></h5>
+                            <h3><b>Data Protection Authorities</b></h3>
                             <p>
                                 In the event of a security incident or complaint, it is important to know which Authorities are responsible for your regulations. 
                                 <br />
@@ -99,19 +282,23 @@
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>ROLES</b></h5>
+                            <h3><b>ROLES</b></h3>
                             <p>
                                 The naming convention within regulations differs but there are three main entities under each: the employee of a company responsible for privacy, the company, and the user.
                                 <br />
+                                <br />
                                 <b>DPO – Data Protection Officer</b>
                                 <br />
+                                <br />
                                 The most common name for the employee responsible for privacy of data is the Data Privacy Officer. This is the term used in GDPR. Other roles that may include this responsibility are CPO (Chief Privacy Officer) or CISO (Chief Information Security Officer). GDPR covers this role in Article 39, PIPEDA covers it within the principle of Accountability.
-
-                                The responsibilities of the DPO include:
-                                •	Monitoring for and ensuring legal regulation compliance
-                                •	Overseeing and updating DPIAs (Data Protection Impact Assessments)
-                                •	Acting as primary contact for external companies and regulatory bodies 
-                                •	Ensuring internal policies and processes are in place, and providing training to staff 
+                                <br />
+                                The responsibilities of the DPO include:<br />
+                                •	Monitoring for and ensuring legal regulation compliance<br />
+                                •	Overseeing and updating DPIAs (Data Protection Impact Assessments)<br />
+                                •	Acting as primary contact for external companies and regulatory bodies
+                                <br />
+                                •	Ensuring internal policies and processes are in place, and providing training to staff
+                                <br />
                                 <br />
 
                                 <asp:Label ID="lbl_DPO" runat="server" Text="" />
@@ -121,7 +308,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>Controllers, Processors, Organizations</b></h5>
+                            <h3><b>Controllers, Processors, Organizations</b></h3>
                             <p>
                                 Determining your company can help in defining which regulation rules you need to observe. The company that controls the data is typically referred to as an organization.
                                 <br />
@@ -131,34 +318,42 @@
                             </p>
                         </td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h5><b>Documentation and Links</b></h5>
+                            <h3><b>Documentation and Links</b></h3>
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;">
-                            <h5><b>Your Data Privacy Officer </b></h5>
-                            <p>
-                                <asp:Label ID="lbl_Name" runat="server" Text="Name : " />
-                                <asp:Label ID="lbl_Email" runat="server" Text="Email : " />
-                                <asp:Label ID="lbl_Phone" runat="server" Text="Phone No : " />
-                                <asp:Label ID="lbl_Title" runat="server" Text="Title : " />
-                                <asp:Label ID="lbl_Contact" runat="server" Text="Other Contact Info : " />
-                            </p>
+                            <div style="vertical-align: top;">
+                                <h3><b>Your Data Privacy Officer </b></h3>
+                            </div>
+                            <div>
+                                <p>
+                                    <asp:Label ID="lbl_Name" runat="server" Text="Name : " /><br />
+                                    <asp:Label ID="lbl_Email" runat="server" Text="Email : " /><br />
+                                    <asp:Label ID="lbl_Phone" runat="server" Text="Phone No : " /><br />
+                                    <asp:Label ID="lbl_Title" runat="server" Text="Title : " /><br />
+                                    <asp:Label ID="lbl_Contact" runat="server" Text="Other Contact Info : " /><br />
+                                </p>
+                            </div>
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <h5><b>Your Data Authority List</b></h5>
-                            <p>
-                                <asp:Label ID="lbl_linklist" runat="server" Text="" />
-                            </p>
+                            <div style="vertical-align: top;">
+                                <h3><b>Your Data Authority List</b></h3>
+                            </div>
+                            <div>
+                                <p>
+                                    <asp:Label ID="lbl_linklist" runat="server" Text="" />
+                                </p>
+                            </div>
                         </td>
                     </tr>
                 </table>
             </div>
 
-            <%--            <%--Privacy Engineering--%>
-            <div class="boxshadow zoom">
+            <%--Privacy Engineering--%>
+            <%--<div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -199,10 +394,10 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
 
             <%--Data Control--%>
-            <div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -243,11 +438,11 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
 
 
             <%--Consent--%>
-            <div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -288,10 +483,10 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
 
             <%--Incident Management--%>
-            <div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -332,10 +527,10 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>--%>
 
             <%--Employee Training--%>
-            <div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -376,9 +571,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>
-            --%>
-
+            </div>--%>
         </div>
     </form>
 </body>

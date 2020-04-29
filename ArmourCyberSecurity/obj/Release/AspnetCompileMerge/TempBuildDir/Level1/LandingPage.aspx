@@ -175,12 +175,12 @@
                             Contact Us
                     </a>
                     </li>
-                    <li class="nav-item">
+        <%--            <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="#testimonials1-5">
                             <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
                             About Us
                     </a>
-                    </li>
+                    </li>--%>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
                     <a class="btn btn-sm btn-primary display-4" href="/Login.aspx">

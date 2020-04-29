@@ -150,6 +150,7 @@ namespace ArmourCyberSecurity
             return exsists;
         }
 
+
         public DataTable LoadLevel2Questions()
         {
             SqlConnection cnn = new SqlConnection(connetionString);
@@ -385,6 +386,7 @@ namespace ArmourCyberSecurity
                 cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.Add(new SqlParameter("@userId", userId));
                 cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cmd.ExecuteNonQuery();
                 cnn.Close();
             }
             else
@@ -393,6 +395,7 @@ namespace ArmourCyberSecurity
                 cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.Add(new SqlParameter("@userId", userId));
                 cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cmd.ExecuteNonQuery();
                 cnn.Close();
             }
         }
@@ -433,6 +436,49 @@ namespace ArmourCyberSecurity
             int answt = Convert.ToInt32(cmd.ExecuteScalar());
             cnn.Close();
             return answt;
+        }
+
+
+        public DataTable GetLevel2Report(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT feedback_id, userid, question_id, question_type, answer_wt, ans_Text, ans_Cmt, stagesCompleted, sec_ref_id FROM  ar_sec_User_Feedback_Collection_Level2 WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
+        }
+
+        public DataTable FillDPADetails(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT dpa_name, dpa_email, dpa_phoneNo, dpa_title, dpa_contact FROM ar_sec_dpa WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
+        }
+
+        public DataTable FillDPALinks(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT dpo_links FROM ar_sec_dpaLinks WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
         }
     }
 }

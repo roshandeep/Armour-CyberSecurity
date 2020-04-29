@@ -322,7 +322,7 @@
                     <asp:Label ID="lblQues14" runat="server" Text="" />
                 </div>
                 <div class="col-sm-4">
-                    <asp:DropDownList runat="server" ID="ddlAns14">
+                    <asp:DropDownList runat="server" ID="ddlAns14" onChange="EnableTextArea()" >
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />

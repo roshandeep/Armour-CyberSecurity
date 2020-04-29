@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -381,7 +382,7 @@ namespace ArmourCyberSecurity
             string links;
             if (txt_dpaLinks.Text != null)
             {
-                links = txt_dpaLinks.Text.Trim();
+                links = Regex.Replace(txt_dpaLinks.Text.Trim(), "\r", ","); ;
             }
             else
             {
