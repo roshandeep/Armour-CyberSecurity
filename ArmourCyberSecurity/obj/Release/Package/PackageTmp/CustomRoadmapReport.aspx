@@ -314,6 +314,10 @@
                                 <br />
                                 <asp:Label ID="lbl_controller" runat="server" Text="" />
                                 <br />
+                                <asp:Label ID="lbl_processor" runat="server" Text="" />
+                                <br />
+                                <asp:Label ID="lbl_notsure" runat="server" Text="" />
+                                <br />
                                 NOTE: A company can be both a Controller and a Processor.
                             </p>
                         </td>

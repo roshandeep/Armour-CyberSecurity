@@ -1163,7 +1163,7 @@ namespace ArmourCyberSecurity
 
 
                         //MailMessage mm = new MailMessage("roshandeep810@gmail.com", Session["user_mail"].ToString());
-                        MailMessage mm = new MailMessage("info@privacycompliance.group", Session["user_mail"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["user_mail"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
@@ -1174,8 +1174,8 @@ namespace ArmourCyberSecurity
                         smtp.EnableSsl = false;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "info@privacycompliance.group";
-                        NetworkCred.Password = "roshandeep@2895";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }

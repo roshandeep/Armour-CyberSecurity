@@ -192,6 +192,9 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CustomRoadmapMenu.Master" />
     <Content Include="images\bground.jpg" />
+    <Content Include="images\greenDot.png" />
+    <Content Include="images\redDot.png" />
+    <Content Include="images\yellowDot.png" />
     <Content Include="Level1\Account_Activation.aspx" />
     <Content Include="Level1\assets\bootstrapcarouselswipe\bootstrap-carousel-swipe.js" />
     <Content Include="Level1\assets\bootstrap\css\bootstrap-grid.min.css" />
@@ -254,6 +257,7 @@
     <Content Include="Level1\assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
     <Content Include="Level1\assets\web\assets\mobirise-icons\mobirise-icons.woff" />
     <Content Include="Payment\Web.config" />
+    <Content Include="Level1\Online Assessment Privacy Policy.docx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\armor-logo.png" />

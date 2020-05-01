@@ -613,7 +613,7 @@
 
             <div id='sec2Div'>
 
-                <div id="RegionalSpecificReflexive" style="height: 15rem;">
+                <div id="RegionalSpecificReflexive" style="height: 20rem;">
                     <h2>Regional Specific </h2>
                     <div id="Ques8Div" runat="server">
                         <div id="Ques8" style="float: left; width: 35%; padding-left: 4rem;">
@@ -630,10 +630,10 @@
                     </div>
 
                     <div id="Ques9Div" runat="server">
-                        <div id="Ques9" style="float: left; width: 35%; padding-left: 4rem;">
+                        <div id="Ques9" style="margin-top: 36px; width: 35%; padding-left: 4rem;">
                             <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -7px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -50px;">
                             <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -660,7 +660,7 @@
                         <div style="float: left; width: 35%; padding-left: 4rem; padding-top: 1rem;">
                             <asp:Label ID="lblQues11" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; padding-top: 0.7rem;">
+                        <div style="float: right; margin-top: 18px; width: 40%; margin-right: 3rem; padding-top: 0.7rem;">
                             <asp:DropDownList runat="server" ID="ddlAns11" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -689,11 +689,11 @@
                     </div>
 
                     <div id="Ques13Div" runat="server">
-                        <div style="width: 40%; padding-left: 4rem;">
+                        <div style="width: 40%; padding-left: 4rem; margin-top:3rem;">
                             <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem;">
-                            <asp:DropDownList runat="server" ID="ddlAns13" Visible="false" style="margin-top: -40px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem;margin-top: -40px;">
+                            <asp:DropDownList runat="server" ID="ddlAns13" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -705,7 +705,7 @@
                         <div style="float: left; width: 40%; padding-left: 4rem;">
                             <asp:Label ID="lblQues14" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -10px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem;">
                             <asp:DropDownList runat="server" ID="ddlAns14" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -715,10 +715,10 @@
                     </div>
 
                     <div id="Ques15Div" runat="server">
-                        <div style="width: 40%; padding-left: 4rem;">
+                        <div style="width: 40%; padding-left: 4rem;margin-top:3rem;">
                             <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -30px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -25px;">
                             <asp:DropDownList runat="server" ID="ddlAns15" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -809,7 +809,7 @@
                     </div>
                               <br/>
                     <div runat="server" id="Ques23Div">
-                        <div style="width: 35%; margin-left: 4rem; padding-left: 2rem;">
+                        <div style="width: 35%; margin-left: 4rem; padding-left: 2rem;margin-top: 3rem;">
                             <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem">
@@ -832,7 +832,7 @@
                 <div id="Consent" style="height: 15rem;">
                     <h2>Consent</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
-                        <asp:Label ID="lblQues24" runat="server" Text="" /><br />
+                        <asp:Label ID="lblQues24" runat="server" Text="" /><br /><br />
                         <asp:Label ID="lblQues25" runat="server" Text="" /><br />
                     </div>
                     <div style="float: right; width: 40%; margin-right: 3rem">
@@ -911,6 +911,7 @@
                 <div class="container">
                     <div class="media-container-row align-center mbr-white">
                         <div class="row row-links">
+<!--
                             <ul class="foot-menu">
                                 <li class="foot-menu-item mbr-fonts-style display-7">
                                     <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Services</a>
@@ -922,6 +923,7 @@
                                     <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Work</a>
                                 </li>
                             </ul>
+-->
                         </div>
                         <div class="row social-row">
                             <div class="social-list align-right pb-2">
@@ -960,9 +962,11 @@
                         <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
                             <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                                 © Copyright 2020 Armour Cyber Security &nbsp;
+<!--
                                 <br />
                                 Powered By AI HUB
                                 <br />
+-->
                                 - All Rights Reserved
                             </p>
                         </div>

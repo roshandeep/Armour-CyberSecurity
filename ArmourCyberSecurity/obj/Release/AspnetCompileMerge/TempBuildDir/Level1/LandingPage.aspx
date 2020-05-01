@@ -506,7 +506,7 @@
                     </div>
                     <div data-form-type="formoid">
                         <!---Formbuilder Form--->
-                        <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
+                        <form action="info@privacycompliance.group" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
                             <input type="hidden" name="email" data-form-email="true" value="yxxyOpOo6wLgTWBqbLl1zgWO1M2zqSvxtoaFC3nBhmNmPockUbP5tS4iuEK1AzG7ukIBefUUBAF4rVl/zrg1dCQvm3r+V90peQ+y+IplzpBRHkswyz0AMnWJ43g0o5uv" />
                             <div class="row">
                                 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
@@ -548,11 +548,13 @@
         <!--Container-->
         <div class="container">
             <div class="row">
-                If You want to chat directly to a representative
+<!--                If You want to chat directly to a representative-->
            
                 <div class="title col-12">
+<!--
                     <h2 class="align-left mbr-fonts-style display-1">Our Contacts
                 </h2>
+-->
 
                 </div>
                 <div class="col-12">
@@ -704,7 +706,7 @@ Toronto, ON M5S 1M2</a>
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
                         <br> All Rights Reserved<br>
-                        If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
+                        If you wish to withdraw your consent, please contact us at <a href="./Online%20Assessment%20Privacy%20Policy.docx" download>Privacy Policy</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>
                 </div>

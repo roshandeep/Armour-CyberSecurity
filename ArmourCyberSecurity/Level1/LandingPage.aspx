@@ -53,7 +53,7 @@
             }
 
             100% {
-                content: "legally meeting compliance for your customers?";
+                content: "meeting compliance for your customers?";
             }
         }
         /* Popup box BEGIN */
@@ -166,7 +166,7 @@
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="#features3-d">
                             <!--                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>-->
-                            Guided Road Map
+                            Custom Roadmap
                     </a>
                     </li>
                     <li class="nav-item">
@@ -210,11 +210,11 @@
                     </h1>
                     <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
                         Your clients’ data is your greatest asset. If the data is breached you will lose money, time, and credibility. Breaches can be avoided with good cyber security practices and compliance with regulations.<br />
-                        Take our free questionnaire to get your customized report today.
+                        Take our free assessment to get your customized report today.
                
                     </p>
                     <div class="mbr-section-btn align-center">
-                        <a class="btn btn-md btn-primary display-4" href="#features3-d">Take Me to Self Assessment</a>
+                        <a class="btn btn-md btn-primary display-4" href="#features3-d">Take Me to the Self Assessment</a>
 
                     </div>
                 </div>
@@ -320,10 +320,10 @@
                             <img src="assets/images/background3.jpg" alt="Self_Assesment_img">
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">Free Assessment &nbsp;/&nbsp;Self Assessment
+                            <h4 class="card-title mbr-fonts-style display-7">Free Assessment 
                         </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Fill out this quick questionnaire to get your free compliance preparedness report and score .&nbsp; Find out in which areas you need to focus your resources to get to full privacy regulation compliance.
+                                Fill out this quick questionnaire to get your free compliance preparedness report and score.&nbsp; Find out in which areas you need to focus your resources to get to full privacy regulation compliance.
                                 
                             </p>
                             <br/><br />
@@ -343,10 +343,10 @@
                             <img src="assets/images/background1.jpg" alt="Custom_roadmap_img" />
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">Guided Road Map
+                            <h4 class="card-title mbr-fonts-style display-7">Custom Roadmap
                         </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                You are legally obligated to become compliant with data privacy regulations. We can get you there. Using your specialized tool, we guide you through an in depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future.
+                                You are legally obligated to become compliant with data privacy regulations. We can get you there. Using our specialized tool, we guide you through an in-depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future. The result is a custom roadmap that will set you on the right path.
                        
                             </p>
                             <br/><br/>
@@ -354,7 +354,7 @@
                         <div class="mbr-section-btn text-center">
                             <%--<a href="#" class="btn btn-primary display-4">Buy Now
                                  </a>--%>
-                            <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" Text="Buy Now" OnClick="level2_Click" />
+                            <asp:Button ID="level2" runat="server" CssClass="btn btn-primary display-4" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" Text="More Info" OnClick="level2_Click" />
                         </div>
                     </div>
                 </div>
@@ -365,7 +365,7 @@
                             <img src="assets/images/background2.jpg" alt="contactus_img" />
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">Custom Privacy Consulting 
+                            <h4 class="card-title mbr-fonts-style display-7">Privacy Consulting 
                         </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommending tools that meet your access request needs. Do not hesitate to reach out with any questions or inquiries.
@@ -443,7 +443,7 @@
                             </div>
 
                             <p class="mbr-text mbr-fonts-style display-7">
-                                An engineer and software architect, Cat Coode has spent two decades working at tech companies in roles from software developer to senior management. In 2013, Cat recognized the need for people to better understand the importance of their digital data and how to keep it safe. Combining her love for teaching and her background in tech, Cat launched Binary Tattoo. Binary for all things digital, and Tattoo for the permanence of what we put
+                                Cat Coode is the founder of Binary Tattoo. Binary, for the language of all things digital. Tattoo, for the permanence of what goes online. Her mission is to help you safeguard your data and protect your digital identity. Backed by two decades of experience in mobile development and software architecture, as well as a certification in data privacy law, Cat helps corporations and individuals better understand cybersecurity and data privacy.
                             </p>
 
                         </div>
@@ -484,7 +484,7 @@
 
                 <div class="col-md-6">
                 <h2 class="pb-3 align-left mbr-fonts-style display-2">
-                    DROP US A LINE
+                    LETS TALK ABOUT YOUR PRIVACY NEEDS
                 </h2>
                     <div>
                         <div class="icon-block pb-3 align-left">
@@ -499,14 +499,14 @@
                         </div>
                         <div class="icon-contacts pb-3">
                         <h5 class="align-left mbr-fonts-style display-7">
-                           "send us message below about your data privacy ompliance needs and we will get back to you."
+                           How best can we help you? 
                         </h5>
 
                         </div>
                     </div>
                     <div data-form-type="formoid">
                         <!---Formbuilder Form--->
-                        <form action="#" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
+                        <form action="info@privacycompliance.group" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form">
                             <input type="hidden" name="email" data-form-email="true" value="yxxyOpOo6wLgTWBqbLl1zgWO1M2zqSvxtoaFC3nBhmNmPockUbP5tS4iuEK1AzG7ukIBefUUBAF4rVl/zrg1dCQvm3r+V90peQ+y+IplzpBRHkswyz0AMnWJ43g0o5uv" />
                             <div class="row">
                                 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
@@ -548,11 +548,13 @@
         <!--Container-->
         <div class="container">
             <div class="row">
-                If You want to chat directly to a representative
+<!--                If You want to chat directly to a representative-->
            
                 <div class="title col-12">
+<!--
                     <h2 class="align-left mbr-fonts-style display-1">Our Contacts
                 </h2>
+-->
 
                 </div>
                 <div class="col-12">
@@ -596,7 +598,7 @@ Toronto, ON M5S 1M2</a>
                                     <h5 class="align-left mbr-fonts-style display-5">E-mail:
                                 </h5>
                                     <p class="mbr-text align-left mbr-fonts-style display-7">
-                                        <a href="https://privacy@armourcyber.ca">privacy@privacyregulationsolutions.group</a>
+                                        <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
 
                                     </p>
                                 </div>
@@ -704,7 +706,7 @@ Toronto, ON M5S 1M2</a>
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
                         <br> All Rights Reserved<br>
-                        If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
+                        <a href="./Online%20Assessment%20Privacy%20Policy.docx" download>Privacy Policy</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>
                 </div>

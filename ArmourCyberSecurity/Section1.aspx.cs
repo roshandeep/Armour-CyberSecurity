@@ -382,7 +382,7 @@ namespace ArmourCyberSecurity
             string links;
             if (txt_dpaLinks.Text != null)
             {
-                links = Regex.Replace(txt_dpaLinks.Text.Trim(), "\r", ","); ;
+                links = Regex.Replace(txt_dpaLinks.Text.Replace("\n", "").Replace("\r", "").Trim(), @"\s+", ",");
             }
             else
             {
