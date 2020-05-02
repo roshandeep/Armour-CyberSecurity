@@ -429,93 +429,502 @@
             </div>--%>
 
             <%--Data Control--%>
-            <%--<div class="boxshadow zoom">
+            <div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
-                            <h3 style="color: white;">Regional Specific Questions</h3>
+                            <h3 style="color: white; font-size: xx-large;">DATA CONTROL  </h3>
+
                         </th>
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <asp:Label ID="lbl_rsq_info" runat="server" Text="Both your location and that of your customers determine the legally required legislations for your company. " />
+                            <br />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Data control is covered in all of the regulations under Data Subject Rights or guiding principles.
+For example, according to GDPR Article 15, a user has the right to access their data. Under Article 16, they have the right to rectify that data, and under Article 17, they have the right to ask to be erased from your system.
+
+                            </p>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <table>
 
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <asp:Image ID="img_rsq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lbl_rsq_score" runat="server" Text="" />
-                                    </td>
-                                </tr>
-
-                            </table>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>SECTION GOAL: </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                To build a system for data control that complies with an individual's rights but also ensures privacy and security levels are high.<br />
+                                <br />
+                                The steps below will help you through the creation of your own custom Data Request and Retention process for determining how best to access, deliver, and delete a user’s data on request. By proactively creating this process, you ensure that you are properly and securely handling data user rights.<br />
+                                <br />
+                                Depending on quantity of requests you receive, many of these steps can be automated, from data retrieval to automated customer scripts. Automation also helps you track the requests to completion in the event you are audited. Consider that as you develop the process.<br />
+                                <br />
+                            </p>
                         </td>
-                        <td style="width: 100%; text-align: justify;">
-                            <div class="statemenRow">
-                                <div class="divBullet">
-                                    <asp:Label ID="bullet2" runat="server" Text="" />
-                                </div>
-                                <div class="divLabel">
-                                    <asp:Label ID="comment2" runat="server" Text="" />
-                                </div>
-                            </div>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>Data Subject Access Requests (DSAR)</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+                                <br />
+                                <asp:Label ID="lbl_dc_1" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <b>This process should include requests to see, alter, or transfer an individual’s data.
+Review the items below to ensure that you have covered all of your bases. 
+                                </b>
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_2" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_2" runat="server" Text="You are able to properly authenticate an individual's identity to grant the request. This can be done automatically via their own email and password if inside a system with credentials. Otherwise you need to have an established way to verify the requestor’s identity." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_3" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_3" runat="server" Text="You are able to package an individual's data up in a way that is readable by the individual. This means it cannot be in a proprietary format. Suggested method is CSV." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_4" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_4" runat="server" Text="You are able to securely transfer the data to an individual. If data is sensitive, it should be encrypted and/or password protected." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_5" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_5" runat="server" Text="You have optimized any of this process with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you have a secure and consistent process of finding, gathering, and packaging the data. These tools often include ways to track the requests." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_6" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_6" runat="server" Text="You are you able to access specific data from your systems about an individual for correction. If an individual needs to amend a single piece of data for accuracy (ex an address) then your process or systems allow you to find and amend that data. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>Data Retention and Removal</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
+                                <br />
+                                <asp:Label ID="lbl_dc_8" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <asp:Label ID="lbl_dc_10" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                Data retention is two-fold; deleting data when it is no longer of use and deleting data when requested by an individual. The initiation of deletion is different but since the act of removal is the same you can choose to use one process for retention and deletion. If it makes more sense for your company, separate the items below in to two separate processes.
+
+                            <br />
+                                <br />
+                                <b>Review the items below to ensure that you have covered all of your bases. </b>
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_9" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_9" runat="server" Text="You have a data retention period for all data. This depends on what kind of data you are storing and the need for future use. If your data ceases to be of value when not in use, then 2 years is the standard retention period. If the data is accounting related, then the term may be 7 years. If the data is personal but has value to a company (example an ex-employee’s contact information) then that data may be kept indefinitely. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_11" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_11" runat="server" Text="You are able to remove the individual from all systems including back-ups. If an individual request to be deleted from the system and there is no legal basis to keep their personal data then it showed be removed from all storage including back-ups and printed versions." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_12" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_12" runat="server" Text="You have a way to anonymize or pseudo anonymize data. By stripping the identifiable data away from non-identifiable data, you may be able to retain pieces of data for analysis and processing. This is only necessary if you want to keep some of the data." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_13" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_13" runat="server" Text="You have a way to date data and remove it if it has not been in use for an extended period of time. If your retention period has a data to it then you should have a way to flag data with a timestamp to ensure its removal after the retention period has expired." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_dc_14" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_dc_14" runat="server" Text="You have optimized any of this process with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you are properly locating and deleting the data. These tools often include ways to track the requests." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>Communication</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                How you communicate with an individual is up to your company. The one required piece of information is the acknowledgement of the request that includes a timeline for completion. According to most regulations, these requests must be completed within 30 days. Check appropriate requirements to ensure you have the correct timeline. If the request is denied this should also be communicated to avoid missed expectations.
+                                <br />
+                                <asp:Label ID="lbl_dc_comm" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                Though pre-written templates are not required for regulation compliance, creating them in advance will save you time and resources as the requests come in. It will also ensure consistent communication from the company to individuals.<br />
+
+                                The trail of communication additionally provides a great way to audit what requests were made, when they were handled, and when they were completed.<br />
+
+                                <br />
+                                The suggested communication templates are:
+                                <br />
+                                ●	<b>Acknowledgement:</b> Request received.<br />
+                                ●	<b>Request Accepted:</b> Individual authenticated and request will be processed.<br />
+                                ●	<b>Request Denied:</b> Request will NOT be processed. There are a number of valid reasons that can be listed.<br />
+                                ●	<b>Data Request Delivery:</b> Data sent.<br />
+                                ●	<b>Data Deletion Confirmation:</b> Confirmation of system removal.<br />
+
+                                <br />
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <hr size="1" width="90%" align="center" color="#000">
+                            <h3><b>Documentation and Links</b></h3>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Subject Access Request Process</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_dsarp" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Retention and Deletion Process</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_drdp" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Request Scripts and Communications</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_drsc" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
 
 
             <%--Consent--%>
-            <%--<div class="boxshadow zoom">
+            <div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
-                            <h3 style="color: white;">Privacy Engineering</h3>
+                            <h3 style="color: white; font-size: xx-large;">CONSENT  </h3>
+
                         </th>
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <asp:Label ID="lbl_peq_info" runat="server" Text="Putting Privacy at the foundation of all of your services and products is the key to building a strong base that is regulation compliant and protects your customers/clients. A proper privacy engineering implementation includes the use of Privacy by Design principles, running of a DPIA (Data Privacy Impact Assessment), categorization of your PII (Personally identifiable information), and proper vendor management." />
+                            <br />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Data privacy consent is outlined as the user acceptance of the collection use, processing, transfer, storage, and retention of their data. A clear explanation of each of these elements must be presented to the data subject for them to properly provide their consent. This can be done in person via a printed document or digitally, typically via the Privacy Policy.
+                            </p>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <table>
 
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <asp:Image ID="img_peq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lbl_peq_score" runat="server" Text="" />
-                                    </td>
-                                </tr>
-
-                            </table>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>SECTION GOAL: </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                To ensure that consent is properly collected from informed individuals that are aware of how their data is collected and used.
+                                <br />
+                            </p>
                         </td>
-                        <td style="width: 100%; text-align: justify;">
-                            <div class="statemenRow">
-                                <div class="divBullet">
-                                    <asp:Label ID="bullet4" runat="server" Text="" />
-                                </div>
-                                <div class="divLabel">
-                                    <asp:Label ID="comment4" runat="server" Text="" />
-                                </div>
-                            </div>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>PRIVACY POLICY</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                As a company, you have many options to present your users and customers with the required information about their data privacy. The simplest way to do this is through a Privacy Policy in person or on your website. 
+                                <br />
+                                In accordance to the legislations, the privacy policy must explain to users what their rights are and how to execute on those rights. It is also important to establish a legal basis for which data is being collected. This policy should be clear and easy to find. 
+                                <br />
+                                Below is a checklist of what should be included in this policy. We have scored this list based on your assessment input. Review each item to ensure you have met the standard.<br />
+
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_1" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_1" runat="server" Text="You have an <b>existing privacy policy</b>. This can be distributed to customers/clients on sign up and/or posted on your website. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_2" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_2" runat="server" Text="Your <b>privacy policy is easy to locate on your website</b>. Having a digital copy online allows you to update it when needed. Conventionally this page is linked in the header of footer of your site." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_3" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_3" runat="server" Text="Your <b>privacy policy is updated annually</b>. Regulations and laws change. You should at least review, if not update, this policy annually and change the version date at the bottom." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_4" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_4" runat="server" Text="You have identified if your<b> company is the controller and/or processor</b> of information. The Controller assumes ultimate accountability for the data is that is being collected and processed. They also select the processors." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_5" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_5" runat="server" Text="You have<b> listed all the personal data that is being collected</b>. This includes data collected directly from the customer/client and the data you collect from tools or services (example location data, usage data)." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_6" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_6" runat="server" Text="You have <b>listed all the methods by which data is collected</b>. This includes direct methods such as input forms and indirect methods such as cookies." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_7" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_7" runat="server" Text="You have<b> listed the legal basis </b>(business reason) why you are collecting that data. Each piece of personal data needs a reason. For example, gender is not needed for a magazine subscription service. It is demographic data but not required data." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_8" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_8" runat="server" Text="You have<b> listed the geographical regions in which the data is being transferred and stored</b>. Some regulations (like GDPR) require that data be processed within the given region. Others (like PIPEDA) allow cross-border transfer so long as it is specified to the user." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_9" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_9" runat="server" Text="You have <b>listed the retention period for your company's data</b>. This will vary by company and by data type. Financial data, for example, requires 7 years storage; other data could be 2 years. If you have legal basis, some data could be stored indefinitely." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_10" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_10" runat="server" Text="You have<b> listed any third party policies </b>where applicable. If you are the Controller, it is important to let users know that your third party partners are also compliant. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_11" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_11" runat="server" Text="You have listed the <b>individual's rights according to your legislations</b>. You can either call out that the individual has rights or list them separately. Doing so here shows that you understand and are able to comply with the rights your customers/clients may have." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_12" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_12" runat="server" Text="You <b>have included the contact information for your privacy officer </b>and/or ways in which individuals can contact the company to execute their rights. This can be via email, postal mail, or online form. As long as the method is clear to the individual. " />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>OPT-INS AND OPT-OUTS</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Users must have the ability to Opt In and Opt Out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed. You can use a checkbox for this on a digital service but be sure not to have it checked by default.
+                                <br />
+                                <b>Consent is a key component to privacy regulations. It must be informed (individual knows what they are agreeing to) and given freely. </b>
+                                <br />
+                                There is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.
+                                <br />
+                                Data retention is two-fold; deleting data when it is no longer of use and deleting data when requested by an individual. The initiation of deletion is different but since the act of removal is the same you can choose to use one process for retention and deletion. If it makes more sense for your company, separate the items below in to two separate processes.
+                                <br />
+                                <asp:Label ID="lbl_c_13" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <b>Review the items below to ensure that you have covered all of your bases. </b>
+                                <br />
+                                <b>IF YOU ARE ACTING AS THE CONTROLLER: To be compliant with privacy regulations, all of the items should be marked green, or complete.
+                                    <br />
+                                    IF YOU ARE ACTING AS THE PROCESSOR: You can make a judgement on each requirement and if it applies to you or if it is covered by your controller.
+
+                                </b>
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_14" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_14" runat="server" Text="You have an <b> explicit box for &quot;Do not sell my personal information&quot;.</b> California residents must be able to opt out of the reselling of their data." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_15" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_15" runat="server" Text="You <b>storing the acknowledgment of consent of each individual</b>. In the event you are audited, you must be able to show that each individual has consented to your services." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_16" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_16" runat="server" Text="You <b>have a method or link for individuals to opt-out</b> of parts of your service. If participation or data is required to fully use your service or product, you can stipulate that opting out will result in partial or no access." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_17" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_17" runat="server" Text="You <b>have a method for individuals to quit</b> your service or product. This must include a way for them to leave entirely and not only deactivate their account with you." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_18" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_18" runat="server" Text="You <b>have a process to notify users if there is a change in the way their data is being processes or sold</b>. If the use of an individual’s data has changed then you require a new consent from them." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_c_19" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_c_19" runat="server" Text="You <b> have a way to store updated consent</b>. When data use changes and a new consent request is sent out, you must be able to accept that consent and store it for audit." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>COOKIES</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Cookies are a form of personal data collection. When individuals visit your website, they must consent to having cookies track their usage.
+                                <br />
+                                <asp:Label ID="lbl_c_20" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                               
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <hr size="1" width="90%" align="center" color="#000">
+                            <h3><b>Documentation and Links</b></h3>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Privacy Policy</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_c_pp" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Consent Management Process</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_c_cmp" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Request Scripts and Communications</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="Label17" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
 
             <%--Incident Management--%>
             <%--<div class="boxshadow zoom">
@@ -610,123 +1019,151 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_1" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_1" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_1" runat="server" Text="You have an existing privacy education program. This program should be delivered annually and include both cyber hygiene practices as well as privacy processes specific to your organization. Your company’s incident response management plan also falls into this program. " />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_2" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_2" runat="server" Text="Your privacy program includes data privacy regulations and compliance education. Employees should all have a basic understanding of what regulations that apply to them and your customers/clients." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_3" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_3" runat="server" Text="Your onboarding for new employees includes the Privacy Education Program. This should also detail what their particular role includes." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_4" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_4" runat="server" Text="Your employees know where to access Privacy Policies and process documentation. " />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_5" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_5" runat="server" Text="Your employees are aware of the privacy rights they have with respect to their own personally identifiable data (PII) that is kept by the company. " />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_6" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_6" runat="server" Text="Your customer-facing employees know how to respond to privacy and regulation related questions from customers, partners or vendors. This includes questions about their rights and how to invoke them." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_7" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_607" runat="server" Text="Your product and service development team understands Privacy by Design. They know what it is and how to ensure it is used for both existing and future development." />
+                            <asp:Label ID="lbl_7" runat="server" Text="Your product and service development team understands Privacy by Design. They know what it is and how to ensure it is used for both existing and future development." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_8" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_8" runat="server" Text="Your product and service development team understands the definition of PII. They are made aware of any procedures you have around the addition of and/or processing of PII. This may include a tool or document used to track PII." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_9" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_9" runat="server" Text="Your product and service development team understands data control and how the product/service needs to conform to those controls. This includes the need for authenticating requests, the way data has to be collected/transferred, and optimizing for load." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_10" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_10" runat="server" Text="All executives understand the importance of privacy regulations from the perspective of both legal requirements and protecting your private data." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_11" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_11" runat="server" Text="All employees understand how to identify a privacy incident and/or breach. What constitutes an incident for your company? " />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_12" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_12" runat="server" Text="All employees understand how to report a privacy incident and/or breach. Whether it’s a tool, a central email address, or a process, every employee will need to be able to escalate information of a potential incident to the right team immediately." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_13" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_13" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_13" runat="server" Text="All employees understand how to communicate externally during a privacy incident and/or breach. This is key to a company’s reputation. " />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_14" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_14" runat="server" Text="Incident response stakeholders know their roles during and after an incident." />
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: justify; margin: 2px;">
-                            <asp:Image ID="img_15" runat="server" />
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
                             <asp:Label ID="lbl_15" runat="server" Text="Your company has done a tabletop exercise to test your incident response management plan. Tabletop exercises as part of training helps prevent errors in the time of an actual incident." />
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <hr size="1" width="90%" align="center" color="#000">
+                            <h3><b>Documentation and Links</b></h3>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Onboarding and New Employee Training</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_onet" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Privacy and Compliance Training</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_pct" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
                         </td>
                     </tr>
                 </table>
