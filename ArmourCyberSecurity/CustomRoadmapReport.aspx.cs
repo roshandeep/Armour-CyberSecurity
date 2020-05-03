@@ -56,11 +56,11 @@ namespace ArmourCyberSecurity
         private void DisplayReport()
         {
             //GlobalRegulationsReport(); //Done
-            PrivacyEngineeringReport();
+            //PrivacyEngineeringReport();
             //DataControlReport();//Done
-            ConsentReport();
-            IncidentManagementReport();
-            //EmployeeTrainingReport(); //Done
+            //ConsentReport(); //Done
+            //IncidentManagementReport();
+            EmployeeTrainingReport(); //Done
         }
 
         private void EmployeeTrainingReport()
@@ -68,6 +68,8 @@ namespace ArmourCyberSecurity
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
+            DataTable dt_links = new DataTable();
+            dt_links = dal.GetLinks(userId);
             string regions = string.Empty;
             if (dt != null)
             {
@@ -93,7 +95,44 @@ namespace ArmourCyberSecurity
                             img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
                             et_text.Add("RED");
                         }
+
+                        if (row["sec_ref_id"].ToString() == "1")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_pct.Text = links["dpo_links"].ToString();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_pct.Text = "No information was provided";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "3")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_onet.Text = links["dpo_links"].ToString();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_onet.Text = "No information was provided";
+                            }
+                        }
                     }
+                    
                 }
             }
 
@@ -907,6 +946,30 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Onboarding and New Employee Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_onet.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Privacy and Compliance Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pct.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
                         /* ===========================================================================================
                          * Employee Training
                          * ===========================================================================================
@@ -961,6 +1024,8 @@ namespace ArmourCyberSecurity
         private void ConsentReport()
         {
             DAL dal = new DAL();
+            DataTable dt_links = new DataTable();
+            dt_links = dal.GetLinks(userId);
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
             string regions = string.Empty;
@@ -1024,10 +1089,36 @@ namespace ArmourCyberSecurity
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 lbl_c_13.Text = "You indicated that you have a Consent Management Process. ";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_c_cmp.Text = links["dpo_links"].ToString();
+                                    }
+                                }
                             }
                             else
                             {
                                 lbl_c_13.Text = "You indicated that you do not have an adequate Consent Management Process. ";
+                                lbl_c_cmp.Text = "No information was provided";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "1")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_c_pp.Text = links["dpo_links"].ToString();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_c_pp.Text = "No information was provided";
                             }
                         }
 
@@ -2074,6 +2165,22 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Policy \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_pp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Consent Management Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_cmp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
                         pdfDoc.Add(table);
                         /* ===========================================================================================
                          * CONSENT
@@ -2125,7 +2232,9 @@ namespace ArmourCyberSecurity
         {
             DAL dal = new DAL();
             DataTable dt = new DataTable();
+            DataTable dt_links = new DataTable();
             dt = dal.GetLevel2Report(userId);
+            dt_links = dal.GetLinks(userId);
             string regions = string.Empty;
             if (dt != null)
             {
@@ -2140,10 +2249,18 @@ namespace ArmourCyberSecurity
                             if(row["ans_Text"].ToString() == "YES")
                             {
                                 lbl_dc_1.Text = "You indicated that you have a defined process to handle data requests from individuals.";
+                                foreach(DataRow links in dt_links.Rows)
+                                {
+                                    if(links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_dsarp.Text = links["dpo_links"].ToString();
+                                    }
+                                }
                             }
                             else
                             {
                                 lbl_dc_1.Text = "You indicated that you do not yet have an adequate process to handle data requests from individuals. ";
+                                lbl_dsarp.Text = "No information was provided";
                             }
                         }
                         else
@@ -2178,16 +2295,25 @@ namespace ArmourCyberSecurity
                                 if(dc_flag_7_15 == 1)
                                 {
                                     lbl_dc_comm.Text = "You indicated that you have a set of pre-written communications to the individual for data subject access and deletion requests.";
+                                    foreach (DataRow links in dt_links.Rows)
+                                    {
+                                        if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                        {
+                                            lbl_drsc.Text = links["dpo_links"].ToString();
+                                        }
+                                    }
                                 }
                                 else
                                 {
                                     lbl_dc_comm.Text = "You indicated that you do not yet have a set of pre-written communications to the individual for data subject access and deletion requests.";
+                                    lbl_drsc.Text = "No information was provided";
                                 }
                             }
                             else
                             {
                                 dc_flag_7_15 = 0;
                                 lbl_dc_comm.Text = "You indicated that you do not yet have a set of pre-written communications to the individual for data subject access and deletion requests.";
+                                lbl_drsc.Text = "No information was provided";
                             }
                         }
                         else
@@ -2196,10 +2322,18 @@ namespace ArmourCyberSecurity
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 lbl_dc_8.Text = "You indicated that you have a defined data retention and removal process.";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_drdp.Text = links["dpo_links"].ToString();
+                                    }
+                                }
                             }
                             else
                             {
                                 lbl_dc_8.Text = "You indicated that you do not yet have a defined data retention and removal process.s";
+                                lbl_drdp.Text = "No information was provided";
                             }
                         }
                         else
@@ -3138,6 +3272,25 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("●	Request Denied : Request will NOT be processed. There are a number of valid reasons that can be listed. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("●	Data Request Delivery : Data sent. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("●	Data Deletion Confirmation : Confirmation of system removal.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Data Subject Access Request Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dsarp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drdp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Data Request Scripts and Communications\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drsc.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;

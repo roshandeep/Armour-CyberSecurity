@@ -491,5 +491,19 @@ namespace ArmourCyberSecurity
             cnn.Close();
             return ds.Tables[0];
         }
+
+        public DataTable GetLinks(string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT dpo_links, question_type, stagesCompleted, sec_ref_id FROM ar_sec_dpaLinks WHERE userId = @userId;";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cnn.Close();
+            return ds.Tables[0];
+        }
     }
 }

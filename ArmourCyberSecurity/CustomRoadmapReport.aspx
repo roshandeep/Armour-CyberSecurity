@@ -920,16 +920,6 @@ Review the items below to ensure that you have covered all of your bases.
                             </p>
                         </td>
                     </tr>
-                    <tr>
-                        <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <h3><b>Data Request Scripts and Communications</b></h3>
-                            <hr size="1" width="40%" align="center" color="#000">
-                            <p style="width: 90%; margin: 0 auto;">
-                                <asp:Label ID="Label17" runat="server" Text="" Font-Bold="true" />
-                                <br />
-                            </p>
-                        </td>
-                    </tr>
                 </table>
             </div>
 
