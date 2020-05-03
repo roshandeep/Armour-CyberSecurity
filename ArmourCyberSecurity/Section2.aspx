@@ -79,6 +79,79 @@
                 alert("Fill in all the questions before moving ahead");
             }
         });
+
+        function EnableTextArea(){
+            var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
+            var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
+
+            var ddlAns9 = document.getElementById('<%= ddlAns9.ClientID %>');
+            var links9 = document.getElementById('<%= txt_Links_9.ClientID %>');
+
+            var ddlAns23 = document.getElementById('<%= ddlAns23.ClientID %>');
+            var links23 = document.getElementById('<%= txt_Links_23.ClientID %>');
+
+            var ddlAns16 = document.getElementById('<%= ddlAns16.ClientID %>');
+            var links16 = document.getElementById('<%= txt_Links_16.ClientID %>');
+
+            var ddlAns15 = document.getElementById('<%= ddlAns15.ClientID %>');
+            var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
+
+            var ddlAns8 = document.getElementById('<%= ddlAns8.ClientID %>');
+            var links8 = document.getElementById('<%= txt_Links_8.ClientID %>');
+
+            var ddlAns22 = document.getElementById('<%= ddlAns22.ClientID %>');
+            var links22 = document.getElementById('<%= txt_Links_22.ClientID %>');
+
+            if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
+                links1.disabled = false;
+            }
+            else {
+                links1.disabled = true;
+            }
+
+            if (ddlAns9.options[ddlAns9.selectedIndex].innerHTML == 'YES') {
+                links9.disabled = false;
+            }
+            else {
+                links9.disabled = true;
+            }
+
+            if (ddlAns23.options[ddlAns23.selectedIndex].innerHTML == 'YES') {
+                links23.disabled = false;
+            }
+            else {
+                links23.disabled = true;
+            }
+
+            if (ddlAns16.options[ddlAns16.selectedIndex].innerHTML == 'YES') {
+                links16.disabled = false;
+            }
+            else {
+                links16.disabled = true;
+            }
+
+            if (ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES') {
+                links15.disabled = false;
+            }
+            else {
+                links15.disabled = true;
+            }
+
+            if (ddlAns8.options[ddlAns8.selectedIndex].innerHTML == 'YES') {
+                links8.disabled = false;
+            }
+            else {
+                links8.disabled = true;
+            }
+
+            if (ddlAns22.options[ddlAns22.selectedIndex].innerHTML == 'YES') {
+                links22.disabled = false;
+            }
+            else {
+                links22.disabled = true;
+            }
+        }
+
     </script>
     <div>
         <h5>The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data. 
@@ -106,10 +179,13 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
 
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues2" runat="server" Text="" />
@@ -163,17 +239,23 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             </h3>
 
             <asp:Label ID="lblQues8" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns8">
+            <asp:DropDownList runat="server" ID="ddlAns8" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
+            <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+            <br />
 
             <asp:Label ID="lblQues9" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns9">
+            <asp:DropDownList runat="server" ID="ddlAns9" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_9" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues10" runat="server" Text="" />
@@ -212,10 +294,14 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <br />
 
             <asp:Label ID="lblQues15" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns15">
+            <asp:DropDownList runat="server" ID="ddlAns15" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+
             <br />
 
             <asp:Button ID="btn_part2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
@@ -225,10 +311,14 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <h4>If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services, such as cloud storage, for customers and clients. Some regulations require a contract but it is a good idea to have one regardless. 
             </h4>
             <asp:Label ID="lblQues16" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns16">
+            <asp:DropDownList runat="server" ID="ddlAns16" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_16" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+
             <br />
 
             <asp:Label ID="lblQues17" runat="server" Text="" />
@@ -275,17 +365,24 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             </h4>
 
             <asp:Label ID="lblQues22" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns22">
+            <asp:DropDownList runat="server" ID="ddlAns22" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
+            <asp:Label ID="lbl_Links_22" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_22" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+
+            <br />
 
             <asp:Label ID="lblQues23" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns23">
+            <asp:DropDownList runat="server" ID="ddlAns23" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
             <asp:Label ID="lblQues24" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns24">

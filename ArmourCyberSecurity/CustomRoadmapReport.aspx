@@ -703,7 +703,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_1" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_1" runat="server" Text="You have an <b>existing privacy policy</b>. This can be distributed to customers/clients on sign up and/or posted on your website. " />
+                            <asp:Label ID="lbl_c_1" runat="server" Text="You have an existing privacy policy. This can be distributed to customers/clients on sign up and/or posted on your website. " />
                         </td>
                     </tr>
                     <tr>
@@ -711,7 +711,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_2" runat="server" Text="Your <b>privacy policy is easy to locate on your website</b>. Having a digital copy online allows you to update it when needed. Conventionally this page is linked in the header of footer of your site." />
+                            <asp:Label ID="lbl_c_2" runat="server" Text="Your privacy policy is easy to locate on your website. Having a digital copy online allows you to update it when needed. Conventionally this page is linked in the header of footer of your site." />
                         </td>
                     </tr>
                     <tr>
@@ -719,7 +719,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_3" runat="server" Text="Your <b>privacy policy is updated annually</b>. Regulations and laws change. You should at least review, if not update, this policy annually and change the version date at the bottom." />
+                            <asp:Label ID="lbl_c_3" runat="server" Text="Your privacy policy is updated annually. Regulations and laws change. You should at least review, if not update, this policy annually and change the version date at the bottom." />
                         </td>
                     </tr>
                     <tr>
@@ -727,7 +727,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_4" runat="server" Text="You have identified if your<b> company is the controller and/or processor</b> of information. The Controller assumes ultimate accountability for the data is that is being collected and processed. They also select the processors." />
+                            <asp:Label ID="lbl_c_4" runat="server" Text="You have identified if your company is the controller and/or processor of information. The Controller assumes ultimate accountability for the data is that is being collected and processed. They also select the processors." />
                         </td>
                     </tr>
                     <tr>
@@ -735,7 +735,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_5" runat="server" Text="You have<b> listed all the personal data that is being collected</b>. This includes data collected directly from the customer/client and the data you collect from tools or services (example location data, usage data)." />
+                            <asp:Label ID="lbl_c_5" runat="server" Text="You have listed all the personal data that is being collected. This includes data collected directly from the customer/client and the data you collect from tools or services (example location data, usage data)." />
                         </td>
                     </tr>
                     <tr>
@@ -743,7 +743,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_6" runat="server" Text="You have <b>listed all the methods by which data is collected</b>. This includes direct methods such as input forms and indirect methods such as cookies." />
+                            <asp:Label ID="lbl_c_6" runat="server" Text="You have listed all the methods by which data is collected. This includes direct methods such as input forms and indirect methods such as cookies." />
                         </td>
                     </tr>
                     <tr>
@@ -751,7 +751,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_7" runat="server" Text="You have<b> listed the legal basis </b>(business reason) why you are collecting that data. Each piece of personal data needs a reason. For example, gender is not needed for a magazine subscription service. It is demographic data but not required data." />
+                            <asp:Label ID="lbl_c_7" runat="server" Text="You have listed the legal basis (business reason) why you are collecting that data. Each piece of personal data needs a reason. For example, gender is not needed for a magazine subscription service. It is demographic data but not required data." />
                         </td>
                     </tr>
                     <tr>
@@ -759,7 +759,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_8" runat="server" Text="You have<b> listed the geographical regions in which the data is being transferred and stored</b>. Some regulations (like GDPR) require that data be processed within the given region. Others (like PIPEDA) allow cross-border transfer so long as it is specified to the user." />
+                            <asp:Label ID="lbl_c_8" runat="server" Text="You have listed the geographical regions in which the data is being transferred and stored. Some regulations (like GDPR) require that data be processed within the given region. Others (like PIPEDA) allow cross-border transfer so long as it is specified to the user." />
                         </td>
                     </tr>
                     <tr>
@@ -767,7 +767,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_9" runat="server" Text="You have <b>listed the retention period for your company's data</b>. This will vary by company and by data type. Financial data, for example, requires 7 years storage; other data could be 2 years. If you have legal basis, some data could be stored indefinitely." />
+                            <asp:Label ID="lbl_c_9" runat="server" Text="You have listed the retention period for your company's data. This will vary by company and by data type. Financial data, for example, requires 7 years storage; other data could be 2 years. If you have legal basis, some data could be stored indefinitely." />
                         </td>
                     </tr>
                     <tr>
@@ -775,7 +775,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_10" runat="server" Text="You have<b> listed any third party policies </b>where applicable. If you are the Controller, it is important to let users know that your third party partners are also compliant. " />
+                            <asp:Label ID="lbl_c_10" runat="server" Text="You have listed any third party policies where applicable. If you are the Controller, it is important to let users know that your third party partners are also compliant. " />
                         </td>
                     </tr>
                     <tr>
@@ -783,7 +783,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_11" runat="server" Text="You have listed the <b>individual's rights according to your legislations</b>. You can either call out that the individual has rights or list them separately. Doing so here shows that you understand and are able to comply with the rights your customers/clients may have." />
+                            <asp:Label ID="lbl_c_11" runat="server" Text="You have listed the individual's rights according to your legislations. You can either call out that the individual has rights or list them separately. Doing so here shows that you understand and are able to comply with the rights your customers/clients may have." />
                         </td>
                     </tr>
                     <tr>
@@ -791,7 +791,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_12" runat="server" Text="You <b>have included the contact information for your privacy officer </b>and/or ways in which individuals can contact the company to execute their rights. This can be via email, postal mail, or online form. As long as the method is clear to the individual. " />
+                            <asp:Label ID="lbl_c_12" runat="server" Text="You have included the contact information for your privacy officer and/or ways in which individuals can contact the company to execute their rights. This can be via email, postal mail, or online form. As long as the method is clear to the individual. " />
                         </td>
                     </tr>
 
@@ -803,21 +803,27 @@ Review the items below to ensure that you have covered all of your bases.
                             <p style="width: 90%; margin: 0 auto;">
                                 Users must have the ability to Opt In and Opt Out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed. You can use a checkbox for this on a digital service but be sure not to have it checked by default.
                                 <br />
+                                <br />
                                 <b>Consent is a key component to privacy regulations. It must be informed (individual knows what they are agreeing to) and given freely. </b>
                                 <br />
-                                There is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.
                                 <br />
-                                Data retention is two-fold; deleting data when it is no longer of use and deleting data when requested by an individual. The initiation of deletion is different but since the act of removal is the same you can choose to use one process for retention and deletion. If it makes more sense for your company, separate the items below in to two separate processes.
+                                There is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.
+                                 <br />
                                 <br />
                                 <asp:Label ID="lbl_c_13" runat="server" Text="" Font-Bold="true" />
                                 <br />
+                                <br />
                                 <b>Review the items below to ensure that you have covered all of your bases. </b>
                                 <br />
+                                <br />
                                 <b>IF YOU ARE ACTING AS THE CONTROLLER: To be compliant with privacy regulations, all of the items should be marked green, or complete.
+                                    <br />
                                     <br />
                                     IF YOU ARE ACTING AS THE PROCESSOR: You can make a judgement on each requirement and if it applies to you or if it is covered by your controller.
 
                                 </b>
+                                <br />
+                                <br />
                             </p>
 
                         </td>
@@ -827,7 +833,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_14" runat="server" Text="You have an <b> explicit box for &quot;Do not sell my personal information&quot;.</b> California residents must be able to opt out of the reselling of their data." />
+                            <asp:Label ID="lbl_c_14" runat="server" Text="You have an explicit box for &quot;Do not sell my personal information&quot;. California residents must be able to opt out of the reselling of their data." />
                         </td>
                     </tr>
                     <tr>
@@ -835,7 +841,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_15" runat="server" Text="You <b>storing the acknowledgment of consent of each individual</b>. In the event you are audited, you must be able to show that each individual has consented to your services." />
+                            <asp:Label ID="lbl_c_15" runat="server" Text="You storing the acknowledgment of consent of each individual. In the event you are audited, you must be able to show that each individual has consented to your services." />
                         </td>
                     </tr>
                     <tr>
@@ -843,7 +849,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_16" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_16" runat="server" Text="You <b>have a method or link for individuals to opt-out</b> of parts of your service. If participation or data is required to fully use your service or product, you can stipulate that opting out will result in partial or no access." />
+                            <asp:Label ID="lbl_c_16" runat="server" Text="You have a method or link for individuals to opt-out of parts of your service. If participation or data is required to fully use your service or product, you can stipulate that opting out will result in partial or no access." />
                         </td>
                     </tr>
                     <tr>
@@ -851,7 +857,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_17" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_17" runat="server" Text="You <b>have a method for individuals to quit</b> your service or product. This must include a way for them to leave entirely and not only deactivate their account with you." />
+                            <asp:Label ID="lbl_c_17" runat="server" Text="You have a method for individuals to quit your service or product. This must include a way for them to leave entirely and not only deactivate their account with you." />
                         </td>
                     </tr>
                     <tr>
@@ -859,7 +865,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_18" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_18" runat="server" Text="You <b>have a process to notify users if there is a change in the way their data is being processes or sold</b>. If the use of an individual’s data has changed then you require a new consent from them." />
+                            <asp:Label ID="lbl_c_18" runat="server" Text="You have a process to notify users if there is a change in the way their data is being processes or sold. If the use of an individual’s data has changed then you require a new consent from them." />
                         </td>
                     </tr>
                     <tr>
@@ -867,7 +873,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_19" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_19" runat="server" Text="You <b> have a way to store updated consent</b>. When data use changes and a new consent request is sent out, you must be able to accept that consent and store it for audit." />
+                            <asp:Label ID="lbl_c_19" runat="server" Text="You have a way to store updated consent. When data use changes and a new consent request is sent out, you must be able to accept that consent and store it for audit." />
                         </td>
                     </tr>
                     <tr>
@@ -878,9 +884,10 @@ Review the items below to ensure that you have covered all of your bases.
                             <p style="width: 90%; margin: 0 auto;">
                                 Cookies are a form of personal data collection. When individuals visit your website, they must consent to having cookies track their usage.
                                 <br />
+                                <br />
                                 <asp:Label ID="lbl_c_20" runat="server" Text="" Font-Bold="true" />
                                 <br />
-                               
+                                <br />
                             </p>
 
                         </td>

@@ -287,15 +287,16 @@ namespace ArmourCyberSecurity
             string sql = string.Empty;
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_User_Feedback_Collection_Level2 WHERE userid = @userId AND question_id = @quesId;";
+            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_User_Feedback_Collection_Level2 WHERE userid = @userId AND question_id = @quesId AND stagesCompleted = @stagesCompleted;";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
             cmd.Parameters.Add(new SqlParameter("@quesId", quesId));
+            cmd.Parameters.Add(new SqlParameter("@stagesCompleted", stagesCompleted));
             int AnsExists = Convert.ToInt32(cmd.ExecuteScalar());
 
             if (AnsExists > 0)
             {
-                sql = "UPDATE ar_sec_User_Feedback_Collection_Level2 SET userid = @userId, question_id = @quesId, question_type = @quesType, answer_wt = @ansWt, ans_Text = @ansText, stagesCompleted = @stagesCompleted, sec_ref_id = @sec_ref_id WHERE userid = @userId AND question_id = @quesId;";
+                sql = "UPDATE ar_sec_User_Feedback_Collection_Level2 SET userid = @userId, question_id = @quesId, question_type = @quesType, answer_wt = @ansWt, ans_Text = @ansText, sec_ref_id = @sec_ref_id WHERE userid = @userId AND question_id = @quesId AND stagesCompleted = @stagesCompleted;";
                 cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.Add(new SqlParameter("@userId", userId));
                 cmd.Parameters.Add(new SqlParameter("@quesId", quesId));
@@ -371,30 +372,40 @@ namespace ArmourCyberSecurity
             return ds.Tables[0];
         }
 
-        public void SaveDPALinks(string userId, string links)
+        public void SaveDPALinks(string userId, string links, string question_type, int sec_ref_id, int stageCompleted)
         {
             string sql = string.Empty;
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_dpaLinks WHERE userid = @userId ";
+            sql = "SELECT DISTINCT COUNT(*) FROM ar_sec_dpaLinks WHERE userid = @userId AND sec_ref_id = @sec_ref_id AND stagesCompleted = @stagesCompleted AND question_type = @question_type ";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+            cmd.Parameters.Add(new SqlParameter("@question_type", question_type));
+            cmd.Parameters.Add(new SqlParameter("@sec_ref_id", sec_ref_id));
+            cmd.Parameters.Add(new SqlParameter("@stagesCompleted", stageCompleted));
             int AnsExists = Convert.ToInt32(cmd.ExecuteScalar());
             if (AnsExists > 0)
             {
-                sql = "UPDATE ar_sec_dpaLinks SET dpo_links = @dpo_links WHERE userId = @userId;";
+                sql = "UPDATE ar_sec_dpaLinks SET dpo_links = @dpo_links WHERE userId = @userId AND sec_ref_id = @sec_ref_id AND stagesCompleted = @stagesCompleted AND question_type = @question_type";
                 cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.Add(new SqlParameter("@userId", userId));
                 cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cmd.Parameters.Add(new SqlParameter("@question_type", question_type));
+                cmd.Parameters.Add(new SqlParameter("@sec_ref_id", sec_ref_id));
+                cmd.Parameters.Add(new SqlParameter("@stagesCompleted", stageCompleted));
                 cmd.ExecuteNonQuery();
                 cnn.Close();
             }
             else
             {
-                sql = "INSERT INTO ar_sec_dpaLinks(userId, dpo_links) VALUES (@userId, @dpo_links);";
+                sql = "INSERT INTO ar_sec_dpaLinks(userId, dpo_links, question_type, sec_ref_id, stagesCompleted) VALUES (@userId, @dpo_links, @question_type, @sec_ref_id, @stagesCompleted);";
                 cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.Add(new SqlParameter("@userId", userId));
                 cmd.Parameters.Add(new SqlParameter("@dpo_links", links));
+                cmd.Parameters.Add(new SqlParameter("@question_type", question_type));
+                cmd.Parameters.Add(new SqlParameter("@sec_ref_id", sec_ref_id));
+                cmd.Parameters.Add(new SqlParameter("@stagesCompleted", stageCompleted));
                 cmd.ExecuteNonQuery();
                 cnn.Close();
             }
@@ -404,7 +415,7 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT userId, dpo_links FROM ar_sec_dpaLinks WHERE userId = @userId;";
+            string sql = "SELECT userId, dpo_links, question_type, sec_ref_id, stagesCompleted FROM ar_sec_dpaLinks WHERE userId = @userId;";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@userId", userId));
             SqlDataAdapter da = new SqlDataAdapter(cmd);

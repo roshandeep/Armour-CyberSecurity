@@ -40,6 +40,24 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns1;
         
         /// <summary>
+        /// lbl_Links_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_1;
+        
+        /// <summary>
+        /// txt_Links_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_1;
+        
+        /// <summary>
         /// lblQues2 control.
         /// </summary>
         /// <remarks>
@@ -238,6 +256,24 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns8;
         
         /// <summary>
+        /// lbl_Links_8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_8;
+        
+        /// <summary>
+        /// txt_Links_8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_8;
+        
+        /// <summary>
         /// lblQues9 control.
         /// </summary>
         /// <remarks>
@@ -263,6 +299,24 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns9;
+        
+        /// <summary>
+        /// lbl_Links_9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_9;
+        
+        /// <summary>
+        /// txt_Links_9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_9;
         
         /// <summary>
         /// lblQues10 control.
@@ -427,6 +481,24 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns15;
         
         /// <summary>
+        /// lbl_Links_15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_15;
+        
+        /// <summary>
+        /// txt_Links_15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_15;
+        
+        /// <summary>
         /// btn_part2 control.
         /// </summary>
         /// <remarks>
@@ -461,6 +533,24 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns16;
+        
+        /// <summary>
+        /// lbl_Links_16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_16;
+        
+        /// <summary>
+        /// txt_Links_16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_16;
         
         /// <summary>
         /// lblQues17 control.
@@ -634,6 +724,24 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns22;
         
         /// <summary>
+        /// lbl_Links_22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_22;
+        
+        /// <summary>
+        /// txt_Links_22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_22;
+        
+        /// <summary>
         /// lblQues23 control.
         /// </summary>
         /// <remarks>
@@ -659,6 +767,24 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns23;
+        
+        /// <summary>
+        /// lbl_Links_23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Links_23;
+        
+        /// <summary>
+        /// txt_Links_23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_23;
         
         /// <summary>
         /// lblQues24 control.

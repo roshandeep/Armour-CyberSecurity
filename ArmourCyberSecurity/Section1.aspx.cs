@@ -126,12 +126,16 @@ namespace ArmourCyberSecurity
                 txt_dpaLinks.Enabled = true;
                 foreach (DataRow row in dt.Rows)
                 {
-                    txt_dpaLinks.Text = row["dpo_links"].ToString();
+                    if(row["stagesCompleted"].ToString() == "1")
+                    {
+                        txt_dpaLinks.Text = row["dpo_links"].ToString();
+                    }
                 }
             }
             else
             {
                 txt_dpaLinks.Enabled = false;
+                txt_dpaLinks.Text = "";
             }
         }
 
@@ -367,7 +371,7 @@ namespace ArmourCyberSecurity
                                 }
                                 if (ddl == ddlAns14 && ddl.SelectedItem.Text == "YES")
                                 {
-                                    SaveDPALinks(userId);
+                                    SaveDPALinks(userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 1);
                                 }
                             }
                         }
@@ -376,7 +380,7 @@ namespace ArmourCyberSecurity
             }
         }
 
-        private void SaveDPALinks(string userId)
+        private void SaveDPALinks(string userId, string question_type, int sec_ref_id, int stagecompleted)
         {
             DAL dal = new DAL();
             string links;
@@ -388,7 +392,7 @@ namespace ArmourCyberSecurity
             {
                 links = "";
             }
-            dal.SaveDPALinks(userId, links);
+            dal.SaveDPALinks(userId, links, question_type, sec_ref_id, stagecompleted);
         }
 
         private void SaveDPAInfo(string userId)

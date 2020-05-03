@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -61,7 +62,65 @@ namespace ArmourCyberSecurity
                             }
                         }
                     }
+                    LoadLinks(userId);
                 }
+            }
+        }
+
+        private void LoadLinks(string userId)
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadDPALinks(userId);
+
+            if (ddlAns1.SelectedItem.Text == "YES")
+            {
+                txt_Links_1.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "1")
+                    {
+                        txt_Links_1.Text = row["dpo_links"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_1.Enabled = false;
+                txt_Links_1.Text = "";
+            }
+            if (ddlAns15.SelectedItem.Text == "YES" && ddlAns7.SelectedItem.Text == "YES")
+            {
+                txt_Links_15.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "15")
+                    {
+                        txt_Links_15.Text = row["dpo_links"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_15.Enabled = false;
+                txt_Links_15.Text = "";
+            }
+
+            if (ddlAns8.SelectedItem.Text == "YES")
+            {
+                txt_Links_8.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "8")
+                    {
+                        txt_Links_8.Text = row["dpo_links"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_8.Enabled = false;
+                txt_Links_8.Text = "";
             }
         }
 
@@ -157,6 +216,17 @@ namespace ArmourCyberSecurity
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
                             }
+                            if (ddl == ddlAns1)
+                            {
+                                if (ddl.SelectedItem.Text == "YES")
+                                {
+                                    SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                                else
+                                {
+                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                            }
                         }
                     }
                 }
@@ -186,12 +256,47 @@ namespace ArmourCyberSecurity
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
                             }
+
+                            if (ddl == ddlAns8)
+                            {
+                                if (ddl.SelectedItem.Text == "YES")
+                                {
+                                    SaveLinks(txt_Links_8.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                                else
+                                {
+                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                            }
+                            if (ddl == ddlAns15)
+                            {
+                                if (ddl.SelectedItem.Text == "YES" && ddlAns7.SelectedItem.Text == "YES")
+                                {
+                                    SaveLinks(txt_Links_15.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                                else
+                                {
+                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                            }
                         }
                     }
                 }
             }
         }
 
-
+        private void SaveLinks(string links, string userId, string question_type, int sec_ref_id, int stagecompleted)
+        {
+            DAL dal = new DAL();
+            if (links != string.Empty)
+            {
+                links = Regex.Replace(links.Replace("\n", "").Replace("\r", "").Trim(), @"\s+", ",");
+            }
+            else
+            {
+                links = "";
+            }
+            dal.SaveDPALinks(userId, links, question_type, sec_ref_id, stagecompleted);
+        }
     }
 }

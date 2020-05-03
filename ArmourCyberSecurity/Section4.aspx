@@ -40,6 +40,28 @@
             }
         });
 
+        function EnableTextArea(){
+            var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
+            var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
+
+            var ddlAns13 = document.getElementById('<%= ddlAns13.ClientID %>');
+            var links13 = document.getElementById('<%= txt_Links_13.ClientID %>');
+
+            if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
+                links1.disabled = false;
+            }
+            else {
+                links1.disabled = true;
+            }
+
+            if (ddlAns13.options[ddlAns13.selectedIndex].innerHTML == 'YES') {
+                links13.disabled = false;
+            }
+            else {
+                links13.disabled = true;
+            }
+            
+        }
     </script>
     <div>
         <h5>The following questions deal with how privacy information is displayed to your customer or client, as well as how their explicit consent gathered and tracked.
@@ -69,10 +91,13 @@
             <h5>In accordance to the legislations, the privacy policy must explain to users what their rights are and how to execute on those rights. It is also important to establish a legal basis for which data is being collected. This policy should be clear and easy to find.
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues2" runat="server" Text="" />
@@ -158,10 +183,13 @@
                 Users must have the ability to Opt in and out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed.
             </h5>
             <asp:Label ID="lblQues13" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns13">
+            <asp:DropDownList runat="server" ID="ddlAns13" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_13" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_13" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues14" runat="server" Text="" />

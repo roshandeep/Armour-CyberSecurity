@@ -1,6 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section6.aspx.cs" Inherits="ArmourCyberSecurity.Section6" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script>
+        function EnableTextArea() {
+            var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
+            var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
+
+            var ddlAns3 = document.getElementById('<%= ddlAns3.ClientID %>');
+            var links3 = document.getElementById('<%= txt_Links_3.ClientID %>');
+
+
+            if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
+                links1.disabled = false;
+            }
+            else {
+                links1.disabled = true;
+            }
+
+            if (ddlAns3.options[ddlAns3.selectedIndex].innerHTML == 'YES') {
+                links3.disabled = false;
+            }
+            else {
+                links3.disabled = true;
+            }
+
+        }
+    </script>
     <div>
         <h5>The following questions deal with how you have designed you remployee training program. 
         </h5>
@@ -18,17 +43,18 @@
             <br>
         </h5>
         <div>
-            <h2>
-                Privacy Policy
+            <h2>Privacy Policy
             </h2>
-            <h5>
-                In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
+            <h5>In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues2" runat="server" Text="" />
@@ -39,10 +65,13 @@
             <br />
 
             <asp:Label ID="lblQues3" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns3">
+            <asp:DropDownList runat="server" ID="ddlAns3" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues4" runat="server" Text="" />
@@ -73,7 +102,7 @@
             <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
-             <asp:Label ID="lblQues8" runat="server" Text="" />
+            <asp:Label ID="lblQues8" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns8">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>

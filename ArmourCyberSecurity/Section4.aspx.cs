@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Data;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace ArmourCyberSecurity
 {
@@ -61,7 +62,48 @@ namespace ArmourCyberSecurity
                             }
                         }
                     }
+                    LoadLinks(userId);
                 }
+            }
+        }
+
+        private void LoadLinks(string userId)
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadDPALinks(userId);
+            if (ddlAns1.SelectedItem.Text == "YES")
+            {
+                txt_Links_1.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "4" && row["sec_ref_id"].ToString() == "1")
+                    {
+                        txt_Links_1.Text = row["dpo_links"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_1.Enabled = false;
+                txt_Links_1.Text = "";
+            }
+
+            if (ddlAns13.SelectedItem.Text == "YES")
+            {
+                txt_Links_13.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "4" && row["sec_ref_id"].ToString() == "13")
+                    {
+                        txt_Links_13.Text = row["dpo_links"].ToString();
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_13.Enabled = false;
+                txt_Links_13.Text = "";
             }
         }
 
@@ -155,6 +197,18 @@ namespace ArmourCyberSecurity
                                 quesType = row["question_type"].ToString();
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 4, secQuesId);
+
+                                if (ddl == ddlAns1)
+                                {
+                                    if (ddl.SelectedItem.Text == "YES")
+                                    {
+                                        SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
+                                    }
+                                    else
+                                    {
+                                        SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
+                                    }
+                                }
                             }
                         }
                     }
@@ -184,11 +238,37 @@ namespace ArmourCyberSecurity
                                 quesType = row["question_type"].ToString();
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 4, secQuesId);
+
+                                if (ddl == ddlAns13)
+                                {
+                                    if (ddl.SelectedItem.Text == "YES")
+                                    {
+                                        SaveLinks(txt_Links_13.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
+                                    }
+                                    else
+                                    {
+                                        SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+
+        private void SaveLinks(string links, string userId, string question_type, int sec_ref_id, int stagecompleted)
+        {
+            DAL dal = new DAL();
+            if (links != string.Empty)
+            {
+                links = Regex.Replace(links.Replace("\n", "").Replace("\r", "").Trim(), @"\s+", ",");
+            }
+            else
+            {
+                links = "";
+            }
+            dal.SaveDPALinks(userId, links, question_type, sec_ref_id, stagecompleted);
         }
     }
 }

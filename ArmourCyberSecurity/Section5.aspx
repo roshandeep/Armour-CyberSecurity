@@ -56,7 +56,58 @@
             }
         });
 
+        function EnableTextArea() {
+            var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
+            var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
 
+            var ddlAns3 = document.getElementById('<%= ddlAns3.ClientID %>');
+            var links3 = document.getElementById('<%= txt_Links_3.ClientID %>');
+
+            var ddlAns19 = document.getElementById('<%= ddlAns19.ClientID %>');
+            var links19 = document.getElementById('<%= txt_Links_19.ClientID %>');
+
+            var ddlAns21 = document.getElementById('<%= ddlAns21.ClientID %>');
+            var links21 = document.getElementById('<%= txt_Links_21.ClientID %>');
+
+            var ddlAns23 = document.getElementById('<%= ddlAns23.ClientID %>');
+            var links23 = document.getElementById('<%= txt_Links_23.ClientID %>');
+
+            if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
+                links1.disabled = false;
+            }
+            else {
+                links1.disabled = true;
+            }
+
+            if (ddlAns3.options[ddlAns3.selectedIndex].innerHTML == 'YES') {
+                links3.disabled = false;
+            }
+            else {
+                links3.disabled = true;
+            }
+
+            if (ddlAns19.options[ddlAns19.selectedIndex].innerHTML == 'YES') {
+                links19.disabled = false;
+            }
+            else {
+                links19.disabled = true;
+            }
+
+            if (ddlAns21.options[ddlAns21.selectedIndex].innerHTML == 'YES') {
+                links21.disabled = false;
+            }
+            else {
+                links21.disabled = true;
+            }
+
+            if (ddlAns23.options[ddlAns23.selectedIndex].innerHTML == 'YES') {
+                links23.disabled = false;
+            }
+            else {
+                links23.disabled = true;
+            }
+
+        }
     </script>
     <div>
         <h5>The following questions deal with how your company responds to and addresses a privacy incident. 
@@ -80,10 +131,13 @@
             <h5>All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues2" runat="server" Text="" />
@@ -94,10 +148,13 @@
             <br />
 
             <asp:Label ID="lblQues3" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns3">
+            <asp:DropDownList runat="server" ID="ddlAns3" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues4" runat="server" Text="" />
@@ -205,10 +262,13 @@
             <br />
 
             <asp:Label ID="lblQues19" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns19">
+            <asp:DropDownList runat="server" ID="ddlAns19" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns19" ControlToValidate="ddlAns19" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_19" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_19" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues20" runat="server" Text="" />
@@ -228,10 +288,13 @@
                 Depending on risk of harm, users must be notified individually or by public statement.
             </h5>
             <asp:Label ID="lblQues21" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns21">
+            <asp:DropDownList runat="server" ID="ddlAns21" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_21" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_21" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues22" runat="server" Text="" />
@@ -242,10 +305,13 @@
             <br />
 
             <asp:Label ID="lblQues23" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns23">
+            <asp:DropDownList runat="server" ID="ddlAns23" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+            <br />
+            <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " />
+            <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
             <br />
 
             <asp:Label ID="lblQues24" runat="server" Text="" />
