@@ -23,12 +23,13 @@ namespace ArmourCyberSecurity
         DAL dal = new DAL();
         int pcq = 0, rsq = 0, rfq = 0, peq = 0, dcq = 0, cq = 0, irq = 0, overall = 0, rrq = 0;
         string overall_cmt = string.Empty, pcq_cmt = string.Empty, rrq_cmt = string.Empty, rfq_cmt = string.Empty, peq_cmt = string.Empty, dcq_cmt = string.Empty, cq_cmt = string.Empty, irq_cmt = string.Empty;
-        string firstName = string.Empty, lastname = string.Empty;
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btn_return_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/LandingPage.aspx", false);
+            Response.Redirect("~/LeveL1/LandingPage.aspx", false);
         }
+
+        string firstName = string.Empty, lastname = string.Empty;
 
         int pcq_high = 0, pcq_med = 0, pcq_low = 0;
         int rsq_high = 0, rsq_med = 0, rsq_low = 0;

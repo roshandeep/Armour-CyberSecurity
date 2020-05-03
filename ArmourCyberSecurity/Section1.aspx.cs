@@ -128,7 +128,7 @@ namespace ArmourCyberSecurity
                 {
                     if(row["stagesCompleted"].ToString() == "1")
                     {
-                        txt_dpaLinks.Text = row["dpo_links"].ToString();
+                        txt_dpaLinks.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
                     }
                 }
             }
@@ -386,7 +386,7 @@ namespace ArmourCyberSecurity
             string links;
             if (txt_dpaLinks.Text != null)
             {
-                links = Regex.Replace(txt_dpaLinks.Text.Replace("\n", "").Replace("\r", "").Trim(), @"\s+", ",");
+                links = Regex.Replace(txt_dpaLinks.Text.Replace("\r\n", ",").Trim(), @"\s+", ",");
             }
             else
             {

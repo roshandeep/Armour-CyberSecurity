@@ -41,6 +41,11 @@ namespace ArmourCyberSecurity
 
             if (!this.IsPostBack)
             {
+                divGlobalRegulations.Visible = false;
+                divDataControl.Visible = false;
+                divConsent.Visible = false;
+                divEmployeeTraining.Visible = false;
+
                 DisplayReport();
             }
         }
@@ -55,12 +60,43 @@ namespace ArmourCyberSecurity
 
         private void DisplayReport()
         {
-            //GlobalRegulationsReport(); //Done
-            //PrivacyEngineeringReport();
-            //DataControlReport();//Done
-            //ConsentReport(); //Done
-            //IncidentManagementReport();
-            EmployeeTrainingReport(); //Done
+            if(Request.UrlReferrer.AbsoluteUri != null)
+            {
+                string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
+                if(previousPage == "Section1")
+                {
+                    divGlobalRegulations.Visible = true;
+                    GlobalRegulationsReport(); //Done
+                }
+                else
+                if(previousPage == "Section2")
+                {
+                    PrivacyEngineeringReport();
+                }
+                else
+                if(previousPage == "Section3")
+                {
+                    divDataControl.Visible = true;
+                    DataControlReport();//Done
+                }
+                else
+                if (previousPage == "Section4")
+                {
+                    divConsent.Visible = true;
+                    ConsentReport(); //Done
+                }
+                else
+                if (previousPage == "Section5")
+                {
+                    IncidentManagementReport();
+                }
+                else
+                if (previousPage == "Section6")
+                {
+                    divEmployeeTraining.Visible = true;
+                    EmployeeTrainingReport(); //Done
+                }
+            }
         }
 
         private void EmployeeTrainingReport()
@@ -104,7 +140,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_pct.Text = links["dpo_links"].ToString();
+                                        lbl_pct.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -122,7 +158,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_onet.Text = links["dpo_links"].ToString();
+                                        lbl_onet.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -957,10 +993,10 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Onboarding and New Employee Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_onet.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_onet.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Privacy and Compliance Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pct.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pct.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -1093,7 +1129,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_c_cmp.Text = links["dpo_links"].ToString();
+                                        lbl_c_cmp.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -1112,7 +1148,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_c_pp.Text = links["dpo_links"].ToString();
+                                        lbl_c_pp.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -2169,10 +2205,10 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Privacy Policy \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_c_pp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_pp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Consent Management Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_c_cmp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_cmp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -2253,7 +2289,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if(links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_dsarp.Text = links["dpo_links"].ToString();
+                                        lbl_dsarp.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -2299,7 +2335,7 @@ namespace ArmourCyberSecurity
                                     {
                                         if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                         {
-                                            lbl_drsc.Text = links["dpo_links"].ToString();
+                                            lbl_drsc.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                         }
                                     }
                                 }
@@ -2326,7 +2362,7 @@ namespace ArmourCyberSecurity
                                 {
                                     if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
                                     {
-                                        lbl_drdp.Text = links["dpo_links"].ToString();
+                                        lbl_drdp.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
                                     }
                                 }
                             }
@@ -3284,13 +3320,13 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Data Subject Access Request Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_dsarp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dsarp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_drdp.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data Request Scripts and Communications\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_drsc.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drsc.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -3759,7 +3795,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Protection Authorities\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("In the event of a security incident or complaint, it is important to know which Authorities are responsible for your regulations. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(dpa_list + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(dpa_list.Replace("<br/>", "\n") + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -3871,7 +3907,7 @@ namespace ArmourCyberSecurity
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Documentation and Links\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk(dpa_list + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(dpa_list.Replace("<br/>", "\n") + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -4004,9 +4040,7 @@ namespace ArmourCyberSecurity
                 dpa_links = dt.Rows[0]["dpo_links"].ToString().Replace(",", "\n");
             }
         }
-
         
-
         private static void DrawLine(PdfWriter writer, float x1, float y1, float x2, float y2, BaseColor color)
         {
             PdfContentByte contentByte = writer.DirectContent;

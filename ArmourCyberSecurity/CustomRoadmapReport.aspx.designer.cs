@@ -31,6 +31,15 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.Image Logo;
         
         /// <summary>
+        /// divGlobalRegulations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGlobalRegulations;
+        
+        /// <summary>
         /// lbl_legislation_list control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_linklist;
+        
+        /// <summary>
+        /// divDataControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDataControl;
         
         /// <summary>
         /// lbl_dc_1 control.
@@ -389,6 +407,15 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_drsc;
+        
+        /// <summary>
+        /// divConsent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divConsent;
         
         /// <summary>
         /// img_c_1 control.
@@ -749,6 +776,15 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_c_cmp;
+        
+        /// <summary>
+        /// divEmployeeTraining control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEmployeeTraining;
         
         /// <summary>
         /// img_1 control.

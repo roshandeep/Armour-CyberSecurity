@@ -70,7 +70,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["stagesCompleted"].ToString() == "6" && row["sec_ref_id"].ToString() == "1")
                     {
-                        txt_Links_1.Text = row["dpo_links"].ToString();
+                        txt_Links_1.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
                     }
                 }
             }
@@ -87,7 +87,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["stagesCompleted"].ToString() == "6" && row["sec_ref_id"].ToString() == "3")
                     {
-                        txt_Links_3.Text = row["dpo_links"].ToString();
+                        txt_Links_3.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
                     }
                 }
             }
@@ -208,7 +208,7 @@ namespace ArmourCyberSecurity
             DAL dal = new DAL();
             if (links != string.Empty)
             {
-                links = Regex.Replace(links.Replace("\n", "").Replace("\r", "").Trim(), @"\s+", ",");
+                links = Regex.Replace(links.Replace("\r\n", ",").Trim(), @"\s+", ",");
             }
             else
             {

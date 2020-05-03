@@ -221,7 +221,7 @@
             </div>
 
             <%--Global Regulations--%>
-            <div class="boxshadow zoom">
+            <div class="boxshadow zoom" id="divGlobalRegulations" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -229,10 +229,6 @@
 
                         </th>
                     </tr>
-
-
-
-
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
                             <br />
@@ -384,7 +380,7 @@
             </div>
 
             <%--Privacy Engineering--%>
-            <%--<div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom" id="divPrivacyEngineering" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -429,7 +425,7 @@
             </div>--%>
 
             <%--Data Control--%>
-            <div class="boxshadow zoom">
+            <div class="boxshadow zoom" id="divDataControl" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -653,7 +649,7 @@ Review the items below to ensure that you have covered all of your bases.
 
 
             <%--Consent--%>
-            <div class="boxshadow zoom">
+            <div class="boxshadow zoom" id="divConsent" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -924,7 +920,7 @@ Review the items below to ensure that you have covered all of your bases.
             </div>
 
             <%--Incident Management--%>
-            <%--<div class="boxshadow zoom">
+            <%--<div class="boxshadow zoom" id="divIncidentManagement" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
@@ -968,7 +964,7 @@ Review the items below to ensure that you have covered all of your bases.
             </div>--%>
 
             <%--Employee Training--%>
-            <div class="boxshadow zoom">
+            <div class="boxshadow zoom" id="divEmployeeTraining" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
