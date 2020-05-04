@@ -1229,7 +1229,7 @@ namespace ArmourCyberSecurity
             phrase.Add(new Chunk("Armor CyberSecurity", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
             cell = new PdfPCell(phrase);
             tabFot.AddCell(cell);
-            tabFot.WriteSelectedRows(0, -1, 150, document.Bottom, writer.DirectContent);
+            //document.Add(tabFot);
         }
 
         //write on close of document

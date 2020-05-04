@@ -201,7 +201,7 @@
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">
-                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/armor-logo.png" Style="width: 100px;" />
+                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/newLogo.png" Style="width: 100px;height: 120px;" />
                         </td>
                     </tr>
                     <tr>
