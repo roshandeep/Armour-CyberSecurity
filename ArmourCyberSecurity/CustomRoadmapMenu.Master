@@ -30,12 +30,13 @@
             <div class="col-sm">
                 <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" />
             </div>
-            <div class="col-sm">
+<%--            <div class="col-sm">
                 <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" />
-                <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
-            </div>
+                
+            </div>--%>
             <div class="col-sm">
                 <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" Enabled = "True"/>
+                <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
             </div>
         </div>
         <div class="row">

@@ -35,6 +35,13 @@ namespace ArmourCyberSecurity
         List<String> con_1_12 = new List<String>();
         List<String> con_14_19 = new List<String>();
 
+        List<String> pe_2_8 = new List<String>();
+        List<String> pe_10_16 = new List<String>();
+        List<String> pe_17_21 = new List<String>();
+
+        List<String> im_4_20 = new List<String>();
+        List<String> im_21_25 = new List<String>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetUserId();
@@ -45,6 +52,8 @@ namespace ArmourCyberSecurity
                 divDataControl.Visible = false;
                 divConsent.Visible = false;
                 divEmployeeTraining.Visible = false;
+                divPrivacyEngineering.Visible = false;
+                divIncidentManagement.Visible = false;
 
                 DisplayReport();
             }
@@ -71,6 +80,7 @@ namespace ArmourCyberSecurity
                 else
                 if (previousPage == "Section2")
                 {
+                    divPrivacyEngineering.Visible = true;
                     PrivacyEngineeringReport();
                 }
                 else
@@ -88,6 +98,7 @@ namespace ArmourCyberSecurity
                 else
                 if (previousPage == "Section5")
                 {
+                    divIncidentManagement.Visible = true;
                     IncidentManagementReport();
                 }
                 else
@@ -1054,7 +1065,1550 @@ namespace ArmourCyberSecurity
 
         private void IncidentManagementReport()
         {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.GetLevel2Report(userId);
+            DataTable dt_links = new DataTable();
+            dt_links = dal.GetLinks(userId);
+            string regions = string.Empty;
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "5")
+                    {
 
+                        for (int i = 4; i <= 20; i++)
+                        {
+                            if (i != 6)
+                            {
+                                if (Convert.ToInt32(row["sec_ref_id"]) == i)
+                                {
+                                    var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
+                                    if (row["ans_Text"].ToString() == "YES")
+                                    {
+                                        img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                        im_4_20.Add("GREEN");
+                                    }
+                                    else
+                                    if (row["ans_Text"].ToString() == "SOMEWHAT")
+                                    {
+                                        img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                        im_4_20.Add("YELLOW");
+                                    }
+                                    else
+                                    if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                                    {
+                                        img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                        im_4_20.Add("RED");
+                                    }
+                                }
+                            }
+                        }
+
+                        for (int i = 21; i <= 25; i++)
+                        {
+                            if (Convert.ToInt32(row["sec_ref_id"]) == i)
+                            {
+                                var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
+                                if (row["ans_Text"].ToString() == "YES")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    im_21_25.Add("GREEN");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "SOMEWHAT")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    im_21_25.Add("YELLOW");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    im_21_25.Add("RED");
+                                }
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "21")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_dpant.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_dpant.Text = "No information was provided";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "19")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_im_int.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_im_int.Text = "No information was provided";
+                            }
+                        }
+
+                        if(row["sec_ref_id"].ToString() == "23")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_im_ent.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_im_ent.Text = "No information was provided";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "6")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_im_6.Text = "You indicated that you have a method to determine if an incident classifies as a privacy breach.";
+                            }
+                            else
+                            {
+                                lbl_im_6.Text = "You indicated that you do not have a method to determine if an incident classifies as a privacy breach. ";
+                            }
+                        }
+                        if (row["sec_ref_id"].ToString() == "3")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_im_3.Text = "You indicated that you have a Privacy Breach log.";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_im_pbl.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_im_pbl.Text = "No information was provided";
+                                lbl_im_3.Text = "You indicated that you do not have a Privacy Breach Log. You should create one to have at the ready.";
+                            }
+                        }
+                        if (row["sec_ref_id"].ToString() == "2")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_im_2.Text = "You indicated that you have tested your Incident Response Management Plan.";
+                            }
+                            else
+                            {
+                                lbl_im_2.Text = "You indicated that you have not tested your Incident Response Management Plan.";
+                            }
+                        }
+                        if (row["sec_ref_id"].ToString() == "1")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_im_1.Text = "You indicated that you have an Incident Response Management Plan.";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_im_irp.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_im_irp.Text = "No information was provided";
+                                lbl_im_1.Text = "You indicated that you do not have an Incident Response Management Plan. It should be made a priority to create one.";
+                            }
+                        }
+                    }
+                }
+            }
+            CreateIncidentManagementPdf();
+        }
+
+        private void CreateIncidentManagementPdf()
+        {
+            PdfPTable table = null;
+            Phrase phrase = null;
+            PdfPCell cell = null;
+            BaseColor color = null;
+
+            using (StringWriter sw = new StringWriter())
+            {
+                using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                {
+
+                    StringReader sr = new StringReader(sw.ToString());
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, memoryStream);
+                        writer.PageEvent = new Level2Footer();
+                        pdfDoc.Open();
+
+                        /* ===========================================================================================
+                         * Incident Management
+                         * ===========================================================================================
+                         */
+                        //Add border to page
+                        PdfContentByte content = writer.DirectContent;
+                        Rectangle rectangle = new Rectangle(pdfDoc.PageSize);
+                        rectangle.Left += pdfDoc.LeftMargin;
+                        rectangle.Right -= pdfDoc.RightMargin;
+                        rectangle.Top -= pdfDoc.TopMargin;
+                        rectangle.Bottom += pdfDoc.BottomMargin + 10;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        string imagepath = Server.MapPath("~/images");
+                        Image img = Image.GetInstance(imagepath + "/newLogo.png");
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("PRIVACY BREACH & INCIDENT RESPONSE \n\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("SECTION GOAL: \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("To ensure that your company has an adequate incident response management plan in place before you experience an incident.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("With privacy incidents, it is not IF you will be breached but WHEN.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("DEFINING A PRIVACY BREACH\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("A breach of personal data is a finable offence by the respective Data Protection Authorities (DPA).\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The definition of a breach in all regulations lines up with how It is defined in GDPR as ", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("“a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data transmitted, stored or otherwise processed”. \n\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("If you use a third company party to process your data, then you are still ultimately responsible for the protection of said data. If the third-party company has been breached, they are obligated to send you a notification. You must now assess the breach as your own and then address accordingly with actions and notifications.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_6.Text + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("You will need to be able to determine if your incident has crossed the threshold of being a breach. An incident may involve only internal discussion, but a breach requires external notification.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("All breaches are supposed to be logged by your company for audit purposes by the respective DPAs. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_3.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("INCIDENT RESPONSE PROCESS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and individuals informed. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The following is intended to guide you through the creation of your own custom incident response process for Data Privacy Breaches. The key here is not to be caught off guard. The faster you can step in, stop the incident, address it, and take charge, the better.", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Studies have shown that companies pay an average of $500K US in fees for NOT having a plan in place.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_1.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("It is also imperative that you run your plan through in an activity called a tabletop exercise (like a fire alarm drill). This ensures everyone is prepared and knows what they doing.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_2.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Testing should be done annually or when major stakeholders change.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("To optimize your plan, review the list below to ensure that your plan covers all the needed pieces.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+                        
+
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        Image img_dot;
+                        if (im_4_20[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+
+                        if (im_4_20[1] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[1] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[1] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[2] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[2] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[2] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[3] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[3] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[3] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[4] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[4] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[4] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_9.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[5] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[5] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[5] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[6] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[6] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[6] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[7] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[7] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[7] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+
+                        if (im_4_20[8] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[8] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[8] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[9] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[9] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[9] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################THIRD PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+
+
+                        if (im_4_20[10] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[10] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[10] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[11] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[11] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[11] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_16.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[12] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[12] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[12] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_17.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[13] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[13] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[13] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_18.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[14] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[14] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[14] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_19.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_4_20[15] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[15] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[15] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_20.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("SENDING NOTIFICATIONS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Some information about your breach is mandatory to be shared and other information you may want to keep confidential. Since time is of the essence with privacy incidents, it is extremely helpful to have pre-prepared templates for your notifications. These templates can include all the static information, such as company contact information, plus spaces to fill in information specific to this incident. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("If it is not possible or unreasonable to send notifications to all of your users, you have the option to post a public statement. This can appear on your company’s website or as a statement to the press. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Though breach notifications are part of all regulations, these templates are not. This said, it is shown that having these guidelines prepared in advance saves a great deal of time and money.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        /* ########################################FOURTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        if (im_21_25[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_21.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_21_25[1] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[1] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[1] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_22.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_21_25[2] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[2] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[2] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_23.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_21_25[3] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[3] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[3] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_24.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (im_21_25[4] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[4] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[4] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_25.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Breach Log\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_pbl.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Incident Response Plan\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_irp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        /* ########################################FIFTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Protection Authority Notification Template \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dpant.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Internal Notification Template \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_int.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("External Notification Template  \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_ent.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+
+                        /* ===========================================================================================
+                         * Incident Management
+                         * ===========================================================================================
+                         */
+
+
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        pdfDoc.Close();
+                        byte[] bytes = memoryStream.ToArray();
+                        memoryStream.Close();
+
+                        string email_body = "Hello,<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "You or a member of your team filled out Incident Management section of our Global Data Privacy Regulation Assessment. <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Attached you will find your company's custom roadmap for Global Regulations.It outlines:<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where you are compliant<br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where you can optimize<br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where work is needed to meet compliance.<br />" + Environment.NewLine;
+                        email_body = email_body + "Take time to review your result and then reach out with any questions or concerns you may have.<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "This assessment determines your preparedness for Global Data Privacy Regulations such as GDPR, PIPEDA, LGPD etc. Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines.<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "To best protect your clients, your company and your reputation, you should be confident with your results. We are here to help. For more information contact us at  <i> privacy@armourcyber.ca </i> <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Cat Coode,<br /> Senior Privacy Consultant<br />" + Environment.NewLine;
+                        email_body = email_body + "Privacy Compliance Group<br />" + Environment.NewLine;
+                        email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
+
+
+                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        mm.Subject = "Your Company's Privacy Compliance Report";
+                        mm.Body = email_body;
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.IsBodyHtml = true;
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        NetworkCredential NetworkCred = new NetworkCredential();
+                        NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        NetworkCred.Password = "roshandeepsinghsaini";
+                        smtp.Credentials = NetworkCred;
+                        smtp.Send(mm);
+                    }
+                }
+            }
         }
 
         private void ConsentReport()
@@ -3458,7 +5012,1672 @@ namespace ArmourCyberSecurity
 
         private void PrivacyEngineeringReport()
         {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.GetLevel2Report(userId);
+            DataTable dt_links = new DataTable();
+            dt_links = dal.GetLinks(userId);
+            string regions = string.Empty;
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "2")
+                    {
+                        if (row["sec_ref_id"].ToString() == "1")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_pe_1.Text = "You indicated that you have a System Map for your products and/or services. Make sure your map includes all the flows of activity including access, transfers and storage of information.";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_sm_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_pe_1.Text = "You indicated that you do not have a System Map for your products and/or services.  When you create your map, make sure it includes all the flows of activity including access, transfers and storage of information.";
+                                lbl_sm_links.Text = "No information was provided.";
+                            }
+                        }
+                        for (int i = 2; i <= 8; i++)
+                        {
+                            if (Convert.ToInt32(row["sec_ref_id"]) == i)
+                            {
+                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                if (row["ans_Text"].ToString() == "YES")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    pe_2_8.Add("GREEN");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "SOMEWHAT")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    pe_2_8.Add("YELLOW");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    pe_2_8.Add("RED");
+                                }
+                            }
+                        }
 
+                        if (row["sec_ref_id"].ToString() == "9")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_pe_9.Text = "You indicated that you have a Data Map for your products and/or services. ";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_dm_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_pe_9.Text = "You indicated that you do not have a Data Map for your products and/or services.";
+                                lbl_dm_links.Text = "No information was provided.";
+                            }
+                        }
+                        for (int i = 10; i <= 16; i++)
+                        {
+                            if (Convert.ToInt32(row["sec_ref_id"]) == i)
+                            {
+                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                if (row["ans_Text"].ToString() == "YES")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    pe_10_16.Add("GREEN");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "SOMEWHAT")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    pe_10_16.Add("YELLOW");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    pe_10_16.Add("RED");
+                                }
+                            }
+                        }
+
+                        for (int i = 17; i <= 21; i++)
+                        {
+                            if (Convert.ToInt32(row["sec_ref_id"]) == i)
+                            {
+                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                if (row["ans_Text"].ToString() == "YES")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    pe_17_21.Add("GREEN");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "SOMEWHAT")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    pe_17_21.Add("YELLOW");
+                                }
+                                else
+                                if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    pe_17_21.Add("RED");
+                                }
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "22")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_pe_22.Text = "You indicated that you have a Vendor Management Process in place. ";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_vmp_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_pe_22.Text = "You indicated that you do not have a Vendor Management Process in place. ";
+                                lbl_vmp_links.Text = "No information was provided.";
+                            }
+                        }
+                        if (row["sec_ref_id"].ToString() == "24")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_pe_24.Text = "You indicated that you have a process to review the DPIA. ";
+                            }
+                            else
+                            {
+                                lbl_pe_24.Text = "You indicated that you do not have a process to review the DPIA. Set a reminder for this review.";
+                            }
+                        }
+                        if (row["sec_ref_id"].ToString() == "23")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                lbl_pe_23.Text = "You indicated that you have run a Data Protection Impact Assessment.";
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_dpia_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_dpia_links.Text = "No information was provided.";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "16")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_pidap_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_pidap_links.Text = "No information was provided.";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "15")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_duisit_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_duisit_links.Text = "No information was provided.";
+                            }
+                        }
+
+                        if (row["sec_ref_id"].ToString() == "8")
+                        {
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                foreach (DataRow links in dt_links.Rows)
+                                {
+                                    if (links["stagesCompleted"].ToString() == row["stagesCompleted"].ToString() && links["sec_ref_id"].ToString() == row["sec_ref_id"].ToString())
+                                    {
+                                        lbl_duisEt_links.Text = links["dpo_links"].ToString().Replace(",", "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                lbl_duisEt_links.Text = "No information was provided.";
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+            CreatePrivacyEngineeringPdf();
+        }
+
+        private void CreatePrivacyEngineeringPdf()
+        {
+            PdfPTable table = null;
+            Phrase phrase = null;
+            PdfPCell cell = null;
+            BaseColor color = null;
+
+            using (StringWriter sw = new StringWriter())
+            {
+                using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                {
+
+                    StringReader sr = new StringReader(sw.ToString());
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, memoryStream);
+                        writer.PageEvent = new Level2Footer();
+                        pdfDoc.Open();
+
+                        /* ===========================================================================================
+                         * PrivacyEngineering
+                         * ===========================================================================================
+                         */
+                        //Add border to page
+                        PdfContentByte content = writer.DirectContent;
+                        Rectangle rectangle = new Rectangle(pdfDoc.PageSize);
+                        rectangle.Left += pdfDoc.LeftMargin;
+                        rectangle.Right -= pdfDoc.RightMargin;
+                        rectangle.Top -= pdfDoc.TopMargin;
+                        rectangle.Bottom += pdfDoc.BottomMargin + 10;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        string imagepath = Server.MapPath("~/images");
+                        Image img = Image.GetInstance(imagepath + "/newLogo.png");
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("PRIVACY ENGINEERNG & DATA ANALYSIS \n\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data control is covered in all of the regulations under Data Subject Rights or guiding principles. For example, according to GDPR Article 15, a user has the right to access their data.Under Article 16, they have the right to rectify that data, and under Article 17, they have the right to ask to be erased from your system.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("SECTION GOAL: \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("To ensure that privacy is at the foundation of your system and services.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("To evaluate the basis on which data is collected. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("To determine the level of security of its processing, transfer and storage. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Through this process you eliminate risk by removing any data that is not necessary to the system, and add in the security measures needed to protect the data that remains.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("FOUNDATION - PRIVACY BY DESIGN (PbD)\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Starting with the foundation of the system or service, you'll need to draw or write out the flow of data including collection, transfer and access to the data. [Note: this system and services map is the first step in a Data Privacy Impact Assessment below]\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Your System and Service Map\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Whether you are assessing an existing system or designing a new one, you will need to create a system and/or service map. This can be done with drawings, flow charts or words. The map is an opportunity to evaluate where privacy is being considered and where it may be missed. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pe_1.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The implementation of privacy by design principles will depend specifically on your product and/or service. The following design elements should be considered in order to improve your system.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        Image img_dot;
+                        if (pe_2_8[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_2.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        if (pe_2_8[1] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[1] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[1] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_3.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_2_8[2] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[2] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[2] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_2_8[3] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[3] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[3] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_2_8[4] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[4] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[4] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_6.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_2_8[5] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[5] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[5] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_2_8[6] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[6] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[6] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+
+                        pdfDoc.Add(table);
+
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("DATA ASSESSMENT & CATEGORIZATION \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Once the system map is complete and different transactions are identified, it is important to list the data involved at those touch points. This data will then be categorized, assessed for necessity, and documented.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The data flow can be captured in a data map. The data itself can be captured in a speadsheet or a tool. This is referred to as the Data Use Info Sheet.\n[Note: the Data Map and Data Use Info Sheet are part of the Data Privacy Impact Assessment below].\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pe_9.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("It is important that you document all the PI and PII you collect. Having this documentation allows you to evaluate the risk of collecting/processing the data and determine if it is truly required. If you have legal basis to collect the data, ensure you understand the risk.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Below are best practices to optimize the safety of the data you are collecting.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+                        
+                        
+
+                        /* ########################################THIRD PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        if (pe_10_16[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[1] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[1] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[1] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[2] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[2] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[2] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[3] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[3] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[3] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[4] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[4] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[4] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[5] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[5] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[5] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_10_16[6] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[6] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[6] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_16.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("VENDOR MANAGEMENT \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services (such as cloud storage) for customers and clients. Some regulations require a vendor contract but it is a good idea to have one regardless of regulation.\n \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pe_22.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Review these items to ensure your Vendor Management Process meets the standards.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################FOURTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
+                        if (pe_17_21[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_17.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_17_21[1] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[1] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[1] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_18.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_17_21[2] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[2] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[2] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_19.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_17_21[3] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[3] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[3] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_20.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        if (pe_17_21[4] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[4] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_17_21[4] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_21.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+                        
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("DATA PRIVACY IMPACT ASSESSMENT \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Of all the elements of compliance, a thorough DPIA will take the most amount of time. Authorities suggest reviewing the DPIA every 6 months. When done properly the first time, the review should have a minimal impact on resources going forward. A new DPIA should be done for every new system or service created if it involves PII.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pe_23.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Review the sections to ensure you have covered all required areas of the DPIA.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The body of the assessment is broken in to six parts:\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("1. System and/or Service Map \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("2. Data List (including PI and PII)\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("3. Notice and Consent \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("4. Security and Data Access \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("5. Retention and Deletion\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("6. Further actions and Recommendations\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        /* ########################################FIFTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("It is also recommended you include an executive summary and a sign off page for executive stakeholders.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The DPIA should be reviewed and re-signed every year. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pe_24.Text + "\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Systems Map\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_sm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Map\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Privacy Impact Assessment\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dpia_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("PII and Data Assessment process\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pidap_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Use Info Sheet for Internal Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_duisit_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+
+                        pdfDoc.Add(table);
+
+                        /* ########################################SIXTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Use Info Sheet for External Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_duisEt_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Vendor Management Process\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_vmp_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        /* ===========================================================================================
+                         * PrivacyEngineering
+                         * ===========================================================================================
+                         */
+
+
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        pdfDoc.Close();
+                        byte[] bytes = memoryStream.ToArray();
+                        memoryStream.Close();
+
+                        string email_body = "Hello,<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "You or a member of your team filled out Privacy Engineering & Data Analysis section of our Global Data Privacy Regulation Assessment. <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Attached you will find your company's custom roadmap for Global Regulations.It outlines:<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where you are compliant<br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where you can optimize<br />" + Environment.NewLine;
+                        email_body = email_body + "•	areas where work is needed to meet compliance.<br />" + Environment.NewLine;
+                        email_body = email_body + "Take time to review your result and then reach out with any questions or concerns you may have.<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "This assessment determines your preparedness for Global Data Privacy Regulations such as GDPR, PIPEDA, LGPD etc. Companies are legally required to fulfill the privacy regulations determined by the geographical location of both the company and their customers/clients. <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Compliance is a large task, but when done properly the first time, it becomes simple to maintain. Doing due diligence helps mitigate risk to customers, protects a company’s reputation, and drastically reduces fines.<br /><br />" + Environment.NewLine;
+                        email_body = email_body + "To best protect your clients, your company and your reputation, you should be confident with your results. We are here to help. For more information contact us at  <i> privacy@armourcyber.ca </i> <br /><br />" + Environment.NewLine;
+                        email_body = email_body + "Cat Coode,<br /> Senior Privacy Consultant<br />" + Environment.NewLine;
+                        email_body = email_body + "Privacy Compliance Group<br />" + Environment.NewLine;
+                        email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
+
+
+                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        mm.Subject = "Your Company's Privacy Compliance Report";
+                        mm.Body = email_body;
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.IsBodyHtml = true;
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        NetworkCredential NetworkCred = new NetworkCredential();
+                        NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        NetworkCred.Password = "roshandeepsinghsaini";
+                        smtp.Credentials = NetworkCred;
+                        smtp.Send(mm);
+                    }
+                }
+            }
         }
 
         private void GlobalRegulationsReport()

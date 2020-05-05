@@ -76,13 +76,13 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.Button btn_Sec6;
         
         /// <summary>
-        /// btn_Submit control.
+        /// btn_Report control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Submit;
+        protected global::System.Web.UI.WebControls.Button btn_Report;
         
         /// <summary>
         /// lbl_warning control.
@@ -92,15 +92,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_warning;
-        
-        /// <summary>
-        /// btn_Report control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Report;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

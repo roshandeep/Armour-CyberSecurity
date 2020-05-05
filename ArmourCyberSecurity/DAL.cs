@@ -282,6 +282,19 @@ namespace ArmourCyberSecurity
             return noOfSec;
         }
 
+        public int CheckCurrentSections(string userId, int section)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql = "SELECT COUNT(DISTINCT(stagesCompleted)) FROM ar_sec_User_Feedback_Collection_Level2 WHERE userid = @userid AND stagesCompleted = @stagesCompleted";
+            cmd = new SqlCommand(sql, cnn);
+            cmd.Parameters.Add(new SqlParameter("@userid", userId));
+            cmd.Parameters.Add(new SqlParameter("@stagesCompleted", section));
+            int complete = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            return complete;
+        }
+
         public void SaveLevel2Answers(string userId, int quesId, string quesType, string ansWt, string ansText, int stagesCompleted, int secQuesId)
         {
             string sql = string.Empty;

@@ -201,7 +201,7 @@
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">
-                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/newLogo.png" Style="width: 100px;height: 120px;" />
+                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/newLogo.png" Style="width: 100px; height: 120px;" />
                         </td>
                     </tr>
                     <tr>
@@ -380,49 +380,388 @@
             </div>
 
             <%--Privacy Engineering--%>
-            <%--<div class="boxshadow zoom" id="divPrivacyEngineering" runat="server">
+            <div class="boxshadow zoom" id="divPrivacyEngineering" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
-                            <h3 style="color: white;">Privacy Culture Questions</h3>
-                            <hr size="1" width="50%" align="center" color="#000">
+                            <h3 style="color: white; font-size: xx-large;">PRIVACY ENGINEERNG & DATA ANALYSIS 
+                            </h3>
+
                         </th>
+                    </tr>
+
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>SECTION GOAL: </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                To ensure that privacy is at the foundation of your system and services.
+                                <br />
+                                To evaluate the basis on which data is collected.
+                                <br />
+                                To determine the level of security of its processing, transfer and storage.
+                                <br />
+                                Through this process you eliminate risk by removing any data that is not necessary to the system, and add in the security measures needed to protect the data that remains.<br />
+
+                            </p>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <asp:Label ID="lbl_pcq_info" runat="server" Text="As a company you are entrusted with protecting data for both your customers and your employees. Putting in place a proper privacy program ensures that you mitigate risk to customers, protect your company’s reputation, and drastically reduces fines. " />
+                            <br />
+                            <h3><b>FOUNDATION - PRIVACY BY DESIGN (PbD)</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data. 
+                                Starting with the foundation of the system or service, you'll need to draw or write out the flow of data including collection, transfer and access to the data. [Note: this system and services map is the first step in a Data Privacy Impact Assessment below]
+                                Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.
+                                 <br />
+                                <br />
+                            </p>
+
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <table>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>Your System and Service Map</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Whether you are assessing an existing system or designing a new one, you will need to create a system and/or service map. This can be done with drawings, flow charts or words. The map is an opportunity to evaluate where privacy is being considered and where it may be missed.
+                                <br />
+                                <br />
+                                <asp:Label ID="lbl_pe_1" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <br />
+                                The implementation of privacy by design principles will depend specifically on your product and/or service. The following design elements should be considered in order to improve your system.<br />
+                            </p>
 
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <asp:Image ID="img_pcq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lbl_pcq_score" runat="server" Text="" />
-                                    </td>
-                                </tr>
-
-                            </table>
                         </td>
-                        <td style="width: 100%; text-align: justify;">
-                            <div class="statemenRow">
-                                <div class="divBullet">
-                                    <asp:Label ID="bullet1" runat="server" Text="" />
-                                </div>
-                                <div class="divLabel">
-                                    <asp:Label ID="comment1" runat="server" Text="" />
-                                </div>
-                            </div>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_2" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_2" runat="server" Text="You have you pseudonymized your data in the design. This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information but can still be correlated together. This is valid for some regulations (others require full anonymization). This allows you to process data while keeping individuals protected." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_3" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_3" runat="server" Text="You have you anonymized your data in the design? This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information and can no longer be connected back to the personal data. This is valid for all regulations. This allows you to process and retain data while keeping individuals protected." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_4" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_4" runat="server" Text="The storage of your data is protected by encryption. This is not required but does lower the risk of breach significantly. The higher the level of sensitivity of the data, the more stringent the protection." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_5" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_5" runat="server" Text="The access to your data is limited to only those who require it. If all of your data is highly sensitive then access should be strict. If you have multiple data severities then you can separate your highly sensitive data from less sensitive data by access levels. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_6" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_6" runat="server" Text="The transfer of your data is protected by encryption. This is not required but does lower the risk of breach significantly. Data on transfer is particularly susceptible to man-in-the-middle attacks where it can be taken. The higher the level of sensitivity of the data, the more stringent the protection." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_7" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_7" runat="server" Text="You have a system or process to delete data from your system when no longer needed. You need to have a retention time on the data you maintain and that time should be justified with legal basis." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>DATA ASSESSMENT & CATEGORIZATION</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                Once the system map is complete and different transactions are identified, it is important to list the data involved at those touch points. This data will then be categorized, assessed for necessity, and documented.<br />
+                                <br />
+                                Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.
+                                <br />
+                                The data flow can be captured in a data map. The data itself can be captured in a speadsheet or a tool. This is referred to as the Data Use Info Sheet.
+[Note: the Data Map and Data Use Info Sheet are part of the Data Privacy Impact Assessment below]. 
+
+                            <br />
+                                <br />
+                                <asp:Label ID="lbl_pe_9" runat="server" Text="" />
+                                <br />
+                                It is important that you document all the PI and PII you collect. Having this documentation allows you to evaluate the risk of collecting/processing the data and determine if it is truly required. If you have legal basis to collect the data, ensure you understand the risk.
+
+                                <br />
+                                Below are best practices to optimize the safety of the data you are collecting.
+
+                                <br />
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_8" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_8" runat="server" Text="You are tracking your all your collected data in a data use info sheet (excel spreadsheet) or a data collection tool. Many regulations will require an audit trail of your data. The Data Use Info sheet or output from your tool should be included in your DPIA. On that sheet you should include the source of the data, the category and potentially the risk of harm." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_10" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_10" runat="server" Text="You have identified all of your collected data. Using your Data Map, you can show all of the data being collected by your company either directly or indirectly from an individual." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_11" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_11" runat="server" Text="You have you categorized all of your personal information, PI (data about an individual). PI may include identifiers that are not unique such as gender, religion, age, or city." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_12" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_12" runat="server" Text="You have you categorized all of your personally identifiable information, PII (data that when taken alone or in combination with other data identifies a specific individual. PII may include areas with unique identifiers such as email addresses, financial data, biometrics." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_13" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_13" runat="server" Text="You have assessed all of your PII for legal basis (business necessity) and removed any data collection that is not needed for your business. Extra data is useful for marketing but it there is not a need then you cannot collect anything beyond what has business purpose. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_14" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_14" runat="server" Text="You have assessed the RROSH (Real Risk of Significant Harm) for the potential breach of each piece of personal data. Certain categories, such as financial or medical data hold a higher risk. That said, you should evaluate your company’s data against the risk of your customers/clients based on their geographical or political region. Example: Religion may be low risk in some countries and high risk in others." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_15" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_15" runat="server" Text="You have you done this assessment for data pertaining to internal employees. The regulations also apply to employees of the company. Your company should have a record of what it is collecting and why." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_16" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_16" runat="server" Text="You have a process for employees to assess and add new PII to your internal systems. Given the risk of adding PII, your company should have a process to evaluate the legal basis for adding new data. The process should also include instructions on how to add new data to the Data Use Info Sheet or tool. You may also need to add in consent collection for this data. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>VENDOR MANAGEMENT</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services (such as cloud storage) for customers and clients. Some regulations require a vendor contract but it is a good idea to have one regardless of regulation.
+                                <br />
+                                <asp:Label ID="lbl_pe_22" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                Though pre-written templates are not required for regulation compliance, creating them in advance will save you time and resources as the requests come in. It will also ensure consistent communication from the company to individuals.<br />
+                                <br />
+                                <b>Review these items to ensure your Vendor Management Process meets the standards.
+                                </b>
+                                <br />
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_17" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_17" runat="server" Text="You have you categorized all of your personal information, PI (data about an individual). PI may include identifiers that are not unique such as gender, religion, age, or city." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_18" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_18" runat="server" Text="You have you categorized all of your personally identifiable information, PII (data that when taken alone or in combination with other data identifies a specific individual. PII may include areas with unique identifiers such as email addresses, financial data, biometrics." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_19" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_19" runat="server" Text="You have assessed all of your PII for legal basis (business necessity) and removed any data collection that is not needed for your business. Extra data is useful for marketing but it there is not a need then you cannot collect anything beyond what has business purpose. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_20" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_20" runat="server" Text="You have assessed the RROSH (Real Risk of Significant Harm) for the potential breach of each piece of personal data. Certain categories, such as financial or medical data hold a higher risk. That said, you should evaluate your company’s data against the risk of your customers/clients based on their geographical or political region. Example: Religion may be low risk in some countries and high risk in others." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_pe_21" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_pe_21" runat="server" Text="You have you done this assessment for data pertaining to internal employees. The regulations also apply to employees of the company. Your company should have a record of what it is collecting and why." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>DATA PRIVACY IMPACT ASSESSMENT</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.
+                                <br />
+                                Though pre-written templates are not required for regulation compliance, creating them in advance will save you time and resources as the requests come in. It will also ensure consistent communication from the company to individuals.
+                                <br />
+                                <br />
+                                The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.
+Of all the elements of compliance,<b> a thorough DPIA will take the most amount of time</b>. Authorities suggest reviewing the DPIA every 6 months. When done properly the first time, the review should have a minimal impact on resources going forward. A new DPIA should be done for every new system or service created if it involves PII.
+
+                                <br />
+                                <asp:Label ID="lbl_pe_23" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                Review the sections to ensure you have covered all required areas of the DPIA.
+                                The body of the assessment is broken in to six parts:<br />
+
+                                1.	System and/or Service Map
+                                <br />
+                                2.	Data List (including PI and PII)
+                                <br />
+                                3.	Notice and Consent
+                                <br />
+                                4.	Security and Data Access
+                                <br />
+                                5.	Retention and Deletion
+                                <br />
+                                6.	Further actions and Recommendations
+                                <br />
+
+                                It is also recommended you include an executive summary and a sign off page for executive stakeholders.
+                                <br />
+
+                                <br />
+                                The DPIA should be reviewed and re-signed every year. 
+                                <asp:Label ID="lbl_pe_24" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <hr size="1" width="90%" align="center" color="#000">
+                            <h3><b>Documentation and Links</b></h3>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Systems Map</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_sm_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Map</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_dm_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Privacy Impact Assessment</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_dpia_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>PII and Data Assessment process</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_pidap_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Use Info Sheet for Internal Tools</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_duisit_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Use Info Sheet for External Tools</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_duisEt_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Vendor Management Process</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_vmp_links" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
 
             <%--Data Control--%>
             <div class="boxshadow zoom" id="divDataControl" runat="server">
@@ -920,48 +1259,335 @@ Review the items below to ensure that you have covered all of your bases.
             </div>
 
             <%--Incident Management--%>
-            <%--<div class="boxshadow zoom" id="divIncidentManagement" runat="server">
+            <div class="boxshadow zoom" id="divIncidentManagement" runat="server">
                 <table>
                     <tr style="background-color: #0795d6;">
                         <th colspan="2" style="text-align: center;">
-                            <h3 style="color: white;">Data Control</h3>
+                            <h3 style="color: white; font-size: xx-large;">PRIVACY BREACH & INCIDENT RESPONSE  
+                            </h3>
+
                         </th>
+                    </tr>
+
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>SECTION GOAL: </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                To ensure that your company has an adequate incident response management plan in place before you experience an incident.
+                                <br />
+                                With privacy incidents, it is not IF you will be breached but WHEN.
+
+                            </p>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: justify; margin: 2px;" colspan="2">
-                            <asp:Label ID="lbl_dcq_info" runat="server" Text="Users have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. " />
+                            <br />
+                            <h3><b>DEFINING A PRIVACY BREACH</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                A breach of personal data is a finable offence by the respective Data Protection Authorities (DPA).
+                                <br />
+                                <br />
+                                The definition of a breach in all regulations lines up with how It is defined in GDPR as <i>“a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data transmitted, stored or otherwise processed”.</i>
+                                <br />
+                                If you use a third company party to process your data, then you are still ultimately responsible for the protection of said data. If the third-party company has been breached, they are obligated to send you a notification. You must now assess the breach as your own and then address accordingly with actions and notifications.
+                                <br />
+                                <asp:Label ID="lbl_im_6" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <b>You will need to be able to determine if your incident has crossed the threshold of being a breach. An incident may involve only internal discussion, but a breach requires external notification.</b>
+                                <br />
+                                All breaches are supposed to be logged by your company for audit purposes by the respective DPAs. 
+                                <br />
+                                <asp:Label ID="lbl_im_3" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <table>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>INCIDENT RESPONSE PROCESS</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and individuals informed. 
+                                <br />
+                                <br />
+                                The following is intended to guide you through the creation of your own custom incident response process for Data Privacy Breaches. The key here is not to be caught off guard. The faster you can step in, stop the incident, address it, and take charge, the better.
+                                <br />
+                                <br />
+                                Studies have shown that companies pay an average of $500K US in fees for NOT having a plan in place.
+                                <br />
+                                <asp:Label ID="lbl_im_1" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                <br />
+                                It is also imperative that you run your plan through in an activity called a tabletop exercise (like a fire alarm drill). This ensures everyone is prepared and knows what they doing.
+                                <br />
+                                <br />
+                                <asp:Label ID="lbl_im_2" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                                Testing should be done annually or when major stakeholders change.
+                                <br />
+                                <br />
+                                To optimize your plan, review the list below to ensure that your plan covers all the needed pieces.
+                                <br />
+                                <br />
+                            </p>
 
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <asp:Image ID="img_dcq" runat="server" ImageAlign="Middle" Style="width: 200px; border-radius: 50%;" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lbl_dcq_score" runat="server" Text="" />
-                                    </td>
-                                </tr>
-
-                            </table>
                         </td>
-                        <td style="width: 100%; text-align: justify;">
-                            <div class="statemenRow">
-                                <div class="divBullet">
-                                    <asp:Label ID="bullet5" runat="server" Text="" />
-                                </div>
-                                <div class="divLabel">
-                                    <asp:Label ID="comment5" runat="server" Text="" />
-                                </div>
-                            </div>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_4" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_4" runat="server" Text="You have the contact information for any vendors that process your customers or users data. If a breach has occurred within a system run by your vendors you need to be able to contact the right people to report the breach. This could be reported to you internally or by a customer." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_5" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_5" runat="server" Text="You have a process or method for individuals to report a suspected incident. This should be for external customers or internal employees. If an incident is a breach you want to ensure that information gets to stakeholders as quickly a possible to resolve the issue and to contain the spread of misinformation." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_7" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_7" runat="server" Text="You have identified the individual(s) who will be running the management plan. This is typically the Data Protection Officer but may have a different title. It is key that one person or team is charged with coordinating and executing the plan. They may delegate pieces but ultimately a central individual/team is accountable." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_8" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_8" runat="server" Text="You have back-up managers for the plan. In the event that your plan executer is unavailable, there should be ‘understudies’ that will take on their role." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_9" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_9" runat="server" Text="You have a list of all stakeholders that are required. This list can be quite extensive and could include executives, product developers, communications, IT department, legal etc." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_10" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_10" runat="server" Text="You printed the stakeholder list with contact information in hard copy, off your company systems. Ransomware and other popular cyber incidents lock down company systems. A copy of you plan should be kept off system. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_11" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_11" runat="server" Text="You have a phone bridge or meeting location (other than email) to discuss the incident that is open 24/7. Email can be easily forwarded to the wrong individuals (including externally) and can be used against a company if misunderstood. It is recommended that phone or in-person discussions take place until resolutions are made. A war-room meeting area is suggested." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_12" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_12" runat="server" Text="You have contacted any third-party cyber security company needed to manage insurance, forensics, audits etc. to be on retainer. If you do not have the resources in-house, it is key to have companies on retainer that can resolve issues from breach identification to insurance questions. The retainer must be done ahead of time and their contact information should be included in the plan." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_13" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_13" runat="server" Text="You have contacted any third part legal resources to manage be on retainer. If you do not have the resources in-house, it is key to have legal weigh in on the incident and severity of risk of harm. The retainer must be done ahead of time and their contact information should be included in the plan." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_14" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_14" runat="server" Text="All stakeholders know their roles. Each member of the incident team must know what is expected of them including the work that is expected, the communication they should provide, and other team members they should coordinate with." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_15" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_15" runat="server" Text="You have a communication strategy between stakeholder teams (updates, progress). This is often where plans break down and why they should be tested. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_16" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_16" runat="server" Text="All stakeholders have a way to contact one another outside work. Breaches frequently occur in off-work hours. All stakeholders should have a contact list and method to join conversations from outside the office. This is where phone bridges are handy. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_17" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_17" runat="server" Text="You have evaluated all of your PII to determine the Real Risk of Significant Harm (RROSH). The RROSH is used to determine the risk level of the breach, which dictates notification strategies. Adding the RROSH to your PII tracking (via Data Use Info Sheet or tool) helps generate a risk profile quickly." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_18" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_18" runat="server" Text="You developed a risk profile for your PII and data. Using the RROSH of your personal information, a risk profile of your systems can tell you immediately what risk the breach may pose thus determining your next steps for communication. Risk profiles can be developed for different groups of data such as login credentials vs financial data.  " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_19" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_19" runat="server" Text="You have a notification process and/or communications team lined up. Depending on the size of your customer base and criticality of your data, a process, an individual, or a team should be ready to produce and execute on all communications. " />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_20" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_20" runat="server" Text="You have a breach template to log the relevant information. Having a template with areas to fill in will allow you to organize your thoughts and ensure you have captured all the needed information from your stakeholders. When structured properly, this template can also be used to easily populate your notification templates. It should include what you know, what you have done, what individuals can do etc." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <br />
+                            <h3><b>SENDING NOTIFICATIONS</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000" />
+                            <p style="width: 90%; margin: 0 auto;">
+                                A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.<br />
+                                <br />
+                                Some information about your breach is mandatory to be shared and other information you may want to keep confidential. Since time is of the essence with privacy incidents, it is extremely helpful to have pre-prepared templates for your notifications. These templates can include all the static information, such as company contact information, plus spaces to fill in information specific to this incident. 
+                                <br />
+                                If it is not possible or unreasonable to send notifications to all of your users, you have the option to post a public statement. This can appear on your company’s website or as a statement to the press. 
+                            <br />
+                                Though<b> breach notifications are part of all regulations</b>, these templates are not. This said, it is shown that having these guidelines prepared in advance saves a great deal of time and money.
+                                <br />
+
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_21" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_21" runat="server" Text="You have a template for notifications to your relevant data protection authority. The template should include spaces for all of the mandatory information." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_22" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_22" runat="server" Text="You have a template for notifications to any business that uses your product or services. If other companies use your product and/or service, then you are obligated to let them know about your breach so that they can inform customers if necessary." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_23" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_23" runat="server" Text="You have a template for notifications to your users or customers. The template should include spaces for all of the mandatory information." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_24" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_24" runat="server" Text="You have a process or method to automatically contact large numbers of users or customers. There are tools that can do this for you, or you can automate a technical product to do this. Consider that methods such as telephone or postal mail are practical with small numbers only." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px; width: 10%; text-align: center; vertical-align: middle;">
+                            <asp:Image ID="img_im_25" runat="server" Width="30px" Height="30px" />
+                        </td>
+                        <td style="text-align: justify; margin: 2px;">
+                            <asp:Label ID="lbl_im_25" runat="server" Text="You have a method to post a public statement that would reach all customers. In the event that you cannot individually contact users or customers, you should have a webpage set up or a press contact to be able to publish a public statement." />
+                        </td>
+                    </tr>
+                   
+                    <tr>
+
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <hr size="1" width="90%" align="center" color="#000">
+                            <h3><b>Documents and Links</b></h3>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Privacy Breach Log</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_im_pbl" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Incident Response Plan</b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_im_irp" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Data Protection Authority Notification Template </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_dpant" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>Internal Notification Template </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_im_int" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: justify; margin: 2px;" colspan="2">
+                            <h3><b>External Notification Template </b></h3>
+                            <hr size="1" width="40%" align="center" color="#000">
+                            <p style="width: 90%; margin: 0 auto;">
+                                <asp:Label ID="lbl_im_ent" runat="server" Text="" Font-Bold="true" />
+                                <br />
+                            </p>
                         </td>
                     </tr>
                 </table>
-            </div>--%>
+            </div>
 
             <%--Employee Training--%>
             <div class="boxshadow zoom" id="divEmployeeTraining" runat="server">
