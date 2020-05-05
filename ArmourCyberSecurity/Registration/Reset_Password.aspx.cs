@@ -17,21 +17,21 @@ namespace ArmourCyberSecurity.Registration
         
         protected void ResetClick(object sender, EventArgs e)
         {
-            //MAJOR SECURITY ISSUE IN HERE NEEDS TO BE FIXED, DONT PROMPT FOR EMAIL AT ALL, GRAB EMAIL FORM DB BASED ON ACTIVATION CODE
-            string email = txtEmail.Text.Trim().ToString();
             if (bool.TryParse(Session["valid"].ToString(), out bool valid))
             {
                 if (valid)
                 {
+                    string userID = Session["userID"].ToString();
+                    //string fpcode = Session["fpcode"].ToString();
                     HashSalt hashSalt = GenerateSaltedHash(16, txtPassword.Text.Trim().ToString());
                     using (SqlConnection con = new SqlConnection(connetionString))
                     {
                         using (SqlDataAdapter sda = new SqlDataAdapter())
                         {
-                            using (SqlCommand update = new SqlCommand("UPDATE Users SET Password = @Password, Salt = @Salt WHERE email = @Email"))
+                            using (SqlCommand update = new SqlCommand("UPDATE Users SET Password = @Password, Salt = @Salt WHERE userId = @userId"))
                             {
                                 update.CommandType = CommandType.Text;
-                                update.Parameters.AddWithValue("@Email", email);
+                                update.Parameters.AddWithValue("@userId", userID);
                                 update.Parameters.AddWithValue("@Password", hashSalt.Hash);
                                 update.Parameters.AddWithValue("@Salt", hashSalt.Salt);
                                 update.Connection = con;
@@ -45,7 +45,7 @@ namespace ArmourCyberSecurity.Registration
                                 }
                                 else
                                 {
-                                    FailureText.Text = "Email not found.";
+                                    FailureText.Text = "User not found.";
                                 }
 
                             }
@@ -66,8 +66,27 @@ namespace ArmourCyberSecurity.Registration
             if (!this.IsPostBack)
             {
                 string forgot_password_code = !string.IsNullOrEmpty(Request.QueryString["ForgotPasswordCode"]) ? Request.QueryString["ForgotPasswordCode"] : Guid.Empty.ToString();
+                Session["fpcode"] = forgot_password_code;
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
+                    using (SqlCommand command = new SqlCommand("SELECT userId FROM ForgotPassword WHERE ForgotPasswordCode = @fpcode"))
+                    {
+                        command.Parameters.AddWithValue("@fpcode", forgot_password_code);
+                        command.Connection = con;
+                        con.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            string userID = reader["userId"].ToString();
+                            Session["userID"] = userID;
+                        }
+                        else
+                        {
+                            //FPCode is not found in database.
+                            FailureText.Text = "Invalid email link.";
+                        }
+                        con.Close();
+                    }
                     using (SqlCommand cmd = new SqlCommand("DELETE FROM ForgotPassword WHERE ForgotPasswordCode = @ForgotPasswordCode"))
                     {
                         using (SqlDataAdapter sda = new SqlDataAdapter())
@@ -87,7 +106,7 @@ namespace ArmourCyberSecurity.Registration
                             }
                             else
                             {
-                                FailureText.Text = "Invalid Activation code.";
+                                FailureText.Text = "Invalid ForgotPassword code.";
                             }
                         }
                     }

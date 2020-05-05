@@ -688,15 +688,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns21;
         
         /// <summary>
-        /// btn_part3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_part3;
-        
-        /// <summary>
         /// lblQues22 control.
         /// </summary>
         /// <remarks>
@@ -740,6 +731,15 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Links_22;
+        
+        /// <summary>
+        /// btn_part3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_part3;
         
         /// <summary>
         /// lblQues23 control.

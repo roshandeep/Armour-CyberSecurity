@@ -356,14 +356,7 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
 
-            <asp:Button ID="btn_part3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
-        </div>
-        <div id='sec4Div'>
-            <h2>Privacy Impact Assessment</h2>
-            <h4>All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.<br>
-                The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.
-            </h4>
-
+            
             <asp:Label ID="lblQues22" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns22" onChange="EnableTextArea()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
@@ -374,6 +367,15 @@ Both the adherence to Privacy by Design and the completed Privacy Impact Assessm
             <asp:TextBox ID="txt_Links_22" TextMode="multiline" Columns="50" Rows="5" runat="server" />
 
             <br />
+
+            <asp:Button ID="btn_part3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+        </div>
+        <div id='sec4Div'>
+            <h2>Privacy Impact Assessment</h2>
+            <h4>All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.<br>
+                The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.
+            </h4>
+
 
             <asp:Label ID="lblQues23" runat="server" Text="" />
             <asp:DropDownList runat="server" ID="ddlAns23" onChange="EnableTextArea()">
