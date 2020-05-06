@@ -79,7 +79,7 @@ namespace ArmourCyberSecurity
                         break;
                     default:
                         message = "Registration successful.\\nAn activation email has been sent.";
-                        //SendActivationEmail(userId);
+                        SendActivationEmail(userId);
                         // Add user in RDSS user table
                         if (exsists > 0)
                         {

@@ -127,19 +127,19 @@ namespace ArmourCyberSecurity
                         var img = (System.Web.UI.WebControls.Image)FindControl("img_" + row["sec_ref_id"].ToString());
                         if (row["ans_Text"].ToString() == "YES")
                         {
-                            img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                            img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                             et_text.Add("GREEN");
                         }
                         else
                         if (row["ans_Text"].ToString() == "SOMEWHAT")
                         {
-                            img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                            img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                             et_text.Add("YELLOW");
                         }
                         else
                         if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                         {
-                            img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                            img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                             et_text.Add("RED");
                         }
 
@@ -224,7 +224,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -241,11 +241,8 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                       cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -332,7 +329,7 @@ namespace ArmourCyberSecurity
                         Image img_dot;
                         if (et_text[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -340,7 +337,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -348,7 +345,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -361,8 +358,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_1.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_1.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_1.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_1.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -373,7 +371,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -381,7 +379,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -389,7 +387,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -402,8 +400,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_2.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -413,7 +412,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -421,7 +420,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -429,7 +428,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -442,8 +441,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_3.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_3.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -453,7 +453,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -461,7 +461,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -469,7 +469,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -482,8 +482,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_4.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -493,7 +494,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -501,7 +502,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -509,7 +510,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -522,8 +523,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_5.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -533,7 +535,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -541,7 +543,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -549,7 +551,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -562,8 +564,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_6.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_6.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -573,7 +576,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[6] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -581,7 +584,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[6] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -589,7 +592,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[6] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -602,8 +605,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_7.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -629,7 +633,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -644,10 +648,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -673,7 +674,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[7] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -681,7 +682,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[7] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -689,7 +690,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[7] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -702,8 +703,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_8.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -714,7 +716,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[8] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -722,7 +724,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[8] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -730,7 +732,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[8] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -743,7 +745,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_9.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_9.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -754,7 +758,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[9] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -762,7 +766,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[9] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -770,7 +774,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[9] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -783,8 +787,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_10.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -794,7 +799,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[10] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -802,7 +807,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[10] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -810,7 +815,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[10] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -823,8 +828,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_11.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -834,7 +840,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[11] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -842,7 +848,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[11] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -850,7 +856,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[11] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -863,8 +869,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk(getLeftString(lbl_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_12.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
                         cell.Border = PdfPCell.BOX;
@@ -874,7 +881,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[12] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -882,7 +889,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[12] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -890,7 +897,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[12] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -903,7 +910,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_13.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -914,7 +923,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[13] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -922,7 +931,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[13] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -930,7 +939,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[13] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -943,7 +952,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_14.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -954,7 +965,7 @@ namespace ArmourCyberSecurity
 
                         if (et_text[14] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -962,7 +973,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[14] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -970,7 +981,7 @@ namespace ArmourCyberSecurity
                         else
                         if (et_text[14] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -983,7 +994,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_15.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK))); cell = new PdfPCell(phrase);
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1008,6 +1021,74 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Privacy and Compliance Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_pct.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -1046,7 +1127,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap EMPLOYEE TRAINING.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -1087,19 +1168,19 @@ namespace ArmourCyberSecurity
                                     var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
                                     if (row["ans_Text"].ToString() == "YES")
                                     {
-                                        img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                        img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                         im_4_20.Add("GREEN");
                                     }
                                     else
                                     if (row["ans_Text"].ToString() == "SOMEWHAT")
                                     {
-                                        img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                        img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                         im_4_20.Add("YELLOW");
                                     }
                                     else
                                     if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                     {
-                                        img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                        img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                         im_4_20.Add("RED");
                                     }
                                 }
@@ -1113,19 +1194,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     im_21_25.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     im_21_25.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     im_21_25.Add("RED");
                                 }
                             }
@@ -1289,7 +1370,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -1306,10 +1387,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -1408,7 +1486,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -1423,10 +1501,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -1452,7 +1527,7 @@ namespace ArmourCyberSecurity
                         Image img_dot;
                         if (im_4_20[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1460,7 +1535,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1468,7 +1543,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1481,7 +1556,10 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_4.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1493,7 +1571,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1501,7 +1579,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1509,7 +1587,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1522,7 +1600,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_5.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1533,7 +1613,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1541,7 +1621,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1549,7 +1629,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1562,7 +1642,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_7.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1573,7 +1655,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1581,7 +1663,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1589,7 +1671,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1602,7 +1684,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_8.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1613,7 +1697,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1621,7 +1705,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1629,7 +1713,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1642,7 +1726,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_9.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_9.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1653,7 +1739,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1661,7 +1747,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1669,7 +1755,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1682,7 +1768,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_10.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1693,7 +1781,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[6] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1701,7 +1789,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[6] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1709,7 +1797,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[6] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1722,7 +1810,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_11.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1733,7 +1823,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[7] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1741,7 +1831,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[7] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1749,7 +1839,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[7] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1762,7 +1852,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_12.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1774,7 +1866,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[8] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1782,7 +1874,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[8] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1790,7 +1882,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[8] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1803,7 +1895,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_13.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1814,7 +1908,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[9] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1822,7 +1916,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[9] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1830,7 +1924,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[9] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1843,7 +1937,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_14.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1871,7 +1967,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -1886,10 +1982,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -1916,7 +2009,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[10] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1924,7 +2017,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[10] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1932,7 +2025,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[10] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1945,7 +2038,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_15.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1956,7 +2051,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[11] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1964,7 +2059,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[11] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1972,7 +2067,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[11] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1985,7 +2080,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_16.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_16.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -1996,7 +2093,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[12] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2004,7 +2101,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[12] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2012,7 +2109,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[12] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2025,7 +2122,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_17.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_17.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2036,7 +2135,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[13] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2044,7 +2143,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[13] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2052,7 +2151,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[13] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2065,7 +2164,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_18.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_18.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2076,7 +2177,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[14] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2084,7 +2185,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[14] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2092,7 +2193,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[14] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2105,7 +2206,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_19.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_19.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2116,7 +2219,7 @@ namespace ArmourCyberSecurity
 
                         if (im_4_20[15] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2124,7 +2227,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[15] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2132,7 +2235,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_4_20[15] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2145,7 +2248,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_20.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_20.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_20.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_20.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2194,7 +2299,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -2209,10 +2314,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -2237,7 +2339,7 @@ namespace ArmourCyberSecurity
 
                         if (im_21_25[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2245,7 +2347,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2253,7 +2355,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2266,7 +2368,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_21.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_21.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_21.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_21.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2277,7 +2381,7 @@ namespace ArmourCyberSecurity
 
                         if (im_21_25[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2285,7 +2389,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2293,7 +2397,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2306,7 +2410,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_22.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_22.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_22.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_22.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2317,7 +2423,7 @@ namespace ArmourCyberSecurity
 
                         if (im_21_25[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2325,7 +2431,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2333,7 +2439,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2346,7 +2452,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_23.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_23.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_23.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_23.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2357,7 +2465,7 @@ namespace ArmourCyberSecurity
 
                         if (im_21_25[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2365,7 +2473,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2373,7 +2481,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2386,7 +2494,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_24.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_24.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_24.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_24.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2397,7 +2507,7 @@ namespace ArmourCyberSecurity
 
                         if (im_21_25[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2405,7 +2515,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2413,7 +2523,7 @@ namespace ArmourCyberSecurity
                         else
                         if (im_21_25[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2426,7 +2536,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_im_25.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_im_25.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_im_25.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_im_25.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2486,7 +2598,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -2501,10 +2613,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -2562,6 +2671,20 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
                         pdfDoc.Add(table);
 
 
@@ -2594,7 +2717,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap INCIDENT MANAGEMENT.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -2632,19 +2755,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_c_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     con_1_12.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     con_1_12.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     con_1_12.Add("RED");
                                 }
                             }
@@ -2656,19 +2779,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_c_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     con_14_19.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     con_14_19.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     con_14_19.Add("RED");
                                 }
                             }
@@ -2768,7 +2891,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -2785,10 +2908,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -2866,7 +2986,7 @@ namespace ArmourCyberSecurity
                         Image img_dot;
                         if (con_1_12[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2874,7 +2994,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2882,7 +3002,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2895,7 +3015,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_1.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_1.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_1.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_1.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2907,7 +3029,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2915,7 +3037,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2923,7 +3045,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2936,7 +3058,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_2.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2947,7 +3071,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2955,7 +3079,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2963,7 +3087,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2976,7 +3100,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_3.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_3.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -2987,7 +3113,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2995,7 +3121,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3003,7 +3129,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3016,7 +3142,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_4.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3027,7 +3155,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3035,7 +3163,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3043,7 +3171,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3056,7 +3184,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_5.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3067,7 +3197,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3075,7 +3205,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3083,7 +3213,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3096,7 +3226,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_6.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_6.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3124,7 +3256,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -3139,10 +3271,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -3168,7 +3297,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[6] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3176,7 +3305,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[6] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3184,7 +3313,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[6] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3197,7 +3326,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_7.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3209,7 +3340,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[7] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3217,7 +3348,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[7] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3225,7 +3356,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[7] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3238,7 +3369,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_8.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3249,7 +3382,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[8] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3257,7 +3390,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[8] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3265,7 +3398,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[8] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3278,7 +3411,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_9.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_9.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3289,7 +3424,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[9] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3297,7 +3432,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[9] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3305,7 +3440,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[9] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3318,7 +3453,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_10.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3329,7 +3466,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[10] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3337,7 +3474,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[10] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3345,7 +3482,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[10] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3358,7 +3495,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_11.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3369,7 +3508,7 @@ namespace ArmourCyberSecurity
 
                         if (con_1_12[11] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3377,7 +3516,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[11] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3385,7 +3524,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_1_12[11] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3398,7 +3537,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_12.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3451,7 +3592,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -3466,10 +3607,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -3495,7 +3633,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3503,7 +3641,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3511,7 +3649,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3524,7 +3662,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_14.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3536,7 +3676,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3544,7 +3684,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3552,7 +3692,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3565,7 +3705,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_15.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3576,7 +3718,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3584,7 +3726,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3592,7 +3734,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3605,7 +3747,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_16.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_16.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3616,7 +3760,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3624,7 +3768,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3632,7 +3776,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3645,7 +3789,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_17.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_17.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3656,7 +3802,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3664,7 +3810,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3672,7 +3818,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3685,7 +3831,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_18.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_18.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3696,7 +3844,7 @@ namespace ArmourCyberSecurity
 
                         if (con_14_19[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3704,7 +3852,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3712,7 +3860,7 @@ namespace ArmourCyberSecurity
                         else
                         if (con_14_19[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3725,7 +3873,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_c_19.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_c_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_c_19.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_c_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -3772,6 +3922,75 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         pdfDoc.Add(table);
+
+                        /* ########################################FOURTH PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
                         /* ===========================================================================================
                          * CONSENT
                          * ===========================================================================================
@@ -3801,7 +4020,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap CONSENT.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -3932,19 +4151,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_2 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_2 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_2 = "RED";
                             }
                         }
@@ -3954,19 +4173,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_3 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_3 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_3 = "RED";
                             }
                         }
@@ -3976,19 +4195,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_4 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_4 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_4 = "RED";
                             }
                         }
@@ -3998,19 +4217,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_5 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_5 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_5 = "RED";
                             }
                         }
@@ -4020,19 +4239,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_6 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_6 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_6 = "RED";
                             }
                         }
@@ -4042,19 +4261,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_9 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_9 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_9 = "RED";
                             }
                         }
@@ -4064,19 +4283,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_11 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_11 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_11 = "RED";
                             }
                         }
@@ -4086,19 +4305,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_12 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_12 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_12 = "RED";
                             }
                         }
@@ -4108,19 +4327,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_13 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_13 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_13 = "RED";
                             }
                         }
@@ -4130,19 +4349,19 @@ namespace ArmourCyberSecurity
                             var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                 dc_text_14 = "GREEN";
                             }
                             else
                             if (row["ans_Text"].ToString() == "SOMEWHAT")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                 dc_text_14 = "YELLOW";
                             }
                             else
                             if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                             {
-                                img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_14 = "RED";
                             }
                         }
@@ -4192,7 +4411,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -4209,10 +4428,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -4292,7 +4508,7 @@ namespace ArmourCyberSecurity
                         Image img_dot;
                         if (dc_text_2 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4300,7 +4516,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_2 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4308,7 +4524,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_2 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4321,7 +4537,10 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_2.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4333,7 +4552,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_3 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4341,7 +4560,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_3 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4349,7 +4568,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_3 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4362,7 +4581,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_3.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_3.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4373,7 +4594,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_4 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4381,7 +4602,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_3 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4389,7 +4610,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_3 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4402,7 +4623,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_4.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4413,7 +4636,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_5 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4421,7 +4644,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_5 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4429,7 +4652,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_5 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4442,7 +4665,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_5.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4485,10 +4710,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -4513,7 +4735,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_6 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4521,7 +4743,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_6 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4529,7 +4751,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_6 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4542,7 +4764,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_6.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_6.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4587,7 +4811,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_9 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4595,7 +4819,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_9 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4603,7 +4827,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_9 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4616,7 +4840,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_9.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_9.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_9.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4628,7 +4854,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_11 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4636,7 +4862,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_11 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4644,7 +4870,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_11 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4657,7 +4883,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_11.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4668,7 +4896,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_12 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4676,7 +4904,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_12 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4684,7 +4912,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_12 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4697,7 +4925,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_12.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4708,7 +4938,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_13 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4716,7 +4946,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_13 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4724,7 +4954,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_13 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4737,7 +4967,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_13.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4748,7 +4980,7 @@ namespace ArmourCyberSecurity
 
                         if (dc_text_14 == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4756,7 +4988,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_14 == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4764,7 +4996,7 @@ namespace ArmourCyberSecurity
                         else
                         if (dc_text_14 == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4777,7 +5009,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_dc_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_dc_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_dc_14.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_dc_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -4821,10 +5055,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -4908,7 +5139,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -4923,10 +5154,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -4948,12 +5176,27 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
+                        phrase = new Phrase();
                         phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data Request Scripts and Communications\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_drsc.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -4993,7 +5236,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap DATA CONTROL.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -5050,19 +5293,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     pe_2_8.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     pe_2_8.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_2_8.Add("RED");
                                 }
                             }
@@ -5094,19 +5337,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     pe_10_16.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     pe_10_16.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_10_16.Add("RED");
                                 }
                             }
@@ -5119,19 +5362,19 @@ namespace ArmourCyberSecurity
                                 var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/greenDot.png");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
                                     pe_17_21.Add("GREEN");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "SOMEWHAT")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/yellowDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/YellowExclamation.png");
                                     pe_17_21.Add("YELLOW");
                                 }
                                 else
                                 if (row["ans_Text"].ToString() == "NO" || row["ans_Text"].ToString() == "UNSURE")
                                 {
-                                    img.ImageUrl = Page.ResolveUrl("~/images/redDot.PNG");
+                                    img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_17_21.Add("RED");
                                 }
                             }
@@ -5285,7 +5528,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -5302,10 +5545,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -5399,7 +5639,7 @@ namespace ArmourCyberSecurity
                         Image img_dot;
                         if (pe_2_8[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5407,7 +5647,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5415,7 +5655,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5428,7 +5668,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_2.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5456,7 +5698,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -5471,10 +5713,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -5499,7 +5738,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5507,7 +5746,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5515,7 +5754,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5528,7 +5767,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_3.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_3.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_3.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5539,7 +5780,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5547,7 +5788,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5555,7 +5796,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5568,7 +5809,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_4.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_4.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_4.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5579,7 +5822,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5587,7 +5830,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5595,7 +5838,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5608,7 +5851,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_5.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_5.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_5.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5619,7 +5864,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5627,7 +5872,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5635,7 +5880,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5648,7 +5893,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_6.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_6.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_6.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5659,7 +5906,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5667,7 +5914,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5675,7 +5922,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5688,7 +5935,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_7.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_7.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_7.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5699,7 +5948,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_2_8[6] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5707,7 +5956,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[6] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5715,7 +5964,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_2_8[6] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5728,7 +5977,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_8.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_8.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_8.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5783,7 +6034,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -5798,10 +6049,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -5826,7 +6074,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5834,7 +6082,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5842,7 +6090,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5855,7 +6103,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_10.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_10.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_10.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5866,7 +6116,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5874,7 +6124,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5882,7 +6132,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5895,7 +6145,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_11.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_11.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_11.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5906,7 +6158,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5914,7 +6166,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5922,7 +6174,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5935,7 +6187,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_12.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_12.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_12.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5946,7 +6200,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5954,7 +6208,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5962,7 +6216,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5975,7 +6229,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_13.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_13.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_13.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -5986,7 +6242,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5994,7 +6250,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6002,7 +6258,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6015,7 +6271,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_14.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_14.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_14.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6026,7 +6284,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[5] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6034,7 +6292,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[5] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6042,7 +6300,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[5] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6055,7 +6313,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_15.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_15.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_15.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6066,7 +6326,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_10_16[6] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6074,7 +6334,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[6] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6082,7 +6342,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_10_16[6] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6095,7 +6355,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_16.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_16.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_16.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6144,7 +6406,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -6159,10 +6421,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -6187,7 +6446,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_17_21[0] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6195,7 +6454,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[0] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6203,7 +6462,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[0] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6216,7 +6475,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_17.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_17.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_17.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6227,7 +6488,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_17_21[1] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6235,7 +6496,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[1] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6243,7 +6504,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[1] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6256,7 +6517,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_18.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_18.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_18.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6267,7 +6530,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_17_21[2] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6275,7 +6538,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[2] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6283,7 +6546,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[2] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6296,7 +6559,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_19.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_19.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_19.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6307,7 +6572,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_17_21[3] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6315,7 +6580,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[3] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6323,7 +6588,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[3] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6336,7 +6601,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_20.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_20.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_20.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_20.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6347,7 +6614,7 @@ namespace ArmourCyberSecurity
 
                         if (pe_17_21[4] == "GREEN")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/greenDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6355,7 +6622,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[4] == "YELLOW")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/yellowDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6363,7 +6630,7 @@ namespace ArmourCyberSecurity
                         else
                         if (pe_17_21[4] == "RED")
                         {
-                            img_dot = Image.GetInstance(imagepath + "/redDot.png");
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6376,7 +6643,9 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(lbl_pe_21.Text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_21.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_21.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_21.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6434,7 +6703,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -6449,11 +6718,8 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                       cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
                         cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
@@ -6490,7 +6756,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Documentation and Links\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Systems Map\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_sm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_sm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6502,7 +6768,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Map\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_dm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dm_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6515,7 +6781,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Privacy Impact Assessment\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_dpia_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_dpia_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6527,7 +6793,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("PII and Data Assessment process\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pidap_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pidap_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6539,7 +6805,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Use Info Sheet for Internal Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_duisit_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_duisit_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6567,7 +6833,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -6582,10 +6848,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -6611,7 +6874,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Use Info Sheet for External Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_duisEt_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_duisEt_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6623,7 +6886,21 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Vendor Management Process\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_vmp_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 14, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_vmp_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6663,7 +6940,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap PRIVACY ENGINEERING.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -6728,31 +7005,39 @@ namespace ArmourCyberSecurity
                             notsure = lbl_notsure.Text;
                         }
 
-                        if (row["question_id"].ToString() == "13" && row["ans_Text"].ToString() == "YES")
+                        if (row["question_id"].ToString() == "13")
                         {
-                            FillDPODetails(userId);
-                            lbl_DPO.Text = "You indicated you do have a DPO or someone covering this role.";
-                            dpo_exsists = lbl_DPO.Text;
-                            dpo_flag = 1;
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                FillDPODetails(userId);
+                                lbl_DPO.Text = "You indicated you do have a DPO or someone covering this role.";
+                                dpo_exsists = lbl_DPO.Text;
+                                dpo_flag = 1;
+                            }
+                            else
+                            {
+                                lbl_DPO.Text = "You indicated you do not have someone covering this role.You should appoint someone in your company to take on this duty.";
+                                dpo_exsists = lbl_DPO.Text;
+                            }
                         }
-                        else
-                        {
-                            lbl_DPO.Text = "You indicated you do not have someone covering this role.You should appoint someone in your company to take on this duty.";
-                            dpo_exsists = lbl_DPO.Text;
-                        }
+                        
 
-                        if (row["question_id"].ToString() == "14" && row["ans_Text"].ToString() == "YES")
+                        if (row["question_id"].ToString() == "14")
                         {
-                            FillDPADetails(userId);
-                            lbl_DPA.Text = "You indicated on your assessment that you have this list. Make sure you review this list of all Data Protection Authorities you have.";
-                            dpa_list = lbl_DPA.Text;
-                            dpa_flag = 1;
+                            if (row["ans_Text"].ToString() == "YES")
+                            {
+                                FillDPADetails(userId);
+                                lbl_DPA.Text = "You indicated on your assessment that you have this list. Make sure you review this list of all Data Protection Authorities you have. Make a list of all Data Protection Authorities you may require. Include contact names, URLs, and addresses where needed.";
+                                dpa_list = lbl_DPA.Text;
+                                dpa_flag = 1;
+                            }
+                            else
+                            {
+                                lbl_DPA.Text = "You indicated on your assessment that you do not have this list. Make a list of all Data Protection Authorities you may require. Include contact names, URLs, and addresses where needed.";
+                                dpa_list = lbl_DPA.Text;
+                            }
                         }
-                        else
-                        {
-                            lbl_DPA.Text = "You indicated on your assessment that you do not have this list. Make a list of all Data Protection Authorities you may require. Include contact names, URLs, and addresses where needed.";
-                            dpa_list = lbl_DPA.Text;
-                        }
+                        
                     }
 
                 }
@@ -6762,55 +7047,55 @@ namespace ArmourCyberSecurity
 
             if (regions.Contains("Canada"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Canada, PIPEDA (Personal Information Protection and Electronic Documents Act)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Canada, PIPEDA (Personal Information Protection and Electronic Documents Act)" + "<br />";
             }
             if (regions.Contains("Europe"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Europe, GDPR (General Data Protection Regulation)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Europe, GDPR (General Data Protection Regulation)" + "<br />";
             }
             if (regions.Contains("California"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "California, CCPA (California Consumer Privacy Act)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 California, CCPA (California Consumer Privacy Act)" + "<br />";
             }
             if (regions.Contains("Brazil"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Brazil, LGPD (Lei Geral de Proteção de Dados - Brazilian General Data Protection Law)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Brazil, LGPD (Lei Geral de Proteção de Dados - Brazilian General Data Protection Law)" + "<br />";
             }
             if (regions.Contains("Mexico"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Mexico, LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares - Federal Law on the Protection of Personal Data)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Mexico, LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares - Federal Law on the Protection of Personal Data)" + "<br />";
             }
             if (regions.Contains("Argentina"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Argentina, PDPL (Personal Data Protection Law)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Argentina, PDPL (Personal Data Protection Law)" + "<br />";
             }
             if (regions.Contains("New Zealand"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "New Zealand, NZ Privacy Act" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 New Zealand, NZ Privacy Act" + "<br />";
             }
             if (regions.Contains("Australia"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Australia, Privacy Act" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Australia, Privacy Act" + "<br />";
             }
             if (regions.Contains("India"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "India, PDPB (Personal Data Privacy Bill)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 India, PDPB (Personal Data Privacy Bill)" + "<br />";
             }
             if (regions.Contains("Singapore"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Singapore, PDPA (Personal Data Privacy Act)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Singapore, PDPA (Personal Data Privacy Act)" + "<br />";
             }
             if (regions.Contains("Philippines"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Philippines, PDPA (Personal Data Privacy Act)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Philippines, PDPA (Personal Data Privacy Act)" + "<br />";
             }
             if (regions.Contains("Japan"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Japan, APPI (Act on the Protection of Personal Information)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Japan, APPI (Act on the Protection of Personal Information)" + "<br />";
             }
             if (regions.Contains("Hong Kong"))
             {
-                lbl_legislation_list.Text = lbl_legislation_list.Text + "Hong Kong, PDPO ( Personal Data Privacy Ordinance)" + "<br />";
+                lbl_legislation_list.Text = lbl_legislation_list.Text + "\u2022 Hong Kong, PDPO ( Personal Data Privacy Ordinance)" + "<br />";
             }
 
             legislation_text = lbl_legislation_list.Text.Trim().Replace("<br />", "\n");
@@ -6875,7 +7160,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -6892,10 +7177,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -6955,13 +7237,13 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("REGULATIONS \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Regulations vary by geographical region. Additionally, some apply to the location of the company and others to the location of the individual. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("For example, GDPR applies:\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("If the company is in the EU\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("If the company does business with some subjects in the EU\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("If the company is in a country that also follows GDPR (ex Brazil)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("If the data subject is 'in the union'. This is intentionally vague and could cover either residents by address or citizens so long as some action takes place in the EU.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nFor example, GDPR applies:\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 If the company is in the EU\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 If the company does business with some subjects in the EU\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 If the company is in a country that also follows GDPR (ex Brazil)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 If the data subject is 'in the union'. This is intentionally vague and could cover either residents by address or citizens so long as some action takes place in the EU.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("According to your input, your company falls under the following legislations:\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(legislation_text, FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(legislation_text, FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6986,7 +7268,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -7001,10 +7283,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -7031,20 +7310,20 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Each regulation carries its own standards and penalties. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         if (Session["rsq_status"].ToString() == "LOW")
                         {
-                            phrase.Add(new Chunk("According to your assessment responses, you are not fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                            phrase.Add(new Chunk("\nAccording to your assessment responses, you are not fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         }
                         else
                         if (Session["rsq_status"].ToString() == "MEDIUM")
                         {
-                            phrase.Add(new Chunk("According to your assessment responses, you are not fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                            phrase.Add(new Chunk("\nAccording to your assessment responses, you are not fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         }
                         else
                         if (Session["rsq_status"].ToString() == "HIGH")
                         {
-                            phrase.Add(new Chunk("According to your assessment responses, you are fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                            phrase.Add(new Chunk("\nAccording to your assessment responses, you are fully aware of these rules and fines. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         }
 
-                        phrase.Add(new Chunk("Having an understanding of the regulations you fall under protect your data and prevent your company from the high cost of possible fines. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nHaving an understanding of the regulations you fall under protect your data and prevent your company from the high cost of possible fines. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -7080,10 +7359,10 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("DPO – Data Protection Officer\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("The most common name for the employee responsible for privacy of data is the Data Privacy Officer. This is the term used in GDPR. Other roles that may include this responsibility are CPO (Chief Privacy Officer) or CISO (Chief Information Security Officer). GDPR covers this role in Article 39, PIPEDA covers it within the principle of Accountability.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\nThe responsibilities of the DPO include:\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Monitoring for and ensuring legal regulation compliance\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Overseeing and updating DPIAs (Data Protection Impact Assessments)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Acting as primary contact for external companies and regulatory bodies \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Ensuring internal policies and processes are in place, and providing training to staff \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Monitoring for and ensuring legal regulation compliance\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Overseeing and updating DPIAs (Data Protection Impact Assessments)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Acting as primary contact for external companies and regulatory bodies \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Ensuring internal policies and processes are in place, and providing training to staff \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(dpo_exsists + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Ensure that the person acting as DPO fulfils all the prescribed responsibilities.\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
@@ -7126,7 +7405,7 @@ namespace ArmourCyberSecurity
                         table = new PdfPTable(2);
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         //Armor Logo
@@ -7141,10 +7420,7 @@ namespace ArmourCyberSecurity
 
                         //Armor Address
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Privacy Compliance Group\n", FontFactory.GetFont("Arial", 18, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("77 Bloor St West,\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Suite 600, Toronto\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("ON M5S 1M2", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
                         cell = new PdfPCell(phrase);
                         cell.SetLeading(3, 1);
                         cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
@@ -7222,6 +7498,20 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("For more information please visit ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" www.PrivacyCompliance.Solutions" + "\n", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        phrase.Add(new Chunk("\nFor any questions or further assistance with privacy compliance, do not hesitate to reach out at ", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("privacy@armourcyber.ca", FontFactory.GetFont("Arial", 12, Font.UNDERLINE, new BaseColor(0, 0, 238))));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
                         pdfDoc.Add(table);
 
                         /* ===========================================================================================
@@ -7252,7 +7542,7 @@ namespace ArmourCyberSecurity
                         MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
-                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "CyberRiskAssessmentReport.pdf"));
+                        mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap GLOBAL REGULATIONS.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
@@ -7300,6 +7590,26 @@ namespace ArmourCyberSecurity
                 lbl_linklist.Text = dt.Rows[0]["dpo_links"].ToString().Replace(",", "<br />");
                 dpa_links = dt.Rows[0]["dpo_links"].ToString().Replace(",", "\n");
             }
+        }
+
+        private string getLeftString(string str)
+        {
+            string result = str.Substring(0, str.IndexOf("<"));
+            return result;
+        }
+
+        private string getMiddleString(string str)
+        {
+            int start = str.IndexOf("<b>") + "<b>".Length;
+            int end = str.IndexOf("</b>") - start;
+            string result = str.Substring(start, end);
+            return result;
+        }
+
+        private string getRightString(string str)
+        {
+            string result = str.Substring(str.LastIndexOf(">") + 1);
+            return result;
         }
 
         private static void DrawLine(PdfWriter writer, float x1, float y1, float x2, float y2, BaseColor color)

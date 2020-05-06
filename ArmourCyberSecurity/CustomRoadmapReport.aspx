@@ -265,11 +265,11 @@
                                 Regulations vary by geographical region. Additionally, some apply to the location of the company and others to the location of the individual.
                                 <br />
                                 For example,<strong> GDPR</strong> applies:<br />
-                                ●	If the company is in the <strong>EU </strong>
+                                •	If the company is in the <strong>EU </strong>
                                 <br />
-                                ●	If the company does business with some subjects in the  <strong>EU</strong><br />
-                                ●	If the company is in a country that also follows<strong> GDPR</strong> (ex Brazil)<br />
-                                ●	If the data subject is 'in the union'. This is intentionally vague and could cover either <strong>residents</strong> by address or <strong>citizens</strong> so long as some action takes place in the<strong> EU</strong>.<br />
+                                •	If the company does business with some subjects in the  <strong>EU</strong><br />
+                                •	If the company is in a country that also follows<strong> GDPR</strong> (ex Brazil)<br />
+                                •	If the data subject is 'in the union'. This is intentionally vague and could cover either <strong>residents</strong> by address or <strong>citizens</strong> so long as some action takes place in the<strong> EU</strong>.<br />
                                 <br />
                                 <strong>According to your input, your company falls under the following legislations: </strong>
                                 <br />
@@ -291,7 +291,7 @@
                             <p style="width: 90%; margin: 0 auto;">
                                 In the event of a security incident or complaint, it is important to know which Authorities are responsible for your regulations. 
                                 <br />
-                                <asp:Label ID="lbl_DPA" runat="server" Text="" />
+                                <asp:Label ID="lbl_DPA" runat="server" Text="" Font-Bold="true" />
 
                             </p>
                         </td>
@@ -319,7 +319,7 @@
                                 <br />
                                 <br />
 
-                                <asp:Label ID="lbl_DPO" runat="server" Text="" />
+                                <asp:Label ID="lbl_DPO" runat="server" Text="" Font-Bold="true" />
 
                             </p>
                         </td>
@@ -445,7 +445,7 @@
                             <asp:Image ID="img_pe_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_2" runat="server" Text="You have you pseudonymized your data in the design. This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information but can still be correlated together. This is valid for some regulations (others require full anonymization). This allows you to process data while keeping individuals protected." />
+                            <asp:Label ID="lbl_pe_2" runat="server" Text="You have you<b> pseudonymized your data </b>in the design. This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information but can still be correlated together. This is valid for some regulations (others require full anonymization). This allows you to process data while keeping individuals protected." />
                         </td>
                     </tr>
                     <tr>
@@ -453,7 +453,7 @@
                             <asp:Image ID="img_pe_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_3" runat="server" Text="You have you anonymized your data in the design? This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information and can no longer be connected back to the personal data. This is valid for all regulations. This allows you to process and retain data while keeping individuals protected." />
+                            <asp:Label ID="lbl_pe_3" runat="server" Text="You have you <b>anonymized your data </b>in the design? This means have you stored your data in a way where the personally identifiable information is separated from the non-identifiable information and can no longer be connected back to the personal data. This is valid for all regulations. This allows you to process and retain data while keeping individuals protected." />
                         </td>
                     </tr>
                     <tr>
@@ -461,7 +461,7 @@
                             <asp:Image ID="img_pe_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_4" runat="server" Text="The storage of your data is protected by encryption. This is not required but does lower the risk of breach significantly. The higher the level of sensitivity of the data, the more stringent the protection." />
+                            <asp:Label ID="lbl_pe_4" runat="server" Text="The <b>storage of your data is protected by encryption</b>. This is not required but does lower the risk of breach significantly. The higher the level of sensitivity of the data, the more stringent the protection." />
                         </td>
                     </tr>
                     <tr>
@@ -469,7 +469,7 @@
                             <asp:Image ID="img_pe_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_5" runat="server" Text="The access to your data is limited to only those who require it. If all of your data is highly sensitive then access should be strict. If you have multiple data severities then you can separate your highly sensitive data from less sensitive data by access levels. " />
+                            <asp:Label ID="lbl_pe_5" runat="server" Text="The <b>access to your data is limited </b>to only those who require it. If all of your data is highly sensitive then access should be strict. If you have multiple data severities then you can separate your highly sensitive data from less sensitive data by access levels. " />
                         </td>
                     </tr>
                     <tr>
@@ -477,7 +477,7 @@
                             <asp:Image ID="img_pe_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_6" runat="server" Text="The transfer of your data is protected by encryption. This is not required but does lower the risk of breach significantly. Data on transfer is particularly susceptible to man-in-the-middle attacks where it can be taken. The higher the level of sensitivity of the data, the more stringent the protection." />
+                            <asp:Label ID="lbl_pe_6" runat="server" Text="The <b>transfer of your data is protected by encryption.</b> This is not required but does lower the risk of breach significantly. Data on transfer is particularly susceptible to man-in-the-middle attacks where it can be taken. The higher the level of sensitivity of the data, the more stringent the protection." />
                         </td>
                     </tr>
                     <tr>
@@ -485,7 +485,7 @@
                             <asp:Image ID="img_pe_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_7" runat="server" Text="You have a system or process to delete data from your system when no longer needed. You need to have a retention time on the data you maintain and that time should be justified with legal basis." />
+                            <asp:Label ID="lbl_pe_7" runat="server" Text="You have a <b>system or process to delete data </b>from your system when no longer needed. You need to have a retention time on the data you maintain and that time should be justified with legal basis." />
                         </td>
                     </tr>
                     <tr>
@@ -520,7 +520,7 @@
                             <asp:Image ID="img_pe_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_8" runat="server" Text="You are tracking your all your collected data in a data use info sheet (excel spreadsheet) or a data collection tool. Many regulations will require an audit trail of your data. The Data Use Info sheet or output from your tool should be included in your DPIA. On that sheet you should include the source of the data, the category and potentially the risk of harm." />
+                            <asp:Label ID="lbl_pe_8" runat="server" Text="You are <b>tracking your all your collected data in a data</b> use info sheet (excel spreadsheet) or a data collection tool. Many regulations will require an audit trail of your data. The Data Use Info sheet or output from your tool should be included in your DPIA. On that sheet you should include the source of the data, the category and potentially the risk of harm." />
                         </td>
                     </tr>
                     <tr>
@@ -528,7 +528,7 @@
                             <asp:Image ID="img_pe_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_10" runat="server" Text="You have identified all of your collected data. Using your Data Map, you can show all of the data being collected by your company either directly or indirectly from an individual." />
+                            <asp:Label ID="lbl_pe_10" runat="server" Text="You have <b>identified all of your collected data.</b> Using your Data Map, you can show all of the data being collected by your company either directly or indirectly from an individual." />
                         </td>
                     </tr>
                     <tr>
@@ -536,7 +536,7 @@
                             <asp:Image ID="img_pe_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_11" runat="server" Text="You have you categorized all of your personal information, PI (data about an individual). PI may include identifiers that are not unique such as gender, religion, age, or city." />
+                            <asp:Label ID="lbl_pe_11" runat="server" Text="You have <b>you categorized all of your personal information, PI </b>(data about an individual). PI may include identifiers that are not unique such as gender, religion, age, or city." />
                         </td>
                     </tr>
                     <tr>
@@ -544,7 +544,7 @@
                             <asp:Image ID="img_pe_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_12" runat="server" Text="You have you categorized all of your personally identifiable information, PII (data that when taken alone or in combination with other data identifies a specific individual. PII may include areas with unique identifiers such as email addresses, financial data, biometrics." />
+                            <asp:Label ID="lbl_pe_12" runat="server" Text="You have <b>you categorized all of your personally identifiable information, PII </b>(data that when taken alone or in combination with other data identifies a specific individual. PII may include areas with unique identifiers such as email addresses, financial data, biometrics." />
                         </td>
                     </tr>
                     <tr>
@@ -552,7 +552,7 @@
                             <asp:Image ID="img_pe_13" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_13" runat="server" Text="You have assessed all of your PII for legal basis (business necessity) and removed any data collection that is not needed for your business. Extra data is useful for marketing but it there is not a need then you cannot collect anything beyond what has business purpose. " />
+                            <asp:Label ID="lbl_pe_13" runat="server" Text="You have <b>assessed all of your PII for legal basis </b>(business necessity) and removed any data collection that is not needed for your business. Extra data is useful for marketing but it there is not a need then you cannot collect anything beyond what has business purpose. " />
                         </td>
                     </tr>
                     <tr>
@@ -560,7 +560,7 @@
                             <asp:Image ID="img_pe_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_14" runat="server" Text="You have assessed the RROSH (Real Risk of Significant Harm) for the potential breach of each piece of personal data. Certain categories, such as financial or medical data hold a higher risk. That said, you should evaluate your company’s data against the risk of your customers/clients based on their geographical or political region. Example: Religion may be low risk in some countries and high risk in others." />
+                            <asp:Label ID="lbl_pe_14" runat="server" Text="You have <b>assessed the RROSH (Real Risk of Significant Harm)</b> for the potential breach of each piece of personal data. Certain categories, such as financial or medical data hold a higher risk. That said, you should evaluate your company’s data against the risk of your customers/clients based on their geographical or political region. Example: Religion may be low risk in some countries and high risk in others." />
                         </td>
                     </tr>
                     <tr>
@@ -568,7 +568,7 @@
                             <asp:Image ID="img_pe_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_15" runat="server" Text="You have you done this assessment for data pertaining to internal employees. The regulations also apply to employees of the company. Your company should have a record of what it is collecting and why." />
+                            <asp:Label ID="lbl_pe_15" runat="server" Text="You have you done this <b>assessment for data pertaining to internal employees</b>. The regulations also apply to employees of the company. Your company should have a record of what it is collecting and why." />
                         </td>
                     </tr>
                     <tr>
@@ -576,7 +576,7 @@
                             <asp:Image ID="img_pe_16" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_16" runat="server" Text="You have a process for employees to assess and add new PII to your internal systems. Given the risk of adding PII, your company should have a process to evaluate the legal basis for adding new data. The process should also include instructions on how to add new data to the Data Use Info Sheet or tool. You may also need to add in consent collection for this data. " />
+                            <asp:Label ID="lbl_pe_16" runat="server" Text="You have a <b>process for employees to assess and add new PII </b>to your internal systems. Given the risk of adding PII, your company should have a process to evaluate the legal basis for adding new data. The process should also include instructions on how to add new data to the Data Use Info Sheet or tool. You may also need to add in consent collection for this data. " />
                         </td>
                     </tr>
                     <tr>
@@ -603,7 +603,7 @@
                             <asp:Image ID="img_pe_17" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_17" runat="server" Text="You have you categorized all of your personal information, PI (data about an individual). PI may include identifiers that are not unique such as gender, religion, age, or city." />
+                            <asp:Label ID="lbl_pe_17" runat="server" Text="You have a list of all <b>software products and collection services that you use internally </b>with your employees that collects personal data. Consider software used by your HR and financial departments as well as remote access or device use." />
                         </td>
                     </tr>
                     <tr>
@@ -611,7 +611,7 @@
                             <asp:Image ID="img_pe_18" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_18" runat="server" Text="You have you categorized all of your personally identifiable information, PII (data that when taken alone or in combination with other data identifies a specific individual. PII may include areas with unique identifiers such as email addresses, financial data, biometrics." />
+                            <asp:Label ID="lbl_pe_18" runat="server" Text="You have <b>reviewed all of these internally used companies</b> to ensure they are compliant with the same regulations you require. Your employees have the same rights as your customers." />
                         </td>
                     </tr>
                     <tr>
@@ -619,7 +619,7 @@
                             <asp:Image ID="img_pe_19" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_19" runat="server" Text="You have assessed all of your PII for legal basis (business necessity) and removed any data collection that is not needed for your business. Extra data is useful for marketing but it there is not a need then you cannot collect anything beyond what has business purpose. " />
+                            <asp:Label ID="lbl_pe_19" runat="server" Text="You have a list of all <b>software products and collection services that you use externally</b> with your users/customers that touches personal data. Consider software you use to collect, process, transfer, and store data." />
                         </td>
                     </tr>
                     <tr>
@@ -627,7 +627,7 @@
                             <asp:Image ID="img_pe_20" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_20" runat="server" Text="You have assessed the RROSH (Real Risk of Significant Harm) for the potential breach of each piece of personal data. Certain categories, such as financial or medical data hold a higher risk. That said, you should evaluate your company’s data against the risk of your customers/clients based on their geographical or political region. Example: Religion may be low risk in some countries and high risk in others." />
+                            <asp:Label ID="lbl_pe_20" runat="server" Text="You have <b>reviewed all of these externally used companies</b> to ensure they are compliance with the same regulations you require. You will not be considered compliant by many regulations if the companies you use are not compliant." />
                         </td>
                     </tr>
                     <tr>
@@ -635,7 +635,7 @@
                             <asp:Image ID="img_pe_21" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_pe_21" runat="server" Text="You have you done this assessment for data pertaining to internal employees. The regulations also apply to employees of the company. Your company should have a record of what it is collecting and why." />
+                            <asp:Label ID="lbl_pe_21" runat="server" Text="You have a <b>contract you use with third party companies and services</b> to ensure they are compliant and will notify you of a breach of their systems. This is required for some regulations and not others though it is highly recommended. Without this contract a vendor company has no obligation to alert you to any breaches in their systems or non-compliance they have." />
                         </td>
                     </tr>
                     <tr>
@@ -821,7 +821,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_2" runat="server" Text="You are able to properly authenticate an individual's identity to grant the request. This can be done automatically via their own email and password if inside a system with credentials. Otherwise you need to have an established way to verify the requestor’s identity." />
+                            <asp:Label ID="lbl_dc_2" runat="server" Text="You are able to <b>properly authenticate</b> an individual's identity to grant the request. This can be done automatically via their own email and password if inside a system with credentials. Otherwise you need to have an established way to verify the requestor’s identity." />
                         </td>
                     </tr>
                     <tr>
@@ -829,7 +829,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_3" runat="server" Text="You are able to package an individual's data up in a way that is readable by the individual. This means it cannot be in a proprietary format. Suggested method is CSV." />
+                            <asp:Label ID="lbl_dc_3" runat="server" Text="You are able to <b>package an individual's data</b> up in a way that is readable by the individual. This means it cannot be in a proprietary format. Suggested method is CSV." />
                         </td>
                     </tr>
                     <tr>
@@ -837,7 +837,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_4" runat="server" Text="You are able to securely transfer the data to an individual. If data is sensitive, it should be encrypted and/or password protected." />
+                            <asp:Label ID="lbl_dc_4" runat="server" Text="You are able to <b>securely transfer the data</b> to an individual. If data is sensitive, it should be encrypted and/or password protected." />
                         </td>
                     </tr>
                     <tr>
@@ -845,7 +845,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_5" runat="server" Text="You have optimized any of this process with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you have a secure and consistent process of finding, gathering, and packaging the data. These tools often include ways to track the requests." />
+                            <asp:Label ID="lbl_dc_5" runat="server" Text="You have <b>optimized any of this process</b> with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you have a secure and consistent process of finding, gathering, and packaging the data. These tools often include ways to track the requests." />
                         </td>
                     </tr>
                     <tr>
@@ -853,7 +853,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_6" runat="server" Text="You are you able to access specific data from your systems about an individual for correction. If an individual needs to amend a single piece of data for accuracy (ex an address) then your process or systems allow you to find and amend that data. " />
+                            <asp:Label ID="lbl_dc_6" runat="server" Text="You are you <b>able to access specific data</b> from your systems about an individual for correction. If an individual needs to amend a single piece of data for accuracy (ex an address) then your process or systems allow you to find and amend that data. " />
                         </td>
                     </tr>
                     <tr>
@@ -882,7 +882,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_9" runat="server" Text="You have a data retention period for all data. This depends on what kind of data you are storing and the need for future use. If your data ceases to be of value when not in use, then 2 years is the standard retention period. If the data is accounting related, then the term may be 7 years. If the data is personal but has value to a company (example an ex-employee’s contact information) then that data may be kept indefinitely. " />
+                            <asp:Label ID="lbl_dc_9" runat="server" Text="You have a <b>data retention period </b>for all data. This depends on what kind of data you are storing and the need for future use. If your data ceases to be of value when not in use, then 2 years is the standard retention period. If the data is accounting related, then the term may be 7 years. If the data is personal but has value to a company (example an ex-employee’s contact information) then that data may be kept indefinitely. " />
                         </td>
                     </tr>
                     <tr>
@@ -890,7 +890,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_11" runat="server" Text="You are able to remove the individual from all systems including back-ups. If an individual request to be deleted from the system and there is no legal basis to keep their personal data then it showed be removed from all storage including back-ups and printed versions." />
+                            <asp:Label ID="lbl_dc_11" runat="server" Text="You are able to <b>remove the individual from all systems</b> including back-ups. If an individual request to be deleted from the system and there is no legal basis to keep their personal data then it showed be removed from all storage including back-ups and printed versions." />
                         </td>
                     </tr>
                     <tr>
@@ -898,7 +898,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_12" runat="server" Text="You have a way to anonymize or pseudo anonymize data. By stripping the identifiable data away from non-identifiable data, you may be able to retain pieces of data for analysis and processing. This is only necessary if you want to keep some of the data." />
+                            <asp:Label ID="lbl_dc_12" runat="server" Text="You have a way to <b>anonymize or pseudo anonymize </b>data. By stripping the identifiable data away from non-identifiable data, you may be able to retain pieces of data for analysis and processing. This is only necessary if you want to keep some of the data." />
                         </td>
                     </tr>
                     <tr>
@@ -906,7 +906,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_13" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_13" runat="server" Text="You have a way to date data and remove it if it has not been in use for an extended period of time. If your retention period has a data to it then you should have a way to flag data with a timestamp to ensure its removal after the retention period has expired." />
+                            <asp:Label ID="lbl_dc_13" runat="server" Text="You have a way to<b> date data and remove it </b>if it has not been in use for an extended period of time. If your retention period has a data to it then you should have a way to flag data with a timestamp to ensure its removal after the retention period has expired." />
                         </td>
                     </tr>
                     <tr>
@@ -914,7 +914,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_dc_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_dc_14" runat="server" Text="You have optimized any of this process with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you are properly locating and deleting the data. These tools often include ways to track the requests." />
+                            <asp:Label ID="lbl_dc_14" runat="server" Text="You have <b>optimized any of this process </b>with a tool or internal automation. This is not necessary for compliance but if you are able to automate the process it will help you under load (many requests). Additionally, the use of automation or tools ensures you are properly locating and deleting the data. These tools often include ways to track the requests." />
                         </td>
                     </tr>
                     <tr>
@@ -1038,7 +1038,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_1" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_1" runat="server" Text="You have an existing privacy policy. This can be distributed to customers/clients on sign up and/or posted on your website. " />
+                            <asp:Label ID="lbl_c_1" runat="server" Text="You have an <b>existing privacy policy</b>. This can be distributed to customers/clients on sign up and/or posted on your website. " />
                         </td>
                     </tr>
                     <tr>
@@ -1046,7 +1046,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_2" runat="server" Text="Your privacy policy is easy to locate on your website. Having a digital copy online allows you to update it when needed. Conventionally this page is linked in the header of footer of your site." />
+                            <asp:Label ID="lbl_c_2" runat="server" Text="Your <b>privacy policy is easy to locate on your website</b>. Having a digital copy online allows you to update it when needed. Conventionally this page is linked in the header of footer of your site." />
                         </td>
                     </tr>
                     <tr>
@@ -1054,7 +1054,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_3" runat="server" Text="Your privacy policy is updated annually. Regulations and laws change. You should at least review, if not update, this policy annually and change the version date at the bottom." />
+                            <asp:Label ID="lbl_c_3" runat="server" Text="Your <b>privacy policy is updated annually.</b> Regulations and laws change. You should at least review, if not update, this policy annually and change the version date at the bottom." />
                         </td>
                     </tr>
                     <tr>
@@ -1062,7 +1062,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_4" runat="server" Text="You have identified if your company is the controller and/or processor of information. The Controller assumes ultimate accountability for the data is that is being collected and processed. They also select the processors." />
+                            <asp:Label ID="lbl_c_4" runat="server" Text="You have identified if your <b>company is the controller and/or processor</b> of information. The Controller assumes ultimate accountability for the data is that is being collected and processed. They also select the processors." />
                         </td>
                     </tr>
                     <tr>
@@ -1070,7 +1070,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_5" runat="server" Text="You have listed all the personal data that is being collected. This includes data collected directly from the customer/client and the data you collect from tools or services (example location data, usage data)." />
+                            <asp:Label ID="lbl_c_5" runat="server" Text="You have <b>listed all the personal data that is being collected</b>. This includes data collected directly from the customer/client and the data you collect from tools or services (example location data, usage data)." />
                         </td>
                     </tr>
                     <tr>
@@ -1078,7 +1078,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_6" runat="server" Text="You have listed all the methods by which data is collected. This includes direct methods such as input forms and indirect methods such as cookies." />
+                            <asp:Label ID="lbl_c_6" runat="server" Text="You have <b>listed all the methods by which data is collected.</b> This includes direct methods such as input forms and indirect methods such as cookies." />
                         </td>
                     </tr>
                     <tr>
@@ -1086,7 +1086,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_7" runat="server" Text="You have listed the legal basis (business reason) why you are collecting that data. Each piece of personal data needs a reason. For example, gender is not needed for a magazine subscription service. It is demographic data but not required data." />
+                            <asp:Label ID="lbl_c_7" runat="server" Text="You have <b>listed the legal basis </b>(business reason) why you are collecting that data. Each piece of personal data needs a reason. For example, gender is not needed for a magazine subscription service. It is demographic data but not required data." />
                         </td>
                     </tr>
                     <tr>
@@ -1094,7 +1094,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_8" runat="server" Text="You have listed the geographical regions in which the data is being transferred and stored. Some regulations (like GDPR) require that data be processed within the given region. Others (like PIPEDA) allow cross-border transfer so long as it is specified to the user." />
+                            <asp:Label ID="lbl_c_8" runat="server" Text="You have<b> listed the geographical regions in which the data is being transferred and stored.</b> Some regulations (like GDPR) require that data be processed within the given region. Others (like PIPEDA) allow cross-border transfer so long as it is specified to the user." />
                         </td>
                     </tr>
                     <tr>
@@ -1102,7 +1102,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_9" runat="server" Text="You have listed the retention period for your company's data. This will vary by company and by data type. Financial data, for example, requires 7 years storage; other data could be 2 years. If you have legal basis, some data could be stored indefinitely." />
+                            <asp:Label ID="lbl_c_9" runat="server" Text="You have <b>listed the retention period for your company's data.</b> This will vary by company and by data type. Financial data, for example, requires 7 years storage; other data could be 2 years. If you have legal basis, some data could be stored indefinitely." />
                         </td>
                     </tr>
                     <tr>
@@ -1110,7 +1110,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_10" runat="server" Text="You have listed any third party policies where applicable. If you are the Controller, it is important to let users know that your third party partners are also compliant. " />
+                            <asp:Label ID="lbl_c_10" runat="server" Text="You have <b>listed any third party policies </b>where applicable. If you are the Controller, it is important to let users know that your third party partners are also compliant. " />
                         </td>
                     </tr>
                     <tr>
@@ -1118,7 +1118,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_11" runat="server" Text="You have listed the individual's rights according to your legislations. You can either call out that the individual has rights or list them separately. Doing so here shows that you understand and are able to comply with the rights your customers/clients may have." />
+                            <asp:Label ID="lbl_c_11" runat="server" Text="You have listed the <b>individual's rights according to your legislations.</b> You can either call out that the individual has rights or list them separately. Doing so here shows that you understand and are able to comply with the rights your customers/clients may have." />
                         </td>
                     </tr>
                     <tr>
@@ -1126,7 +1126,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_12" runat="server" Text="You have included the contact information for your privacy officer and/or ways in which individuals can contact the company to execute their rights. This can be via email, postal mail, or online form. As long as the method is clear to the individual. " />
+                            <asp:Label ID="lbl_c_12" runat="server" Text="You<b> have included the contact information for your privacy officer</b> and/or ways in which individuals can contact the company to execute their rights. This can be via email, postal mail, or online form. As long as the method is clear to the individual. " />
                         </td>
                     </tr>
 
@@ -1168,7 +1168,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_14" runat="server" Text="You have an explicit box for &quot;Do not sell my personal information&quot;. California residents must be able to opt out of the reselling of their data." />
+                            <asp:Label ID="lbl_c_14" runat="server" Text="You have <b>an explicit box for &quot;Do not sell my personal information&quot;. </b>California residents must be able to opt out of the reselling of their data." />
                         </td>
                     </tr>
                     <tr>
@@ -1176,7 +1176,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_15" runat="server" Text="You storing the acknowledgment of consent of each individual. In the event you are audited, you must be able to show that each individual has consented to your services." />
+                            <asp:Label ID="lbl_c_15" runat="server" Text="You <b>storing the acknowledgment of consent of each individual</b>. In the event you are audited, you must be able to show that each individual has consented to your services." />
                         </td>
                     </tr>
                     <tr>
@@ -1184,7 +1184,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_16" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_16" runat="server" Text="You have a method or link for individuals to opt-out of parts of your service. If participation or data is required to fully use your service or product, you can stipulate that opting out will result in partial or no access." />
+                            <asp:Label ID="lbl_c_16" runat="server" Text="You <b>have a method or link for individuals to opt-out </b>of parts of your service. If participation or data is required to fully use your service or product, you can stipulate that opting out will result in partial or no access." />
                         </td>
                     </tr>
                     <tr>
@@ -1192,7 +1192,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_17" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_17" runat="server" Text="You have a method for individuals to quit your service or product. This must include a way for them to leave entirely and not only deactivate their account with you." />
+                            <asp:Label ID="lbl_c_17" runat="server" Text="You <b>have a method for individuals to quit</b> your service or product. This must include a way for them to leave entirely and not only deactivate their account with you." />
                         </td>
                     </tr>
                     <tr>
@@ -1200,7 +1200,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_18" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_18" runat="server" Text="You have a process to notify users if there is a change in the way their data is being processes or sold. If the use of an individual’s data has changed then you require a new consent from them." />
+                            <asp:Label ID="lbl_c_18" runat="server" Text="You <b>have a process to notify users if there is a change in the way their data is being processes or sold.</b> If the use of an individual’s data has changed then you require a new consent from them." />
                         </td>
                     </tr>
                     <tr>
@@ -1208,7 +1208,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_c_19" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_c_19" runat="server" Text="You have a way to store updated consent. When data use changes and a new consent request is sent out, you must be able to accept that consent and store it for audit." />
+                            <asp:Label ID="lbl_c_19" runat="server" Text="You <b>have a way to store updated consent.</b> When data use changes and a new consent request is sent out, you must be able to accept that consent and store it for audit." />
                         </td>
                     </tr>
                     <tr>
@@ -1345,7 +1345,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_4" runat="server" Text="You have the contact information for any vendors that process your customers or users data. If a breach has occurred within a system run by your vendors you need to be able to contact the right people to report the breach. This could be reported to you internally or by a customer." />
+                            <asp:Label ID="lbl_im_4" runat="server" Text="You have <b>the contact information for any vendors</b> that process your customers or users data. If a breach has occurred within a system run by your vendors you need to be able to contact the right people to report the breach. This could be reported to you internally or by a customer." />
                         </td>
                     </tr>
                     <tr>
@@ -1353,7 +1353,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_5" runat="server" Text="You have a process or method for individuals to report a suspected incident. This should be for external customers or internal employees. If an incident is a breach you want to ensure that information gets to stakeholders as quickly a possible to resolve the issue and to contain the spread of misinformation." />
+                            <asp:Label ID="lbl_im_5" runat="server" Text="You have a process or <b>method for individuals to report a suspected incident</b>. This should be for external customers or internal employees. If an incident is a breach you want to ensure that information gets to stakeholders as quickly a possible to resolve the issue and to contain the spread of misinformation." />
                         </td>
                     </tr>
                     <tr>
@@ -1361,7 +1361,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_7" runat="server" Text="You have identified the individual(s) who will be running the management plan. This is typically the Data Protection Officer but may have a different title. It is key that one person or team is charged with coordinating and executing the plan. They may delegate pieces but ultimately a central individual/team is accountable." />
+                            <asp:Label ID="lbl_im_7" runat="server" Text="You have <b>identified the individual(s) who will be running the management plan.</b> This is typically the Data Protection Officer but may have a different title. It is key that one person or team is charged with coordinating and executing the plan. They may delegate pieces but ultimately a central individual/team is accountable." />
                         </td>
                     </tr>
                     <tr>
@@ -1369,7 +1369,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_8" runat="server" Text="You have back-up managers for the plan. In the event that your plan executer is unavailable, there should be ‘understudies’ that will take on their role." />
+                            <asp:Label ID="lbl_im_8" runat="server" Text="You have <b>back-up managers </b>for the plan. In the event that your plan executer is unavailable, there should be ‘understudies’ that will take on their role." />
                         </td>
                     </tr>
                     <tr>
@@ -1377,7 +1377,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_9" runat="server" Text="You have a list of all stakeholders that are required. This list can be quite extensive and could include executives, product developers, communications, IT department, legal etc." />
+                            <asp:Label ID="lbl_im_9" runat="server" Text="You have a <b>list of all stakeholders</b> that are required. This list can be quite extensive and could include executives, product developers, communications, IT department, legal etc." />
                         </td>
                     </tr>
                     <tr>
@@ -1385,7 +1385,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_10" runat="server" Text="You printed the stakeholder list with contact information in hard copy, off your company systems. Ransomware and other popular cyber incidents lock down company systems. A copy of you plan should be kept off system. " />
+                            <asp:Label ID="lbl_im_10" runat="server" Text="You <b>printed the stakeholder list</b> with contact information in hard copy, off your company systems. Ransomware and other popular cyber incidents lock down company systems. A copy of you plan should be kept off system. " />
                         </td>
                     </tr>
                     <tr>
@@ -1393,7 +1393,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_11" runat="server" Text="You have a phone bridge or meeting location (other than email) to discuss the incident that is open 24/7. Email can be easily forwarded to the wrong individuals (including externally) and can be used against a company if misunderstood. It is recommended that phone or in-person discussions take place until resolutions are made. A war-room meeting area is suggested." />
+                            <asp:Label ID="lbl_im_11" runat="server" Text="You have a <b>phone bridge or meeting location</b> (other than email) to discuss the incident that is open 24/7. Email can be easily forwarded to the wrong individuals (including externally) and can be used against a company if misunderstood. It is recommended that phone or in-person discussions take place until resolutions are made. A war-room meeting area is suggested." />
                         </td>
                     </tr>
                     <tr>
@@ -1401,7 +1401,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_12" runat="server" Text="You have contacted any third-party cyber security company needed to manage insurance, forensics, audits etc. to be on retainer. If you do not have the resources in-house, it is key to have companies on retainer that can resolve issues from breach identification to insurance questions. The retainer must be done ahead of time and their contact information should be included in the plan." />
+                            <asp:Label ID="lbl_im_12" runat="server" Text="You have <b>contacted any third-party cyber security company</b> needed to manage insurance, forensics, audits etc. to be on retainer. If you do not have the resources in-house, it is key to have companies on retainer that can resolve issues from breach identification to insurance questions. The retainer must be done ahead of time and their contact information should be included in the plan." />
                         </td>
                     </tr>
                     <tr>
@@ -1409,7 +1409,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_13" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_13" runat="server" Text="You have contacted any third part legal resources to manage be on retainer. If you do not have the resources in-house, it is key to have legal weigh in on the incident and severity of risk of harm. The retainer must be done ahead of time and their contact information should be included in the plan." />
+                            <asp:Label ID="lbl_im_13" runat="server" Text="You have <b>contacted any third part legal resources</b> to manage be on retainer. If you do not have the resources in-house, it is key to have legal weigh in on the incident and severity of risk of harm. The retainer must be done ahead of time and their contact information should be included in the plan." />
                         </td>
                     </tr>
                     <tr>
@@ -1417,7 +1417,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_14" runat="server" Text="All stakeholders know their roles. Each member of the incident team must know what is expected of them including the work that is expected, the communication they should provide, and other team members they should coordinate with." />
+                            <asp:Label ID="lbl_im_14" runat="server" Text="All <b>stakeholders know their roles.</b> Each member of the incident team must know what is expected of them including the work that is expected, the communication they should provide, and other team members they should coordinate with." />
                         </td>
                     </tr>
                     <tr>
@@ -1425,7 +1425,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_15" runat="server" Text="You have a communication strategy between stakeholder teams (updates, progress). This is often where plans break down and why they should be tested. " />
+                            <asp:Label ID="lbl_im_15" runat="server" Text="You have a <b>communication strategy between stakeholder teams </b>(updates, progress). This is often where plans break down and why they should be tested. " />
                         </td>
                     </tr>
                     <tr>
@@ -1433,7 +1433,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_16" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_16" runat="server" Text="All stakeholders have a way to contact one another outside work. Breaches frequently occur in off-work hours. All stakeholders should have a contact list and method to join conversations from outside the office. This is where phone bridges are handy. " />
+                            <asp:Label ID="lbl_im_16" runat="server" Text="All <b>stakeholders have a way to contact one another outside work</b>. Breaches frequently occur in off-work hours. All stakeholders should have a contact list and method to join conversations from outside the office. This is where phone bridges are handy. " />
                         </td>
                     </tr>
                     <tr>
@@ -1441,7 +1441,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_17" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_17" runat="server" Text="You have evaluated all of your PII to determine the Real Risk of Significant Harm (RROSH). The RROSH is used to determine the risk level of the breach, which dictates notification strategies. Adding the RROSH to your PII tracking (via Data Use Info Sheet or tool) helps generate a risk profile quickly." />
+                            <asp:Label ID="lbl_im_17" runat="server" Text="You have <b>evaluated all of your PII to determine the Real Risk of Significant Harm (RROSH).</b> The RROSH is used to determine the risk level of the breach, which dictates notification strategies. Adding the RROSH to your PII tracking (via Data Use Info Sheet or tool) helps generate a risk profile quickly." />
                         </td>
                     </tr>
                     <tr>
@@ -1449,7 +1449,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_18" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_18" runat="server" Text="You developed a risk profile for your PII and data. Using the RROSH of your personal information, a risk profile of your systems can tell you immediately what risk the breach may pose thus determining your next steps for communication. Risk profiles can be developed for different groups of data such as login credentials vs financial data.  " />
+                            <asp:Label ID="lbl_im_18" runat="server" Text="You <b>developed a risk profile for your PII</b> and data. Using the RROSH of your personal information, a risk profile of your systems can tell you immediately what risk the breach may pose thus determining your next steps for communication. Risk profiles can be developed for different groups of data such as login credentials vs financial data.  " />
                         </td>
                     </tr>
                     <tr>
@@ -1457,7 +1457,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_19" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_19" runat="server" Text="You have a notification process and/or communications team lined up. Depending on the size of your customer base and criticality of your data, a process, an individual, or a team should be ready to produce and execute on all communications. " />
+                            <asp:Label ID="lbl_im_19" runat="server" Text="You have a <b>notification process and/or communications team </b>lined up. Depending on the size of your customer base and criticality of your data, a process, an individual, or a team should be ready to produce and execute on all communications. " />
                         </td>
                     </tr>
                     <tr>
@@ -1465,7 +1465,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_20" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_20" runat="server" Text="You have a breach template to log the relevant information. Having a template with areas to fill in will allow you to organize your thoughts and ensure you have captured all the needed information from your stakeholders. When structured properly, this template can also be used to easily populate your notification templates. It should include what you know, what you have done, what individuals can do etc." />
+                            <asp:Label ID="lbl_im_20" runat="server" Text="You have a <b>breach template to log </b>the relevant information. Having a template with areas to fill in will allow you to organize your thoughts and ensure you have captured all the needed information from your stakeholders. When structured properly, this template can also be used to easily populate your notification templates. It should include what you know, what you have done, what individuals can do etc." />
                         </td>
                     </tr>
                     <tr>
@@ -1492,7 +1492,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_21" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_21" runat="server" Text="You have a template for notifications to your relevant data protection authority. The template should include spaces for all of the mandatory information." />
+                            <asp:Label ID="lbl_im_21" runat="server" Text="You have a <b>template for notifications to your relevant data protection authority.</b> The template should include spaces for all of the mandatory information." />
                         </td>
                     </tr>
                     <tr>
@@ -1500,7 +1500,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_22" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_22" runat="server" Text="You have a template for notifications to any business that uses your product or services. If other companies use your product and/or service, then you are obligated to let them know about your breach so that they can inform customers if necessary." />
+                            <asp:Label ID="lbl_im_22" runat="server" Text="You have a<b> template for notifications to any business that uses your product or services.</b> If other companies use your product and/or service, then you are obligated to let them know about your breach so that they can inform customers if necessary." />
                         </td>
                     </tr>
                     <tr>
@@ -1508,7 +1508,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_23" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_23" runat="server" Text="You have a template for notifications to your users or customers. The template should include spaces for all of the mandatory information." />
+                            <asp:Label ID="lbl_im_23" runat="server" Text="You have a<b> template for notifications to your users or customers.</b> The template should include spaces for all of the mandatory information." />
                         </td>
                     </tr>
                     <tr>
@@ -1516,7 +1516,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_24" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_24" runat="server" Text="You have a process or method to automatically contact large numbers of users or customers. There are tools that can do this for you, or you can automate a technical product to do this. Consider that methods such as telephone or postal mail are practical with small numbers only." />
+                            <asp:Label ID="lbl_im_24" runat="server" Text="You have a process or method to <b>automatically contact large numbers of users or customers.</b> There are tools that can do this for you, or you can automate a technical product to do this. Consider that methods such as telephone or postal mail are practical with small numbers only." />
                         </td>
                     </tr>
                     <tr>
@@ -1524,10 +1524,10 @@ Review the items below to ensure that you have covered all of your bases.
                             <asp:Image ID="img_im_25" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_im_25" runat="server" Text="You have a method to post a public statement that would reach all customers. In the event that you cannot individually contact users or customers, you should have a webpage set up or a press contact to be able to publish a public statement." />
+                            <asp:Label ID="lbl_im_25" runat="server" Text="You have a method to <b>post a public statement </b>that would reach all customers. In the event that you cannot individually contact users or customers, you should have a webpage set up or a press contact to be able to publish a public statement." />
                         </td>
                     </tr>
-                   
+
                     <tr>
 
                         <td style="text-align: justify; margin: 2px;" colspan="2">
@@ -1642,7 +1642,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_1" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_1" runat="server" Text="You have an existing privacy education program. This program should be delivered annually and include both cyber hygiene practices as well as privacy processes specific to your organization. Your company’s incident response management plan also falls into this program. " />
+                            <asp:Label ID="lbl_1" runat="server" Text="You have an existing <b> privacy education program.</b> This program should be delivered annually and include both cyber hygiene practices as well as privacy processes specific to your organization. Your company’s incident response management plan also falls into this program. " />
                         </td>
                     </tr>
                     <tr>
@@ -1650,7 +1650,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_2" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_2" runat="server" Text="Your privacy program includes data privacy regulations and compliance education. Employees should all have a basic understanding of what regulations that apply to them and your customers/clients." />
+                            <asp:Label ID="lbl_2" runat="server" Text="Your privacy program <b>includes data privacy regulations and compliance education.</b> Employees should all have a basic understanding of what regulations that apply to them and your customers/clients." />
                         </td>
                     </tr>
                     <tr>
@@ -1658,7 +1658,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_3" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_3" runat="server" Text="Your onboarding for new employees includes the Privacy Education Program. This should also detail what their particular role includes." />
+                            <asp:Label ID="lbl_3" runat="server" Text="Your <b>onboarding for new employees includes the Privacy Education Program</b>. This should also detail what their particular role includes." />
                         </td>
                     </tr>
                     <tr>
@@ -1666,7 +1666,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_4" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_4" runat="server" Text="Your employees know where to access Privacy Policies and process documentation. " />
+                            <asp:Label ID="lbl_4" runat="server" Text="Your employees know where to <b>access Privacy Policies and process documentation</b>. " />
                         </td>
                     </tr>
                     <tr>
@@ -1674,7 +1674,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_5" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_5" runat="server" Text="Your employees are aware of the privacy rights they have with respect to their own personally identifiable data (PII) that is kept by the company. " />
+                            <asp:Label ID="lbl_5" runat="server" Text="Your <b>employees are aware of the privacy rights</b> they have with respect to their own personally identifiable data (PII) that is kept by the company. " />
                         </td>
                     </tr>
                     <tr>
@@ -1682,7 +1682,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_6" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_6" runat="server" Text="Your customer-facing employees know how to respond to privacy and regulation related questions from customers, partners or vendors. This includes questions about their rights and how to invoke them." />
+                            <asp:Label ID="lbl_6" runat="server" Text="Your <b>customer-facing employees know how to respond to privacy and regulation related questions</b> from customers, partners or vendors. This includes questions about their rights and how to invoke them." />
                         </td>
                     </tr>
                     <tr>
@@ -1690,7 +1690,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_7" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_7" runat="server" Text="Your product and service development team understands Privacy by Design. They know what it is and how to ensure it is used for both existing and future development." />
+                            <asp:Label ID="lbl_7" runat="server" Text="Your product and service <b>development team understands Privacy by Design.</b> They know what it is and how to ensure it is used for both existing and future development." />
                         </td>
                     </tr>
                     <tr>
@@ -1698,7 +1698,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_8" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_8" runat="server" Text="Your product and service development team understands the definition of PII. They are made aware of any procedures you have around the addition of and/or processing of PII. This may include a tool or document used to track PII." />
+                            <asp:Label ID="lbl_8" runat="server" Text="Your product and service <b>development team understands the definition of PII.</b> They are made aware of any procedures you have around the addition of and/or processing of PII. This may include a tool or document used to track PII." />
                         </td>
                     </tr>
                     <tr>
@@ -1706,7 +1706,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_9" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_9" runat="server" Text="Your product and service development team understands data control and how the product/service needs to conform to those controls. This includes the need for authenticating requests, the way data has to be collected/transferred, and optimizing for load." />
+                            <asp:Label ID="lbl_9" runat="server" Text="Your product and service <b>development team understands data control</b> and how the product/service needs to conform to those controls. This includes the need for authenticating requests, the way data has to be collected/transferred, and optimizing for load." />
                         </td>
                     </tr>
                     <tr>
@@ -1714,7 +1714,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_10" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_10" runat="server" Text="All executives understand the importance of privacy regulations from the perspective of both legal requirements and protecting your private data." />
+                            <asp:Label ID="lbl_10" runat="server" Text="All <b>executives understand the importance of privacy regulations</b> from the perspective of both legal requirements and protecting your private data." />
                         </td>
                     </tr>
                     <tr>
@@ -1722,7 +1722,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_11" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_11" runat="server" Text="All employees understand how to identify a privacy incident and/or breach. What constitutes an incident for your company? " />
+                            <asp:Label ID="lbl_11" runat="server" Text="All <b>employees understand how to identify a privacy incident</b> and/or breach. What constitutes an incident for your company? " />
                         </td>
                     </tr>
                     <tr>
@@ -1730,7 +1730,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_12" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_12" runat="server" Text="All employees understand how to report a privacy incident and/or breach. Whether it’s a tool, a central email address, or a process, every employee will need to be able to escalate information of a potential incident to the right team immediately." />
+                            <asp:Label ID="lbl_12" runat="server" Text="All <b>employees understand how to report a privacy incident</b> and/or breach. Whether it’s a tool, a central email address, or a process, every employee will need to be able to escalate information of a potential incident to the right team immediately." />
                         </td>
                     </tr>
                     <tr>
@@ -1738,7 +1738,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_13" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_13" runat="server" Text="All employees understand how to communicate externally during a privacy incident and/or breach. This is key to a company’s reputation. " />
+                            <asp:Label ID="lbl_13" runat="server" Text="All <b>employees understand how to communicate externally during a privacy incident</b> and/or breach. This is key to a company’s reputation. " />
                         </td>
                     </tr>
                     <tr>
@@ -1746,7 +1746,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_14" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_14" runat="server" Text="Incident response stakeholders know their roles during and after an incident." />
+                            <asp:Label ID="lbl_14" runat="server" Text="<b>Incident response stakeholders know their roles</b> during and after an incident." />
                         </td>
                     </tr>
                     <tr>
@@ -1754,7 +1754,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <asp:Image ID="img_15" runat="server" Width="30px" Height="30px" />
                         </td>
                         <td style="text-align: justify; margin: 2px;">
-                            <asp:Label ID="lbl_15" runat="server" Text="Your company has done a tabletop exercise to test your incident response management plan. Tabletop exercises as part of training helps prevent errors in the time of an actual incident." />
+                            <asp:Label ID="lbl_15" runat="server" Text="Your company has done a tabletop exercise to<b> test your incident response management plan.</b> Tabletop exercises as part of training helps prevent errors in the time of an actual incident." />
                         </td>
                     </tr>
                     <tr>

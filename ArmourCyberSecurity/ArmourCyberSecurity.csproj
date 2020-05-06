@@ -192,9 +192,9 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CustomRoadmapMenu.Master" />
     <Content Include="images\bground.jpg" />
-    <Content Include="images\greenDot.png" />
-    <Content Include="images\redDot.png" />
-    <Content Include="images\yellowDot.png" />
+    <Content Include="images\GreenTick.png" />
+    <Content Include="images\RedCross.png" />
+    <Content Include="images\YellowExclamation.png" />
     <Content Include="Level1\Account_Activation.aspx" />
     <Content Include="Level1\assets\bootstrapcarouselswipe\bootstrap-carousel-swipe.js" />
     <Content Include="Level1\assets\bootstrap\css\bootstrap-grid.min.css" />
