@@ -30,17 +30,9 @@
             }
         });
 
-        function EnableTextArea() {
+        function EnableTextArea1() {
             var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
             var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
-
-            var ddlAns8 = document.getElementById('<%= ddlAns8.ClientID %>');
-            var links8 = document.getElementById('<%= txt_Links_8.ClientID %>');
-
-            var ddlAns7 = document.getElementById('<%= ddlAns7.ClientID %>');
-            var ddlAns15 = document.getElementById('<%= ddlAns15.ClientID %>');
-            var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
-
 
             if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
                 links1.disabled = false;
@@ -48,6 +40,10 @@
             else {
                 links1.disabled = true;
             }
+        }
+        function EnableTextArea8() {
+            var ddlAns8 = document.getElementById('<%= ddlAns8.ClientID %>');
+            var links8 = document.getElementById('<%= txt_Links_8.ClientID %>');
 
             if (ddlAns8.options[ddlAns8.selectedIndex].innerHTML == 'YES') {
                 links8.disabled = false;
@@ -55,6 +51,11 @@
             else {
                 links8.disabled = true;
             }
+        }
+        function EnableTextArea15() {
+            var ddlAns7 = document.getElementById('<%= ddlAns7.ClientID %>');
+            var ddlAns15 = document.getElementById('<%= ddlAns15.ClientID %>');
+            var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
 
             if (ddlAns7.options[ddlAns7.selectedIndex].innerHTML == 'YES' && ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES') {
                 links15.disabled = false;
@@ -86,7 +87,7 @@
             <h5>Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea1()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -131,7 +132,7 @@
             <br />
 
             <asp:Label ID="lblQues7" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns7">
+            <asp:DropDownList runat="server" ID="ddlAns7" onChange="EnableTextArea15()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -144,7 +145,7 @@
             <h5>Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
             </h5>
             <asp:Label ID="lblQues8" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns8" onChange="EnableTextArea()">
+            <asp:DropDownList runat="server" ID="ddlAns8" onChange="EnableTextArea8()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -196,7 +197,7 @@
             <br />
 
             <asp:Label ID="lblQues15" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns15" onChange="EnableTextArea()">
+            <asp:DropDownList runat="server" ID="ddlAns15" onChange="EnableTextArea15()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />

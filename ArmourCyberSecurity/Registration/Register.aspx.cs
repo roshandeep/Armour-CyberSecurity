@@ -120,20 +120,26 @@ namespace ArmourCyberSecurity
             email_body = email_body + "Privacy Compliance Group<br />" + Environment.NewLine;
             email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
-            MailMessage mm = new MailMessage("", txtEmail.Text.Trim().ToString())
+            MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Confirm Your Email",
                 Body = email_body,
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "relay-hosting.secureserver.net";
-            smtp.Port = 25;
-            smtp.EnableSsl = false;
+            //smtp.Host = "relay-hosting.secureserver.net";
+            //smtp.Port = 25;
+            //smtp.EnableSsl = false;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "david@privacycompliance.group";
-            NetworkCred.Password = "roshandeep@2895";
+            //NetworkCred.UserName = "david@privacycompliance.group";
+            //NetworkCred.Password = "roshandeep@2895";
+            NetworkCred.UserName = "roshandeep1995@gmail.com";
+            NetworkCred.Password = "roshandeepsinghsaini";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);

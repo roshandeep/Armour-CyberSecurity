@@ -350,7 +350,7 @@
                         </td>
                     </tr>
                     <tr style="width: 90%; margin: 0 auto;">
-                        <td style="text-align: justify; margin: 2px; float: left">
+                        <td style="text-align: justify; margin-left: 50px; float: left">
                             <div style="vertical-align: top;">
                                 <h3><b>Your Data Privacy Officer </b></h3>
                             </div>
@@ -364,7 +364,7 @@
                                 </p>
                             </div>
                         </td>
-                        <td style="text-align: justify; float: right">
+                        <td style="text-align: justify;margin-right: 50px;  float: right">
                             <div style="vertical-align: top;">
                                 <h3><b style="margin-right: 7rem;">Your Data Authority List </b></h3>
 

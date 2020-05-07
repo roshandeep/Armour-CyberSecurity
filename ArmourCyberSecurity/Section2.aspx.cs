@@ -335,10 +335,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if(ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_1.Enabled = true;
                                         SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_1.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -376,10 +378,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_8.Enabled = true;
                                         SaveLinks(txt_Links_8.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_8.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -387,10 +391,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_9.Enabled = true;
                                         SaveLinks(txt_Links_9.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_9.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -398,10 +404,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_15.Enabled = true;
                                         SaveLinks(txt_Links_15.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_15.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -409,10 +417,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_16.Enabled = true;
                                         SaveLinks(txt_Links_16.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_16.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -450,10 +460,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_22.Enabled = true;
                                         SaveLinks(txt_Links_22.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_22.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
@@ -491,10 +503,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_23.Enabled = true;
                                         SaveLinks(txt_Links_23.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                     else
                                     {
+                                        txt_Links_23.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }

@@ -254,10 +254,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_1.Enabled = true;
                                         SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                     else
                                     {
+                                        txt_Links_1.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                 }
@@ -265,10 +267,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_3.Enabled = true;
                                         SaveLinks(txt_Links_3.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                     else
                                     {
+                                        txt_Links_3.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                 }
@@ -276,10 +280,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_19.Enabled = true;
                                         SaveLinks(txt_Links_19.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                     else
                                     {
+                                        txt_Links_19.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                 }
@@ -317,10 +323,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_21.Enabled = true;
                                         SaveLinks(txt_Links_21.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                     else
                                     {
+                                        txt_Links_21.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                 }
@@ -328,10 +336,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_23.Enabled = true;
                                         SaveLinks(txt_Links_23.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                     else
                                     {
+                                        txt_Links_23.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 5);
                                     }
                                 }

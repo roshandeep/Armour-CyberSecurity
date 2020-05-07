@@ -2,13 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
-        function EnableTextArea() {
+        function EnableTextArea1() {
+
             var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
             var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
-
-            var ddlAns3 = document.getElementById('<%= ddlAns3.ClientID %>');
-            var links3 = document.getElementById('<%= txt_Links_3.ClientID %>');
-
 
             if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
                 links1.disabled = false;
@@ -17,6 +14,11 @@
                 links1.disabled = true;
             }
 
+        }
+        function EnableTextArea3() {
+            var ddlAns3 = document.getElementById('<%= ddlAns3.ClientID %>');
+            var links3 = document.getElementById('<%= txt_Links_3.ClientID %>');
+            
             if (ddlAns3.options[ddlAns3.selectedIndex].innerHTML == 'YES') {
                 links3.disabled = false;
             }
@@ -48,7 +50,7 @@
             <h5>In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
             </h5>
             <asp:Label ID="lblQues1" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea()">
+            <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea1()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -65,7 +67,7 @@
             <br />
 
             <asp:Label ID="lblQues3" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns3" onChange="EnableTextArea()">
+            <asp:DropDownList runat="server" ID="ddlAns3" onChange="EnableTextArea3()">
                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />

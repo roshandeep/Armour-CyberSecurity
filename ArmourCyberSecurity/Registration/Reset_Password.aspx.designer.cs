@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArmourCyberSecurity.Registration
-{
-
-
-    public partial class Reset_Password
-    {
-
+namespace ArmourCyberSecurity.Registration {
+    
+    
+    public partial class Reset_Password {
+        
         /// <summary>
         /// passwordreset control.
         /// </summary>
@@ -22,16 +20,7 @@ namespace ArmourCyberSecurity.Registration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm passwordreset;
-
-        /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -40,7 +29,7 @@ namespace ArmourCyberSecurity.Registration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// txtConfirmPassword control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace ArmourCyberSecurity.Registration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-
+        
         /// <summary>
         /// FailureText control.
         /// </summary>

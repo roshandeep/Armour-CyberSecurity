@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace ArmourCyberSecurity.Registration
 {
     public partial class Reset_Password : System.Web.UI.Page
     {
-        string connetionString = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
         
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+
         protected void ResetClick(object sender, EventArgs e)
         {
             if (bool.TryParse(Session["valid"].ToString(), out bool valid))

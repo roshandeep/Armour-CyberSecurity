@@ -17,6 +17,8 @@ namespace ArmourCyberSecurity
 {
     public partial class Forgot_Password : System.Web.UI.Page
     {
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -61,7 +63,7 @@ namespace ArmourCyberSecurity
 
         protected void PasswordResetEmail(string userId)
         {
-            string constr = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
+            //string constr = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
             string forgot_password_code = Guid.NewGuid().ToString();
             string email_body = "Please click the following link to reset your password. <br /><br />" + Environment.NewLine;
             email_body += "<a href = '" + Request.Url.AbsoluteUri.Replace("Registration/Forgot_Password", "Registration/Reset_Password.aspx?ForgotPasswordCode=" + forgot_password_code) + "'>Click here to activate your account.</a>" + Environment.NewLine;
@@ -69,20 +71,25 @@ namespace ArmourCyberSecurity
             email_body += "Powered by Armour CyberSecurity 2020 <br />" + Environment.NewLine;
 
 
-            //MailMessage mm = new MailMessage("roshandeep810@gmail.com", "roshandeep1995@gmail.com");
-            MailMessage mm = new MailMessage("PasswordReset@PrivacyComplianceSolutions.com", txtEmail.Text.Trim().ToString())
+            MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
+            //MailMessage mm = new MailMessage("PasswordReset@PrivacyComplianceSolutions.com", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Password Reset",
                 Body = email_body,
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "relay-hosting.secureserver.net";
-            smtp.Port = 25;
-            smtp.EnableSsl = false;
+            //smtp.Host = "relay-hosting.secureserver.net";
+            //smtp.Port = 25;
+            //smtp.EnableSsl = false;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "david@privacycompliance.group";
-            NetworkCred.Password = "roshandeep@2895";
+            //NetworkCred.UserName = "david@privacycompliance.group";
+            //NetworkCred.Password = "roshandeep@2895";
+            NetworkCred.UserName = "roshandeep1995@gmail.com";
+            NetworkCred.Password = "roshandeepsinghsaini";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
@@ -93,7 +100,7 @@ namespace ArmourCyberSecurity
 
 
 
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(connetionString))
             {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO ForgotPassword VALUES(@UserId, @ForgotPasswordCode)"))
                 {
@@ -111,18 +118,5 @@ namespace ArmourCyberSecurity
             }
         }
 
-
-        //static async Task PasswordResetEmail(string username, string body, string emailAddress)
-        //{
-        //    var apiKey = "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";
-        //    var client = new SendGridClient(apiKey);
-        //    var from = new EmailAddress("PasswordReset@CyberArmourSecurity.com", "Password Reset");
-        //    var subject = "Password Reset";
-        //    var to = new EmailAddress(emailAddress, username);
-        //    var plainTextContent = "and easy to do anywhere, even with C#";
-        //    var htmlContent = body;
-        //    var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-        //    var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
-        //}
     }
 }

@@ -50,7 +50,7 @@ namespace ArmourCyberSecurity
                             {
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
                                 con.Close();
-                                //Response.Redirect("~/Section1.aspx", true);
+                                Response.Redirect("~/Section1.aspx", true);
                             }
                             else
                             {

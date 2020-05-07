@@ -202,10 +202,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_1.Enabled = true;
                                         SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
                                     }
                                     else
                                     {
+                                        txt_Links_1.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
                                     }
                                 }
@@ -243,10 +245,12 @@ namespace ArmourCyberSecurity
                                 {
                                     if (ddl.SelectedItem.Text == "YES")
                                     {
+                                        txt_Links_13.Enabled = true;
                                         SaveLinks(txt_Links_13.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
                                     }
                                     else
                                     {
+                                        txt_Links_13.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 4);
                                     }
                                 }

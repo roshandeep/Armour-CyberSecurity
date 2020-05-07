@@ -1420,9 +1420,19 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
+                        phrase.Add(new Chunk("All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and individuals informed\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("With privacy incidents, it is not IF you will be breached but WHEN.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
                         phrase.Add(new Chunk("SECTION GOAL: \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("To ensure that your company has an adequate incident response management plan in place before you experience an incident.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("With privacy incidents, it is not IF you will be breached but WHEN.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -1438,9 +1448,9 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("“a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data transmitted, stored or otherwise processed”. \n\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
                         phrase.Add(new Chunk("If you use a third company party to process your data, then you are still ultimately responsible for the protection of said data. If the third-party company has been breached, they are obligated to send you a notification. You must now assess the breach as your own and then address accordingly with actions and notifications.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_im_6.Text + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("You will need to be able to determine if your incident has crossed the threshold of being a breach. An incident may involve only internal discussion, but a breach requires external notification.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nYou will need to be able to determine if your incident has crossed the threshold of being a breach. An incident may involve only internal discussion, but a breach requires external notification.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("All breaches are supposed to be logged by your company for audit purposes by the respective DPAs. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_im_3.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + lbl_im_3.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -1453,12 +1463,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("INCIDENT RESPONSE PROCESS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and individuals informed. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("The following is intended to guide you through the creation of your own custom incident response process for Data Privacy Breaches. The key here is not to be caught off guard. The faster you can step in, stop the incident, address it, and take charge, the better.", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Studies have shown that companies pay an average of $500K US in fees for NOT having a plan in place.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_im_1.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("It is also imperative that you run your plan through in an activity called a tabletop exercise (like a fire alarm drill). This ensures everyone is prepared and knows what they doing.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_im_2.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Testing should be done annually or when major stakeholders change.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("To optimize your plan, review the list below to ensure that your plan covers all the needed pieces.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nStudies have shown that companies pay an average of $500K US in fees for NOT having a plan in place.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -1514,6 +1519,28 @@ namespace ArmourCyberSecurity
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
                         DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
                         DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_im_1.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("It is also imperative that you run your plan through in an activity called a tabletop exercise (like a fire alarm drill). This ensures everyone is prepared and knows what they doing.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_2.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Testing should be done annually or when major stakeholders change.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("To optimize your plan, review the list below to ensure that your plan covers all the needed pieces.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -1864,6 +1891,64 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
 
+
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################THIRD PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (im_4_20[8] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -1947,65 +2032,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-
-                        /* ########################################THIRD PAGE######################################## */
-
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.2f, 0.8f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(2);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
-
-
 
                         if (im_4_20[10] == "GREEN")
                         {
@@ -2270,9 +2296,6 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("SENDING NOTIFICATIONS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Some information about your breach is mandatory to be shared and other information you may want to keep confidential. Since time is of the essence with privacy incidents, it is extremely helpful to have pre-prepared templates for your notifications. These templates can include all the static information, such as company contact information, plus spaces to fill in information specific to this incident. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("If it is not possible or unreasonable to send notifications to all of your users, you have the option to post a public statement. This can appear on your company’s website or as a statement to the press. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Though breach notifications are part of all regulations, these templates are not. This said, it is shown that having these guidelines prepared in advance saves a great deal of time and money.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -2327,6 +2350,27 @@ namespace ArmourCyberSecurity
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
                         DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
                         DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Some information about your breach is mandatory to be shared and other information you may want to keep confidential. Since time is of the essence with privacy incidents, it is extremely helpful to have pre-prepared templates for your notifications. These templates can include all the static information, such as company contact information, plus spaces to fill in information specific to this incident. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("If it is not possible or unreasonable to send notifications to all of your users, you have the option to post a public statement. This can appear on your company’s website or as a statement to the press. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Though breach notifications are part of all regulations, these templates are not. This said, it is shown that having these guidelines prepared in advance saves a great deal of time and money.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -2568,17 +2612,6 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("Incident Response Plan\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_im_irp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -2634,6 +2667,19 @@ namespace ArmourCyberSecurity
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Incident Response Plan\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_irp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Protection Authority Notification Template \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
@@ -2965,7 +3011,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("PRIVACY POLICY \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("As a company, you have many options to present your users and customers with the required information about their data privacy. The simplest way to do this is through a Privacy Policy in person or on your website. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("In accordance to the legislations, the privacy policy must explain to users what their rights are and how to execute on those rights. It is also important to establish a legal basis for which data is being collected. This policy should be clear and easy to find. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Below is a checklist of what should be included in this policy. We have scored this list based on your assessment input. Review each item to ensure you have met the standard.\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nBelow is a checklist of what should be included in this policy. We have scored this list based on your assessment input. Review each item to ensure you have met the standard.\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -3561,7 +3607,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("OPT-INS AND OPT-OUTS \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Users must have the ability to Opt In and Opt Out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed. You can use a checkbox for this on a digital service but be sure not to have it checked by default.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Consent is a key component to privacy regulations. It must be informed (individual knows what they are agreeing to) and given freely.  \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("There is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nThere is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_c_13.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Review the items below to ensure that you have covered all of your bases. \n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("IF YOU ARE ACTING AS THE CONTROLLER: To be compliant with privacy regulations, all of the items should be marked green, or complete.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
@@ -4461,7 +4507,7 @@ namespace ArmourCyberSecurity
                         table.AddCell(cell);
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Data control is covered in all of the regulations under Data Subject Rights or guiding principles. For example, according to GDPR Article 15, a user has the right to access their data.Under Article 16, they have the right to rectify that data, and under Article 17, they have the right to ask to be erased from your system.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("If you build a solid foundation of privacy into your service or product, innovation and design will stay in line with privacy regulations and practices. Privacy Engineering and Data Analysis are often overlooked because they cannot be easily seen externally. Like the foundation of a house, they are the most important piece or else your structure will later fall apart and be very costly to repair.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -4791,7 +4837,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk(lbl_dc_8.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_dc_10.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data retention is two-fold; deleting data when it is no longer of use and deleting data when requested by an individual. The initiation of deletion is different but since the act of removal is the same you can choose to use one process for retention and deletion. If it makes more sense for your company, separate the items below in to two separate processes.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Review the items below to ensure that you have covered all of your bases. \n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nReview the items below to ensure that you have covered all of your bases. \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -5088,18 +5134,16 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
-                        pdfDoc.Add(table);
-
                         phrase = new Phrase();
                         phrase.Add(new Chunk(lbl_dc_comm.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Though pre-written templates are not required for regulation compliance, creating them in advance will save you time and resources as the requests come in. It will also ensure consistent communication from the company to individuals.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("The trail of communication additionally provides a great way to audit what requests were made, when they were handled, and when they were completed.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("The suggested communication templates are: \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("●	Acknowledgement : Request received. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("●	Request Accepted : Individual authenticated and request will be processed. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("●	Request Denied : Request will NOT be processed. There are a number of valid reasons that can be listed. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("●	Data Request Delivery : Data sent. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("●	Data Deletion Confirmation : Confirmation of system removal.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("The suggested communication templates are: \n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Acknowledgement : Request received. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Request Accepted : Individual authenticated and request will be processed. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Request Denied : Request will NOT be processed. There are a number of valid reasons that can be listed. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Data Request Delivery : Data sent. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\u2022 Data Deletion Confirmation : Confirmation of system removal.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -5113,6 +5157,9 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Data Subject Access Request Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_dsarp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -5177,9 +5224,6 @@ namespace ArmourCyberSecurity
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data Request Scripts and Communications\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_drsc.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
@@ -5605,7 +5649,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("FOUNDATION - PRIVACY BY DESIGN (PbD)\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Starting with the foundation of the system or service, you'll need to draw or write out the flow of data including collection, transfer and access to the data. [Note: this system and services map is the first step in a Data Privacy Impact Assessment below]\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nBoth the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6667,10 +6711,10 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("DATA PRIVACY IMPACT ASSESSMENT \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Of all the elements of compliance, a thorough DPIA will take the most amount of time. Authorities suggest reviewing the DPIA every 6 months. When done properly the first time, the review should have a minimal impact on resources going forward. A new DPIA should be done for every new system or service created if it involves PII.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pe_23.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nOf all the elements of compliance, a thorough DPIA will take the most amount of time. \nAuthorities suggest reviewing the DPIA every 6 months. When done properly the first time, the review should have a minimal impact on resources going forward. A new DPIA should be done for every new system or service created if it involves PII.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + lbl_pe_23.Text + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Review the sections to ensure you have covered all required areas of the DPIA.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("The body of the assessment is broken in to six parts:\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\nThe body of the assessment is broken in to six parts:\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("1. System and/or Service Map \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("2. Data List (including PI and PII)\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("3. Notice and Consent \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
@@ -7242,7 +7286,8 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("\u2022 If the company does business with some subjects in the EU\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\u2022 If the company is in a country that also follows GDPR (ex Brazil)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\u2022 If the data subject is 'in the union'. This is intentionally vague and could cover either residents by address or citizens so long as some action takes place in the EU.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("According to your input, your company falls under the following legislations:\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("According to your input,", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(" your company falls under the following legislations:\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(legislation_text, FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
@@ -7335,7 +7380,7 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Protection Authorities\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("In the event of a security incident or complaint, it is important to know which Authorities are responsible for your regulations. \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(dpa_list.Replace("<br/>", "\n") + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + dpa_list.Replace("<br/>", "\n") + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -7363,7 +7408,7 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("\u2022 Overseeing and updating DPIAs (Data Protection Impact Assessments)\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\u2022 Acting as primary contact for external companies and regulatory bodies \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\u2022 Ensuring internal policies and processes are in place, and providing training to staff \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(dpo_exsists + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + dpo_exsists + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Ensure that the person acting as DPO fulfils all the prescribed responsibilities.\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
@@ -7376,9 +7421,9 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Controllers, Processors, Organizations\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Determining your company can help in defining which regulation rules you need to observe. The company that controls the data is typically referred to as an organization.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(controller + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(processor + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(notsure + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + controller + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + processor + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("\n" + notsure + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("NOTE: A company can be both a Controller and a Processor.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
@@ -7612,7 +7657,7 @@ namespace ArmourCyberSecurity
             return result;
         }
 
-        private static void DrawLine(PdfWriter writer, float x1, float y1, float x2, float y2, BaseColor color)
+        public static void DrawLine(PdfWriter writer, float x1, float y1, float x2, float y2, BaseColor color)
         {
             PdfContentByte contentByte = writer.DirectContent;
             contentByte.SetColorStroke(color);
@@ -7643,4 +7688,55 @@ namespace ArmourCyberSecurity
             //document.Add(tabFot);
         }
     }
+
+    public class PDFLayout : PdfPageEventHelper
+    {
+        public override void OnEndPage(PdfWriter writer, Document document)
+        {
+            base.OnEndPage(writer, document);
+
+            PdfPTable table;
+            PdfPCell cell;
+            Phrase phrase;
+
+            table = new PdfPTable(2);
+            table.TotalWidth = 500f;
+            table.LockedWidth = true;
+            table.SetWidths(new float[] { 0.2f, 0.8f });
+            table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+            //Armor Logo
+            string imagepath = HttpContext.Current.Server.MapPath("~/images");
+            Image img = Image.GetInstance(imagepath + "/newLogo.png");
+            img.ScaleAbsolute(50, 61);
+            cell = new PdfPCell(img);
+            cell.Border = PdfPCell.NO_BORDER;
+            cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+            cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            cell.PaddingBottom = 0f;
+            cell.PaddingTop = 5f;
+            table.AddCell(cell);
+
+            //Armor Address
+            phrase = new Phrase();
+            phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+            cell = new PdfPCell(phrase);
+            cell.SetLeading(3, 1);
+            cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+            cell.Border = PdfPCell.NO_BORDER;
+            cell.PaddingBottom = 2f;
+            cell.PaddingTop = 5f;
+            table.AddCell(cell);
+
+            BaseColor color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+            CustomRoadmapReport.DrawLine(writer, 25f, document.Top - 79f, document.PageSize.Width - 25f, document.Top - 79f, color);
+            CustomRoadmapReport.DrawLine(writer, 25f, document.Top - 80f, document.PageSize.Width - 25f, document.Top - 80f, color);
+
+            document.Add(table);
+        }
+    }
+
+   
+
 }
