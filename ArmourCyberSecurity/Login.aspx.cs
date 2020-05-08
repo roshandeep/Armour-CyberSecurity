@@ -48,9 +48,9 @@ namespace ArmourCyberSecurity
                             bool verifiedEmail = Convert.ToBoolean(reader["ConfirmedEmail"]);
                             if (verifiedEmail == true)
                             {
-                                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
                                 con.Close();
-                                Response.Redirect("~/Section1.aspx", true);
+                                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
+                                //Response.Redirect("~/Section1.aspx", true);
                             }
                             else
                             {

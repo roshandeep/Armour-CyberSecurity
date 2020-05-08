@@ -68,7 +68,7 @@ namespace ArmourCyberSecurity.Level1
                                 }
                                 
                                 System.Threading.Thread.Sleep(3000);
-                                Response.Redirect("~/Login.aspx", false);
+                                Response.Redirect("~/Level1/CustomRoadmapLandingpage.aspx", false);
                                 
                             }
                             else

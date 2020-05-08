@@ -26,7 +26,7 @@ namespace ArmourCyberSecurity
 
         protected void level2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Section1.aspx", false);
+            Response.Redirect("~/Level1/CustomRoadmapLandingpage.aspx", false);
         }
 
         protected void btn_SignIn_Click(object sender, EventArgs e)

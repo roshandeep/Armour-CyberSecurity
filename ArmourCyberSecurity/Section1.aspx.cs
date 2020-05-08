@@ -365,13 +365,39 @@ namespace ArmourCyberSecurity
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 1, secQuesId);
 
-                                if(ddl == ddlAns13 && ddl.SelectedItem.Text == "YES")
+                                if(ddl == ddlAns13)
                                 {
-                                    SaveDPAInfo(userId);
+                                    if (ddl.SelectedItem.Text == "YES")
+                                    {
+                                        txt_Name.Enabled = true;
+                                        txt_Email.Enabled = true;
+                                        txt_phone.Enabled = true;
+                                        txt_title.Enabled = true;
+                                        txt_contact.Enabled = true;
+                                        SaveDPAInfo(userId);
+                                    }
+                                    else
+                                    {
+                                        txt_Name.Enabled = false;
+                                        txt_Email.Enabled = false;
+                                        txt_phone.Enabled = false;
+                                        txt_title.Enabled = false;
+                                        txt_contact.Enabled = false;
+                                        SaveDPAInfo(userId);
+                                    }
                                 }
                                 if (ddl == ddlAns14 && ddl.SelectedItem.Text == "YES")
                                 {
-                                    SaveDPALinks(userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 1);
+                                    if (ddl.SelectedItem.Text == "YES")
+                                    {
+                                        txt_dpaLinks.Enabled = true;
+                                        SaveDPALinks(userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 1);
+                                    }
+                                    else
+                                    {
+                                        txt_dpaLinks.Enabled = false;
+                                        SaveDPALinks(userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 1);
+                                    }
                                 }
                             }
                         }

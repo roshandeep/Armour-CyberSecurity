@@ -4,45 +4,295 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="AIHUB/DC">
+    <meta name="creator" author="techie(aj)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon">
+    <meta name="description" content="Home page">
+
+    <title>Custom Road Map</title>
+    <link rel="stylesheet" href="Level1/assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="Level1/assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="Level1/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="Level1/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="Level1/assets/theme/css/style.css">
+    <link rel="preload" as="style" href="Level1/assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="Level1/assets/mobirise/css/mbr-additional.css" type="text/css">
+     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+
+    <style>
+        #form1 {
+            /*                    background: linear-gradient(#626d8d, #efefef,#c3c5cb);*/
+            background-image: url(./Level1/assets/images/bground.jpg);
+            /*                background:linear-gradient(120deg,#3498db,#224ee3,#3498db);*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: auto;
+        }
+
+
+
+
+        #ContentPlaceHolder1_lblQues1,
+        #ContentPlaceHolder1_lblQues2,
+        #ContentPlaceHolder1_lblQues3,
+        #ContentPlaceHolder1_lblQues4,
+        #ContentPlaceHolder1_lblQues5,
+        #ContentPlaceHolder1_lblQues6,
+        #ContentPlaceHolder1_lblQues7,
+        #ContentPlaceHolder1_lblQues8,
+        #ContentPlaceHolder1_lblQues9,
+        #ContentPlaceHolder1_lblQues10,
+        #ContentPlaceHolder1_lblQues11,
+        #ContentPlaceHolder1_lblQues12,
+        #ContentPlaceHolder1_lblQues13,
+        #ContentPlaceHolder1_lbl_Name,
+        #ContentPlaceHolder1_lbl_Email,
+        #ContentPlaceHolder1_lbl_Phone,
+        #ContentPlaceHolder1_lbl_Title,
+        #ContentPlaceHolder1_lbl_Contact,
+        #ContentPlaceHolder1_lblQues14,
+        #ContentPlaceHolder1_lbl_dpaLinks,
+        #ContentPlaceHolder1_lblQues15,
+        #ContentPlaceHolder1_lblQues16,
+        #ContentPlaceHolder1_lblQues17,
+        #ContentPlaceHolder1_lblQues18,
+        #ContentPlaceHolder1_lblQues19,
+        #ContentPlaceHolder1_lblQues20,
+        #ContentPlaceHolder1_lblQues21,
+        #ContentPlaceHolder1_lblQues22,
+        #ContentPlaceHolder1_lblQues23,
+        #ContentPlaceHolder1_lblQues24,
+        #ContentPlaceHolder1_lblQues25,
+        #ContentPlaceHolder1_lblQues26 {
+            color: floralwhite;
+            font-size: large;
+            font-weight: 600;
+        }
+
+
+
+
+        #ContentPlaceHolder1_ddlAns3,
+        #ContentPlaceHolder1_ddlAns4,
+        #ContentPlaceHolder1_ddlAns5,
+        #ContentPlaceHolder1_ddlAns6,
+        #ContentPlaceHolder1_ddlAns7,
+        #ContentPlaceHolder1_ddlAns8,
+        #ContentPlaceHolder1_ddlAns9,
+        #ContentPlaceHolder1_ddlAns10,
+        #ContentPlaceHolder1_ddlAns11,
+        #ContentPlaceHolder1_ddlAns12,
+        #ContentPlaceHolder1_ddlAns13,
+        #ContentPlaceHolder1_txt_Name,
+        #ContentPlaceHolder1_txt_phone,
+        #ContentPlaceHolder1_txt_title,
+        #ContentPlaceHolder1_txt_contact,
+        #ContentPlaceHolder1_ddlAns14,
+        #ContentPlaceHolder1_txt_Email,
+        #ContentPlaceHolder1_txt_dpaLinks,
+        #ContentPlaceHolder1_ddlAns1,
+        #ContentPlaceHolder1_ddlAns2,
+        #ContentPlaceHolder1_ddlAns15,
+        #ContentPlaceHolder1_ddlAns16,
+        #ContentPlaceHolder1_ddlAns17,
+        #ContentPlaceHolder1_ddlAns18,
+        #ContentPlaceHolder1_ddlAns19,
+        #ContentPlaceHolder1_ddlAns20,
+        #ContentPlaceHolder1_ddlAns21,
+        #ContentPlaceHolder1_ddlAns22,
+        #ContentPlaceHolder1_ddlAns23,
+        #ContentPlaceHolder1_ddlAns24,
+        #ContentPlaceHolder1_ddlAns25 {
+            display: block;
+            width: 50%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: rgba(255, 255, 255, 1);
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+
+
+        label {
+            color: floralwhite;
+            font-size: large;
+            font-weight: 500;
+            padding: 5px;
+        }
+
+
+
+        h5, h6, h3 {
+            background-color: dimgray;
+            color: floralwhite;
+        }
+
+        #btn_Sec1, #btn_Sec2, #btn_Sec3, #btn_Sec4, #btn_Sec5, #btn_Sec6, #btn_Report {
+            border: none;
+            background: none;
+            font-weight: 600;
+        }
+
+            #btn_Sec1:hover,
+            #btn_Sec2:hover,
+            #btn_Sec3:hover,
+            #btn_Sec4:hover,
+            #btn_Sec5:hover,
+            #btn_Sec6:hover,
+            #btn_Report{
+                color: #149dcc;
+            }
+    </style>
+
+
+
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/dropdown/js/nav-dropdown.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/theme/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 </head>
-<body class="container-fluid">
-    <form id="form1" runat="server" class="container-fluid">
-        <div class="row">
+<body>
 
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false" />
-            </div>
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false" />
-            </div>
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec3" runat="server" Text="Data Control" OnClick="btn_Sec3_Click" CausesValidation="false" />
-            </div>
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec4" runat="server" Text="Consent" OnClick="btn_Sec4_Click" CausesValidation="false" />
-            </div>
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec5" runat="server" Text="Incident Management" OnClick="btn_Sec5_Click" CausesValidation="false" />
-            </div>
-            <div class="col-sm">
-                <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" />
-            </div>
-<%--            <div class="col-sm">
-                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" />
-                
-            </div>--%>
-            <div class="col-sm">
-                <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" Enabled = "True"/>
-                <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
-            </div>
-        </div>
+    <form id="form1" runat="server">
+        <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
+
+
+
+            <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="menu-logo">
+                    <div class="navbar-brand">
+                        <span class="navbar-logo">
+                            <a href="./page1.html">
+                                <img src="Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
+                            </a>
+                        </span>
+                        <span class="navbar-caption-wrap">
+                            <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="nav navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" /></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" /></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec3" runat="server" Text="Data Control" OnClick="btn_Sec3_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" /></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec4" runat="server" Text="Consent" OnClick="btn_Sec4_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" /></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec5" runat="server" Text="Incident Management" OnClick="btn_Sec5_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" /></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" CssClass="nav-link link text-white display-6" />></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link text-white display-6" Enabled="True" /></li>
+                            <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+
         <div class="row">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
+
+
     </form>
+    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
+
+
+
+
+
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+
+
+
+
+
+
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2020 Armour Cyber Security
+                        <br>
+                        All Rights Reserved<br>
+                        If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
+                        <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>

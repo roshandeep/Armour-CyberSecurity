@@ -94,7 +94,7 @@
 
                                     <tr>
                                         <td class="txtb">
-                                            <asp:TextBox runat="server" ID="UserName" placeholder="Usename"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="UserName" placeholder="Username"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ValidationGroup="Login1" ToolTip="User Name is required." ID="UserNameRequired">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>

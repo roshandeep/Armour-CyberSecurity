@@ -20,21 +20,20 @@
 
 <script>
 (function() {
-  var stripe = Stripe('pk_test_dv7XSoJVZgSV4CiDNrYgnOUQ00KCEF6q1W');
-
+    var stripe = Stripe('pk_test_dv7XSoJVZgSV4CiDNrYgnOUQ00KCEF6q1W');
   var checkoutButton = document.getElementById('checkout-button-sku_H8jWTcMkJ5uh1n');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
       items: [{sku: 'sku_H8jWTcMkJ5uh1n', quantity: 1}],
-
+        
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: window.location.protocol + '//success',
+      successUrl: window.location.protocol + '//localhost:62800/Section1',
       cancelUrl: window.location.protocol + '//canceled',
     })
     .then(function (result) {
