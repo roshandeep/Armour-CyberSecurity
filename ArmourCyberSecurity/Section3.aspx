@@ -104,26 +104,36 @@
         }
     </script>
     <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
-        <h5>The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
+        <br />
+        <h5 style="background-color: transparent;">The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
         <br />
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">SECTION GOAL:
+        <br />
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">SECTION GOAL:
             <br />
             To build a system for data control that complies with an individual's rights but also ensures privacy and security levels are high. 
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">STAKEHOLDERS REQUIRED:
-            <br>
+        <br />
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">STAKEHOLDERS REQUIRED:
+            <br />
             To fill out this section you will need a knowledge of the following:
-            <br>
-            the way the data is collected, stored, transefered and processed<br>
+            <br />
+            the way the data is collected, stored, transefered and processed<br />
             * the way(s) individuals communicate with the company
-            <br>
+            <br />
             the method by which individuals are authenticated in the system 
+            <br />
         </h5>
         <div id='sec1Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
-            <h2>Data Subject Access Requests</h2>
-            <h5>Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+            <br />
+            <h2>Data Subject Access Requests
+                <br />
+            </h2>
+            <br />
+            <h5 style="background-color: transparent;">Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+            <br />
             </h5>
+            <br />
             <div class="row">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
@@ -134,7 +144,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>
@@ -224,10 +234,15 @@
             <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>
         <div id='sec2Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+            <br />
             <h2 style="width: 90%; margin: 0 auto;">Data Retention and Removal
+                <br />
             </h2>
-            <h5 style="width: 90%; margin: 0 auto;">Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
+            <br />
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
+            <br />
             </h5>
+            <br />
             <div class="row">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues8" runat="server" Text="" />
@@ -238,7 +253,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -337,7 +352,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>

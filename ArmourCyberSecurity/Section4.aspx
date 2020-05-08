@@ -104,33 +104,37 @@
         }
     </script>
     <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
-        <h5>The following questions deal with how privacy information is displayed to your customer or client, as well as how their explicit consent gathered and tracked.
+        <h5 style="background-color: transparent;">The following questions deal with how privacy information is displayed to your customer or client, as well as how their explicit consent gathered and tracked.
             <br />
         </h5>
-        <h5>SECTION GOAL:
-            <br>
+        <h5 style="background-color: transparent;">SECTION GOAL:
+            <br />
             To ensure that consent is properly collected from infomred individuals that are aware of how their data is collected and used.
+        <br />
         </h5>
-        <h5>STAKEHOLDERS REQUIRED:
-            <br>
+        <h5 style="background-color: transparent;">STAKEHOLDERS REQUIRED:
+            <br />
             To fill out this section you will need a knowledge of the following:
-            <br>
+            <br />
             * the type of data that is collected
-            <br>
+            <br />
             * the method(s) by which that data is collected (directly and indirectly)
-            <br>
+            <br />
             * the list of third party or vendor companies that process the data 
-            <br>
+            <br />
             * the locations where the data is stored 
-            <br>
+            <br />
             * the contact information for the company
+            <br />
         </h5>
         <div id='sec1Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
             <h2>Privacy Policy
+                <br />
             </h2>
-            <h5>In accordance to the legislations, the privacy policy must explain to users what their rights are and how to execute on those rights. It is also important to establish a legal basis for which data is being collected. This policy should be clear and easy to find.
+            <h5 style="background-color: transparent;">In accordance to the legislations, the privacy policy must explain to users what their rights are and how to execute on those rights. It is also important to establish a legal basis for which data is being collected. This policy should be clear and easy to find.
+            <br />
             </h5>
-
+            <br />
             <div class="row">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
@@ -141,7 +145,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -302,7 +306,9 @@
         </div>
         <div id='sec2Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
             <h2>Opt Ins/Outs</h2>
-            <h5 style="width: 90%; margin: 0 auto;">Users must have the ability to Opt in and out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed.
+            <br />
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">Users must have the ability to Opt in and out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed.
+            <br />
             </h5>
 
             <div class="row">
@@ -315,7 +321,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_13" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_13" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_13" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>

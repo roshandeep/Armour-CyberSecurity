@@ -205,26 +205,29 @@
 
     <div id="Global_Regulations" class="container-fluid">
         <div class="row" style="padding-top: 8rem;">
-            <h5 style="width: 90%; margin: 0 auto; color: floralwhite;"><strong>The following questions deal with the region in which you do buisness, which includes both where your office resides and where your customers reside.</strong>
-                <br>
+            <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;"><strong>The following questions deal with the region in which you do buisness, which includes both where your office resides and where your customers reside.</strong>
+                <br />
                 For the purpose of this report, we will be focusing on GDPR (Europe), PIPEDA (Canada), CCPA (California), and LGPD (Brazil. This said, between the global reach of many companies and the fact that more countries and regional oversight are coming to law, following the best practice suggestions laid out in this assessment will benefit you regardless of region.
-
+                <br />
             </h5>
             <br />
 
-            <h5 style="width: 90%; margin: 0 auto; align-content: center; color: floralwhite;">SECTION GOAL:</h5>
-            <br>
-            <h6 style="width: 90%; margin: 0 auto; color: floralwhite;">To establish which legislations are required, determined by both your company location and that of your customers. Qualify your company against those legislations to determine your company’s ‘role’ with respect to the data (GDPR Ex. Processor or Controller).
+            <h5 style="width: 90%; margin: 0 auto; align-content: center; color: floralwhite; background-color: transparent;">SECTION GOAL:
+                <br />
+            </h5>
+            <br />
+            <h6 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;">To establish which legislations are required, determined by both your company location and that of your customers. Qualify your company against those legislations to determine your company’s ‘role’ with respect to the data (GDPR Ex. Processor or Controller).
 
                             Note: If you deal with medical data, then there are separate regulations that are specific to these kinds of records. They are typical labeled Health Insurance Portability and Accountability Act, or the like.
-
+                <br />
             </h6>
             <br />
 
-            <h5 style="width: 90%; margin: 0 auto; color: floralwhite;">STAKEHOLDERS REQUIRED:
-            <br>
+            <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;">STAKEHOLDERS REQUIRED:
+            <br />
                 To fill out this section you will need a knowledge of the locations of the company and the people who use your product/service.
             </h5>
+            <br />
         </div>
         <br />
         <div id='sec1Div' class="container-fluid" style="width: 80%;">
@@ -415,7 +418,9 @@
                 </div>
             </div>
             <div class="row" id="DPODetails">
-                <div class="col-sm">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
                     <div class="container">
                         <div class="row">
                             <div class="col">
@@ -468,10 +473,10 @@
 
 
             <div class="row">
-                <div class="col">
+                <div class="col-sm-8">
                     <asp:Label ID="lblQues14" runat="server" Text="" />
                 </div>
-                <div class="col">
+                <div class="col-sm-4">
                     <asp:DropDownList runat="server" ID="ddlAns14" onChange="EnableTextArea()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -480,14 +485,24 @@
                 </div>
             </div>
             <div class="row" id="DPOLinks">
-                <div class="col-sm">
-                    <asp:Label ID="lbl_dpaLinks" runat="server" Text="DPA : " />
-                    <asp:TextBox ID="txt_dpaLinks" TextMode="multiline" Columns="50" Rows="5" runat="server" />
-
-                    <br />
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <asp:Label ID="lbl_dpaLinks" runat="server" Text="DPA : " />
+                            </div>
+                            <div class="col">
+                                <asp:TextBox ID="txt_dpaLinks" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="row">
+            </div>
             <div class="row">
                 <asp:Button ID="btn_Save1" runat="server" Text="Save" OnClick="btn_Save1_Click" />
             </div>

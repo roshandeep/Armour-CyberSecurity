@@ -69,25 +69,31 @@
 
 
     <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
-        <h5 style="width: 90%; margin: 0 auto;">The following questions deal with how you have designed you remployee training program. 
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how you have designed you remployee training program. 
+        <br />
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">SECTION GOAL:
-            <br>
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">SECTION GOAL:
+            <br />
+            <br />
             To ensure that all employees understand their roles within the company for privacy and compliance.
+            <br />
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">STAKEHOLDERS REQUIRED:
-            <br>
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">STAKEHOLDERS REQUIRED:
+            <br />
             To fill out this section you will need a knowledge of the following:
-            <br>
+            <br />
             * the onborading program used at the company
-            <br>
+            <br />
             * the employee training program around privacy
-            <br>
+            <br />
         </h5>
+        <br />
         <div style="width: 90%; margin: 0 auto;" class="container-fluid">
             <h2 style="width: 90%; margin: 0 auto;">Privacy Policy
+                <br />
             </h2>
-            <h5 style="width: 90%; margin: 0 auto;">In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
+            <br />
             </h5>
             <div class="row">
                 <div class="col-sm-6">
@@ -99,7 +105,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -128,7 +134,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>

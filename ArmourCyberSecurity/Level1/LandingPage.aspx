@@ -705,7 +705,7 @@ Toronto, ON M5S 1M2</a>
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br> All Rights Reserved<br>
+                        <br /> All Rights Reserved<br />
                         <a href="./Online%20Assessment%20Privacy%20Policy.docx" download>Privacy Policy</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>

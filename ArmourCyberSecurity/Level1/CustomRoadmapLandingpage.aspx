@@ -142,7 +142,7 @@
                             <div id="collapse3_21" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" style="background-color: #149dcc">
                                 <div class="panel-body p-4"style="background-color:white">
                                     <p class="mbr-fonts-style panel-text display-7">
-<!--                                       Key differences from traditional builders:<br>* Minimalistic, extremely <strong>easy-to-use</strong> interface<br>* <strong>Mobile</strong>-friendliness, latest website blocks and techniques "out-the-box"<br>* <strong>Free</strong> for commercial and non-profit use-->
+<!--                                       Key differences from traditional builders:<br />* Minimalistic, extremely <strong>easy-to-use</strong> interface<br />* <strong>Mobile</strong>-friendliness, latest website blocks and techniques "out-the-box"<br />* <strong>Free</strong> for commercial and non-profit use-->
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, sagittis purus. Nunc auctor gravida magna, sed efficitur tortor tristique quis.
                                         
 </p>
@@ -244,7 +244,7 @@
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br> All Rights Reserved<br>
+                        <br /> All Rights Reserved<br />
                         If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
                         <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
                     </p>

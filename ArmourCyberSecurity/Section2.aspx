@@ -204,29 +204,33 @@
 
     </script>
     <div style="padding-top: 8rem;">
-        <h5 style="width: 90%; margin: 0 auto;">The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data.
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data.
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">SECTION GOAL:
-            <br>
+        <br />
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">SECTION GOAL:
+            <br />
             To ensure that privacy is at the foundation of your system and services. To evaluate the basis on which data is collected and the security of its processing, transfer and storage. Through this process you eliminate risk by removing any data that is not necessary to system, and add in the secuirty measures needed to protect the data
         </h5>
-        <h5 style="width: 90%; margin: 0 auto;">STAKEHOLDERS REQUIRED:
-            <br>
+        <br />
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">STAKEHOLDERS REQUIRED:
+            <br />
             To fill out this section you will need a knowledge of the following:
-            <br>
-            the way the data is collected, stored, transefered and processed<br>
+            <br />
+            the way the data is collected, stored, transefered and processed<br />
             * the types and cotegories of any perosnal data
-            <br>
+            <br />
             the third party software and products your company uses with personal data
+            <br />
         </h5>
-
+        <br />
         <div id='sec1Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
             <h2>Privacy by Design</h2>
-            <h5>Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data.
-            <br>
+            <br />
+            <h5 style="background-color: transparent;">Privacy by Design is a framework to ensure that privacy is paramount in the operation and maintenance of a system. Applying the seven principles of PbD maximizes the security and safety of your data.
+            <br />
                 Starting with the foundation of the system or service, you'll need draw or write out the flow of data including collection, transfer and access to the data. [Note: this system and services map is the first step in a Data Privacy Impact Assessment below]
                                 Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.
-                                
+               <br />
             </h5>
             <div class="row">
                 <div class="col-sm-6">
@@ -239,7 +243,7 @@
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
 
 
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -331,9 +335,10 @@
             <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>
         <div id='sec2Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+            <br />
             <h2>Data Categorization</h2>
-
-            <h5>To assess your data, you will need to create a data map by listing your current data and reviewing it against necessity for your products/services. [Note: the Data Use Info Sheet is part of the Privacy Impact Assessment below]. Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.
+            <br />
+            <h5 style="background-color: transparent;">To assess your data, you will need to create a data map by listing your current data and reviewing it against necessity for your products/services. [Note: the Data Use Info Sheet is part of the Privacy Impact Assessment below]. Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.
             </h5>
 
             <div class="row">
@@ -346,7 +351,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -362,7 +367,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_9" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>
@@ -448,7 +453,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -458,9 +463,12 @@
             <asp:Button ID="btn_part2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>
         <div id='sec3Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+            <br />
             <h2>Vendor Management</h2>
-            <h5>If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services, such as cloud storage, for customers and clients. Some regulations require a contract but it is a good idea to have one regardless.
+            <br />
+            <h5 style="background-color: transparent;">If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services, such as cloud storage, for customers and clients. Some regulations require a contract but it is a good idea to have one regardless.
             </h5>
+            <br />
             <div class="row">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues16" runat="server" Text="" />
@@ -471,7 +479,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_16" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -553,7 +561,7 @@
             </asp:DropDownList>
             <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
             <br />
-            <asp:Label ID="lbl_Links_22" runat="server" Text="Free Form Links : " />
+            <asp:Label ID="lbl_Links_22" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
             <asp:TextBox ID="txt_Links_22" TextMode="multiline" Columns="50" Rows="5" runat="server" />
 
             <br />
@@ -561,11 +569,13 @@
             <asp:Button ID="btn_part3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>
         <div id='sec4Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+            <br />
             <h2>Privacy Impact Assessment</h2>
-            <h5>All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.<br>
+            <br />
+            <h5 style="background-color: transparent;">All legislations require that companies show due diligence in their protection of personal data. This can be done via an evaluation called a Data Protection Impact Assessment (DPIA) or Privacy Impact Assessment (PIA), which lists, reviews, and records all the ways data is handled, used, stored, and protected.<br />
                 The DPIA includes a system map, data map, and information from the data use info sheet, which are included in the sections above. The DPIA also covers security and privacy measures taken to protect the data while being accessed, stored, and transferred.
             </h5>
-
+            <br />
             <div class="row">
                 <div class="col-sm-6">
 
@@ -577,7 +587,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>

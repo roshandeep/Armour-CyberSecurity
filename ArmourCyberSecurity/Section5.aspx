@@ -210,13 +210,15 @@
         }
     </script>
     <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
-        <h5>The following questions deal with how your company responds to and addresses a privacy incident. 
+        <h5 style="background-color: transparent;">The following questions deal with how your company responds to and addresses a privacy incident. 
+        <br />
         </h5>
-        <h5>SECTION GOAL:
+        <h5 style="background-color: transparent;">SECTION GOAL:
             <br />
             To ensure that your company has an adequate incident response management plan in place before you experience an incident.
+            <br />
         </h5>
-        <h5>STAKEHOLDERS REQUIRED:
+        <h5 style="background-color: transparent;">STAKEHOLDERS REQUIRED:
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />
@@ -225,10 +227,14 @@
             * the names of third parties, including legal and forensics, that may be brought in to resolve an issue. 
             <br />
             * the existing 'severity one' or incident plans the company has  
+            <br />
         </h5>
         <div id='sec1Div' class="container-fliud">
-            <h2>Incident Response Plan</h2>
-            <h5>All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
+            <h2>Incident Response Plan
+                <br />
+            </h2>
+            <h5 style="background-color: transparent;">All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
+            <br />
             </h5>
             <div class="row">
                 <div class="col-sm-6">
@@ -240,7 +246,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -270,7 +276,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -494,7 +500,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns19" ControlToValidate="ddlAns19" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_19" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_19" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_19" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -518,10 +524,12 @@
         </div>
         <div id='sec2Div' class="container-fliud">
             <h2>Notifications
+                <br />
             </h2>
-            <h5>Depending on risk of harm, the appropriate data protection authority (or authorities) must be notified
-                <br>
+            <h5 style="background-color: transparent;">Depending on risk of harm, the appropriate data protection authority (or authorities) must be notified
+                <br />
                 Depending on risk of harm, users must be notified individually or by public statement.
+                <br />
             </h5>
             <div class="row">
                 <div class="col-sm-6">
@@ -534,7 +542,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_21" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_21" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_21" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -566,7 +574,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " />
+                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
