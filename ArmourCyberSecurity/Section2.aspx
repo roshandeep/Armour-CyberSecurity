@@ -554,17 +554,21 @@
                     <br />
                 </div>
             </div>
-
-            <asp:Label ID="lblQues22" runat="server" Text="" />
-            <asp:DropDownList runat="server" ID="ddlAns22" onChange="EnableTextArea22()">
-                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-            <br />
-            <asp:Label ID="lbl_Links_22" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
-            <asp:TextBox ID="txt_Links_22" TextMode="multiline" Columns="50" Rows="5" runat="server" />
-
-            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues22" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns22" onChange="EnableTextArea22()">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                    <br />
+                    <asp:Label ID="lbl_Links_22" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:TextBox ID="txt_Links_22" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                    <br />
+                </div>
+            </div>
 
             <asp:Button ID="btn_part3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>

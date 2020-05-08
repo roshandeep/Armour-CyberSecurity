@@ -117,7 +117,7 @@ namespace ArmourCyberSecurity
             string email_body = "Hello, " + username + Environment.NewLine;
             email_body = email_body + "Please click the following link to confirm your email and unlock full access to PrivacyComplianceSolutions.com<br /><br />" + Environment.NewLine;
             email_body = email_body + "<a href = '" + Request.Url.AbsoluteUri.Replace("Registration/Register", "Level1/Account_Activation.aspx?ActivationCode=" + activationCode) + "'>Click here to activate your account.</a>" + Environment.NewLine;
-            email_body = email_body + "Privacy Compliance Group<br />" + Environment.NewLine;
+            email_body = email_body + "<br />Privacy Compliance Group<br />" + Environment.NewLine;
             email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
             MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())

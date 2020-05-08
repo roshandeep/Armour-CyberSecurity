@@ -263,10 +263,10 @@
             </div>
 
             <div id="Ques3Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues3" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns3" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -277,10 +277,10 @@
             <br />
 
             <div id="Ques4Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues4" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns4" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -290,10 +290,10 @@
             <br />
 
             <div id="Ques5Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues5" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns5" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -303,10 +303,10 @@
             <br />
 
             <div id="Ques6Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues6" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns6" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -320,10 +320,10 @@
             </div>
 
             <div id="Ques7Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues7" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns7" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -333,10 +333,10 @@
             <br />
 
             <div id="Ques8Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns8" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -346,10 +346,10 @@
             <br />
 
             <div id="Ques9Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -359,10 +359,10 @@
             <br />
 
             <div id="Ques10Div" runat="server" class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns10" Visible="false">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -380,10 +380,10 @@
                 <h2>Roles</h2>
             </div>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues11" runat="server" Text="" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns11">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -393,10 +393,10 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues12" runat="server" Text="" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns12">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -406,10 +406,10 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues13" runat="server" Text="" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns13" onChange="Enable()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -418,15 +418,15 @@
                 </div>
             </div>
             <div class="row" id="DPODetails">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_Name" runat="server" Text="Name : " />
-                            </div>
-                            <div class="col">
+                            <%--</div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_Name" runat="server"></asp:TextBox>
                             </div>
                         </div>
@@ -434,8 +434,8 @@
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_Email" runat="server" Text="Email : " />
-                            </div>
-                            <div class="col">
+                           <%-- </div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_Email" runat="server"> </asp:TextBox>
                             </div>
                         </div>
@@ -443,8 +443,8 @@
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_Phone" runat="server" Text="Phone No : " />
-                            </div>
-                            <div class="col">
+                            <%--</div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_phone" runat="server"></asp:TextBox>
                             </div>
                         </div>
@@ -452,8 +452,8 @@
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_Title" runat="server" Text="Title : " />
-                            </div>
-                            <div class="col">
+                            <%--</div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_title" runat="server"></asp:TextBox>
                             </div>
                         </div>
@@ -461,8 +461,8 @@
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_Contact" runat="server" Text="Other Contact Info : " />
-                            </div>
-                            <div class="col">
+                           <%-- </div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_contact" runat="server"></asp:TextBox>
                             </div>
                         </div>
@@ -473,10 +473,10 @@
 
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <asp:Label ID="lblQues14" runat="server" Text="" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <asp:DropDownList runat="server" ID="ddlAns14" onChange="EnableTextArea()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
@@ -485,15 +485,15 @@
                 </div>
             </div>
             <div class="row" id="DPOLinks">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <asp:Label ID="lbl_dpaLinks" runat="server" Text="DPA : " />
-                            </div>
-                            <div class="col">
+                            <%--</div>
+                            <div class="col">--%>
                                 <asp:TextBox ID="txt_dpaLinks" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                             </div>
                         </div>

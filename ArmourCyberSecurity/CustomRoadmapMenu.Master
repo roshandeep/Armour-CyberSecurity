@@ -137,7 +137,7 @@
 
 
         h5, h6, h3 {
-            background-color: dimgray;
+            background-color: rgba(105,105,105,0.2);
             color: floralwhite;
         }
 
