@@ -118,7 +118,7 @@
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br> All Rights Reserved<br>
+                        <br /> All Rights Reserved<br />
                         If you wish to withdraw your consent, please contact us at <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
                        
                     </p>

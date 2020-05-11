@@ -525,7 +525,7 @@
                     </span>
                     <span class="navbar-caption-wrap" style="padding-top: 2rem;">
                         <a class="navbar-caption text-white display-4" href="#" style="color: white; text-decoration: none;">
-                            <h1>Privacy Regulation Assessment</h1>
+                            <h1>Privacy Compliance Solutions</h1>
                         </a>
                     </span>
                 </div>

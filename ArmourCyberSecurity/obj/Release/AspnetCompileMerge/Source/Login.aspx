@@ -94,7 +94,7 @@
 
                                     <tr>
                                         <td class="txtb">
-                                            <asp:TextBox runat="server" ID="UserName" placeholder="Usename"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="UserName" placeholder="Username"></asp:TextBox>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ValidationGroup="Login1" ToolTip="User Name is required." ID="UserNameRequired">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
@@ -130,6 +130,8 @@
                                             <asp:HyperLink runat="server" NavigateUrl="Registration/Register" ID="CreateUserLink" >Create a new user...</asp:HyperLink>
                                             <br />
                                             <asp:HyperLink runat="server" NavigateUrl="Registration/Forgot_Password.aspx" ID="PasswordRecoveryLink">Forgot your password?</asp:HyperLink>
+                                            <br />
+                                            
                                         </td>
                                     </tr>
                                 </table>
@@ -142,6 +144,8 @@
                     ForeColor="#FFFFFF"
                     BackColor="#6B696B"></TitleTextStyle>
             </asp:Login>
+
+            <asp:Label ID="lbl_notification" runat="server" Text="" ForeColor="Red" Font-Bold="true"/>
 
         </div>
     </form>

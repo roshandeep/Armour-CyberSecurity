@@ -12,6 +12,7 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.IO;
 
 namespace ArmourCyberSecurity
 {
@@ -23,6 +24,16 @@ namespace ArmourCyberSecurity
         //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
         protected void Page_Load(object sender, EventArgs e)
         {
+            string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
+            if (previousPage == "Register")
+            {
+                lbl_notification.Text = "Check your Email to activate your account.";
+            }
+            else
+            {
+                lbl_notification.Text = "";
+            }
+
             Login1.Focus();
             if (!String.IsNullOrEmpty(Request.Params["logout"]))
             {

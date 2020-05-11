@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArmourCyberSecurity
-{
-
-
-    public partial class Forgot_Password
-    {
-
+namespace ArmourCyberSecurity {
+    
+    
+    public partial class Forgot_Password {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ArmourCyberSecurity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -31,7 +29,16 @@ namespace ArmourCyberSecurity
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
+        /// <summary>
+        /// btn_sendmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_sendmail;
+        
         /// <summary>
         /// ltMessage control.
         /// </summary>

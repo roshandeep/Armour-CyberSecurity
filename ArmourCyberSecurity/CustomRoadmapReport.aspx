@@ -4,9 +4,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="AIHUB/DC">
+    <meta name="creator" author="techie(aj)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon">
+    <meta name="description" content="Home page">
+
+    <title>Custom Road Map Report</title>
+
+    <link rel="stylesheet" href="Level1/assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="Level1/assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="Level1/assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="Level1/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="Level1/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="Level1/assets/theme/css/style.css">
+    <link rel="preload" as="style" href="Level1/assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="Level1/assets/mobirise/css/mbr-additional.css" type="text/css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
+        #form1 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: auto;
+        }
+
         .modalBackground {
             background-image: linear-gradient(120deg,#3498db,#224ee3,#3498db);
             filter: alpha(opacity=40);
@@ -196,6 +224,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8" style="margin-bottom: 100px;">
+            <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+
+                <div class="menu-logo">
+                    <div class="navbar-brand">
+                        <span class="navbar-logo">
+                            <a href="./page1.html">
+                                <img src="Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
+                            </a>
+                        </span>
+                        <span class="navbar-caption-wrap">
+                            <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+            </nav>
+        </section>
         <div>
             <div class="boxshadow" style="background-color: #0795d6;">
                 <table style="margin: 0 auto; text-align: center">
@@ -364,7 +411,7 @@
                                 </p>
                             </div>
                         </td>
-                        <td style="text-align: justify;margin-right: 50px;  float: right">
+                        <td style="text-align: justify; margin-right: 50px; float: right">
                             <div style="vertical-align: top;">
                                 <h3><b style="margin-right: 7rem;">Your Data Authority List </b></h3>
 
@@ -1788,6 +1835,57 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                 </table>
             </div>
         </div>
+        <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
+            <div class="container">
+                <div class="media-container-row align-center mbr-white">
+                    <div class="row row-links">
+                    </div>
+                    <div class="row social-row">
+                        <div class="social-list align-right pb-2">
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-copirayt">
+                        <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                            © Copyright 2020 Armour Cyber Security
+                        <br />
+                            All Rights Reserved<br />
+                            <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </form>
+
 </body>
 </html>

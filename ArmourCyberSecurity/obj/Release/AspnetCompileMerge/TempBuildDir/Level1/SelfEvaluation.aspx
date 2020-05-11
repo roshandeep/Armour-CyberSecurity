@@ -525,7 +525,7 @@
                     </span>
                     <span class="navbar-caption-wrap" style="padding-top: 2rem;">
                         <a class="navbar-caption text-white display-4" href="#" style="color: white; text-decoration: none;">
-                            <h1>Privacy Regulation Assessment</h1>
+                            <h1>Privacy Compliance Solutions</h1>
                         </a>
                     </span>
                 </div>
@@ -832,7 +832,7 @@
                 <div id="Consent" style="height: 15rem;">
                     <h2>Consent</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
-                        <asp:Label ID="lblQues24" runat="server" Text="" /><br />
+                        <asp:Label ID="lblQues24" runat="server" Text="" /><br /><br />
                         <asp:Label ID="lblQues25" runat="server" Text="" /><br />
                     </div>
                     <div style="float: right; width: 40%; margin-right: 3rem">

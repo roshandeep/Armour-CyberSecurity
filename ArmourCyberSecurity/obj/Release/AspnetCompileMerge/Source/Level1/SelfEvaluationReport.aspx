@@ -5,7 +5,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="AIHUB/DC">
+    <meta name="creator" author="techie(aj)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon">
+    <meta name="description" content="Home page">
+    <title>Self Assessment Report</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         .modalBackground {
@@ -188,6 +207,19 @@
             margin-bottom: 60px;
             margin-top: 0px;
         }
+
+        #btn_return {
+            margin: auto;
+            display: block;
+            padding: 16px 32px;
+            font-family: helvetica;
+            font-size: 16px;
+            font-weight: 100;
+            color: #FFFFFF;
+            background-color: #0795d6;
+            border: 0;
+            font-weight: 100;
+        }
     </style>
     <script>
         $(function () {
@@ -202,6 +234,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <div>
@@ -241,12 +274,34 @@
 
 
         </div>
+
+
         <div>
+            <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8" style="margin-bottom: 100px;">
+                <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+
+                    <div class="menu-logo">
+                        <div class="navbar-brand">
+                            <span class="navbar-logo">
+                                <a href="./page1.html">
+                                    <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
+                                </a>
+                            </span>
+                            <span class="navbar-caption-wrap">
+                                <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+                </nav>
+            </section>
+
             <div class="boxshadow" style="background-color: #0795d6;">
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">
-                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/armor-logo.png" Style="width: 100px;" />
+                            <asp:Image CssClass="Logo" ID="Logo" runat="server" ImageUrl="~/images/newLogo.png" Style="width: 100px; height: 120px;" />
                         </td>
                     </tr>
                     <tr>
@@ -265,7 +320,7 @@
 
             </div>
 
-                <%--OVERALL--%>
+            <%--OVERALL--%>
             <div class="boxshadow zoom">
                 <table>
                     <tr style="background-color: #0795d6;">
@@ -575,7 +630,58 @@
             </div>
         </div>
 
-        <%--  <asp:Button ID="Button1" runat="server" Text="Go Back" OnClick="Button1_Click" />--%>
+        <asp:Button ID="btn_return" runat="server" Text="TRY the Custom Roadmap !" OnClick="btn_return_Click" />
+
+        <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
+            <div class="container">
+                <div class="media-container-row align-center mbr-white">
+                    <div class="row row-links">
+                    </div>
+                    <div class="row social-row">
+                        <div class="social-list align-right pb-2">
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="#" target="_blank">
+                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-copirayt">
+                        <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                            © Copyright 2020 Armour Cyber Security
+                        <br />
+                            All Rights Reserved<br />
+                            <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </form>
 </body>
 </html>

@@ -213,12 +213,12 @@
         <h5 style="background-color: transparent;">The following questions deal with how your company responds to and addresses a privacy incident. 
         <br />
         </h5>
-        <h5 style="background-color: transparent;">SECTION GOAL:
+        <h5 style="background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To ensure that your company has an adequate incident response management plan in place before you experience an incident.
             <br />
         </h5>
-        <h5 style="background-color: transparent;">STAKEHOLDERS REQUIRED:
+        <h5 style="background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />
@@ -246,7 +246,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -276,7 +276,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -500,7 +500,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns19" ControlToValidate="ddlAns19" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_19" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_19" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_19" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -542,7 +542,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_21" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_21" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_21" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -574,7 +574,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>

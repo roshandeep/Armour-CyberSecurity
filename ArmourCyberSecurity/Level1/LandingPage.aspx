@@ -329,7 +329,7 @@
                             <br/><br />
                             <br/>
                         </div>
-                        <div class="mbr-section-btn text-center" style="margin-top: 2.2rem;">
+                        <div class="mbr-section-btn text-center" style="margin-top: 6.5rem;">
                             <%--<a href="./" class="btn btn-primary display-4">Start Here 
                                 </a>--%>
                             <asp:Button ID="level1" runat="server" CssClass="btn btn-primary display-4" Text="Start Here" Style="border-radius: 50px; margin-right: auto; margin-left: auto;" OnClick="level1_Click" />
@@ -372,7 +372,7 @@
                        
                             </p>
                         </div>
-                        <div class="mbr-section-btn text-center" style="margin-top: -.2rem;">
+                        <div class="mbr-section-btn text-center" style="margin-top: 2.8rem;">
                             <a href="#" class="btn btn-primary display-4">Contact Us
                         </a>
                         </div>
@@ -609,17 +609,6 @@ Toronto, ON M5S 1M2</a>
                                 <span class="iconfont-wrapper">
                                     <span class="amp-iconfont icon fa-th-large fa"></span>
                                 </span>
-<!--
-                            <div class="b-info b-mail">
-                                <h5 class="align-left mbr-fonts-style display-5">
-                                    Working Hours:
-                                </h5>
-                                <p class="mbr-text align-left mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fuga labore
-                                    modi natus quos veritatis?
-                                </p>
-                            </div>
--->
                         </div>
                     </div>
                 </div>
@@ -633,43 +622,9 @@ Toronto, ON M5S 1M2</a>
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
-<!--
-                    <ul class="foot-menu">
-
-
-
-
-
-                        
-                <li class="foot-menu-item mbr-fonts-style display-7">
-                        <a class="text-white mbr-bold" href="#" target="_blank">About us</a>
-                    </li>
-
-                        <li class="foot-menu-item mbr-fonts-style display-7">
-                            <a class="text-white mbr-bold" href="#" target="_blank">Services</a>
-                        </li>
-                        <li class="foot-menu-item mbr-fonts-style display-7">
-                            <a class="text-white mbr-bold" href="#" target="_blank">Get In Touch</a>
-                        </li>
-                        
-                    <li class="foot-menu-item mbr-fonts-style display-7">
-                        <a class="text-white mbr-bold" href="#" target="_blank">Careers</a>
-                    </li>
-
-                        <li class="foot-menu-item mbr-fonts-style display-7">
-                            <a class="text-white mbr-bold" href="#" target="_blank">Work</a>
-                        </li>
-                    </ul>
--->
                 </div>
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
-
-
-
-
-
-
                         <div class="soc-item">
                             <a href="#" target="_blank">
                                 <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -706,8 +661,7 @@ Toronto, ON M5S 1M2</a>
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
                         <br /> All Rights Reserved<br />
-                        <a href="./Online%20Assessment%20Privacy%20Policy.docx" download>Privacy Policy</a>
-                        <!--                    &nbsp;| &nbsp; Data Security By Binary Tattoo -->
+                        <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
                     </p>
                 </div>
             </div>

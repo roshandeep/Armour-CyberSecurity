@@ -15,20 +15,7 @@
                 Password Reset
             </th>
         </tr>
-        <tr>
-            <td>
-                Email
-            </td>
-            <td>
-                <asp:TextBox ID="txtEmail" runat="server" />
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
-                    ControlToValidate="txtEmail" runat="server" />
-                <asp:RegularExpressionValidator runat="server" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                    ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="Invalid email address." />
-            </td>
-        </tr>
+
         <tr>
             <td>
                 Password

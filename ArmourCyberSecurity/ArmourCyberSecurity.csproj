@@ -243,6 +243,7 @@
     <Content Include="Level1\assets\ytplayer\jquery.mb.ytplayer.min.js" />
     <Content Include="Level1\LandingPage.aspx" />
     <Content Include="Level1\Level1LandingPage.aspx" />
+    <Content Include="Level1\PrivacyCompliancePolicy.aspx" />
     <Content Include="Payment\Charge.aspx" />
     <Content Include="Payment\ChargeSuccess.aspx" />
     <Content Include="Payment\Checkout.aspx" />
@@ -366,6 +367,13 @@
     </Compile>
     <Compile Include="Level1\Level1LandingPage.aspx.designer.cs">
       <DependentUpon>Level1LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Level1\PrivacyCompliancePolicy.aspx.cs">
+      <DependentUpon>PrivacyCompliancePolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Level1\PrivacyCompliancePolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyCompliancePolicy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -52,6 +52,11 @@
         }
 
 
+.input-disabled{
+   color: rgb(84, 84, 84) !important;
+    cursor: default !important;
+    background-color: rgb(235, 235, 228) !important;
+}
 
         #ContentPlaceHolder1_lblQues1,
         #ContentPlaceHolder1_lblQues2,
@@ -75,7 +80,7 @@
         #ContentPlaceHolder1_lbl_dpaLinks {
             color: floralwhite;
             font-size: large;
-            font-weight: 600;
+            font-weight: 400;
         }
 
 
@@ -91,14 +96,7 @@
         #ContentPlaceHolder1_ddlAns10,
         #ContentPlaceHolder1_ddlAns11,
         #ContentPlaceHolder1_ddlAns12,
-        #ContentPlaceHolder1_ddlAns13,
-        #ContentPlaceHolder1_txt_Name,
-        #ContentPlaceHolder1_txt_phone,
-        #ContentPlaceHolder1_txt_title,
-        #ContentPlaceHolder1_txt_contact,
-        #ContentPlaceHolder1_ddlAns14,
-        #ContentPlaceHolder1_txt_Email,
-        #ContentPlaceHolder1_txt_dpaLinks {
+        #ContentPlaceHolder1_ddlAns13, #ContentPlaceHolder1_ddlAns14 {
             display: block;
             width: 50%;
             padding: .375rem .75rem;
@@ -112,12 +110,47 @@
             transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
 
+        #ContentPlaceHolder1_txt_Name,
+        #ContentPlaceHolder1_txt_phone,
+        #ContentPlaceHolder1_txt_title,
+        #ContentPlaceHolder1_txt_contact,
+        #ContentPlaceHolder1_txt_Email {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: rgba(255, 255, 255, 1);
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-left: 5rem;
+        }
+
+        #ContentPlaceHolder1_txt_dpaLinks {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: rgba(255, 255, 255, 1);
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-left: 21.5rem;
+            height: auto;
+            margin-bottom: 1rem
+        }
 
 
         label {
             color: floralwhite;
             font-size: large;
-            font-weight: 500;
+            font-weight: 400;
             padding: 5px;
         }
     </style>
@@ -204,7 +237,7 @@
     </script>
 
     <div id="Global_Regulations" class="container-fluid">
-        <div class="row" style="padding-top: 8rem;">
+        <div class="row" style="padding-top: 3rem;">
             <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;"><strong>The following questions deal with the region in which you do buisness, which includes both where your office resides and where your customers reside.</strong>
                 <br />
                 For the purpose of this report, we will be focusing on GDPR (Europe), PIPEDA (Canada), CCPA (California), and LGPD (Brazil. This said, between the global reach of many companies and the fact that more countries and regional oversight are coming to law, following the best practice suggestions laid out in this assessment will benefit you regardless of region.
@@ -212,25 +245,26 @@
             </h5>
             <br />
 
-            <h5 style="width: 90%; margin: 0 auto; align-content: center; color: floralwhite; background-color: transparent;">SECTION GOAL:
+            <h5 style="width: 90%; margin: 0 auto; align-content: center; color: floralwhite; background-color: transparent;">
+                <b>SECTION GOAL:</b>
                 <br />
             </h5>
             <br />
-            <h6 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;">To establish which legislations are required, determined by both your company location and that of your customers. Qualify your company against those legislations to determine your company’s ‘role’ with respect to the data (GDPR Ex. Processor or Controller).
+            <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;">To establish which legislations are required, determined by both your company location and that of your customers. Qualify your company against those legislations to determine your company’s ‘role’ with respect to the data (GDPR Ex. Processor or Controller).
 
                             Note: If you deal with medical data, then there are separate regulations that are specific to these kinds of records. They are typical labeled Health Insurance Portability and Accountability Act, or the like.
                 <br />
-            </h6>
-            <br />
-
-            <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;">STAKEHOLDERS REQUIRED:
-            <br />
-                To fill out this section you will need a knowledge of the locations of the company and the people who use your product/service.
             </h5>
             <br />
+
+            <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
+                <br />
+                To fill out this section you will need a knowledge of the locations of the company and the people who use your product/service.
+            <br />
+            </h5>
         </div>
         <br />
-        <div id='sec1Div' class="container-fluid" style="width: 80%;">
+        <div id='sec1Div' class="container-fluid" style="width: 90%;">
             <div class="row" style="width: 100%;">
                 <h2>Regional specific questions</h2>
             </div>
@@ -257,7 +291,7 @@
             </div>
         </div>
 
-        <div id='sec2Div' class="container-fluid" style="width: 80%;">
+        <div id='sec2Div' class="container-fluid" style="width: 90%;">
             <div class="row" style="width: 90%; margin: 0 auto;">
                 <h2>Regional specific questions</h2>
             </div>
@@ -375,7 +409,7 @@
             </div>
         </div>
 
-        <div id='sec3Div' class="container-fluid" style="width: 80%;">
+        <div id='sec3Div' class="container-fluid" style="width: 90%;">
             <div class="row" style="width: 90%; margin: 0 auto;">
                 <h2>Roles</h2>
             </div>
@@ -418,51 +452,49 @@
                 </div>
             </div>
             <div class="row" id="DPODetails">
-                <div class="col-sm-6">
-                </div>
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-8">
                                 <asp:Label ID="lbl_Name" runat="server" Text="Name : " />
-                            <%--</div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-4">
                                 <asp:TextBox ID="txt_Name" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-8">
                                 <asp:Label ID="lbl_Email" runat="server" Text="Email : " />
-                           <%-- </div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-4">
                                 <asp:TextBox ID="txt_Email" runat="server"> </asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-8">
                                 <asp:Label ID="lbl_Phone" runat="server" Text="Phone No : " />
-                            <%--</div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-4">
                                 <asp:TextBox ID="txt_phone" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-8">
                                 <asp:Label ID="lbl_Title" runat="server" Text="Title : " />
-                            <%--</div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-4">
                                 <asp:TextBox ID="txt_title" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-8">
                                 <asp:Label ID="lbl_Contact" runat="server" Text="Other Contact Info : " />
-                           <%-- </div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-4">
                                 <asp:TextBox ID="txt_contact" runat="server"></asp:TextBox>
                             </div>
                         </div>
@@ -485,15 +517,14 @@
                 </div>
             </div>
             <div class="row" id="DPOLinks">
-                <div class="col-sm-6">
-                </div>
+
                 <div class="col-sm-6">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-6">
                                 <asp:Label ID="lbl_dpaLinks" runat="server" Text="DPA : " />
-                            <%--</div>
-                            <div class="col">--%>
+                            </div>
+                            <div class="col-sm-6">
                                 <asp:TextBox ID="txt_dpaLinks" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                             </div>
                         </div>

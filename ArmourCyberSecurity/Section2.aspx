@@ -30,10 +30,9 @@
             }
 
 
-        h5 {
-            background-color: dimgray;
-            color: floralwhite;
-        }
+          h5{
+              color: floralwhite;
+          }
 
         h2 {
             text-align: center;
@@ -207,12 +206,12 @@
         <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data.
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">SECTION GOAL:
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To ensure that privacy is at the foundation of your system and services. To evaluate the basis on which data is collected and the security of its processing, transfer and storage. Through this process you eliminate risk by removing any data that is not necessary to system, and add in the secuirty measures needed to protect the data
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">STAKEHOLDERS REQUIRED:
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED: </b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />
@@ -240,10 +239,8 @@
                     <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea1()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-
-
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" /><br />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -351,7 +348,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -367,7 +364,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_9" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>
@@ -453,7 +450,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -479,7 +476,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_16" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -591,7 +588,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>

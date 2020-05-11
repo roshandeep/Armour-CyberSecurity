@@ -109,12 +109,12 @@
         <br />
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">SECTION GOAL:
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To build a system for data control that complies with an individual's rights but also ensures privacy and security levels are high. 
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">STAKEHOLDERS REQUIRED:
+        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />

@@ -492,10 +492,10 @@ function ValidationSummaryOnSubmit(validationGroup) {
                 }
                 switch (summary.displaymode) {
                     case "List":
-                        headerSep = "<br>";
+                        headerSep = "<br />";
                         first = "";
                         pre = "";
-                        post = "<br>";
+                        post = "<br />";
                         end = "";
                         break;
                     case "BulletList":
@@ -511,7 +511,7 @@ function ValidationSummaryOnSubmit(validationGroup) {
                         first = "";
                         pre = "";
                         post = " ";
-                        end = "<br>";
+                        end = "<br />";
                         break;
                 }
                 s = "";

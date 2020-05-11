@@ -72,7 +72,7 @@ namespace ArmourCyberSecurity
 
 
             MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
-            //MailMessage mm = new MailMessage("PasswordReset@PrivacyComplianceSolutions.com", txtEmail.Text.Trim().ToString())
+            //MailMessage mm = new MailMessage("info@privacycompliance.solutions", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Password Reset",
                 Body = email_body,
@@ -86,11 +86,10 @@ namespace ArmourCyberSecurity
             smtp.Port = 587;
             smtp.EnableSsl = true;
             NetworkCredential NetworkCred = new NetworkCredential();
-            //NetworkCred.UserName = "david@privacycompliance.group";
-            //NetworkCred.Password = "roshandeep@2895";
+            //NetworkCred.UserName = "info@privacycompliance.solutions";
+            //NetworkCred.Password = "Aihub@2020";
             NetworkCred.UserName = "roshandeep1995@gmail.com";
             NetworkCred.Password = "roshandeepsinghsaini";
-            smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
 
