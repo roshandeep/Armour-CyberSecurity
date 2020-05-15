@@ -45,6 +45,10 @@ namespace ArmourCyberSecurity
         protected void Page_Load(object sender, EventArgs e)
         {
             GetUserId();
+            if (Session["userInitial"] != null)
+            {
+                lbl_userinit.Text = Session["userInitial"].ToString();
+            }
 
             if (!this.IsPostBack)
             {

@@ -12,7 +12,10 @@ namespace ArmourCyberSecurity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["userInitial"] != null)
+            {
+                lbl_userinit.Text = Session["userInitial"].ToString();
+            }
         }
 
         protected void btn_Report_Click(object sender, EventArgs e)

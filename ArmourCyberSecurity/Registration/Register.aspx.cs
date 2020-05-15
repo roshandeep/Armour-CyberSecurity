@@ -120,8 +120,6 @@ namespace ArmourCyberSecurity
                                 country = string.Empty;
                             }
 
-                            Session["userInitials"] = txt_firstName.Text[0] + txt_lastName.Text[0];
-
                             dal.AddOtherInfo(Session["userId"].ToString(), txt_firstName.Text.Trim(), txt_lastName.Text.Trim(), phoneNo, industry, country);
                         }
 
@@ -131,6 +129,7 @@ namespace ArmourCyberSecurity
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
                 if (registered == true)
                 {
+                    Session["RegisterRedirection"] = "Registration";
                     Response.Redirect("~/Login.aspx", false);
                 }
             }

@@ -11,13 +11,16 @@ namespace ArmourCyberSecurity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userInitial"] != null)
+            {
+                lbl_userinit.Text = Session["userInitial"].ToString();
+            }
         }
 
         protected void btn_questionnaire_Click(object sender, EventArgs e)
         {
+            Session["RegisterRedirection"] = "Registration";
             Response.Redirect("~/Payment/Checkout.aspx", false);
-            //Response.Redirect("~/Section1.aspx", false);
         }
     }
 }

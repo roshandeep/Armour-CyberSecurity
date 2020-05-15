@@ -207,6 +207,9 @@
                             <a class="nav-link link text-white display-4" href="Level1//LandingPage#testimonials1-5">About Us
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" ForeColor="#0795d6"/>
+                        </li>
                     </ul>
                 </div>
             </nav>

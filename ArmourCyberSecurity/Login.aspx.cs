@@ -59,9 +59,22 @@ namespace ArmourCyberSecurity
                             bool verifiedEmail = Convert.ToBoolean(reader["ConfirmedEmail"]);
                             if (verifiedEmail == true)
                             {
+                                Session["userInitial"] = Login1.UserName.Substring(0,2).ToUpper();
                                 con.Close();
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-                                Response.Redirect("~/Payment/Checkout.aspx", true);
+                                if(Session["RegisterRedirection"] != null)
+                                {
+                                    if (Session["RegisterRedirection"].ToString() == "Registration")
+                                    {
+                                        Session["RegisterRedirection"] = null;
+                                        Response.Redirect("~/Payment/Checkout.aspx", true);
+                                    }
+                                }
+                                else
+                                {
+                                    Response.Redirect("~/Level1/LandingPage.aspx", true);
+                                }
+                               
                             }
                             else
                             {
