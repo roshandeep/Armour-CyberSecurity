@@ -189,5 +189,44 @@
         </div>
 
     </form>
+    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute;top: 90%;width: 100%;">
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2020 Armour Cyber Security
+                        <br> All Rights Reserved<br>
+                        <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

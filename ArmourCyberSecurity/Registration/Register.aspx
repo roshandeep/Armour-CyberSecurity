@@ -49,18 +49,24 @@
                     <div class="hamburger"><span></span><span></span><span></span><span></span></div>
                 </button>
                 <div class="menu-logo">
-                    <div class="navbar-brand"><span class="navbar-logo"><a href="Level1/LandingPage.aspx">
-                        <img src="../Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
-                    </a></span><span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="Level1/LandingPage.aspx">Privacy Compliance Solutions </a></span></div>
+                    <div class="navbar-brand">
+                        <span class="navbar-logo"><a href="../Level1/LandingPage.aspx">
+                            <img src="../Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
+                        </a>
+                        </span>
+                        <span class="navbar-caption-wrap">
+                            <a class="navbar-caption text-white display-4" href="../Level1/LandingPage.aspx">Privacy Compliance Solutions </a>
+                        </span>
+                    </div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item">
-                            <a class="nav-link link text-white display-4" href="Level1/LandingPage#form4-k">Contact Us
+                            <a class="nav-link link text-white display-4" href="../Level1/LandingPage#form4-k">Contact Us
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link text-white display-4" href="Level1/LandingPage#testimonials1-5">About Us
+                            <a class="nav-link link text-white display-4" href="../Level1/LandingPage#testimonials1-5">About Us
                             </a>
                         </li>
                     </ul>
@@ -86,7 +92,7 @@
                 <div style="float: right; width: 48%;">
                     <div class="txtb">
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Password" />
-                        <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtPassword" runat="server" Display="Dynamic"/>
+                        <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtPassword" runat="server" Display="Dynamic" />
                     </div>
                 </div>
             </div>
@@ -117,7 +123,7 @@
 
                 <div style="float: right; width: 48%;">
                     <div class="txtb">
-                        <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="(xxx)-xxx-xxxx" />
+                        <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="Phone Number" />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_phoneNumber" ErrorMessage="Enter 10 digit Phone Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                     </div>
                 </div>
@@ -141,5 +147,45 @@
             <asp:Button Text="Submit" runat="server" OnClick="RegisterUser" class="logbtn" />
         </div>
     </form>
+    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute; top: 115%; width: 100%;">
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2020 Armour Cyber Security
+                        <br />
+                        All Rights Reserved<br />
+                        <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
