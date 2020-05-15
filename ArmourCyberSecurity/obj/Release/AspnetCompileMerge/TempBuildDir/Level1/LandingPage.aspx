@@ -144,7 +144,7 @@
                         </a>
                     </span>
                     <span class="navbar-caption-wrap">
-                        <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                        <a class="navbar-caption text-white display-4" href="LandingPage.aspx">Privacy Compliance Solutions
                         </a>
                     </span>
                 </div>
@@ -643,16 +643,6 @@ Toronto, ON M5S 1M2</a>
                         <div class="soc-item">
                             <a href="#" target="_blank">
                                 <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                     </div>

@@ -18,7 +18,7 @@
 
         body {
             min-height: 100vh;
-            background-image: linear-gradient(120deg, #3498db, #224ee3);
+            background-image: linear-gradient(#149dcc, #587aed);
         }
 
 
@@ -80,7 +80,7 @@
                     // a successful payment.
                     // Instead use one of the strategies described in
                     // https://stripe.com/docs/payments/checkout/fulfillment
-                    successUrl: window.location.protocol + '//localhost:62800/Section1',
+                    successUrl: window.location.protocol + '//localhost:62800/CustomRoadmapDashboard',
                     cancelUrl: window.location.protocol + '//canceled',
                 })
                     .then(function (result) {

@@ -43,11 +43,11 @@
             <div class="menu-logo">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
-                        <a href="./page1.html">
+                        <a href="LandingPage.aspx">
                             <img src="assets/images/Logo.png" alt="armour" style="height: 3.8rem;">
                         </a>
                     </span>
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="./page1.html">Privacy Compliance Solutions</a></span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="LandingPage.aspx">Privacy Compliance Solutions</a></span>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -55,8 +55,14 @@
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="#toggle1-q">HELP &amp; FAQ</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="#progress-bars3-o">PROGRESS</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="#info2-s">REPORT</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#form4-k">Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#testimonials1-5">About Us
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -237,16 +243,6 @@
                         <div class="soc-item">
                             <a href="#" target="_blank">
                                 <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                     </div>

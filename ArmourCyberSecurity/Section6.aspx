@@ -68,17 +68,18 @@
     </script>
 
 
-    <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how you have designed you remployee training program. 
+    <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
+        <div style="padding-left: 4rem;">
+        <h5 style="width: 98%;margin: 0 auto; background-color: transparent;">The following questions deal with how you have designed you remployee training program. 
         <br />
         </h5>
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
+        <h5 style="width: 98%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             <br />
             To ensure that all employees understand their roles within the company for privacy and compliance.
             <br />
         </h5>
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
+        <h5 style="width: 98%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />
@@ -87,15 +88,16 @@
             * the employee training program around privacy
             <br />
         </h5>
+        </div>
         <br />
-        <div style="width: 90%; margin: 0 auto;" class="container-fluid">
-            <h2 style="width: 90%; margin: 0 auto;">Privacy Policy
+        <div style="margin: 0 auto;" class="container-fluid">
+            <h2 style="margin: 0 auto;">Privacy Policy
                 <br />
             </h2>
             <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">In terms of data privacy compliance, employees must be aware of all internal processes and protocols, or at least know where to find the answers.
-            <br />
+            <br /> <br/>
             </h5>
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
                 </div>
@@ -105,13 +107,13 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /> <br/>
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues2" runat="server" Text="" />
                 </div>
@@ -124,7 +126,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues3" runat="server" Text="" />
                 </div>
@@ -134,13 +136,13 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_3" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /> <br/>
                     <asp:TextBox ID="txt_Links_3" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues4" runat="server" Text="" />
                 </div>
@@ -153,7 +155,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues5" runat="server" Text="" />
@@ -167,7 +169,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues6" runat="server" Text="" />
@@ -181,7 +183,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues7" runat="server" Text="" />
@@ -195,7 +197,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues8" runat="server" Text="" />
@@ -209,7 +211,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues9" runat="server" Text="" />
@@ -223,7 +225,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues10" runat="server" Text="" />
@@ -237,7 +239,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues11" runat="server" Text="" />
@@ -251,7 +253,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues12" runat="server" Text="" />
@@ -265,7 +267,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues13" runat="server" Text="" />
@@ -279,7 +281,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues14" runat="server" Text="" />
@@ -293,7 +295,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues15" runat="server" Text="" />

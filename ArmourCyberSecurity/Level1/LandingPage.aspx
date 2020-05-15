@@ -124,9 +124,6 @@
 </head>
 <body>
     <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
-
-
-
         <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -139,12 +136,12 @@
             <div class="menu-logo">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
-                        <a href="#">
+                        <a href="LandingPage.aspx">
                             <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
                         </a>
                     </span>
                     <span class="navbar-caption-wrap">
-                        <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                        <a class="navbar-caption text-white display-4" href="LandingPage.aspx">Privacy Compliance Solutions
                         </a>
                     </span>
                 </div>
@@ -165,7 +162,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="#features3-d">
-                            <!--                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>-->
+                           
                             Custom Roadmap
                     </a>
                     </li>
@@ -175,12 +172,6 @@
                             Contact Us
                     </a>
                     </li>
-        <%--            <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#testimonials1-5">
-                            <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
-                            About Us
-                    </a>
-                    </li>--%>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
                     <a class="btn btn-sm btn-primary display-4" href="/Login.aspx">
@@ -383,10 +374,6 @@
         </div>
     </section>
     <section class="testimonials1 cid-rSx8bkc1tj" id="testimonials1-5">
-
-
-
-
         <div class="container">
             <div class="media-container-row">
                 <div class="title col-12 align-center">
@@ -643,16 +630,6 @@ Toronto, ON M5S 1M2</a>
                         <div class="soc-item">
                             <a href="#" target="_blank">
                                 <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                     </div>

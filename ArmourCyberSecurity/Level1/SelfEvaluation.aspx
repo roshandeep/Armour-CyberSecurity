@@ -519,12 +519,12 @@
             <div class="menu-logo">
                 <div class="navbar-brand" style="text-align: center;">
                     <span class="navbar-logo">
-                        <a href="#">
+                        <a href="LandingPage.aspx">
                             <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 2.8rem;" />
                         </a>
                     </span>
                     <span class="navbar-caption-wrap" style="padding-top: 2rem;">
-                        <a class="navbar-caption text-white display-4" href="#" style="color: white; text-decoration: none;">
+                        <a class="navbar-caption text-white display-4" href="LandingPage.aspx" style="color: white; text-decoration: none;">
                             <h1>Privacy Compliance Solutions</h1>
                         </a>
                     </span>
@@ -947,26 +947,12 @@
                                         <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                                     </a>
                                 </div>
-                                <div class="soc-item">
-                                    <a href="#" target="_blank">
-                                        <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                                    </a>
-                                </div>
-                                <div class="soc-item">
-                                    <a href="#" target="_blank">
-                                        <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
                             <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                                 © Copyright 2020 Armour Cyber Security &nbsp;
-<!--
-                                <br />
-                                Powered By AI HUB
-                                <br />
--->
+
                                 - All Rights Reserved
                             </p>
                         </div>

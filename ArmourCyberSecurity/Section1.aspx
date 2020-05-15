@@ -265,7 +265,7 @@
         </div>
         <br />
         <div id='sec1Div' class="container-fluid" style="width: 90%;">
-            <div class="row" style="width: 100%;">
+            <div class="row" style="padding-left:6rem;">
                 <h2>Regional specific questions</h2>
             </div>
             <div class="row">

@@ -178,6 +178,7 @@
     <Content Include="Content\login.css" />
     <Content Include="Content\signup.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CustomRoadmapDashboard.aspx" />
     <Content Include="Level1\CustomRoadmapLandingpage.aspx" />
     <Content Include="CustomRoadmapReport.aspx" />
     <Content Include="favicon.ico" />
@@ -322,6 +323,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CustomRoadmapDashboard.aspx.cs">
+      <DependentUpon>CustomRoadmapDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomRoadmapDashboard.aspx.designer.cs">
+      <DependentUpon>CustomRoadmapDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Level1\CustomRoadmapLandingpage.aspx.cs">
       <DependentUpon>CustomRoadmapLandingpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

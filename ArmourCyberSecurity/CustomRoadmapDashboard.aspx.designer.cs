@@ -10,7 +10,7 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class CustomRoadmapMenu {
+    public partial class CustomRoadmapDashboard {
         
         /// <summary>
         /// form1 control.
@@ -22,39 +22,57 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btn_rtn_dashbrd control.
+        /// btn_Sec1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_rtn_dashbrd;
+        protected global::System.Web.UI.WebControls.Button btn_Sec1;
         
         /// <summary>
-        /// btn_Report control.
+        /// btn_Sec2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Report;
+        protected global::System.Web.UI.WebControls.Button btn_Sec2;
         
         /// <summary>
-        /// lbl_warning control.
+        /// btn_Sec3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_warning;
+        protected global::System.Web.UI.WebControls.Button btn_Sec3;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btn_Sec4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_Sec4;
+        
+        /// <summary>
+        /// btn_Sec5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec5;
+        
+        /// <summary>
+        /// btn_Sec6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Sec6;
     }
 }

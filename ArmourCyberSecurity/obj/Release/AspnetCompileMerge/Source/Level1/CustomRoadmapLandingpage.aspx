@@ -47,7 +47,7 @@
                             <img src="assets/images/Logo.png" alt="armour" style="height: 3.8rem;">
                         </a>
                     </span>
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="./page1.html">Privacy Compliance Solutions</a></span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="LandingPage.aspx">Privacy Compliance Solutions</a></span>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -237,16 +237,6 @@
                         <div class="soc-item">
                             <a href="#" target="_blank">
                                 <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                     </div>

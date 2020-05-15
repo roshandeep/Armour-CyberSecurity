@@ -61,7 +61,7 @@ namespace ArmourCyberSecurity
                             {
                                 con.Close();
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-                                //Response.Redirect("~/Section1.aspx", true);
+                                Response.Redirect("~/Payment/Checkout.aspx", true);
                             }
                             else
                             {

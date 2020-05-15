@@ -30,7 +30,15 @@ namespace ArmourCyberSecurity
 
         private void GetUserId()
         {
-            userId = Session["questionnaire_userId"].ToString();
+            DAL dal = new DAL();
+            //L2emailId comes from the registration page to login page to L2 Questionnaire
+            string emailId = Session["L2emailId"].ToString();
+
+            //For Testing
+            //string emailId = "roshandeep810@gmail.com";
+
+            userId = dal.GetUserId(emailId);
+            Session["questionnaire_userId"] = userId;
         }
 
         private void LoadPreviousState()

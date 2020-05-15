@@ -239,10 +239,8 @@
                     <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea1()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-
-
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" /><br />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -350,7 +348,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -366,7 +364,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_9" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_9" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>
@@ -452,7 +450,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -478,7 +476,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_16" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_16" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
@@ -590,7 +588,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_23" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /><br />
                     <asp:TextBox ID="txt_Links_23" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>

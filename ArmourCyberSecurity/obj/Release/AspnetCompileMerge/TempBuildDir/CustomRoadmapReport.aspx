@@ -220,6 +220,18 @@
             width: 90%;
             margin: 0 auto;
         }
+
+        #btn_dashboard {
+            background: white;
+            color: #149dcc;
+            margin-right: .2rem;
+        }
+
+
+            #btn_dashboard:hover {
+                color: white;
+                background: #149dcc;
+            }
     </style>
 </head>
 <body>
@@ -235,7 +247,7 @@
                             </a>
                         </span>
                         <span class="navbar-caption-wrap">
-                            <a class="navbar-caption text-white display-4" href="#">Privacy Compliance Solutions
+                            <a class="navbar-caption text-white display-4" href="Level1/LandingPage.aspx">Privacy Compliance Solutions
                             </a>
                         </span>
                     </div>
@@ -1835,6 +1847,9 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                 </table>
             </div>
         </div>
+        <div style="text-align: -webkit-center;font-size: larger;padding : 5px;">
+            <asp:Button ID="btn_dashboard" runat="server" Text="Return To Dashboard" OnClick="btn_dashboard_Click" CausesValidation="false" CssClass="nav-link mbr-fonts-style show active" Font-Bold="true" />
+        </div>
         <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
             <div class="container">
                 <div class="media-container-row align-center mbr-white">
@@ -1860,16 +1875,6 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                             <div class="soc-item">
                                 <a href="#" target="_blank">
                                     <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="#" target="_blank">
-                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                                 </a>
                             </div>
                         </div>

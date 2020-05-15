@@ -947,26 +947,12 @@
                                         <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                                     </a>
                                 </div>
-                                <div class="soc-item">
-                                    <a href="#" target="_blank">
-                                        <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                                    </a>
-                                </div>
-                                <div class="soc-item">
-                                    <a href="#" target="_blank">
-                                        <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
                             <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                                 © Copyright 2020 Armour Cyber Security &nbsp;
-<!--
-                                <br />
-                                Powered By AI HUB
-                                <br />
--->
+
                                 - All Rights Reserved
                             </p>
                         </div>

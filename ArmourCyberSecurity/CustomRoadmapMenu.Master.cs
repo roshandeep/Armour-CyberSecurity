@@ -15,51 +15,6 @@ namespace ArmourCyberSecurity
 
         }
 
-        protected void btn_Sec1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section1.aspx", false);
-        }
-
-        protected void btn_Sec2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section2.aspx", false);
-        }
-
-        //protected void btn_Submit_Click(object sender, EventArgs e)
-        //{
-        //    DAL dal = new DAL();
-        //    int noOfSec = dal.CheckAllSections(Session["questionnaire_userId"].ToString());
-        //    if (noOfSec == 6)
-        //    {
-        //        lbl_warning.Text = "Good Job! All Sections Completed";
-        //        btn_Report.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        lbl_warning.Text = "Complete All Sections, Assessment Incomplete.";
-        //    }
-        //}
-
-        protected void btn_Sec3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section3.aspx", false);
-        }
-
-        protected void btn_Sec4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section4.aspx", false);
-        }
-
-        protected void btn_Sec5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section5.aspx", false);
-        }
-
-        protected void btn_Sec6_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Section6.aspx", false);
-        }
-
         protected void btn_Report_Click(object sender, EventArgs e)
         {
             string url = HttpContext.Current.Request.Url.AbsoluteUri;
@@ -146,6 +101,11 @@ namespace ArmourCyberSecurity
                     }
                 }
             }
+        }
+
+        protected void btn_rtn_dashbrd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CustomRoadmapDashboard.aspx", false);
         }
     }
 }
