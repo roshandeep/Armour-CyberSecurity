@@ -18,10 +18,8 @@ namespace ArmourCyberSecurity
 {
     public partial class Login : System.Web.UI.Page
     {
-        //AWS RDS
-        //string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
         string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
-        //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
@@ -35,10 +33,17 @@ namespace ArmourCyberSecurity
             }
 
             Login1.Focus();
-            if (!String.IsNullOrEmpty(Request.Params["logout"]))
+            //if (!String.IsNullOrEmpty(Request.Params["logout"]))
+            //{
+            //    FormsAuthentication.SignOut();
+            //    Response.Redirect("~/Level1/LandingPage.aspx");
+            //}
+            if(Session["UserSession"] != null)
             {
-                FormsAuthentication.SignOut();
-                Response.Redirect("~/Level1/LandingPage.aspx");
+                if(Session["UserSession"].ToString() == "1")
+                {
+                    Response.Redirect("~/Payment/Checkout.aspx", true);
+                }
             }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -48,7 +53,7 @@ namespace ArmourCyberSecurity
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     Session["L2emailId"] = Login1.UserName;
-                    using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail FROM Users WHERE Email = @Email"))
+                    using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail, userId FROM Users WHERE Email = @Email"))
                     {
                         command.Parameters.AddWithValue("@Email", Login1.UserName.Trim().ToString());
                         command.Connection = con;
@@ -57,8 +62,10 @@ namespace ArmourCyberSecurity
                         if (reader.Read())
                         {
                             bool verifiedEmail = Convert.ToBoolean(reader["ConfirmedEmail"]);
+                            Session["UserID"] = reader["userId"].ToString();
                             if (verifiedEmail == true)
                             {
+                                Session["UserSession"] = "1";
                                 Session["userInitial"] = Login1.UserName.Substring(0,2).ToUpper();
                                 con.Close();
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);

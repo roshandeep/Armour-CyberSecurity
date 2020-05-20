@@ -213,10 +213,12 @@
         <div style="padding-left: 4rem;">
         <h5 style="background-color: transparent;">The following questions deal with how your company responds to and addresses a privacy incident. 
         <br />
+            <br />
         </h5>
         <h5 style="background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To ensure that your company has an adequate incident response management plan in place before you experience an incident.
+            <br />
             <br />
         </h5>
         <h5 style="background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>

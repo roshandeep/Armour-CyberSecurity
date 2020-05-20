@@ -208,7 +208,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" ForeColor="#0795d6"/>
+                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6"/>
                         </li>
                     </ul>
                 </div>

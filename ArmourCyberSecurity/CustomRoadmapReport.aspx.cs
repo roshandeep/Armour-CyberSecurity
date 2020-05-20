@@ -47,7 +47,7 @@ namespace ArmourCyberSecurity
             GetUserId();
             if (Session["userInitial"] != null)
             {
-                lbl_userinit.Text = "Logged In As " + Session["userInitial"].ToString();
+                lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
 
             if (!this.IsPostBack)

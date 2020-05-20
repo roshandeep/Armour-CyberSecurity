@@ -53,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#toggle1-q">HELP &amp; FAQ</a>
+                        <a class="nav-link link text-white display-4" href="#toggle1-q">Help &amp; FAQ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="./LandingPage#form4-k">Contact Us
@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" ForeColor="#0795d6" />
+                        <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
                     </li>
                 </ul>
 

@@ -242,9 +242,10 @@
                 <br />
                 For the purpose of this report, we will be focusing on GDPR (Europe), PIPEDA (Canada), CCPA (California), and LGPD (Brazil. This said, between the global reach of many companies and the fact that more countries and regional oversight are coming to law, following the best practice suggestions laid out in this assessment will benefit you regardless of region.
                 <br />
+                <br />
             </h5>
+            
             <br />
-
             <h5 style="width: 90%; margin: 0 auto; align-content: center; color: floralwhite; background-color: transparent;">
                 <b>SECTION GOAL:</b>
                 <br />
@@ -254,9 +255,10 @@
 
                             Note: If you deal with medical data, then there are separate regulations that are specific to these kinds of records. They are typical labeled Health Insurance Portability and Accountability Act, or the like.
                 <br />
+                <br />
             </h5>
             <br />
-
+            
             <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
                 <br />
                 To fill out this section you will need a knowledge of the locations of the company and the people who use your product/service.

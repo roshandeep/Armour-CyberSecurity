@@ -80,23 +80,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
     <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-    <div id="backdrop">
+    <div class="row main justify-content-center" style="margin-top: 5rem;">
+        <div class="media-container-column title col-12 col-lg-10 col-md-10">
+            <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+            <h3 class="mbr-section-subtitle align-center mbr-light mbr-white mbr-fonts-style display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </h3>
+        </div>
+    </div>
+    <div id="backdrop" style="height: 120px; padding: 40px;">
         <button id="checkout-button-sku_H8jWTcMkJ5uh1n" role="link">
             Checkout
-   
         </button>
+
     </div>
     <div id="error-message"></div>
 
     <script>
         (function () {
             var stripe = Stripe('pk_test_dv7XSoJVZgSV4CiDNrYgnOUQ00KCEF6q1W');
-            var checkoutButton = document.getElementById('checkout-button-sku_H8jWTcMkJ5uh1n');
+    var checkoutButton = document.getElementById('checkout-button-sku_H8jWTcMkJ5uh1n');
+    var userID = '<%= UserID %>';
             checkoutButton.addEventListener('click', function () {
                 // When the customer clicks on the button, redirect
                 // them to Checkout.
                 stripe.redirectToCheckout({
-                    items: [{ sku: 'sku_H8jWTcMkJ5uh1n', quantity: 1 }],
+        items: [{ sku: 'sku_H8jWTcMkJ5uh1n', quantity: 1 }],
+        clientReferenceId: userID,
 
                     // Do not rely on the redirect to the successUrl for fulfilling
                     // purchases, customers may not always reach the success_url after
@@ -104,7 +113,7 @@
                     // Instead use one of the strategies described in
                     // https://stripe.com/docs/payments/checkout/fulfillment
                     successUrl: window.location.protocol + '//localhost:62800/CustomRoadmapDashboard',
-                    cancelUrl: window.location.protocol + '//canceled',
+                    cancelUrl: window.location.protocol + '//localhost:62800/Level1/CustomRoadmapLandingpage',
                 })
                     .then(function (result) {
                         if (result.error) {
@@ -152,11 +161,15 @@
                         <a class="nav-link link text-white display-4" href="../Level1/LandingPage#testimonials1-5">About Us
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
+                    </li>
                 </ul>
             </div>
         </nav>
     </section>
- 
+
+
     <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute; top: 75%; width: 100%;">
         <div class="container">
             <div class="media-container-row align-center mbr-white">

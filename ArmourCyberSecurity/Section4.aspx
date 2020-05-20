@@ -107,13 +107,15 @@
         <div style="padding-left: 3rem;">
         <h5 style="background-color: transparent;">The following questions deal with how privacy information is displayed to your customer or client, as well as how their explicit consent gathered and tracked.
             <br />
+            <br />
         </h5>
         <h5 style="background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To ensure that consent is properly collected from infomred individuals that are aware of how their data is collected and used.
         <br />
+            <br />
         </h5>
-        <h5 style="background-color: transparent;">STAKEHOLDERS REQUIRED:
+        <h5 style="background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />

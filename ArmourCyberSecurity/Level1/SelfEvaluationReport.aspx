@@ -284,7 +284,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="LandingPage.aspx">
-                            <img src="Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
+                            <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
                         </a>
                     </span>
                     <span class="navbar-caption-wrap">

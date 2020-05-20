@@ -72,11 +72,12 @@
         <div style="padding-left: 4rem;">
         <h5 style="width: 98%;margin: 0 auto; background-color: transparent;">The following questions deal with how you have designed you remployee training program. 
         <br />
+            <br />
         </h5>
         <h5 style="width: 98%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
-            <br />
             To ensure that all employees understand their roles within the company for privacy and compliance.
+            <br />
             <br />
         </h5>
         <h5 style="width: 98%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>

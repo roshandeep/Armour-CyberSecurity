@@ -155,29 +155,26 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#features3-d">
-                            <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
-                            Free Assessment
+                        <a class="nav-link link text-white display-4" href="#features3-d">Free Assessment
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#features3-d">
-                           
-                            Custom Roadmap
-                    </a>
+                        <a class="nav-link link text-white display-4" href="#features3-d">Custom Roadmap
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#form4-k">
-                            <!--                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>-->
-                            Contact Us
-                    </a>
+                        <a class="nav-link link text-white display-4" href="#form4-k">Contact Us
+                        </a>
                     </li>
                 </ul>
-                <div class="navbar-buttons mbr-section-btn">
+                <div class="navbar-buttons mbr-section-btn" runat="server" id="div_SignIn">
                     <a class="btn btn-sm btn-primary display-4" href="/Login.aspx">
                         <span></span>
                         Sign in
                     </a>
+                </div>
+                <div class="nav-item" runat="server" id="div_user_initials" visible="false">
+                    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6"/>
                 </div>
             </div>
 
@@ -312,13 +309,14 @@
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Free Assessment 
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 Fill out this quick questionnaire to get your free compliance preparedness report and score.&nbsp; Find out in which areas you need to focus your resources to get to full privacy regulation compliance.
                                 
                             </p>
-                            <br/><br />
-                            <br/>
+                            <br />
+                            <br />
+                            <br />
                         </div>
                         <div class="mbr-section-btn text-center" style="margin-top: 6.5rem;">
                             <%--<a href="./" class="btn btn-primary display-4">Start Here 
@@ -335,12 +333,13 @@
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Custom Roadmap
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 You are legally obligated to become compliant with data privacy regulations. We can get you there. Using our specialized tool, we guide you through an in-depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future. The result is a custom roadmap that will set you on the right path.
                        
                             </p>
-                            <br/><br/>
+                            <br />
+                            <br />
                         </div>
                         <div class="mbr-section-btn text-center">
                             <%--<a href="#" class="btn btn-primary display-4">Buy Now
@@ -357,7 +356,7 @@
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">Privacy Consulting 
-                        </h4>
+                            </h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 Our global cyber security team has been consulting with companies small and large for many years. We are here to help you with any of your compliance and cyber needs. From guiding you through Data Privacy Impact Assessments or recommending tools that meet your access request needs. Do not hesitate to reach out with any questions or inquiries.
                        
@@ -365,7 +364,7 @@
                         </div>
                         <div class="mbr-section-btn text-center" style="margin-top: 2.8rem;">
                             <a href="#" class="btn btn-primary display-4">Contact Us
-                        </a>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -470,24 +469,22 @@
             <div class="row">
 
                 <div class="col-md-6">
-                <h2 class="pb-3 align-left mbr-fonts-style display-2">
-                    LETS TALK ABOUT YOUR PRIVACY NEEDS
-                </h2>
+                    <h2 class="pb-3 align-left mbr-fonts-style display-2">LETS TALK ABOUT YOUR PRIVACY NEEDS
+                    </h2>
                     <div>
                         <div class="icon-block pb-3 align-left">
                             <span class="icon-block__icon">
                                 <span class="mbri-letter mbr-iconfont"></span>
                             </span>
-<!--
+                            <!--
                         <h4 class="icon-block__title align-left mbr-fonts-style display-5">
                             Don't hesitate to contact us
                         </h4>
 -->
                         </div>
                         <div class="icon-contacts pb-3">
-                        <h5 class="align-left mbr-fonts-style display-7">
-                           How best can we help you? 
-                        </h5>
+                            <h5 class="align-left mbr-fonts-style display-7">How best can we help you? 
+                            </h5>
 
                         </div>
                     </div>
@@ -535,10 +532,10 @@
         <!--Container-->
         <div class="container">
             <div class="row">
-<!--                If You want to chat directly to a representative-->
-           
+                <!--                If You want to chat directly to a representative-->
+
                 <div class="title col-12">
-<!--
+                    <!--
                     <h2 class="align-left mbr-fonts-style display-1">Our Contacts
                 </h2>
 -->
@@ -553,7 +550,7 @@
                                 </span>
                                 <div class="b-info b-adress">
                                     <h5 class="align-left mbr-fonts-style display-5">Address:
-                                </h5>
+                                    </h5>
                                     <p class="mbr-text align-left mbr-fonts-style display-7">
                                         <a href="https://www.google.com/maps/place/77+Bloor+St+W,+Toronto,+ON+M5S+1M2/@43.6692104,-79.391786,17z/data=!3m1!4b1!4m5!3m4!1s0x882b34afda0ae153:0x6590e00287a6daf6!8m2!3d43.6692104!4d-79.3895973">77 Bloor St West, Suite 600,
 Toronto, ON M5S 1M2</a>
@@ -569,7 +566,7 @@ Toronto, ON M5S 1M2</a>
                                 </span>
                                 <div class="b-info b-phone">
                                     <h5 class="align-left mbr-fonts-style display-5">Phone:
-                                </h5>
+                                    </h5>
                                     <p class="mbr-text align-left mbr-fonts-style display-7">
                                         <a href="tel:+1-647-229-2015">(647)-229-2015</a>
                                     </p>
@@ -583,7 +580,7 @@ Toronto, ON M5S 1M2</a>
                                 </span>
                                 <div class="b-info b-mail">
                                     <h5 class="align-left mbr-fonts-style display-5">E-mail:
-                                </h5>
+                                    </h5>
                                     <p class="mbr-text align-left mbr-fonts-style display-7">
                                         <a href="https://privacy@armourcyber.ca">privacy@armourcyber.ca</a>
 
@@ -596,15 +593,15 @@ Toronto, ON M5S 1M2</a>
                                 <span class="iconfont-wrapper">
                                     <span class="amp-iconfont icon fa-th-large fa"></span>
                                 </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    
+
     <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
         <div class="container">
             <div class="media-container-row align-center mbr-white">
@@ -637,7 +634,8 @@ Toronto, ON M5S 1M2</a>
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br /> All Rights Reserved<br />
+                        <br />
+                        All Rights Reserved<br />
                         <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
                     </p>
                 </div>
