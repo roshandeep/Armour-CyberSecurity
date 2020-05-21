@@ -121,6 +121,17 @@
         }
         /* Popup box BEGIN */
     </style>
+
+    <script type="text/javascript">
+
+        //function LogOut() {
+        //    document.getElementById('btn_signout').onclick = function () {
+        //        if (document.getElementById('btn_signout').clicked == true) {
+
+        //        }
+        //    };
+        //}
+    </script>
 </head>
 <body>
     <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
@@ -173,8 +184,14 @@
                         Sign in
                     </a>
                 </div>
+                <div class="navbar-buttons mbr-section-btn" runat="server" id="div_SignOut" visible="false">
+                    <a class="btn btn-sm btn-primary display-4" href="/Level1/SignOut.aspx" runat="server" id="btn_signout" >
+                        <span></span>
+                        Sign Out
+                    </a>
+                </div>
                 <div class="nav-item" runat="server" id="div_user_initials" visible="false">
-                    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6"/>
+                    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" />
                 </div>
             </div>
 
@@ -284,10 +301,6 @@
                             <p class="mbr-text mbr-fonts-style display-7">
                                 PIPEDA (Personal Information Protection and Electronic Documents Act) is the data privacy regulation that applies both businesses and citizens of Canada.
 
-
-
-
-                       
                             </p>
                         </div>
                     </div>

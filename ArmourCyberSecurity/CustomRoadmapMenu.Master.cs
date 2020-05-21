@@ -16,6 +16,7 @@ namespace ArmourCyberSecurity
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
+
         }
 
         protected void btn_Report_Click(object sender, EventArgs e)

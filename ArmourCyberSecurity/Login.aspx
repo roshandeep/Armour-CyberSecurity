@@ -111,7 +111,7 @@
             </div>
         </nav>
     </section>
-    <form id="form1" runat="server" class="login-form" style="height: 520px; padding-top: 20px; padding-bottom: 30px;">
+    <form id="form1" runat="server" class="login-form" style="height: 540px; padding-top: 20px; padding-bottom: 30px;">
         <img src="images/newLogo.png" style="width: 62px; margin-left: 7rem; border-radius: 20%;" />
         <h1 style="margin-bottom: 0px;">Login</h1>
         <div>
@@ -134,17 +134,23 @@
                                     <tr>
                                         <td class="txtb">
                                             <asp:TextBox runat="server" ID="UserName" placeholder="Username"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ValidationGroup="Login1" ToolTip="User Name is required." ID="UserNameRequired">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="UserName" ErrorMessage="User Name is required." ValidationGroup="Login1" ToolTip="User Name is required." ID="UserNameRequired"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="txtb">
-
                                             <asp:TextBox runat="server" TextMode="Password" ID="Password" placeholder="Password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ValidationGroup="Login1" ToolTip="Password is required." ID="PasswordRequired">*</asp:RequiredFieldValidator>
+
                                         </td>
-
-
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ValidationGroup="Login1" ToolTip="Password is required." ID="PasswordRequired" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <div class="bottom-text">
@@ -189,7 +195,7 @@
         </div>
 
     </form>
-    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute;top: 90%;width: 100%;">
+    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute; top: 90%; width: 100%;">
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
@@ -221,7 +227,8 @@
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                         © Copyright 2020 Armour Cyber Security
-                        <br> All Rights Reserved<br>
+                        <br>
+                        All Rights Reserved<br>
                         <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
                     </p>
                 </div>

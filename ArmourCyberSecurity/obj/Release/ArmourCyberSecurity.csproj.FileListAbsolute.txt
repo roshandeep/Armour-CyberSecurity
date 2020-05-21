@@ -207,3 +207,13 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Release\
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Release\ArmourCyberSecurity.csproj.CopyComplete
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Release\ArmourCyberSecurity.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Release\ArmourCyberSecurity.pdb
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Common.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.Stripe.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Net.Http.Formatting.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Web.Http.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Common.xml
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.xml
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.Stripe.xml
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Net.Http.Formatting.xml
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Web.Http.xml

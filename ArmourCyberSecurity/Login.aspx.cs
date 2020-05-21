@@ -67,6 +67,7 @@ namespace ArmourCyberSecurity
                             {
                                 Session["UserSession"] = "1";
                                 Session["userInitial"] = Login1.UserName.Substring(0,2).ToUpper();
+                                //Response.Cookies["userInitial"].Value = Login1.UserName.Substring(0, 2).ToUpper();
                                 con.Close();
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
                                 if(Session["RegisterRedirection"] != null)

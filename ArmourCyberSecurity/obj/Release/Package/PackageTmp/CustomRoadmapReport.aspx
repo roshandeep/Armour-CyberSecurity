@@ -242,7 +242,7 @@
                 <div class="menu-logo">
                     <div class="navbar-brand">
                         <span class="navbar-logo">
-                            <a href="./page1.html">
+                            <a href="Level1/LandingPage.aspx">
                                 <img src="Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
                             </a>
                         </span>
@@ -252,7 +252,21 @@
                         </span>
                     </div>
                 </div>
-
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-white display-4" href="Level1//LandingPage#form4-k">Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-white display-4" href="Level1//LandingPage#testimonials1-5">About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6"/>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </section>
         <div>
@@ -1847,7 +1861,7 @@ To meet compliance, you need only to have evidence of a program. To prevent brea
                 </table>
             </div>
         </div>
-        <div style="text-align: -webkit-center;font-size: larger;padding : 5px;">
+        <div style="text-align: -webkit-center; font-size: larger; padding: 5px;">
             <asp:Button ID="btn_dashboard" runat="server" Text="Return To Dashboard" OnClick="btn_dashboard_Click" CausesValidation="false" CssClass="nav-link mbr-fonts-style show active" Font-Bold="true" />
         </div>
         <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">

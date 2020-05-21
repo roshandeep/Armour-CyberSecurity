@@ -103,18 +103,19 @@
             }
         }
     </script>
-    <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
+    <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
         <br />
-        <h5 style="background-color: transparent;">The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
+        <div style="padding-left: 2rem;">
+        <h5 style="background-color: transparent; width: 92%; margin: 0 auto; ">The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
         <br />
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
+        <h5 style="width: 92%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To build a system for data control that complies with an individual's rights but also ensures privacy and security levels are high. 
         </h5>
         <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
+        <h5 style="width: 92%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
             <br />
             To fill out this section you will need a knowledge of the following:
             <br />
@@ -124,17 +125,18 @@
             the method by which individuals are authenticated in the system 
             <br />
         </h5>
-        <div id='sec1Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+    </div>
+        <div id='sec1Div' style="margin: 0 auto;" class="container-fluid">
             <br />
             <h2>Data Subject Access Requests
                 <br />
             </h2>
             <br />
-            <h5 style="background-color: transparent;">Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+            <h5 style="background-color: transparent;width: 90%; margin: 0 auto;">Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
             <br />
             </h5>
             <br />
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
                 </div>
@@ -144,12 +146,12 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /> <br/>
                     <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                     <br />
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues2" runat="server" Text="" />
                 </div>
@@ -162,7 +164,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues3" runat="server" Text="" />
@@ -176,7 +178,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues4" runat="server" Text="" />
@@ -190,7 +192,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues5" runat="server" Text="" />
@@ -204,7 +206,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues6" runat="server" Text="" />
@@ -218,7 +220,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues7" runat="server" Text="" />
@@ -233,9 +235,9 @@
             <br />
             <asp:Button ID="btn_part1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
         </div>
-        <div id='sec2Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
+        <div id='sec2Div' style=" margin: 0 auto;" class="container-fluid">
             <br />
-            <h2 style="width: 90%; margin: 0 auto;">Data Retention and Removal
+            <h2 style="margin: 0 auto;">Data Retention and Removal
                 <br />
             </h2>
             <br />
@@ -243,7 +245,7 @@
             <br />
             </h5>
             <br />
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues8" runat="server" Text="" />
                 </div>
@@ -253,13 +255,13 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /> <br/>
                     <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues9" runat="server" Text="" />
                 </div>
@@ -272,7 +274,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues10" runat="server" Text="" />
@@ -286,7 +288,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues11" runat="server" Text="" />
@@ -300,7 +302,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues12" runat="server" Text="" />
@@ -314,7 +316,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues13" runat="server" Text="" />
@@ -328,7 +330,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues14" runat="server" Text="" />
@@ -342,7 +344,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues15" runat="server" Text="" />
                 </div>
@@ -352,7 +354,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     <br />
-                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" /> <br/>
                     <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>

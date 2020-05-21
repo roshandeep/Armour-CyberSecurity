@@ -260,6 +260,7 @@
     <Content Include="Level1\LandingPage.aspx" />
     <Content Include="Level1\Level1LandingPage.aspx" />
     <Content Include="Level1\PrivacyCompliancePolicy.aspx" />
+    <Content Include="Level1\SignOut.aspx" />
     <Content Include="Payment\Charge.aspx" />
     <Content Include="Payment\ChargeSuccess.aspx" />
     <Content Include="Payment\Checkout.aspx" />
@@ -398,6 +399,13 @@
     </Compile>
     <Compile Include="Level1\PrivacyCompliancePolicy.aspx.designer.cs">
       <DependentUpon>PrivacyCompliancePolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Level1\SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Level1\SignOut.aspx.designer.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

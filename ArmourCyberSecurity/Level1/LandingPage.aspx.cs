@@ -14,9 +14,6 @@ namespace ArmourCyberSecurity
         {
             if (!Page.IsPostBack)
             {
-                //FormsAuthentication.SignOut();
-                //Session.Clear();
-
                 if (Session["UserSession"] != null)
                 {
                     if(Session["UserSession"].ToString() == "1")
@@ -24,10 +21,12 @@ namespace ArmourCyberSecurity
                         div_SignIn.Visible = false;
                         div_user_initials.Visible = true;
                         lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
+                        div_SignOut.Visible = true;
                     }
                 }
             }
         }
+
 
         protected void level1_Click(object sender, EventArgs e)
         {

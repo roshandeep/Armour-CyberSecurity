@@ -266,162 +266,173 @@
             .cid-rSxbAyIsnT .media-container-row .row-copirayt p {
                 width: 100%;
             }
-        
-        #PrivacyCulture{
-            height:18rem;
-            
+
+        #PrivacyCulture {
+            height: 18rem;
         }
+
         @media (max-width: 1414px) {
-            #PrivacyCulture{
-            height:22rem;
-            
-        }}
-     
-        @media (max-width: 1501px) {
-        #ddlAns3{ 
-            margin-top: 20px;
+            #PrivacyCulture {
+                height: 22rem;
             }
         }
-        
+
+        @media (max-width: 1501px) {
+            #ddlAns3 {
+                margin-top: 20px;
+            }
+        }
+
         @media (max-width: 1411px) {
-             #ddlAns2{ 
-            margin-top: 5px;
+            #ddlAns2 {
+                margin-top: 5px;
             }
-             #ddlAns3{ 
-            margin-top: 25px;
+
+            #ddlAns3 {
+                margin-top: 25px;
             }
-             #ddlAns4{ 
-            margin-top: 20px;
+
+            #ddlAns4 {
+                margin-top: 20px;
             }
-             #ddlAns5{ 
-            margin-top: 10px;
+
+            #ddlAns5 {
+                margin-top: 10px;
             }
-            }
-        
-        
+        }
+
+
         @media (max-width: 1405px) {
-             #ddlAns2{ 
-            margin-top: 15px;
+            #ddlAns2 {
+                margin-top: 15px;
             }
-             #ddlAns3{ 
-            margin-top: 30px;
+
+            #ddlAns3 {
+                margin-top: 30px;
             }
-             #ddlAns4{ 
-            margin-top: 30px;
+
+            #ddlAns4 {
+                margin-top: 30px;
             }
-             #ddlAns5{ 
-            margin-top: 15px;
+
+            #ddlAns5 {
+                margin-top: 15px;
             }
-            }
-        
+        }
+
         #lblQues6,
-         #lblQues7{
+        #lblQues7 {
             padding-left: 8%;
-           color: floralwhite;
+            color: floralwhite;
             font-size: large;
             font-weight: 600;
             width: 80%;
             margin: 1em auto;
         }
-        
-        
-        @media(max-width:703px){
-           #lblQues6,
-         #lblQues7{
-             font-weight: 0;
-        }
-        }
-        
-        
-            @media(max-width:703px){
-                 #lblQues6,
-                #lblQues7{
-                    font-size: small;
-                    
-                }
-                
+
+
+        @media(max-width:703px) {
+            #lblQues6,
+            #lblQues7 {
+                font-weight: 0;
             }
-            
-        
-        #ddlAns11{
-           margin-top: -20px;
         }
-        #Ques8{
-                padding-bottom: 1rem;
+
+
+        @media(max-width:703px) {
+            #lblQues6,
+            #lblQues7 {
+                font-size: small;
             }
+        }
+
+
+        #ddlAns11 {
+            margin-top: -20px;
+        }
+
+        #Ques8 {
+            padding-bottom: 1rem;
+        }
+
         @media (max-width: 1408px) {
-            #Ques8{
+            #Ques8 {
                 padding-bottom: 0px;
             }
         }
-        
-        #Ques9{
-                padding-bottom: 1rem;
-            }
+
+        #Ques9 {
+            padding-bottom: 1rem;
+        }
+
         @media (max-width: 1408px) {
-            #Ques9{
+            #Ques9 {
                 padding-bottom: 0px;
             }
         }
-        
-        #PrivacyEngg{
-            height:18rem;
-            
+
+        #PrivacyEngg {
+            height: 18rem;
         }
+
         @media (max-width: 1275px) {
-            #PrivacyEngg{
-            height:22rem;
-            
-        }}
-        
+            #PrivacyEngg {
+                height: 22rem;
+            }
+        }
+
         @media (max-width: 1128px) {
-            #PrivacyEngg{
-            height:25rem;
-            
-        }}
-        
-        
-        
+            #PrivacyEngg {
+                height: 25rem;
+            }
+        }
+
+
+
         @media (max-width: 1411px) {
-             #ddlAns18{ 
-            margin-top: 5px;
+            #ddlAns18 {
+                margin-top: 5px;
             }
-             #ddlAns21{ 
-            margin-top: 5px;
+
+            #ddlAns21 {
+                margin-top: 5px;
             }
-            }
-         
+        }
+
         @media (max-width: 1101px) {
-             #ddlAns20{ 
-            margin-top: 25px;
+            #ddlAns20 {
+                margin-top: 25px;
             }
-            #ddlAns21{ 
-            margin-top: 20px;
+
+            #ddlAns21 {
+                margin-top: 20px;
             }
-            
-        
-        
-        
-        @media (max-width: 1372px) {
-             #ddlAns27{ 
-            margin-top: 5px;
+
+
+
+
+            @media (max-width: 1372px) {
+                #ddlAns27 {
+                    margin-top: 5px;
+                }
+
+                #ddlAns28 {
+                    margin-top: 10px;
+                }
+
+                #ddlAns29 {
+                    margin-top: 10px;
+                }
             }
-             #ddlAns28{ 
-            margin-top: 10px;
-            }
-             #ddlAns29{ 
-            margin-top: 10px;
-            }
-            }
-         
-        @media (max-width: 1101px) {
-             #ddlAns27{ 
-            margin-top: 25px;
-            }
-            #ddlAns28{ 
-            margin-top: 20px;
-            }
-        
+
+            @media (max-width: 1101px) {
+                #ddlAns27 {
+                    margin-top: 25px;
+                }
+
+                #ddlAns28 {
+                    margin-top: 20px;
+                }
             }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -593,13 +604,13 @@
 
                 <div id="RegionalSpecific">
                     <h2>Regional Specific</h2>
-                    <asp:Label ID="lblQues6" runat="server" Text=""/>
+                    <asp:Label ID="lblQues6" runat="server" Text="" />
                     <asp:CheckBoxList ID="chkbxAns6" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns6_SelectedIndexChanged1" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
                     <asp:CustomValidator runat="server" ID="cvDemoList" ClientValidationFunction="ValidateDemoList" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
                     <br />
 
-                    <asp:Label ID="lblQues7" runat="server" Text=""/>
+                    <asp:Label ID="lblQues7" runat="server" Text="" />
                     <asp:CheckBoxList ID="chkbxAns7" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns7_SelectedIndexChanged" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
                     <asp:CustomValidator runat="server" ID="cvDemoList2" ClientValidationFunction="ValidateDemoList2" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
@@ -689,10 +700,10 @@
                     </div>
 
                     <div id="Ques13Div" runat="server">
-                        <div style="width: 40%; padding-left: 4rem; margin-top:3rem;">
+                        <div style="width: 40%; padding-left: 4rem; margin-top: 3rem;">
                             <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" />
                         </div>
-                        <div style="float: right; width: 40%; margin-right: 3rem;margin-top: -40px;">
+                        <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -40px;">
                             <asp:DropDownList runat="server" ID="ddlAns13" Visible="false">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
@@ -715,7 +726,7 @@
                     </div>
 
                     <div id="Ques15Div" runat="server">
-                        <div style="width: 40%; padding-left: 4rem;margin-top:3rem;">
+                        <div style="width: 40%; padding-left: 4rem; margin-top: 3rem;">
                             <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem; margin-top: -25px;">
@@ -807,13 +818,13 @@
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                     </div>
-                              <br/>
+                    <br />
                     <div runat="server" id="Ques23Div">
-                        <div style="width: 35%; margin-left: 4rem; padding-left: 2rem;margin-top: 3rem;">
+                        <div style="width: 35%; margin-left: 4rem; padding-left: 2rem; margin-top: 3rem;">
                             <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" />
                         </div>
                         <div style="float: right; width: 40%; margin-right: 3rem">
-                            <asp:DropDownList runat="server" ID="ddlAns23" Visible="false" style="margin-top: -25px;">
+                            <asp:DropDownList runat="server" ID="ddlAns23" Visible="false" Style="margin-top: -25px;">
                                 <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
@@ -832,7 +843,8 @@
                 <div id="Consent" style="height: 15rem;">
                     <h2>Consent</h2>
                     <div style="float: left; width: 35%; margin-left: 4rem; padding-left: 2rem;">
-                        <asp:Label ID="lblQues24" runat="server" Text="" /><br /><br />
+                        <asp:Label ID="lblQues24" runat="server" Text="" /><br />
+                        <br />
                         <asp:Label ID="lblQues25" runat="server" Text="" /><br />
                     </div>
                     <div style="float: right; width: 40%; margin-right: 3rem">
@@ -899,31 +911,18 @@
 
 
 
-                    </div>
-
-
-                    <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" Style="padding: 1rem 3rem; border-radius: 50px!important; background: transparent; color: white; border-color: #149dcc !important; font-weight: 600; align-self: center; width: 100%" />
                 </div>
-            </div>
 
-            <!-- Footer section-->
-            <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
+
+                <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" Style="padding: 1rem 3rem; border-radius: 50px!important; background: transparent; color: white; border-color: #149dcc !important; font-weight: 600; align-self: center; width: 100%" />
+            </div>
+        </div>
+
+        <!-- Footer section-->
+         <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e">
                 <div class="container">
                     <div class="media-container-row align-center mbr-white">
                         <div class="row row-links">
-<!--
-                            <ul class="foot-menu">
-                                <li class="foot-menu-item mbr-fonts-style display-7">
-                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Services</a>
-                                </li>
-                                <li class="foot-menu-item mbr-fonts-style display-7">
-                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Get In Touch</a>
-                                </li>
-                                <li class="foot-menu-item mbr-fonts-style display-7">
-                                    <a class="text-white mbr-bold" href="#" target="_blank" style="color: aliceblue; text-decoration: none;">Work</a>
-                                </li>
-                            </ul>
--->
                         </div>
                         <div class="row social-row">
                             <div class="social-list align-right pb-2">
@@ -952,13 +951,13 @@
                         <div class="row row-copirayt" style="color: white; font-weight: 300; text-align: center">
                             <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
                                 © Copyright 2020 Armour Cyber Security &nbsp;
-
                                 - All Rights Reserved
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
+
     </form>
 </body>
 </html>

@@ -147,27 +147,27 @@ namespace ArmourCyberSecurity
             email_body = email_body + "<br />Privacy Compliance Group<br />" + Environment.NewLine;
             email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
-            MailMessage mm = new MailMessage("info@privacycompliance.solutions", txtEmail.Text.Trim().ToString())
-            //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
+            //MailMessage mm = new MailMessage("info@privacycompliance.solutions", txtEmail.Text.Trim().ToString())
+            MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Confirm Your Email",
                 Body = email_body,
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "relay-hosting.secureserver.net";
-            smtp.Port = 25;
-            smtp.EnableSsl = true;
-            //smtp.Host = "smtp.gmail.com";
-            //smtp.Port = 587;
+            //smtp.Host = "relay-hosting.secureserver.net";
+            //smtp.Port = 25;
             //smtp.EnableSsl = true;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
 
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "info@privacycompliance.solutions";
-            NetworkCred.Password = "Aihub@2020";
-            //NetworkCred.UserName = "roshandeep1995@gmail.com";
-            //NetworkCred.Password = "roshandeepsinghsaini";
+            //NetworkCred.UserName = "info@privacycompliance.solutions";
+            //NetworkCred.Password = "Aihub@2020";
+            NetworkCred.UserName = "roshandeep1995@gmail.com";
+            NetworkCred.Password = "roshandeepsinghsaini";
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
             using (SqlConnection con = new SqlConnection(connetionString))

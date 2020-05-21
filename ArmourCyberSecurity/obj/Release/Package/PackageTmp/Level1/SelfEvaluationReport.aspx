@@ -277,25 +277,37 @@
 
 
         <div>
-            <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8" style="margin-bottom: 100px;">
-                <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+<section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
+        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+           
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="LandingPage.aspx">
+                            <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;" />
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-white display-4" href="LandingPage.aspx">Privacy Compliance Solutions
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#form4-k">Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#testimonials1-5">About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
 
-                    <div class="menu-logo">
-                        <div class="navbar-brand">
-                            <span class="navbar-logo">
-                                <a href="./page1.html">
-                                    <img src="assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
-                                </a>
-                            </span>
-                            <span class="navbar-caption-wrap">
-                                <a class="navbar-caption text-white display-4" href="Level1/LandingPage.aspx">Privacy Compliance Solutions
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-
-                </nav>
-            </section>
 
             <div class="boxshadow" style="background-color: #0795d6;">
                 <table style="margin: 0 auto; text-align: center">

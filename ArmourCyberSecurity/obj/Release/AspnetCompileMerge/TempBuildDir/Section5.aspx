@@ -209,13 +209,16 @@
 
         }
     </script>
-    <div style="width: 90%; margin: 0 auto; padding-top: 8rem;">
+    <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
+        <div style="padding-left: 4rem;">
         <h5 style="background-color: transparent;">The following questions deal with how your company responds to and addresses a privacy incident. 
         <br />
+            <br />
         </h5>
         <h5 style="background-color: transparent;"><b>SECTION GOAL:</b>
             <br />
             To ensure that your company has an adequate incident response management plan in place before you experience an incident.
+            <br />
             <br />
         </h5>
         <h5 style="background-color: transparent;"><b>STAKEHOLDERS REQUIRED:</b>
@@ -229,14 +232,16 @@
             * the existing 'severity one' or incident plans the company has  
             <br />
         </h5>
+    </div>
         <div id='sec1Div' class="container-fliud">
             <h2>Incident Response Plan
                 <br />
             </h2>
-            <h5 style="background-color: transparent;">All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
+            <h5 style="background-color: transparent; width: 92%; margin: 0 auto;">All privacy breaches and incidents must be assessed for risk of harm. Depending on the legislation, breaches will need to be documented, authorities contacted, and users informed. If a third party company is acting as a processor of a user’s data, the controlling company is accountable for ensuring safety of the user’s data. The same process should be followed
             <br />
             </h5>
-            <div class="row">
+            <br />
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
                 </div>
@@ -252,7 +257,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues2" runat="server" Text="" />
@@ -266,7 +271,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues3" runat="server" Text="" />
                 </div>
@@ -282,7 +287,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues4" runat="server" Text="" />
@@ -296,7 +301,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues5" runat="server" Text="" />
@@ -310,7 +315,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues6" runat="server" Text="" />
@@ -324,7 +329,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues7" runat="server" Text="" />
@@ -338,7 +343,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues8" runat="server" Text="" />
@@ -352,7 +357,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues9" runat="server" Text="" />
@@ -366,7 +371,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues10" runat="server" Text="" />
@@ -380,7 +385,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues11" runat="server" Text="" />
@@ -394,7 +399,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues12" runat="server" Text="" />
@@ -408,7 +413,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues13" runat="server" Text="" />
@@ -422,7 +427,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues14" runat="server" Text="" />
                 </div>
@@ -435,7 +440,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues15" runat="server" Text="" />
@@ -449,7 +454,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues16" runat="server" Text="" />
                 </div>
@@ -462,7 +467,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues17" runat="server" Text="" />
@@ -476,7 +481,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues18" runat="server" Text="" />
@@ -490,7 +495,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues19" runat="server" Text="" />
                 </div>
@@ -506,7 +511,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues20" runat="server" Text="" />
@@ -526,12 +531,14 @@
             <h2>Notifications
                 <br />
             </h2>
-            <h5 style="background-color: transparent;">Depending on risk of harm, the appropriate data protection authority (or authorities) must be notified
+            <h5 style="background-color: transparent;width: 92%; margin: 0 auto;">Depending on risk of harm, the appropriate data protection authority (or authorities) must be notified
                 <br />
                 Depending on risk of harm, users must be notified individually or by public statement.
                 <br />
             </h5>
-            <div class="row">
+            <br />
+
+            <div class="row" style="padding-left: 4rem;" >
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues21" runat="server" Text="" />
@@ -549,7 +556,7 @@
 
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues22" runat="server" Text="" />
@@ -563,7 +570,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues23" runat="server" Text="" />
@@ -580,7 +587,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues24" runat="server" Text="" />
@@ -594,7 +601,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
 
                     <asp:Label ID="lblQues25" runat="server" Text="" />

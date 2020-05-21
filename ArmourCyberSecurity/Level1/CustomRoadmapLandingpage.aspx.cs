@@ -15,6 +15,10 @@ namespace ArmourCyberSecurity
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
+            //if (Request.Cookies["userInitial"].Value != null)
+            //{
+            //    lbl_userinit.Text = "Logged in as : " + Request.Cookies["userInitial"].Value.ToString();
+            //}
         }
 
         protected void btn_questionnaire_Click(object sender, EventArgs e)

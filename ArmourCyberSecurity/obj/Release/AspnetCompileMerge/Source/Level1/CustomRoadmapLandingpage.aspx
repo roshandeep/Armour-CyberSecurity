@@ -43,7 +43,7 @@
             <div class="menu-logo">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
-                        <a href="./page1.html">
+                        <a href="LandingPage.aspx">
                             <img src="assets/images/Logo.png" alt="armour" style="height: 3.8rem;">
                         </a>
                     </span>
@@ -53,10 +53,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="#toggle1-q">HELP &amp; FAQ</a>
+                        <a class="nav-link link text-white display-4" href="#toggle1-q">Help &amp; FAQ</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="#progress-bars3-o">PROGRESS</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="#info2-s">REPORT</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#form4-k">Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="./LandingPage#testimonials1-5">About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
+                    </li>
                 </ul>
 
             </div>
