@@ -22,22 +22,22 @@ namespace ArmourCyberSecurity
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
-            if (previousPage == "Register")
+            string previousPage;
+            if (Request.UrlReferrer != null)
             {
-                lbl_notification.Text = "Check your Email to activate your account.";
-            }
-            else
-            {
-                lbl_notification.Text = "";
+                previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
+                if (previousPage == "Register")
+                {
+                    lbl_notification.Text = "Check your Email to activate your account.";
+                }
+                else
+                {
+                    lbl_notification.Text = "";
+                }
             }
 
             Login1.Focus();
-            //if (!String.IsNullOrEmpty(Request.Params["logout"]))
-            //{
-            //    FormsAuthentication.SignOut();
-            //    Response.Redirect("~/Level1/LandingPage.aspx");
-            //}
+
             if(Session["UserSession"] != null)
             {
                 if(Session["UserSession"].ToString() == "1")
@@ -53,7 +53,7 @@ namespace ArmourCyberSecurity
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     Session["L2emailId"] = Login1.UserName;
-                    using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail, userId FROM Users WHERE Email = @Email"))
+                    using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail, userId, PaymentValidated FROM Users WHERE Email = @Email"))
                     {
                         command.Parameters.AddWithValue("@Email", Login1.UserName.Trim().ToString());
                         command.Connection = con;
@@ -67,10 +67,28 @@ namespace ArmourCyberSecurity
                             {
                                 Session["UserSession"] = "1";
                                 Session["userInitial"] = Login1.UserName.Substring(0,2).ToUpper();
-                                //Response.Cookies["userInitial"].Value = Login1.UserName.Substring(0, 2).ToUpper();
+                                Boolean.TryParse(reader["PaymentValidated"].ToString(), out bool premiumStatus);
+                                Session["PremiumStatus"] = premiumStatus.ToString();
                                 con.Close();
                                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-                                if(Session["RegisterRedirection"] != null)
+
+                                if (Session["PremiumStatus"].ToString() == "True")
+                                {
+                                    if (Session["PremiumUserRedirection"] != null)
+                                    { 
+                                        if (Session["PremiumUserRedirection"].ToString() == "Level2LandingPage")
+                                        {
+                                            Response.Redirect("~/CustomRoadmapDashboard", true);
+                                        }
+                                        else
+                                        {
+                                            Response.Redirect("~/Level1/LandingPage", true);
+                                        }
+                                    }
+                                }
+
+
+                                if (Session["RegisterRedirection"] != null)
                                 {
                                     if (Session["RegisterRedirection"].ToString() == "Registration")
                                     {

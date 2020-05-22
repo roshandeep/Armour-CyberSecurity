@@ -15,16 +15,31 @@ namespace ArmourCyberSecurity
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
-            //if (Request.Cookies["userInitial"].Value != null)
-            //{
-            //    lbl_userinit.Text = "Logged in as : " + Request.Cookies["userInitial"].Value.ToString();
-            //}
         }
 
         protected void btn_questionnaire_Click(object sender, EventArgs e)
         {
-            Session["RegisterRedirection"] = "Registration";
-            Response.Redirect("~/Payment/Checkout.aspx", false);
+            Session["PremiumUserRedirection"] = "Level2LandingPage";
+
+            if (Session["PremiumStatus"] != null)
+            {
+                if (Session["PremiumStatus"].ToString() == "True")
+                {
+                    Response.Redirect("~/CustomRoadmapDashboard", true);
+                }
+                else
+                {
+                    Session["RegisterRedirection"] = "Registration";
+                    Response.Redirect("~/Payment/Checkout.aspx", false);
+                }
+            }
+            else
+            {
+                Session["RegisterRedirection"] = "Registration";
+                Response.Redirect("~/Payment/Checkout.aspx", false);
+            }
+            
         }
+
     }
 }

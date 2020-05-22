@@ -15,6 +15,17 @@ namespace ArmourCyberSecurity
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["PremiumStatus"] == null)
+            {
+                Response.Redirect("~/Payment/Checkout", true);
+            }
+            else
+            {
+                if (Session["PremiumStatus"].ToString() != "True")
+                {
+                    Response.Redirect("~/Payment/Checkout", true);
+                }
+            }
             GetUserId();
 
             if (!Page.IsPostBack)

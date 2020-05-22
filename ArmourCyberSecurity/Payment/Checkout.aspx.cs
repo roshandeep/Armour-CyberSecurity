@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,14 +17,15 @@ namespace ArmourCyberSecurity.Payment
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
-            if (!String.IsNullOrEmpty(Session["userID"].ToString()))
+
+            if(Session["userID"] != null)
             {
                 this.UserID = Session["userID"].ToString();
             }
             else
             {
-                //THIS WILL NEVER HAPPEN IN REAL TIME
-                Response.Redirect("~/Level1/LandingPage");
+                FormsAuthentication.SignOut();
+                Response.Redirect("~/Payment/Checkout");
                 //This means that there was no userID stored in the session. This will cause payment issues, so this should redirect to Level2 Landing Page
             }
         }
