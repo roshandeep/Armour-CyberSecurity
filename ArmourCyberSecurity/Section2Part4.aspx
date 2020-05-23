@@ -56,7 +56,7 @@
     </script>
     <div style="padding-top: 3rem; height: auto;">
         <div style="padding-left: 3rem">
-            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with resspect to the collection, transfer, processing and storage of personal data.
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with respect to the collection, transfer, processing and storage of personal data.
             </h5>
             <br />
             <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
@@ -116,7 +116,7 @@
 
             <asp:Button ID="btn_Save2" runat="server" Text="Save" OnClick="btn_Save2_Click" ClientIDMode="Static" />
             <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
-
+            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Previous" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
         </div>
     </div>
 </asp:Content>

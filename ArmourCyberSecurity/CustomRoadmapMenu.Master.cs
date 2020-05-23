@@ -28,7 +28,7 @@ namespace ArmourCyberSecurity
             if (Request.UrlReferrer.AbsoluteUri != null)
             {
                 string previousPage = Path.GetFileName(Request.Url.AbsolutePath);
-                if (previousPage == "Section1")
+                if (previousPage.Contains("Section1"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 1);
                     if(complete > 0)
@@ -41,7 +41,7 @@ namespace ArmourCyberSecurity
                     }
                 }
                 else
-                if (previousPage == "Section2")
+                if (previousPage.Contains("Section2"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 2);
                     if (complete > 0)
@@ -54,7 +54,7 @@ namespace ArmourCyberSecurity
                     }
                 }
                 else
-                if (previousPage == "Section3")
+                if (previousPage.Contains("Section3"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 3);
                     if (complete > 0)
@@ -67,7 +67,7 @@ namespace ArmourCyberSecurity
                     }
                 }
                 else
-                if (previousPage == "Section4")
+                if (previousPage.Contains("Section4"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 4);
                     if (complete > 0)
@@ -80,7 +80,7 @@ namespace ArmourCyberSecurity
                     }
                 }
                 else
-                if (previousPage == "Section5")
+                if (previousPage.Contains("Section5"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 5);
                     if (complete > 0)
@@ -93,7 +93,7 @@ namespace ArmourCyberSecurity
                     }
                 }
                 else
-                if (previousPage == "Section6")
+                if (previousPage.Contains("Section6"))
                 {
                     complete = dal.CheckCurrentSections(Session["questionnaire_userId"].ToString(), 6);
                     if (complete > 0)

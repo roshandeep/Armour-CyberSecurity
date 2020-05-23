@@ -80,37 +80,37 @@ namespace ArmourCyberSecurity
             if (Request.UrlReferrer.AbsoluteUri != null)
             {
                 string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
-                if (previousPage == "Section1")
+                if (previousPage.Contains("Section1"))
                 {
                     divGlobalRegulations.Visible = true;
                     GlobalRegulationsReport(); //Done
                 }
                 else
-                if (previousPage == "Section2")
+                if (previousPage.Contains("Section2"))
                 {
                     divPrivacyEngineering.Visible = true;
                     PrivacyEngineeringReport();
                 }
                 else
-                if (previousPage == "Section3")
+                if (previousPage.Contains("Section3"))
                 {
                     divDataControl.Visible = true;
                     DataControlReport();//Done
                 }
                 else
-                if (previousPage == "Section4")
+                if (previousPage.Contains("Section4"))
                 {
                     divConsent.Visible = true;
                     ConsentReport(); //Done
                 }
                 else
-                if (previousPage == "Section5")
+                if (previousPage.Contains("Section5"))
                 {
                     divIncidentManagement.Visible = true;
                     IncidentManagementReport();
                 }
                 else
-                if (previousPage == "Section6")
+                if (previousPage.Contains("Section6"))
                 {
                     divEmployeeTraining.Visible = true;
                     EmployeeTrainingReport(); //Done
@@ -413,6 +413,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -450,6 +458,14 @@ namespace ArmourCyberSecurity
                         if (et_text[2] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -495,6 +511,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -532,6 +556,14 @@ namespace ArmourCyberSecurity
                         if (et_text[4] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -577,6 +609,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -614,6 +654,14 @@ namespace ArmourCyberSecurity
                         if (et_text[6] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[6] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -716,6 +764,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[7] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -754,6 +810,14 @@ namespace ArmourCyberSecurity
                         if (et_text[8] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[8] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -800,6 +864,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[9] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -837,6 +909,14 @@ namespace ArmourCyberSecurity
                         if (et_text[10] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[10] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -882,6 +962,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[11] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -919,6 +1007,14 @@ namespace ArmourCyberSecurity
                         if (et_text[12] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[12] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -965,6 +1061,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (et_text[13] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -1003,6 +1107,14 @@ namespace ArmourCyberSecurity
                         if (et_text[14] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[14] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1210,6 +1322,11 @@ namespace ArmourCyberSecurity
                                         img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                         im_4_20.Add("RED");
                                     }
+                                    else
+                                    {
+                                        img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                        im_4_20.Add("BLUE");
+                                    }
                                 }
                             }
                         }
@@ -1235,6 +1352,11 @@ namespace ArmourCyberSecurity
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     im_21_25.Add("RED");
+                                }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    im_21_25.Add("BLUE");
                                 }
                             }
                         }
@@ -1602,6 +1724,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -1642,6 +1772,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1688,6 +1826,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -1726,6 +1872,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[3] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1772,6 +1926,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -1810,6 +1972,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[5] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1856,6 +2026,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[6] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -1894,6 +2072,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[7] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[7] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -1999,6 +2185,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[8] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2037,6 +2231,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[9] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[9] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2083,6 +2285,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[10] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2121,6 +2331,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[11] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[11] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2167,6 +2385,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[12] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2205,6 +2431,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[13] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[13] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2251,6 +2485,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_4_20[14] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2289,6 +2531,14 @@ namespace ArmourCyberSecurity
                         if (im_4_20[15] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_4_20[15] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2431,6 +2681,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_21_25[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2469,6 +2727,14 @@ namespace ArmourCyberSecurity
                         if (im_21_25[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2515,6 +2781,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_21_25[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2557,6 +2831,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (im_21_25[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -2595,6 +2877,14 @@ namespace ArmourCyberSecurity
                         if (im_21_25[4] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (im_21_25[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -2849,6 +3139,11 @@ namespace ArmourCyberSecurity
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     con_1_12.Add("RED");
                                 }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    con_1_12.Add("BLUE");
+                                }
                             }
                         }
                         for (int i = 14; i <= 19; i++)
@@ -2872,6 +3167,11 @@ namespace ArmourCyberSecurity
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     con_14_19.Add("RED");
+                                }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    con_14_19.Add("BLUE");
                                 }
                             }
                         }
@@ -3086,6 +3386,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3125,6 +3433,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3171,6 +3487,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3209,6 +3533,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[3] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3255,6 +3587,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3293,6 +3633,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[5] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3397,6 +3745,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[6] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3436,6 +3792,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[7] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[7] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3482,6 +3846,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[8] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3520,6 +3892,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[9] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[9] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3566,6 +3946,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_1_12[10] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3604,6 +3992,14 @@ namespace ArmourCyberSecurity
                         if (con_1_12[11] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_1_12[11] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3733,6 +4129,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_14_19[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3772,6 +4176,14 @@ namespace ArmourCyberSecurity
                         if (con_14_19[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_14_19[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3818,6 +4230,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_14_19[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3856,6 +4276,14 @@ namespace ArmourCyberSecurity
                         if (con_14_19[3] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_14_19[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -3902,6 +4330,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (con_14_19[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -3940,6 +4376,14 @@ namespace ArmourCyberSecurity
                         if (con_14_19[5] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (con_14_19[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4251,6 +4695,11 @@ namespace ArmourCyberSecurity
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_2 = "RED";
                             }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_2 = "BLUE";
+                            }
                         }
                         else
                         if (row["sec_ref_id"].ToString() == "3")
@@ -4272,6 +4721,11 @@ namespace ArmourCyberSecurity
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_3 = "RED";
+                            }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_3 = "BLUE";
                             }
                         }
                         else
@@ -4295,6 +4749,11 @@ namespace ArmourCyberSecurity
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_4 = "RED";
                             }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_4 = "BLUE";
+                            }
                         }
                         else
                         if (row["sec_ref_id"].ToString() == "5")
@@ -4316,6 +4775,11 @@ namespace ArmourCyberSecurity
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_5 = "RED";
+                            }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_5 = "BLUE";
                             }
                         }
                         else
@@ -4339,6 +4803,11 @@ namespace ArmourCyberSecurity
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_6 = "RED";
                             }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_6 = "BLUE";
+                            }
                         }
                         else
                         if (row["sec_ref_id"].ToString() == "9")
@@ -4360,6 +4829,11 @@ namespace ArmourCyberSecurity
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_9 = "RED";
+                            }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_9 = "BLUE";
                             }
                         }
                         else
@@ -4383,6 +4857,11 @@ namespace ArmourCyberSecurity
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_11 = "RED";
                             }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_11 = "BLUE";
+                            }
                         }
                         else
                         if (row["sec_ref_id"].ToString() == "12")
@@ -4404,6 +4883,11 @@ namespace ArmourCyberSecurity
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_12 = "RED";
+                            }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_12 = "BLUE";
                             }
                         }
                         else
@@ -4427,6 +4911,11 @@ namespace ArmourCyberSecurity
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_13 = "RED";
                             }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_13 = "BLUE";
+                            }
                         }
                         else
                         if (row["sec_ref_id"].ToString() == "14")
@@ -4448,6 +4937,11 @@ namespace ArmourCyberSecurity
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                 dc_text_14 = "RED";
+                            }
+                            else
+                            {
+                                img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                dc_text_14 = "BLUE";
                             }
                         }
 
@@ -4614,6 +5108,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_2 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -4658,6 +5160,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_3 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -4685,7 +5195,7 @@ namespace ArmourCyberSecurity
                             cell = new PdfPCell(img_dot);
                         }
                         else
-                        if (dc_text_3 == "YELLOW")
+                        if (dc_text_4 == "YELLOW")
                         {
                             img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
@@ -4693,9 +5203,17 @@ namespace ArmourCyberSecurity
                             cell = new PdfPCell(img_dot);
                         }
                         else
-                        if (dc_text_3 == "RED")
+                        if (dc_text_4 == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (dc_text_4 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4738,6 +5256,14 @@ namespace ArmourCyberSecurity
                         if (dc_text_5 == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (dc_text_5 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -4841,6 +5367,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_6 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -4917,6 +5451,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_9 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -4956,6 +5498,14 @@ namespace ArmourCyberSecurity
                         if (dc_text_11 == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (dc_text_11 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5002,6 +5552,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_12 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -5044,6 +5602,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (dc_text_13 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -5082,6 +5648,14 @@ namespace ArmourCyberSecurity
                         if (dc_text_14 == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (dc_text_14 == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5397,6 +5971,11 @@ namespace ArmourCyberSecurity
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_2_8.Add("RED");
                                 }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    pe_2_8.Add("BLUE");
+                                }
                             }
                         }
 
@@ -5441,6 +6020,11 @@ namespace ArmourCyberSecurity
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_10_16.Add("RED");
                                 }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    pe_10_16.Add("BLUE");
+                                }
                             }
                         }
 
@@ -5465,6 +6049,11 @@ namespace ArmourCyberSecurity
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                                     pe_17_21.Add("RED");
+                                }
+                                else
+                                {
+                                    img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                                    pe_17_21.Add("BLUE");
                                 }
                             }
                         }
@@ -5749,6 +6338,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_2_8[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -5848,6 +6445,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_2_8[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -5886,6 +6491,14 @@ namespace ArmourCyberSecurity
                         if (pe_2_8[2] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -5932,6 +6545,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_2_8[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -5970,6 +6591,14 @@ namespace ArmourCyberSecurity
                         if (pe_2_8[4] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6016,6 +6645,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_2_8[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6054,6 +6691,14 @@ namespace ArmourCyberSecurity
                         if (pe_2_8[6] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[6] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6184,6 +6829,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_10_16[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6222,6 +6875,14 @@ namespace ArmourCyberSecurity
                         if (pe_10_16[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6268,6 +6929,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_10_16[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6306,6 +6975,14 @@ namespace ArmourCyberSecurity
                         if (pe_10_16[3] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6352,6 +7029,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_10_16[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6394,6 +7079,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_10_16[5] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6432,6 +7125,14 @@ namespace ArmourCyberSecurity
                         if (pe_10_16[6] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_10_16[6] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6556,6 +7257,14 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        else
+                        if (pe_17_21[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6594,6 +7303,13 @@ namespace ArmourCyberSecurity
                         if (pe_17_21[1] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        if (pe_17_21[1] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
@@ -6640,6 +7356,13 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        if (pe_17_21[2] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6682,6 +7405,13 @@ namespace ArmourCyberSecurity
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);
                         }
+                        if (pe_17_21[3] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
                         cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         cell.PaddingBottom = 5f;
@@ -6720,6 +7450,13 @@ namespace ArmourCyberSecurity
                         if (pe_17_21[4] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        if (pe_17_21[4] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);

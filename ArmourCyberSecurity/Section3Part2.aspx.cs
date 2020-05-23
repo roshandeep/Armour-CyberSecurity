@@ -12,6 +12,7 @@ namespace ArmourCyberSecurity
     public partial class Section3Part2 : System.Web.UI.Page
     {
         string userId = string.Empty;
+        public bool ques7Flag = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,6 +53,31 @@ namespace ArmourCyberSecurity
             Session["questionnaire_userId"] = userId;
         }
 
+        private void Ques7State()
+        {
+            DAL dal = new DAL();
+            DataTable dt = new DataTable();
+            dt = dal.LoadSectionState(3, userId);
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (Convert.ToInt32(row["stagesCompleted"]) == 3)
+                    {
+                        if (row["question_type"].ToString() == "Data Subject Access Requests" && row["sec_ref_id"].ToString() == "7" && row["ans_Text"].ToString() == "YES")
+                        {
+                            ques7Flag = true;
+                        }
+                        else
+                        if (row["question_type"].ToString() == "Data Subject Access Requests" && row["sec_ref_id"].ToString() == "7" && row["ans_Text"].ToString() != "YES")
+                        {
+                            ques7Flag = false;
+                        }
+                    }
+                }
+            }
+        }
+
         private void LoadPreviousState()
         {
             DAL dal = new DAL();
@@ -88,11 +114,13 @@ namespace ArmourCyberSecurity
 
         private void LoadLinks(string userId)
         {
+            Ques7State();
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadDPALinks(userId);
 
-            if (ddlAns15.SelectedItem.Text == "YES")
+            if (ddlAns15.SelectedItem.Text == "YES" && ques7Flag)
             {
                 txt_Links_15.Enabled = true;
                 foreach (DataRow row in dt.Rows)
@@ -129,6 +157,8 @@ namespace ArmourCyberSecurity
 
         private void LoadQuestionnaire()
         {
+            Ques7State();
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -167,6 +197,18 @@ namespace ArmourCyberSecurity
                                 ddl.Items.Add(new ListItem("NO", row["question_wt_no"].ToString()));
                                 ddl.Items.Add(new ListItem("SOMEWHAT", row["question_wt_somewhat"].ToString()));
                                 ddl.Items.Add(new ListItem("UNSURE", row["question_wt_unsure"].ToString()));
+                            }
+
+                            if (ddl == ddlAns15)
+                            {
+                                if (ques7Flag)
+                                {
+                                    txt_Links_15.Enabled = true;
+                                }
+                                else
+                                {
+                                    txt_Links_15.Enabled = false;
+                                }
                             }
                         }
                     }

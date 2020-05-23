@@ -230,10 +230,11 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" CausesValidation="false" ClientIDMode="Static" />
-                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" TargetControlID="btn_rtn_dashbrd" ConfirmText="Press OK if you have saved your changes or if you do not wish to save your changes." runat="server" ></asp:ConfirmButtonExtender>
+                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" TargetControlID="btn_rtn_dashbrd" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
                             </li>
                             <li class="nav-item">
                                 <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link display-4" Enabled="True" />
+                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Report" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
                                 <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
                             </li>
                         </ul>

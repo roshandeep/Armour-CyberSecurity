@@ -48,15 +48,18 @@
                 links8.disabled = true;
             }
         }
+
         function EnableTextArea15() {
-            <%--var ddlAns7 = document.getElementById('<%= ddlAns7.ClientID %>');--%>
+            var ddlAns7 = '<%= this.ques7Flag %>';
             var ddlAns15 = document.getElementById('<%= ddlAns15.ClientID %>');
             var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
-
-            if (ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES') {
+            //alert(ddlAns7);
+            if (ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES' && ddlAns7 == 'True') {
+                alert(ddlAns15.options[ddlAns15.selectedIndex].innerHTML + ' ' + ddlAns7 + 'enable karo');
                 links15.disabled = false;
             }
             else {
+                alert(ddlAns15.options[ddlAns15.selectedIndex].innerHTML + ' ' + ddlAns7 + 'disable rakho');
                 links15.disabled = true;
             }
         }
@@ -213,7 +216,7 @@
 
             <asp:Button ID="btn_Save3" runat="server" Text="Save" OnClick="btn_Save3_Click" ClientIDMode="Static" />
             <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
-
+            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Previous" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
         </div>
 
     </div>
