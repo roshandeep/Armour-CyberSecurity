@@ -10,78 +10,78 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class CustomRoadmapMenu {
+    public partial class Section2Part4 {
         
         /// <summary>
-        /// form1 control.
+        /// lblQues23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblQues23;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// ddlAns23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns23;
         
         /// <summary>
-        /// lbl_userinit control.
+        /// lbl_Links_23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_userinit;
+        protected global::System.Web.UI.WebControls.Label lbl_Links_23;
         
         /// <summary>
-        /// btn_rtn_dashbrd control.
+        /// txt_Links_23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_rtn_dashbrd;
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_23;
         
         /// <summary>
-        /// ConfirmButtonExtender1 control.
+        /// lblQues24 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender1;
+        protected global::System.Web.UI.WebControls.Label lblQues24;
         
         /// <summary>
-        /// btn_Report control.
+        /// ddlAns24 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Report;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns24;
         
         /// <summary>
-        /// lbl_warning control.
+        /// btn_Save2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_warning;
+        protected global::System.Web.UI.WebControls.Button btn_Save2;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btn_Previous control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_Previous;
     }
 }

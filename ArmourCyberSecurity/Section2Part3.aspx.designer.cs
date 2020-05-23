@@ -10,160 +10,187 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class Section3 {
+    public partial class Section2Part3 {
         
         /// <summary>
-        /// lblQues1 control.
+        /// lblQues16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues1;
+        protected global::System.Web.UI.WebControls.Label lblQues16;
         
         /// <summary>
-        /// ddlAns1 control.
+        /// ddlAns16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns16;
         
         /// <summary>
-        /// lbl_Links_1 control.
+        /// lbl_Links_16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Links_1;
+        protected global::System.Web.UI.WebControls.Label lbl_Links_16;
         
         /// <summary>
-        /// txt_Links_1 control.
+        /// txt_Links_16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Links_1;
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_16;
         
         /// <summary>
-        /// lblQues2 control.
+        /// lblQues17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues2;
+        protected global::System.Web.UI.WebControls.Label lblQues17;
         
         /// <summary>
-        /// ddlAns2 control.
+        /// ddlAns17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns17;
         
         /// <summary>
-        /// lblQues3 control.
+        /// lblQues18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues3;
+        protected global::System.Web.UI.WebControls.Label lblQues18;
         
         /// <summary>
-        /// ddlAns3 control.
+        /// ddlAns18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns18;
         
         /// <summary>
-        /// lblQues4 control.
+        /// lblQues19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues4;
+        protected global::System.Web.UI.WebControls.Label lblQues19;
         
         /// <summary>
-        /// ddlAns4 control.
+        /// ddlAns19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns19;
         
         /// <summary>
-        /// lblQues5 control.
+        /// lblQues20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues5;
+        protected global::System.Web.UI.WebControls.Label lblQues20;
         
         /// <summary>
-        /// ddlAns5 control.
+        /// ddlAns20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns20;
         
         /// <summary>
-        /// lblQues6 control.
+        /// lblQues21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues6;
+        protected global::System.Web.UI.WebControls.Label lblQues21;
         
         /// <summary>
-        /// ddlAns6 control.
+        /// ddlAns21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns6;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns21;
         
         /// <summary>
-        /// lblQues7 control.
+        /// lblQues22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues7;
+        protected global::System.Web.UI.WebControls.Label lblQues22;
         
         /// <summary>
-        /// ddlAns7 control.
+        /// ddlAns22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns7;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns22;
         
         /// <summary>
-        /// btn_Save3 control.
+        /// lbl_Links_22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Save3;
+        protected global::System.Web.UI.WebControls.Label lbl_Links_22;
+        
+        /// <summary>
+        /// txt_Links_22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Links_22;
+        
+        /// <summary>
+        /// btn_Save2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Save2;
+        
+        /// <summary>
+        /// btn_Previous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Previous;
         
         /// <summary>
         /// btn_Next control.

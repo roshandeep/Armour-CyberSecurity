@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section1.aspx.cs" Inherits="ArmourCyberSecurity.Section1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section1Part2.aspx.cs" Inherits="ArmourCyberSecurity.Section1Part2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <style>
         #Global_Regulations {
             /*                    background: linear-gradient(#626d8d, #efefef,#c3c5cb);*/
@@ -14,7 +13,7 @@
             height: auto;
         }
 
-
+        #btn_Previous,
         #btn_Next,
         #btn_Save1 {
             padding: 1rem 3rem;
@@ -29,6 +28,7 @@
             margin-bottom: 2rem;
         }
 
+            #btn_Previous:hover,
             #btn_Next:hover,
             #btn_Save1:hover {
                 box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
@@ -153,33 +153,6 @@
             padding: 5px;
         }
     </style>
-    <script>
-
-        function ValidateDemoList(source, args) {
-            var chkListModules = document.getElementById('<%= chkbxAns1.ClientID %>');
-            var chkListinputs = chkListModules.getElementsByTagName("input");
-            for (var i = 0; i < chkListinputs.length; i++) {
-                if (chkListinputs[i].checked) {
-                    args.IsValid = true;
-                    return;
-                }
-            }
-            args.IsValid = false;
-        }
-
-        function ValidateDemoList2(source, args) {
-            var chkListModules = document.getElementById('<%= chkbxAns2.ClientID %>');
-            var chkListinputs = chkListModules.getElementsByTagName("input");
-            for (var i = 0; i < chkListinputs.length; i++) {
-                if (chkListinputs[i].checked) {
-                    args.IsValid = true;
-                    return;
-                }
-            }
-            args.IsValid = false;
-        }
-
-    </script>
 
     <div id="Global_Regulations" class="container-fluid">
         <div class="row" style="padding-top: 3rem;">
@@ -211,30 +184,124 @@
             </h5>
         </div>
         <br />
-        <div id='sec1Div' class="container-fluid" style="width: 90%;">
-            <div class="row" style="padding-left: 6rem;">
+
+
+        <div id='sec2Div' class="container-fluid" style="width: 90%;">
+            <div class="row" style="width: 90%; margin: 0 auto;">
                 <h2>Regional specific questions</h2>
             </div>
-            <div class="row">
-                <asp:Label ID="lblQues1" runat="server" Text="" />
+
+            <div id="Ques3Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues3" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns3" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
             </div>
-            <div class="row">
-                <asp:CheckBoxList ID="chkbxAns1" runat="server" ClientIDMode="Static" ClientValidationFunction="ValidateDemoList" RepeatDirection="Vertical">
-                </asp:CheckBoxList>
-                <asp:CustomValidator runat="server" ID="cvDemoList" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
-                <br />
+
+            <br />
+
+            <div id="Ques4Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues4" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns4" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
             </div>
-            <div class="row">
-                <asp:Label ID="lblQues2" runat="server" Text="" />
+            <br />
+
+            <div id="Ques5Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues5" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns5" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
             </div>
-            <div class="row">
-                <asp:CheckBoxList ID="chkbxAns2" runat="server" ClientIDMode="Static" ClientValidationFunction="ValidateDemoList2" RepeatDirection="Vertical">
-                </asp:CheckBoxList>
-                <asp:CustomValidator runat="server" ID="cvDemoList2" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
-                <br />
+            <br />
+
+            <div id="Ques6Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues6" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns6" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
             </div>
+            <br />
+
+            <div class="row" style="width: 90%; margin: 0 auto;">
+                <h2>Regional Fines</h2>
+            </div>
+
+            <div id="Ques7Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues7" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns7" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques8Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns8" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques9Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns9" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div id="Ques10Div" runat="server" class="row">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns10" Visible="false">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" Enabled="false" />--%>
+                </div>
+            </div>
+            <br />
             <div class="row">
                 <asp:Button ID="btn_Save1" runat="server" Text="Save" OnClick="btn_Save1_Click" ClientIDMode="Static" />
+                <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
                 <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
             </div>
         </div>

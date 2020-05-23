@@ -31,15 +31,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns1;
         
         /// <summary>
-        /// reqAns1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns1;
-        
-        /// <summary>
         /// lbl_Links_1 control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns2;
         
         /// <summary>
-        /// reqAns2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns2;
-        
-        /// <summary>
         /// lblQues3 control.
         /// </summary>
         /// <remarks>
@@ -101,15 +83,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns3;
-        
-        /// <summary>
-        /// reqAns3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns3;
         
         /// <summary>
         /// lbl_Links_3 control.
@@ -148,15 +121,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns4;
         
         /// <summary>
-        /// reqAns4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns4;
-        
-        /// <summary>
         /// lblQues5 control.
         /// </summary>
         /// <remarks>
@@ -173,15 +137,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns5;
-        
-        /// <summary>
-        /// reqAns5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns5;
         
         /// <summary>
         /// lblQues6 control.
@@ -202,15 +157,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns6;
         
         /// <summary>
-        /// reqAns6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns6;
-        
-        /// <summary>
         /// lblQues7 control.
         /// </summary>
         /// <remarks>
@@ -227,15 +173,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns7;
-        
-        /// <summary>
-        /// reqAns7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns7;
         
         /// <summary>
         /// lblQues8 control.
@@ -256,15 +193,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns8;
         
         /// <summary>
-        /// reqAns8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns8;
-        
-        /// <summary>
         /// lblQues9 control.
         /// </summary>
         /// <remarks>
@@ -281,15 +209,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns9;
-        
-        /// <summary>
-        /// reqAns9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns9;
         
         /// <summary>
         /// lblQues10 control.
@@ -310,15 +229,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns10;
         
         /// <summary>
-        /// reqAns10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns10;
-        
-        /// <summary>
         /// lblQues11 control.
         /// </summary>
         /// <remarks>
@@ -335,15 +245,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns11;
-        
-        /// <summary>
-        /// reqAns11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns11;
         
         /// <summary>
         /// lblQues12 control.
@@ -364,15 +265,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns12;
         
         /// <summary>
-        /// reqAns12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns12;
-        
-        /// <summary>
         /// lblQues13 control.
         /// </summary>
         /// <remarks>
@@ -389,15 +281,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns13;
-        
-        /// <summary>
-        /// reqAns13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns13;
         
         /// <summary>
         /// lblQues14 control.
@@ -418,15 +301,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns14;
         
         /// <summary>
-        /// reqAns14 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns14;
-        
-        /// <summary>
         /// lblQues15 control.
         /// </summary>
         /// <remarks>
@@ -443,15 +317,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns15;
-        
-        /// <summary>
-        /// reqAns15 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns15;
         
         /// <summary>
         /// lblQues16 control.
@@ -472,15 +337,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns16;
         
         /// <summary>
-        /// reqAns16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns16;
-        
-        /// <summary>
         /// lblQues17 control.
         /// </summary>
         /// <remarks>
@@ -497,15 +353,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns17;
-        
-        /// <summary>
-        /// reqAns17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns17;
         
         /// <summary>
         /// lblQues18 control.
@@ -526,15 +373,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns18;
         
         /// <summary>
-        /// reqAns18 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns18;
-        
-        /// <summary>
         /// lblQues19 control.
         /// </summary>
         /// <remarks>
@@ -551,15 +389,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAns19;
-        
-        /// <summary>
-        /// reqAns19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns19;
         
         /// <summary>
         /// lbl_Links_19 control.
@@ -598,195 +427,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.DropDownList ddlAns20;
         
         /// <summary>
-        /// reqAns20 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns20;
-        
-        /// <summary>
-        /// btn_part1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_part1;
-        
-        /// <summary>
-        /// lblQues21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues21;
-        
-        /// <summary>
-        /// ddlAns21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns21;
-        
-        /// <summary>
-        /// reqAns21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns21;
-        
-        /// <summary>
-        /// lbl_Links_21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Links_21;
-        
-        /// <summary>
-        /// txt_Links_21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Links_21;
-        
-        /// <summary>
-        /// lblQues22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues22;
-        
-        /// <summary>
-        /// ddlAns22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns22;
-        
-        /// <summary>
-        /// reqAns22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns22;
-        
-        /// <summary>
-        /// lblQues23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues23;
-        
-        /// <summary>
-        /// ddlAns23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns23;
-        
-        /// <summary>
-        /// reqAns23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns23;
-        
-        /// <summary>
-        /// lbl_Links_23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Links_23;
-        
-        /// <summary>
-        /// txt_Links_23 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Links_23;
-        
-        /// <summary>
-        /// lblQues24 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues24;
-        
-        /// <summary>
-        /// ddlAns24 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns24;
-        
-        /// <summary>
-        /// reqAns24 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns24;
-        
-        /// <summary>
-        /// lblQues25 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues25;
-        
-        /// <summary>
-        /// ddlAns25 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns25;
-        
-        /// <summary>
-        /// reqAns25 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAns25;
-        
-        /// <summary>
         /// btn_Save5 control.
         /// </summary>
         /// <remarks>
@@ -794,5 +434,14 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Save5;
+        
+        /// <summary>
+        /// btn_Next control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Next;
     }
 }

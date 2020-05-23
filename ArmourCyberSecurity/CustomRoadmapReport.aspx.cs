@@ -150,6 +150,11 @@ namespace ArmourCyberSecurity
                             img.ImageUrl = Page.ResolveUrl("~/images/RedCross.png");
                             et_text.Add("RED");
                         }
+                        else
+                        {
+                            img.ImageUrl = Page.ResolveUrl("~/images/questionMark.png");
+                            et_text.Add("BLUE");
+                        }
 
                         if (row["sec_ref_id"].ToString() == "1")
                         {
@@ -354,6 +359,14 @@ namespace ArmourCyberSecurity
                         if (et_text[0] == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (et_text[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
                             img_dot.Alignment = Image.ALIGN_CENTER;
                             cell = new PdfPCell(img_dot);

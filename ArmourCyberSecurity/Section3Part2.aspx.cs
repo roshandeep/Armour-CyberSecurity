@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ArmourCyberSecurity
 {
-    public partial class Section3 : System.Web.UI.Page
+    public partial class Section3Part2 : System.Web.UI.Page
     {
         string userId = string.Empty;
 
@@ -92,23 +92,39 @@ namespace ArmourCyberSecurity
             DataTable dt = new DataTable();
             dt = dal.LoadDPALinks(userId);
 
-            if (ddlAns1.SelectedItem.Text == "YES")
+            if (ddlAns15.SelectedItem.Text == "YES")
             {
-                txt_Links_1.Enabled = true;
+                txt_Links_15.Enabled = true;
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "1")
+                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "15")
                     {
-                        txt_Links_1.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
+                        txt_Links_15.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
                     }
                 }
             }
             else
             {
-                txt_Links_1.Enabled = false;
-                txt_Links_1.Text = "";
+                txt_Links_15.Enabled = false;
+                txt_Links_15.Text = "";
             }
-            
+
+            if (ddlAns8.SelectedItem.Text == "YES")
+            {
+                txt_Links_8.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "3" && row["sec_ref_id"].ToString() == "8")
+                    {
+                        txt_Links_8.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_8.Enabled = false;
+                txt_Links_8.Text = "";
+            }
         }
 
         private void LoadQuestionnaire()
@@ -203,19 +219,6 @@ namespace ArmourCyberSecurity
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
                             }
-                            if (ddl == ddlAns1)
-                            {
-                                if (ddl.SelectedItem.Text == "YES")
-                                {
-                                    txt_Links_1.Enabled = true;
-                                    SaveLinks(txt_Links_1.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
-                                }
-                                else
-                                {
-                                    txt_Links_1.Enabled = false;
-                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
-                                }
-                            }
                         }
                     }
                 }
@@ -245,6 +248,33 @@ namespace ArmourCyberSecurity
                                 secQuesId = Convert.ToInt32(row["sec_ref_id"]);
                                 dal.SaveLevel2Answers(userId, quesId, quesType, answerWt, answer, 3, secQuesId);
                             }
+
+                            if (ddl == ddlAns8)
+                            {
+                                if (ddl.SelectedItem.Text == "YES")
+                                {
+                                    txt_Links_8.Enabled = true;
+                                    SaveLinks(txt_Links_8.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                                else
+                                {
+                                    txt_Links_8.Enabled = false;
+                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                            }
+                            if (ddl == ddlAns15)
+                            {
+                                if (ddl.SelectedItem.Text == "YES")
+                                {
+                                    txt_Links_15.Enabled = true;
+                                    SaveLinks(txt_Links_15.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                                else
+                                {
+                                    txt_Links_15.Enabled = false;
+                                    SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 3);
+                                }
+                            }
                         }
                     }
                 }
@@ -265,9 +295,9 @@ namespace ArmourCyberSecurity
             dal.SaveDPALinks(userId, links, question_type, sec_ref_id, stagecompleted);
         }
 
-        protected void btn_Next_Click(object sender, EventArgs e)
+        protected void btn_Previous_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Section3Part2.aspx", false);
+            Response.Redirect("~/Section3.aspx", false);
         }
     }
 }

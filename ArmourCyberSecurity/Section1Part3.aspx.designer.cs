@@ -10,168 +10,204 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class Section3 {
+    public partial class Section1Part3 {
         
         /// <summary>
-        /// lblQues1 control.
+        /// lblQues11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues1;
+        protected global::System.Web.UI.WebControls.Label lblQues11;
         
         /// <summary>
-        /// ddlAns1 control.
+        /// ddlAns11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns11;
         
         /// <summary>
-        /// lbl_Links_1 control.
+        /// lblQues12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Links_1;
+        protected global::System.Web.UI.WebControls.Label lblQues12;
         
         /// <summary>
-        /// txt_Links_1 control.
+        /// ddlAns12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Links_1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns12;
         
         /// <summary>
-        /// lblQues2 control.
+        /// lblQues13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues2;
+        protected global::System.Web.UI.WebControls.Label lblQues13;
         
         /// <summary>
-        /// ddlAns2 control.
+        /// ddlAns13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns13;
         
         /// <summary>
-        /// lblQues3 control.
+        /// lbl_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues3;
+        protected global::System.Web.UI.WebControls.Label lbl_Name;
         
         /// <summary>
-        /// ddlAns3 control.
+        /// txt_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns3;
+        protected global::System.Web.UI.WebControls.TextBox txt_Name;
         
         /// <summary>
-        /// lblQues4 control.
+        /// lbl_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues4;
+        protected global::System.Web.UI.WebControls.Label lbl_Email;
         
         /// <summary>
-        /// ddlAns4 control.
+        /// txt_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns4;
+        protected global::System.Web.UI.WebControls.TextBox txt_Email;
         
         /// <summary>
-        /// lblQues5 control.
+        /// lbl_Phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues5;
+        protected global::System.Web.UI.WebControls.Label lbl_Phone;
         
         /// <summary>
-        /// ddlAns5 control.
+        /// txt_phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns5;
+        protected global::System.Web.UI.WebControls.TextBox txt_phone;
         
         /// <summary>
-        /// lblQues6 control.
+        /// lbl_Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues6;
+        protected global::System.Web.UI.WebControls.Label lbl_Title;
         
         /// <summary>
-        /// ddlAns6 control.
+        /// txt_title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns6;
+        protected global::System.Web.UI.WebControls.TextBox txt_title;
         
         /// <summary>
-        /// lblQues7 control.
+        /// lbl_Contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQues7;
+        protected global::System.Web.UI.WebControls.Label lbl_Contact;
         
         /// <summary>
-        /// ddlAns7 control.
+        /// txt_contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAns7;
+        protected global::System.Web.UI.WebControls.TextBox txt_contact;
         
         /// <summary>
-        /// btn_Save3 control.
+        /// lblQues14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Save3;
+        protected global::System.Web.UI.WebControls.Label lblQues14;
         
         /// <summary>
-        /// btn_Next control.
+        /// ddlAns14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Next;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAns14;
+        
+        /// <summary>
+        /// lbl_dpaLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_dpaLinks;
+        
+        /// <summary>
+        /// txt_dpaLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_dpaLinks;
+        
+        /// <summary>
+        /// btn_Save1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Save1;
+        
+        /// <summary>
+        /// btn_Previous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Previous;
     }
 }

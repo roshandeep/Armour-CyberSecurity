@@ -165,9 +165,12 @@
             }
     </style>
 
+    <script>
 
 
-    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+
+
+        <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
@@ -181,6 +184,10 @@
 <body>
 
     <form id="form1" runat="server">
+        
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
         <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
             <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
 
@@ -208,7 +215,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6"/>
+                            <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
                         </li>
                     </ul>
                 </div>
@@ -222,7 +229,8 @@
                     <div class="col-12" style="width: max-content;">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" />
+                                <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" CausesValidation="false" ClientIDMode="Static" />
+                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" TargetControlID="btn_rtn_dashbrd" ConfirmText="Press OK if you have saved your changes or if you do not wish to save your changes." runat="server" ></asp:ConfirmButtonExtender>
                             </li>
                             <li class="nav-item">
                                 <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link display-4" Enabled="True" />

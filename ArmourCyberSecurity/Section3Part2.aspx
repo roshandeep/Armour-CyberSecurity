@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section3.aspx.cs" Inherits="ArmourCyberSecurity.Section3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomRoadmapMenu.Master" AutoEventWireup="true" CodeBehind="Section3Part2.aspx.cs" Inherits="ArmourCyberSecurity.Section3Part2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-        #btn_Next,
+        #btn_Previous,
         #btn_Save3 {
             padding: 1rem 3rem;
             border-radius: 50px !important;
@@ -16,7 +16,7 @@
             margin-bottom: 2rem;
         }
 
-            #btn_Next:hover,
+            #btn_Previous:hover,
             #btn_Save3:hover {
                 box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
@@ -37,15 +37,27 @@
     </style>
     <script>
 
-        function EnableTextArea1() {
-            var ddlAns1 = document.getElementById('<%= ddlAns1.ClientID %>');
-            var links1 = document.getElementById('<%= txt_Links_1.ClientID %>');
+        function EnableTextArea8() {
+            var ddlAns8 = document.getElementById('<%= ddlAns8.ClientID %>');
+            var links8 = document.getElementById('<%= txt_Links_8.ClientID %>');
 
-            if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
-                links1.disabled = false;
+            if (ddlAns8.options[ddlAns8.selectedIndex].innerHTML == 'YES') {
+                links8.disabled = false;
             }
             else {
-                links1.disabled = true;
+                links8.disabled = true;
+            }
+        }
+        function EnableTextArea15() {
+            <%--var ddlAns7 = document.getElementById('<%= ddlAns7.ClientID %>');--%>
+            var ddlAns15 = document.getElementById('<%= ddlAns15.ClientID %>');
+            var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
+
+            if (ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES') {
+                links15.disabled = false;
+            }
+            else {
+                links15.disabled = true;
             }
         }
     </script>
@@ -72,116 +84,136 @@
             <br />
             </h5>
         </div>
-        <div id='sec1Div' style="margin: 0 auto;" class="container-fluid">
+        <div id='sec2Div' style="margin: 0 auto;" class="container-fluid">
             <br />
-            <h2>Data Subject Access Requests
+            <h2 style="margin: 0 auto;">Data Retention and Removal
                 <br />
             </h2>
             <br />
-            <h5 style="background-color: transparent; width: 90%; margin: 0 auto;">Individuals have the right to access their data. Depending on the legislation, they may have the rights to check for accuracy, request correction, or simply review what is held. This includes data you have collected directly from them, data from use, and possibly inferred data.
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">Depending on the legislation, users may have the rights to ‘be forgotten’ or be removed from the system on request. As a privacy design principle, data should also be removed when it is no longer required for business purposes. 
             <br />
             </h5>
             <br />
             <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
-                    <asp:Label ID="lblQues1" runat="server" Text="" />
+                    <asp:Label ID="lblQues8" runat="server" Text="" />
                 </div>
                 <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns1" onChange="EnableTextArea1()">
+                    <asp:DropDownList runat="server" ID="ddlAns8" onChange="EnableTextArea8()">
                         <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                     </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
                     <br />
-                    <asp:Label ID="lbl_Links_1" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <asp:Label ID="lbl_Links_8" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
                     <br />
-                    <asp:TextBox ID="txt_Links_1" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                    <asp:TextBox ID="txt_Links_8" TextMode="multiline" Columns="50" Rows="5" runat="server" />
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues9" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns9">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+
+                    <asp:Label ID="lblQues10" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns10">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+
+                    <asp:Label ID="lblQues11" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns11">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns11" ControlToValidate="ddlAns11" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+
+                    <asp:Label ID="lblQues12" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns12">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns12" ControlToValidate="ddlAns12" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+
+                    <asp:Label ID="lblQues13" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns13">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+
+                    <asp:Label ID="lblQues14" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns14">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                </div>
+            </div>
+            <br />
+
+            <div class="row" style="padding-left: 4rem;">
+                <div class="col-sm-6">
+                    <asp:Label ID="lblQues15" runat="server" Text="" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:DropDownList runat="server" ID="ddlAns15" onChange="EnableTextArea15()">
+                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
                     <br />
-                </div>
-            </div>
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-                    <asp:Label ID="lblQues2" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns2">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns2" ControlToValidate="ddlAns2" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
+                    <asp:Label ID="lbl_Links_15" runat="server" Text="Free Form Links : " ForeColor="#FFFAF0" Font-Bold="true" />
+                    <br />
+                    <asp:TextBox ID="txt_Links_15" TextMode="multiline" Columns="50" Rows="5" runat="server" />
                 </div>
             </div>
             <br />
 
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-
-                    <asp:Label ID="lblQues3" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns3">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
-                </div>
-            </div>
-            <br />
-
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-
-                    <asp:Label ID="lblQues4" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns4">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
-                </div>
-            </div>
-            <br />
-
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-
-                    <asp:Label ID="lblQues5" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns5">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
-                </div>
-            </div>
-            <br />
-
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-
-                    <asp:Label ID="lblQues6" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns6">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns6" ControlToValidate="ddlAns6" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
-                </div>
-            </div>
-            <br />
-
-            <div class="row" style="padding-left: 4rem;">
-                <div class="col-sm-6">
-
-                    <asp:Label ID="lblQues7" runat="server" Text="" />
-                </div>
-                <div class="col-sm-6">
-                    <asp:DropDownList runat="server" ID="ddlAns7" onChange="EnableTextArea15()">
-                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                    </asp:DropDownList>
-                    <%--<asp:RequiredFieldValidator runat="server" ID="reqAns7" ControlToValidate="ddlAns7" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />--%>
-                </div>
-            </div>
-            <br />
             <asp:Button ID="btn_Save3" runat="server" Text="Save" OnClick="btn_Save3_Click" ClientIDMode="Static" />
-            <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
+            <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
+
         </div>
 
     </div>

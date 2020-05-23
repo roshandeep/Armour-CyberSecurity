@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using AjaxControlToolkit;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -36,7 +37,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
                 else
@@ -49,7 +50,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
                 else
@@ -62,7 +63,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
                 else
@@ -75,7 +76,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
                 else
@@ -88,7 +89,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
                 else
@@ -101,7 +102,7 @@ namespace ArmourCyberSecurity
                     }
                     else
                     {
-                        lbl_warning.Text = "Assessment Incomplete. Complete this Sections to view the report.";
+                        lbl_warning.Text = "Assessment Incomplete. Save this Sections to view the report.";
                     }
                 }
             }

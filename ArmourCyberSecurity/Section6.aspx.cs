@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AjaxControlToolkit;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace ArmourCyberSecurity
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["PremiumStatus"] == null)
             {
                 Response.Redirect("~/Payment/Checkout", true);
