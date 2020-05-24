@@ -159,8 +159,8 @@ namespace ArmourCyberSecurity
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
 
-            //ConfirmButtonExtender cbe = (ConfirmButtonExtender)Master.FindControl("ConfirmButtonExtender2");
-            //cbe.Enabled = false;
+            ConfirmButtonExtender cbe = (ConfirmButtonExtender)Master.FindControl("ConfirmButtonExtender2");
+            cbe.Enabled = false;
 
             SaveAnswers(dt);
         }

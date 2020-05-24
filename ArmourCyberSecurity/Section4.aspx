@@ -17,14 +17,14 @@
             margin-bottom: 2rem;
         }
 
-        #btn_Next:hover,
-        #btn_Save4:hover {
-            box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            background-position: right;
-            background: linear-gradient(120deg, #3498db, #3a4953) !important;
-            transition: .5s;
-        }
+            #btn_Next:hover,
+            #btn_Save4:hover {
+                box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                background-position: right;
+                background: linear-gradient(120deg, #3498db, #3a4953) !important;
+                transition: .5s;
+            }
 
 
 
@@ -253,9 +253,17 @@
                 </div>
             </div>
             <br />
-            <asp:Button ID="btn_Save4" runat="server" Text="Save" OnClick="btn_Save4_Click" ClientIDMode="Static" />
-            <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
-            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Save4" runat="server" Text="Save" OnClick="btn_Save4_Click" ClientIDMode="Static" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
+                    <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
         </div>
 
     </div>

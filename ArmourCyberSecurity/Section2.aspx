@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-
         #btn_Next,
         #btn_Save2 {
             padding: 1rem 3rem;
@@ -18,7 +17,7 @@
         }
 
             #btn_Next:hover,
-        #btn_Save2:hover {
+            #btn_Save2:hover {
                 box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
                 background-position: right;
@@ -27,9 +26,9 @@
             }
 
 
-          h5{
-              color: floralwhite;
-          }
+        h5 {
+            color: floralwhite;
+        }
 
         h2 {
             text-align: center;
@@ -56,25 +55,25 @@
     </script>
     <div style="padding-top: 3rem; height: auto;">
         <div style="padding-left: 3rem">
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with respect to the collection, transfer, processing and storage of personal data.
-        </h5>
-        <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;">The following questions deal with how your system or service is set up with respect to the collection, transfer, processing and storage of personal data.
+            </h5>
             <br />
-            To ensure that privacy is at the foundation of your system and services. To evaluate the basis on which data is collected and the security of its processing, transfer and storage. Through this process you eliminate risk by removing any data that is not necessary to system, and add in the secuirty measures needed to protect the data
-        </h5>
-        <br />
-        <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED: </b>
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>SECTION GOAL:</b>
+                <br />
+                To ensure that privacy is at the foundation of your system and services. To evaluate the basis on which data is collected and the security of its processing, transfer and storage. Through this process you eliminate risk by removing any data that is not necessary to system, and add in the secuirty measures needed to protect the data
+            </h5>
             <br />
-            To fill out this section you will need a knowledge of the following:
+            <h5 style="width: 90%; margin: 0 auto; background-color: transparent;"><b>STAKEHOLDERS REQUIRED: </b>
+                <br />
+                To fill out this section you will need a knowledge of the following:
             <br />
-            the way the data is collected, stored, transefered and processed<br />
-            * the types and cotegories of any perosnal data
+                the way the data is collected, stored, transefered and processed<br />
+                * the types and cotegories of any perosnal data
             <br />
-            the third party software and products your company uses with personal data
+                the third party software and products your company uses with personal data
             <br />
-        </h5>
-        <br />
+            </h5>
+            <br />
         </div>
         <div id='sec1Div' style="width: 90%; margin: 0 auto;" class="container-fluid">
             <h2>Privacy by Design</h2>
@@ -85,7 +84,7 @@
                                 Both the adherence to Privacy by Design and the completed Privacy Impact Assessment are requirements for full compliance for many regulations.
                <br />
             </h5>
-            <br/>
+            <br />
             <div class="row" style="padding-left: 4rem;">
                 <div class="col-sm-6">
                     <asp:Label ID="lblQues1" runat="server" Text="" />
@@ -183,10 +182,17 @@
                 </div>
             </div>
             <br />
-
-            <asp:Button ID="btn_Save2" runat="server" Text="Save" OnClick="btn_Save2_Click" ClientIDMode="Static"/>
-            <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static"/>
-            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
-        </div>       
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Save2" runat="server" Text="Save" OnClick="btn_Save2_Click" ClientIDMode="Static" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
+                    <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
     </div>
 </asp:Content>

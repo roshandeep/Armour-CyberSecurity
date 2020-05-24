@@ -16,13 +16,13 @@
         }
 
 
-        #btn_Save6:hover {
-            box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            background-position: right;
-            background: linear-gradient(120deg, #3498db, #3a4953) !important;
-            transition: .5s;
-        }
+            #btn_Save6:hover {
+                box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                background-position: right;
+                background: linear-gradient(120deg, #3498db, #3a4953) !important;
+                transition: .5s;
+            }
 
 
 
@@ -309,8 +309,13 @@
                 </div>
             </div>
             <br />
-            <asp:Button ID="btn_Save6" runat="server" Text="Save" OnClick="btn_Save6_Click" ClientIDMode="Static"/>
-
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Save6" runat="server" Text="Save" OnClick="btn_Save6_Click" ClientIDMode="Static" />
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
         </div>
     </div>
 </asp:Content>

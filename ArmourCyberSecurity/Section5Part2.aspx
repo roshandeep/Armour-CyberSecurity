@@ -200,10 +200,17 @@
                 </div>
             </div>
             <br />
-
-            <asp:Button ID="btn_Save5" runat="server" Text="Save" OnClick="btn_Save5_Click" ClientIDMode="Static"/>
-            <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static"/>
-            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Previous" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Save5" runat="server" Text="Save" OnClick="btn_Save5_Click" ClientIDMode="Static" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
+                    <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Previous" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
         </div>
     </div>
 </asp:Content>

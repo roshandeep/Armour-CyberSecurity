@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-
         #btn_Next,
         #btn_Save5 {
             padding: 1rem 3rem;
@@ -18,7 +17,7 @@
         }
 
             #btn_Next:hover,
-        #btn_Save5:hover {
+            #btn_Save5:hover {
                 box-shadow: inset -4px -4px 10px rgba(225, 225, 225, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
                 background-position: right;
@@ -87,7 +86,7 @@
             var ddlAns19 = document.getElementById('<%= ddlAns19.ClientID %>');
             var links19 = document.getElementById('<%= txt_Links_19.ClientID %>');
 
-          
+
             if (ddlAns1.options[ddlAns1.selectedIndex].innerHTML == 'YES') {
                 links1.disabled = false;
             }
@@ -428,10 +427,17 @@
                 </div>
             </div>
             <br />
-            <asp:Button ID="btn_Save5" runat="server" Text="Save" OnClick="btn_Save5_Click" ClientIDMode="Static"/>
-            <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static"/>
-            <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server" ></asp:ConfirmButtonExtender>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Save5" runat="server" Text="Save" OnClick="btn_Save5_Click" ClientIDMode="Static" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
+                    <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
         </div>
-        
     </div>
 </asp:Content>
