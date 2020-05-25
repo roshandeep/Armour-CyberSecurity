@@ -67,7 +67,12 @@
                         <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
                     </li>
                 </ul>
-
+                <div class="navbar-buttons mbr-section-btn" runat="server" id="div_SignOut" visible="false">
+                    <a class="btn btn-sm btn-primary display-4" href="/Level1/SignOut.aspx" runat="server" id="btn_signout">
+                        <span></span>
+                        Sign Out
+                    </a>
+                </div>
             </div>
         </nav>
     </section>

@@ -51,6 +51,7 @@
     </script>
     <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
         <div style="padding-left: 3rem;">
+            <h1 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent; text-align: center; padding-bottom: 1rem;">Consent</h1><br />
             <h5 style="background-color: transparent;">The following questions deal with how privacy information is displayed to your customer or client, as well as how their explicit consent gathered and tracked.
             <br />
                 <br />

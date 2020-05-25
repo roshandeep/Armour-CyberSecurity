@@ -114,6 +114,7 @@
     </script>
     <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
         <div style="padding-left: 4rem;">
+            <h1 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent; text-align: center; padding-bottom: 1rem;">Incident Management</h1><br />
             <h5 style="background-color: transparent;">The following questions deal with how your company responds to and addresses a privacy incident. 
         <br />
                 <br />

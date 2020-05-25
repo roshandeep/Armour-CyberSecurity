@@ -112,8 +112,8 @@
                     // a successful payment.
                     // Instead use one of the strategies described in
                     // https://stripe.com/docs/payments/checkout/fulfillment
-                    successUrl: window.location.protocol + '//localhost:62800/CustomRoadmapDashboard',
-                    cancelUrl: window.location.protocol + '//localhost:62800/Level1/CustomRoadmapLandingpage',
+                    successUrl: window.location.protocol + '//localhost:62800/CustomRoadmapDashboard?paid=True',
+                    cancelUrl: window.location.protocol + '//localhost:62800/Level1/CustomRoadmapLandingpage?paid=False',
                 })
                     .then(function (result) {
                         if (result.error) {

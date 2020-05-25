@@ -309,7 +309,7 @@
     </section>
 
 
-            <div class="boxshadow" style="background-color: #0795d6;">
+            <div class="boxshadow" style="background-color: #0795d6;margin-top: 80px;">
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">

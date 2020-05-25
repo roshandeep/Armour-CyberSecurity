@@ -158,10 +158,10 @@ namespace ArmourCyberSecurity
             //smtp.Host = "relay-hosting.secureserver.net";
             //smtp.Port = 25;
             //smtp.EnableSsl = true;
+
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             NetworkCredential NetworkCred = new NetworkCredential();
             //NetworkCred.UserName = "info@privacycompliance.solutions";

@@ -122,15 +122,15 @@
         /* Popup box BEGIN */
     </style>
 
-    <script>
+    <script type="text/javascript">
 
-        function LogOut() {
-            document.getElementById('btn_signout').onclick = function () {
-                 <%FormsAuthentication.SignOut();%>
-                <%Session.Clear();%>
-                window.location.reload();
-            };
-        }
+        //function LogOut() {
+        //    document.getElementById('btn_signout').onclick = function () {
+        //        if (document.getElementById('btn_signout').clicked == true) {
+
+        //        }
+        //    };
+        //}
     </script>
 </head>
 <body>
@@ -184,17 +184,16 @@
                         Sign in
                     </a>
                 </div>
+                <div class="nav-item" runat="server" id="div_user_initials" visible="false">
+                    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" />
+                </div>
                 <div class="navbar-buttons mbr-section-btn" runat="server" id="div_SignOut" visible="false">
-                    <a class="btn btn-sm btn-primary display-4" href="#" runat="server" id="btn_signout" onclick="LogOut();">
+                    <a class="btn btn-sm btn-primary display-4" href="/Level1/SignOut.aspx" runat="server" id="btn_signout">
                         <span></span>
                         Sign Out
                     </a>
                 </div>
-                <div class="nav-item" runat="server" id="div_user_initials" visible="false">
-                    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" Font-Bold="true" />
-                </div>
             </div>
-
         </nav>
     </section>
 

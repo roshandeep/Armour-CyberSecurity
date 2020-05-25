@@ -347,12 +347,12 @@
                                 <strong>According to your input, your company falls under the following legislations: </strong>
                                 <br />
 
-                                <asp:Label class="Check" ID="lbl_legislation_list" runat="server" Text="" />
+                                <asp:Label class="Check" ID="lbl_legislation_list" runat="server" Text="" Font-Bold="true"/>
                             </p>
                             <br />
                             <p style="width: 90%; margin: 0 auto;">
                                 Each regulation carries its own standards and penalties.<br />
-                                <asp:Label ID="lbl_regulations_score" runat="server" Text="" />
+                                <asp:Label ID="lbl_regulations_score" runat="server" Text="" Font-Bold="true"/>
                                 Having an understanding of the regulations you fall under protect your data and prevent your company from the high cost of possible fines.
                             </p>
                         </td>
@@ -1697,6 +1697,7 @@ Review the items below to ensure that you have covered all of your bases.
                             <hr size="1" width="40%" align="center" color="#000" />
                             <p style="width: 90%; margin: 0 auto;">
                                 Your employee education program around cyber security and privacy should be delivered at the point when you onboard new employees and then periodically with existing employees.
+                                <br />
                                 <br />
                                 Below is a checklist of what should be included in this program. We have scored this list based on your assessment input. Review each item to ensure you have met the standard.
 To meet compliance, you need only to have evidence of a program. To prevent breaches, (accidental) insider threats, and reputation protection, we suggest you have all the pieces below implemented. The small amount of effort upfront will lower your risks and costs significantly.

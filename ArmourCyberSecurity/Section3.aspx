@@ -52,6 +52,7 @@
     <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
         <br />
         <div style="padding-left: 2rem;">
+            <h1 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent; text-align: center; padding-bottom: 1rem;">Data Control</h1><br />
             <h5 style="background-color: transparent; width: 92%; margin: 0 auto;">The following questions deal with how you handle the control of data including how an individual's data is accessed, transferred, stored, and deleted from your systems.
         <br />
             </h5>

@@ -111,7 +111,7 @@
             </div>
         </nav>
     </section>
-    <form id="form1" runat="server" class="login-form" style="height: 540px; padding-top: 20px; padding-bottom: 30px;">
+    <form id="form1" runat="server" class="login-form" style="height: 560px; padding-top: 20px; padding-bottom: 30px;">
         <img src="images/newLogo.png" style="width: 62px; margin-left: 7rem; border-radius: 20%;" />
         <h1 style="margin-bottom: 0px;">Login</h1>
         <div>
