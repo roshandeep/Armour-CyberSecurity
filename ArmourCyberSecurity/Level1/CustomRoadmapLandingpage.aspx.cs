@@ -20,7 +20,7 @@ namespace ArmourCyberSecurity
 
         protected void btn_questionnaire_Click(object sender, EventArgs e)
         {
-            Session["PremiumUserRedirection"] = "Level2LandingPage";
+            
 
             if (Session["PremiumStatus"] != null)
             {

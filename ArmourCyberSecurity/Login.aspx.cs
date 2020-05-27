@@ -74,17 +74,7 @@ namespace ArmourCyberSecurity
 
                                 if (Session["PremiumStatus"].ToString() == "True")
                                 {
-                                    if (Session["PremiumUserRedirection"] != null)
-                                    { 
-                                        if (Session["PremiumUserRedirection"].ToString() == "Level2LandingPage")
-                                        {
-                                            Response.Redirect("~/CustomRoadmapDashboard", true);
-                                        }
-                                        else
-                                        {
-                                            Response.Redirect("~/Level1/LandingPage", true);
-                                        }
-                                    }
+                                    Response.Redirect("~/CustomRoadmapDashboard", true);
                                 }
 
 
