@@ -153,7 +153,7 @@
             padding: 5px;
         }
     </style>
-        <section class="tabs2 cid-rYwmhfTTsG" id="tabs2-x" style="width: 100%;">
+    <section class="tabs2 cid-rYwmhfTTsG" id="tabs2-x" style="width: 100%;">
         <div class="container" style="margin-top: 6rem; padding-top: 2rem; padding-bottom: 2rem;">
             <div class="media-container-row" style="width: max-content; margin: 0 auto;">
                 <div class="col-12" style="width: max-content;">
@@ -161,7 +161,7 @@
                         <li class="nav-item">
                             <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" CausesValidation="false" ClientIDMode="Static" />
 
-                            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btn_rtn_dashbrd" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
+                            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btn_rtn_dashbrd" CancelControlID="imgbtnbackground" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
                         </li>
                         <li class="nav-item" role="tablist">
                             <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link display-4" Enabled="True" ClientIDMode="Static" />
@@ -173,6 +173,9 @@
         </div>
     </section>
     <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+        <div style="text-align: right;">
+            <asp:ImageButton ID="imgbtnbackground" runat="server" ImageUrl="~/images/RedCross.png" Style="display: inline-block; width: 30px; height: 30px;" />
+        </div>
         <div style="height: 60px">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
@@ -182,12 +185,12 @@
         </div>
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
         <asp:Button ID="btnDiscard" runat="server" Text="Discard" OnClick="btnDiscard_Click" />
-        <asp:Button ID="btnClose" runat="server" Text="Close" />
     </asp:Panel>
 
     <div id="Global_Regulations" class="container-fluid">
         <div class="row" style="padding-top: 3rem;">
-            <h1 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent; text-align: center; padding-bottom: 1rem;">Global Regulations</h1><br />
+            <h1 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent; text-align: center; padding-bottom: 1rem;">Global Regulations</h1>
+            <br />
             <h5 style="width: 90%; margin: 0 auto; color: floralwhite; background-color: transparent;"><strong>The following questions deal with the region in which you do buisness, which includes both where your office resides and where your customers reside.</strong>
                 <br />
                 For the purpose of this report, we will be focusing on GDPR (Europe), PIPEDA (Canada), CCPA (California), and LGPD (Brazil. This said, between the global reach of many companies and the fact that more countries and regional oversight are coming to law, following the best practice suggestions laid out in this assessment will benefit you regardless of region.
@@ -337,11 +340,11 @@
                 </div>
                 <div class="col-sm-4">
                     <asp:Button ID="btn_Previous" runat="server" Text="Previous" OnClick="btn_Previous_Click" ClientIDMode="Static" />
-                    
+
                 </div>
                 <div class="col-sm-4">
                     <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
-                    
+
                 </div>
             </div>
         </div>

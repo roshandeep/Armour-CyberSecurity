@@ -109,22 +109,6 @@ namespace ArmourCyberSecurity
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadDPALinks(userId);
-            if (ddlAns16.SelectedItem.Text == "YES")
-            {
-                txt_Links_16.Enabled = true;
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (row["stagesCompleted"].ToString() == "2" && row["sec_ref_id"].ToString() == "16")
-                    {
-                        txt_Links_16.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
-                    }
-                }
-            }
-            else
-            {
-                txt_Links_16.Enabled = false;
-                txt_Links_16.Text = "";
-            }
             
 
             if (ddlAns22.SelectedItem.Text == "YES")

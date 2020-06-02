@@ -356,9 +356,9 @@ namespace ArmourCyberSecurity
                 }
             }
 
-            SetDeafaults(dt, userId, "Data Categorization", 5);
-            SetDeafaults(dt, userId, "Vendor Management", 5);
-            SetDeafaults(dt, userId, "Privacy Impact Assessment", 5);
+            SetDeafaults(dt, userId, "Data Categorization", 2);
+            SetDeafaults(dt, userId, "Vendor Management", 2);
+            SetDeafaults(dt, userId, "Privacy Impact Assessment", 2);
         }
 
         public void SetDeafaults(DataTable dt, string userId, string question_type, int stagesCompleted)

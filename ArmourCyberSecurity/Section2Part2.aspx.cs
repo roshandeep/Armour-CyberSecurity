@@ -20,7 +20,7 @@ namespace ArmourCyberSecurity
                 Response.Redirect("~/Payment/Checkout", true);
             }
             else
-            {
+            {http://localhost:62800/Section2Part2.aspx.cs
                 if (Session["PremiumStatus"].ToString() != "True")
                 {
                     Response.Redirect("~/Payment/Checkout", true);
@@ -159,6 +159,23 @@ namespace ArmourCyberSecurity
             {
                 txt_Links_8.Enabled = false;
                 txt_Links_8.Text = "";
+            }
+
+            if (ddlAns16.SelectedItem.Text == "YES")
+            {
+                txt_Links_16.Enabled = true;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["stagesCompleted"].ToString() == "2" && row["sec_ref_id"].ToString() == "16")
+                    {
+                        txt_Links_16.Text = row["dpo_links"].ToString().Replace(",", Environment.NewLine);
+                    }
+                }
+            }
+            else
+            {
+                txt_Links_16.Enabled = false;
+                txt_Links_16.Text = "";
             }
         }
 
@@ -319,6 +336,19 @@ namespace ArmourCyberSecurity
                                     else
                                     {
                                         txt_Links_15.Enabled = false;
+                                        SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
+                                    }
+                                }
+                                if (ddl == ddlAns16)
+                                {
+                                    if (ddl.SelectedItem.Text == "YES")
+                                    {
+                                        txt_Links_16.Enabled = true;
+                                        SaveLinks(txt_Links_16.Text, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
+                                    }
+                                    else
+                                    {
+                                        txt_Links_16.Enabled = false;
                                         SaveLinks(string.Empty, userId, row["question_type"].ToString(), Convert.ToInt32(row["sec_ref_id"]), 2);
                                     }
                                 }
