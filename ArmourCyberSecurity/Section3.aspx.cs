@@ -275,7 +275,7 @@ namespace ArmourCyberSecurity
 
         protected void btnDiscard_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/CustomRoadMapReport.aspx", false);
+            Response.Redirect("~/CustomRoadmapDashboard.aspx", false);
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

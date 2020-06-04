@@ -55,11 +55,10 @@
             var links15 = document.getElementById('<%= txt_Links_15.ClientID %>');
             //alert(ddlAns7);
             if (ddlAns15.options[ddlAns15.selectedIndex].innerHTML == 'YES' && ddlAns7 == 'True') {
-                alert(ddlAns15.options[ddlAns15.selectedIndex].innerHTML + ' ' + ddlAns7 + 'enable karo');
                 links15.disabled = false;
             }
             else {
-                alert(ddlAns15.options[ddlAns15.selectedIndex].innerHTML + ' ' + ddlAns7 + 'disable rakho');
+                
                 links15.disabled = true;
             }
         }

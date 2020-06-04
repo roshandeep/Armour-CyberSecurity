@@ -80,6 +80,7 @@ namespace ArmourCyberSecurity
                     default:
                         message = "Registration successful.\\nAn activation email has been sent.";
                         Session["L2emailId"] = txtEmail.Text.Trim();
+                        Session["userInitial"] = txtEmail.Text.Substring(0, 2).ToUpper();
                         SendActivationEmail(userId);
                         // Add user in RDSS user table
                         if (exsists > 0)
