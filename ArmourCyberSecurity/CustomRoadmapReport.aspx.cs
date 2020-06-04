@@ -329,6 +329,67 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(5);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        cell = new PdfPCell(phrase);
+                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        Paragraph p;
+                        Image img_dot;
+                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("YES");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("SOMEWHAT");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("NO/UNSURE");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("Not Answered");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -338,8 +399,7 @@ namespace ArmourCyberSecurity
                         table.SetWidths(new float[] { 2f, 8f });
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.BOX;
-
-                        Image img_dot;
+                        
                         if (et_text[0] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -537,6 +597,61 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
+                        pdfDoc.Add(table);
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (et_text[4] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -683,62 +798,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-
-                        /* ########################################SECOND PAGE######################################## */
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.2f, 0.8f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(2);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
 
 
                         if (et_text[7] == "GREEN")
@@ -1140,30 +1199,6 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Onboarding and New Employee Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_onet.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Privacy and Compliance Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pct.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
                         /* ########################################SECOND PAGE######################################## */
                         pdfDoc.NewPage();
 
@@ -1210,72 +1245,28 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(5);
+                        table = new PdfPTable(1);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Onboarding and New Employee Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_onet.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Privacy and Compliance Training\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_pct.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
-                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
-
-                        Paragraph p;
-                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("YES");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("SOMEWHAT");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("NO/UNSURE");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("Not Answered");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 10f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+                       
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
@@ -1754,6 +1745,68 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
+                        table = new PdfPTable(5);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        cell = new PdfPCell(phrase);
+                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        Paragraph p;
+                        Image img_dot;
+                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("YES");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("SOMEWHAT");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("NO/UNSURE");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("Not Answered");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
                         table = new PdfPTable(2);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1761,7 +1814,6 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.BOX;
 
-                        Image img_dot;
                         if (im_4_20[0] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -2064,6 +2116,63 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################THIRD PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (im_4_20[6] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -2163,65 +2272,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
-
-
-
-                        pdfDoc.Add(table);
-
-
-                        /* ########################################THIRD PAGE######################################## */
-
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.2f, 0.8f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(2);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
 
                         if (im_4_20[8] == "GREEN")
                         {
@@ -2625,25 +2675,6 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("SENDING NOTIFICATIONS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
                         /* ########################################FOURTH PAGE######################################## */
 
                         pdfDoc.NewPage();
@@ -2698,6 +2729,7 @@ namespace ArmourCyberSecurity
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
+                        phrase.Add(new Chunk("SENDING NOTIFICATIONS\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("A breach notification is a legal announcement of your due diligence. Depending on risk of harm, you may need to notify the appropriate data protection authority (or authorities) and/or affected individuals (personally or by public statement). If you are a vendor, you will also have to notify companies that use your product or service. To avoid fines, there are windows of time in which you need to ensure your notifications are sent.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Some information about your breach is mandatory to be shared and other information you may want to keep confidential. Since time is of the essence with privacy incidents, it is extremely helpful to have pre-prepared templates for your notifications. These templates can include all the static information, such as company contact information, plus spaces to fill in information specific to this incident. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("If it is not possible or unreasonable to send notifications to all of your users, you have the option to post a public statement. This can appear on your company’s website or as a statement to the press. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
@@ -2971,27 +3003,6 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Privacy Breach Log\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_im_pbl.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-
-                        pdfDoc.Add(table);
 
                         /* ########################################FIFTH PAGE######################################## */
 
@@ -3046,6 +3057,19 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Breach Log\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_im_pbl.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Incident Response Plan\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
@@ -3092,67 +3116,6 @@ namespace ArmourCyberSecurity
                         cell.VerticalAlignment = Element.ALIGN_TOP;
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(5);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
-                        cell = new PdfPCell(phrase);
-                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        Paragraph p;
-                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("YES");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("SOMEWHAT");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("NO/UNSURE");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("Not Answered");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
@@ -3485,6 +3448,68 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
+                        table = new PdfPTable(5);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        cell = new PdfPCell(phrase);
+                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        Paragraph p;
+                        Image img_dot;
+                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("YES");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("SOMEWHAT");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("NO/UNSURE");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("Not Answered");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
                         table = new PdfPTable(2);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -3492,7 +3517,6 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.BOX;
 
-                        Image img_dot;
                         if (con_1_12[0] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -3694,6 +3718,62 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.2f, 0.8f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (con_1_12[4] == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -3793,63 +3873,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
-
-
-                        pdfDoc.Add(table);
-
-
-                        /* ########################################SECOND PAGE######################################## */
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.2f, 0.8f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\n Privacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 20, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(2);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
 
 
                         if (con_1_12[6] == "GREEN")
@@ -4167,10 +4190,6 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Users must have the ability to Opt In and Opt Out of having their data collected, stored, and transferred. That consent must be stored and updated if data use is changed. You can use a checkbox for this on a digital service but be sure not to have it checked by default.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Consent is a key component to privacy regulations. It must be informed (individual knows what they are agreeing to) and given freely.  \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\nThere is direct consent and indirect consent. Direct Consent is provided by the individual with respect to the collection and use of their data. Indirect Consent is provided from a controller to a processor. For example, if you were collecting individual’s names and decided to put them in a newsletter mailer, you are the controller collecting the data and the mailer is the processor. You need the individual’s consent to add their name to the newsletter but the newsletter application does not need direct consent from the user.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_c_13.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Review the items below to ensure that you have covered all of your bases. \n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("IF YOU ARE ACTING AS THE CONTROLLER: To be compliant with privacy regulations, all of the items should be marked green, or complete.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("IF YOU ARE ACTING AS THE PROCESSOR: You can make a judgement on each requirement and if it applies to you or if it is covered by your controller.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -4225,6 +4244,28 @@ namespace ArmourCyberSecurity
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
                         DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
                         DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_c_13.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Review the items below to ensure that you have covered all of your bases. \n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("IF YOU ARE ACTING AS THE CONTROLLER: To be compliant with privacy regulations, all of the items should be marked green, or complete.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("IF YOU ARE ACTING AS THE PROCESSOR: You can make a judgement on each requirement and if it applies to you or if it is covered by your controller.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -4558,22 +4599,6 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Privacy Policy \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_c_pp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Consent Management Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_c_cmp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
                         pdfDoc.Add(table);
 
                         /* ########################################FOURTH PAGE######################################## */
@@ -4623,72 +4648,27 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(5);
+                        table = new PdfPTable(1);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        phrase.Add(new Chunk("Documentation and Links \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Privacy Policy \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_pp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Consent Management Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_c_cmp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
-                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
-
-                        Paragraph p;
-                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("YES");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("SOMEWHAT");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("NO/UNSURE");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("Not Answered");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
@@ -5268,6 +5248,68 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
+                        table = new PdfPTable(5);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
+                        cell = new PdfPCell(phrase);
+                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        Paragraph p;
+                        Image img_dot;
+                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("YES");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("SOMEWHAT");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("NO/UNSURE");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("Not Answered");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        pdfDoc.Add(table);
+
                         table = new PdfPTable(2);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -5275,7 +5317,6 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.BOX;
 
-                        Image img_dot;
                         if (dc_text_2 == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -5378,6 +5419,63 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
+
+                        pdfDoc.Add(table);
+
+
+                        /* ########################################SECOND PAGE######################################## */
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (dc_text_4 == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -5386,7 +5484,7 @@ namespace ArmourCyberSecurity
                             cell = new PdfPCell(img_dot);
                         }
                         else
-                        if (dc_text_4 == "YELLOW")
+if (dc_text_4 == "YELLOW")
                         {
                             img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
                             img_dot.ScaleAbsolute(30f, 30f);
@@ -5394,7 +5492,7 @@ namespace ArmourCyberSecurity
                             cell = new PdfPCell(img_dot);
                         }
                         else
-                        if (dc_text_4 == "RED")
+if (dc_text_4 == "RED")
                         {
                             img_dot = Image.GetInstance(imagepath + "/RedCross.png");
                             img_dot.ScaleAbsolute(30f, 30f);
@@ -5402,7 +5500,7 @@ namespace ArmourCyberSecurity
                             cell = new PdfPCell(img_dot);
                         }
                         else
-                        if (dc_text_4 == "BLUE")
+if (dc_text_4 == "BLUE")
                         {
                             img_dot = Image.GetInstance(imagepath + "/questionMark.png");
                             img_dot.ScaleAbsolute(30f, 30f);
@@ -5477,63 +5575,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
-
-
-                        pdfDoc.Add(table);
-
-
-                        /* ########################################SECOND PAGE######################################## */
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(2);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
 
                         if (dc_text_6 == "GREEN")
                         {
@@ -5770,6 +5811,64 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
+                        pdfDoc.Add(table);
+
+                        
+
+                        /* ########################################THIRD PAGE######################################## */
+
+                        pdfDoc.NewPage();
+
+                        //Add border to page
+                        rectangle.Left += pdfDoc.LeftMargin - 10;
+                        rectangle.Right -= pdfDoc.RightMargin - 10;
+                        rectangle.Top -= pdfDoc.TopMargin - 10;
+                        rectangle.Bottom += pdfDoc.BottomMargin;
+                        content.SetColorStroke(BaseColor.BLACK);
+                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
+                        content.Stroke();
+
+                        table = new PdfPTable(2);
+                        table.TotalWidth = 500f;
+                        table.LockedWidth = true;
+                        table.SetWidths(new float[] { 0.3f, 0.7f });
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        //Armor Logo
+                        img.ScaleAbsolute(50, 61);
+                        cell = new PdfPCell(img);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.PaddingBottom = 0f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        //Armor Address
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
+                        cell = new PdfPCell(phrase);
+                        cell.SetLeading(3, 1);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        cell.PaddingBottom = 2f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
+
+                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
+                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
+                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(2);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SetWidths(new float[] { 2f, 8f });
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.BOX;
+
                         if (dc_text_13 == "GREEN")
                         {
                             img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
@@ -5872,55 +5971,6 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        
-
-                        /* ########################################THIRD PAGE######################################## */
-
-                        pdfDoc.NewPage();
-
-                        //Add border to page
-                        rectangle.Left += pdfDoc.LeftMargin - 10;
-                        rectangle.Right -= pdfDoc.RightMargin - 10;
-                        rectangle.Top -= pdfDoc.TopMargin - 10;
-                        rectangle.Bottom += pdfDoc.BottomMargin;
-                        content.SetColorStroke(BaseColor.BLACK);
-                        content.Rectangle(rectangle.Left, rectangle.Bottom, rectangle.Width, rectangle.Height);
-                        content.Stroke();
-
-                        table = new PdfPTable(2);
-                        table.TotalWidth = 500f;
-                        table.LockedWidth = true;
-                        table.SetWidths(new float[] { 0.3f, 0.7f });
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        //Armor Logo
-                        img.ScaleAbsolute(50, 61);
-                        cell = new PdfPCell(img);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.PaddingBottom = 0f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        //Armor Address
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("\nPrivacy Compliance Roadmap\n", FontFactory.GetFont("Arial", 22, Font.BOLD, new BaseColor(7, 149, 214))));
-                        cell = new PdfPCell(phrase);
-                        cell.SetLeading(3, 1);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        cell.PaddingBottom = 2f;
-                        cell.PaddingTop = 5f;
-                        table.AddCell(cell);
-
-                        color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
-                        DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
-                        DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
-
-                        pdfDoc.Add(table);
-
                         table = new PdfPTable(1);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -5961,9 +6011,6 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Data Subject Access Request Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_dsarp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -6028,6 +6075,9 @@ namespace ArmourCyberSecurity
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Retention and Deletion Process \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_drdp.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Data Request Scripts and Communications\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_drsc.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
@@ -6038,75 +6088,6 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(5);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
-                        cell = new PdfPCell(phrase);
-                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        Paragraph p;
-                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("YES");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("SOMEWHAT");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("NO/UNSURE");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("Not Answered");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(1);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("\n\nPlease note this report is one of six reports generated as part of the Privacy Compliance Roadmap.\n", FontFactory.GetFont("Arial", 12, Font.ITALIC, BaseColor.BLACK)));
@@ -6567,66 +6548,68 @@ namespace ArmourCyberSecurity
 
                         pdfDoc.Add(table);
 
-                        table = new PdfPTable(2);
+                        table = new PdfPTable(5);
                         table.WidthPercentage = 90f;
                         table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SetWidths(new float[] { 2f, 8f });
                         table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.BOX;
-
-                        Image img_dot;
-                        if (pe_2_8[0] == "GREEN")
-                        {
-                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                            img_dot.ScaleAbsolute(30f, 30f);
-                            img_dot.Alignment = Image.ALIGN_CENTER;
-                            cell = new PdfPCell(img_dot);
-                        }
-                        else
-                        if (pe_2_8[0] == "YELLOW")
-                        {
-                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                            img_dot.ScaleAbsolute(30f, 30f);
-                            img_dot.Alignment = Image.ALIGN_CENTER;
-                            cell = new PdfPCell(img_dot);
-                        }
-                        else
-                        if (pe_2_8[0] == "RED")
-                        {
-                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                            img_dot.ScaleAbsolute(30f, 30f);
-                            img_dot.Alignment = Image.ALIGN_CENTER;
-                            cell = new PdfPCell(img_dot);
-                        }
-                        else
-                        if (pe_2_8[0] == "BLUE")
-                        {
-                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                            img_dot.ScaleAbsolute(30f, 30f);
-                            img_dot.Alignment = Image.ALIGN_CENTER;
-                            cell = new PdfPCell(img_dot);
-                        }
-                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.BOX;
-                        table.AddCell(cell);
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
-                        phrase.Add(new Chunk(getLeftString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(getMiddleString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(getRightString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
                         cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
-                        cell.Border = PdfPCell.BOX;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
+                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                        cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
+                        Paragraph p;
+                        Image img_dot;
+                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("YES");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("SOMEWHAT");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("NO/UNSURE");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
+
+                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                        img_dot.ScaleAbsolute(15f, 15f);
+                        img_dot.Alignment = Image.ALIGN_CENTER;
+                        cell = new PdfPCell();
+                        cell.AddElement(img_dot);
+                        p = new Paragraph("Not Answered");
+                        p.Alignment = Element.ALIGN_CENTER;
+                        cell.AddElement(p);
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
+                        
 
 
                         /* ########################################SECOND PAGE######################################## */
@@ -6681,6 +6664,56 @@ namespace ArmourCyberSecurity
                         table.SetWidths(new float[] { 2f, 8f });
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.BOX;
+
+                        if (pe_2_8[0] == "GREEN")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[0] == "YELLOW")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[0] == "RED")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/RedCross.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        else
+                        if (pe_2_8[0] == "BLUE")
+                        {
+                            img_dot = Image.GetInstance(imagepath + "/questionMark.png");
+                            img_dot.ScaleAbsolute(30f, 30f);
+                            img_dot.Alignment = Image.ALIGN_CENTER;
+                            cell = new PdfPCell(img_dot);
+                        }
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.BOX;
+                        table.AddCell(cell);
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(getLeftString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getMiddleString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(getRightString(lbl_pe_2.Text), FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_TOP;
+                        cell.Border = PdfPCell.BOX;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        table.AddCell(cell);
 
                         if (pe_2_8[1] == "GREEN")
                         {
@@ -6982,9 +7015,7 @@ namespace ArmourCyberSecurity
                         cell.PaddingTop = 5f;
                         table.AddCell(cell);
 
-
                         pdfDoc.Add(table);
-
 
                         table = new PdfPTable(1);
                         table.WidthPercentage = 90f;
@@ -6997,9 +7028,6 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("Once the system map is complete and different transactions are identified, it is important to list the data involved at those touch points. This data will then be categorized, assessed for necessity, and documented.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Your data must be distinguished in terms of Personal Information (PI), Personally Identifiable Information (PII), as well as sensitivity of the data.\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("The data flow can be captured in a data map. The data itself can be captured in a speadsheet or a tool. This is referred to as the Data Use Info Sheet.\n[Note: the Data Map and Data Use Info Sheet are part of the Data Privacy Impact Assessment below].\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pe_9.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("It is important that you document all the PI and PII you collect. Having this documentation allows you to evaluate the risk of collecting/processing the data and determine if it is truly required. If you have legal basis to collect the data, ensure you understand the risk.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Below are best practices to optimize the safety of the data you are collecting.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -7056,6 +7084,26 @@ namespace ArmourCyberSecurity
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
                         DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
                         DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_9.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("It is important that you document all the PI and PII you collect. Having this documentation allows you to evaluate the risk of collecting/processing the data and determine if it is truly required. If you have legal basis to collect the data, ensure you understand the risk.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Below are best practices to optimize the safety of the data you are collecting.\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -7427,8 +7475,6 @@ namespace ArmourCyberSecurity
                         phrase = new Phrase();
                         phrase.Add(new Chunk("VENDOR MANAGEMENT \n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
                         phrase.Add(new Chunk("If you are the controller of data, your company is ultimately responsible for the safety and privacy of the data you handle. As such, vendors and third party partners must be compliant with regulation as well. This applies to internal software and services if your employees fall under a regulation (ex citizen of a country within the EU), and third party software and services (such as cloud storage) for customers and clients. Some regulations require a vendor contract but it is a good idea to have one regardless of regulation.\n \n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_pe_22.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("Review these items to ensure your Vendor Management Process meets the standards.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -7484,6 +7530,25 @@ namespace ArmourCyberSecurity
                         color = new BaseColor(System.Drawing.ColorTranslator.FromHtml("#A9A9A9"));
                         DrawLine(writer, 25f, pdfDoc.Top - 79f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 79f, color);
                         DrawLine(writer, 25f, pdfDoc.Top - 80f, pdfDoc.PageSize.Width - 25f, pdfDoc.Top - 80f, color);
+
+                        pdfDoc.Add(table);
+
+                        table = new PdfPTable(1);
+                        table.WidthPercentage = 90f;
+                        table.HorizontalAlignment = Element.ALIGN_CENTER;
+                        table.SpacingBefore = 20f;
+                        table.DefaultCell.Border = Rectangle.NO_BORDER;
+
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk(lbl_pe_22.Text + "\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("Review these items to ensure your Vendor Management Process meets the standards.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         pdfDoc.Add(table);
 
@@ -7757,12 +7822,6 @@ namespace ArmourCyberSecurity
                         phrase.Add(new Chunk("\n" + lbl_pe_23.Text + "\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("Review the sections to ensure you have covered all required areas of the DPIA.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("\nThe body of the assessment is broken in to six parts:\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("1. System and/or Service Map \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("2. Data List (including PI and PII)\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("3. Notice and Consent \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("4. Security and Data Access \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("5. Retention and Deletion\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
-                        phrase.Add(new Chunk("6. Further actions and Recommendations\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         cell = new PdfPCell(phrase);
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.VerticalAlignment = Element.ALIGN_TOP;
@@ -7827,6 +7886,12 @@ namespace ArmourCyberSecurity
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
                         phrase = new Phrase();
+                        phrase.Add(new Chunk("1. System and/or Service Map \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("2. Data List (including PI and PII)\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("3. Notice and Consent \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("4. Security and Data Access \n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("5. Retention and Deletion\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
+                        phrase.Add(new Chunk("6. Further actions and Recommendations\n\n", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.BLACK)));
                         phrase.Add(new Chunk("It is also recommended you include an executive summary and a sign off page for executive stakeholders.\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk("The DPIA should be reviewed and re-signed every year. \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
                         phrase.Add(new Chunk(lbl_pe_24.Text + "\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
@@ -7888,19 +7953,6 @@ namespace ArmourCyberSecurity
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("Data Use Info Sheet for Internal Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
-                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        phrase.Add(new Chunk(lbl_duisit_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
-                        cell = new PdfPCell(phrase);
-                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        cell.VerticalAlignment = Element.ALIGN_TOP;
-                        cell.PaddingBottom = 5f;
-                        cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-
                         pdfDoc.Add(table);
 
                         /* ########################################SIXTH PAGE######################################## */
@@ -7956,6 +8008,17 @@ namespace ArmourCyberSecurity
                         table.SpacingBefore = 20f;
                         table.DefaultCell.Border = Rectangle.NO_BORDER;
 
+                        phrase = new Phrase();
+                        phrase.Add(new Chunk("Data Use Info Sheet for Internal Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
+                        phrase.Add(new Chunk("Document or link \n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        phrase.Add(new Chunk(lbl_duisit_links.Text.Replace("<br/>", "\n") + "\n\n", FontFactory.GetFont("Arial", 12, Font.NORMAL, BaseColor.BLACK)));
+                        cell = new PdfPCell(phrase);
+                        cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                        cell.VerticalAlignment = Element.ALIGN_TOP;
+                        cell.PaddingBottom = 5f;
+                        cell.PaddingTop = 5f;
+                        cell.Border = PdfPCell.NO_BORDER;
+                        table.AddCell(cell);
 
                         phrase = new Phrase();
                         phrase.Add(new Chunk("Data Use Info Sheet for External Tools\n\n", FontFactory.GetFont("Arial", 14, Font.BOLD, new BaseColor(7, 149, 214))));
@@ -7978,67 +8041,6 @@ namespace ArmourCyberSecurity
                         cell.VerticalAlignment = Element.ALIGN_TOP;
                         cell.PaddingBottom = 5f;
                         cell.PaddingTop = 5f;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        pdfDoc.Add(table);
-
-                        table = new PdfPTable(5);
-                        table.WidthPercentage = 90f;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        table.SpacingBefore = 20f;
-                        table.DefaultCell.Border = Rectangle.NO_BORDER;
-
-                        phrase = new Phrase();
-                        phrase.Add(new Chunk("* LEGENDS", FontFactory.GetFont("Arial", 12, Font.BOLD, BaseColor.RED)));
-                        cell = new PdfPCell(phrase);
-                        cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        Paragraph p;
-                        img_dot = Image.GetInstance(imagepath + "/GreenTick.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("YES");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/YellowExclamation.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("SOMEWHAT");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/RedCross.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("NO/UNSURE");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
-                        cell.Border = PdfPCell.NO_BORDER;
-                        table.AddCell(cell);
-
-                        img_dot = Image.GetInstance(imagepath + "/questionMark.png");
-                        img_dot.ScaleAbsolute(15f, 15f);
-                        img_dot.Alignment = Image.ALIGN_CENTER;
-                        cell = new PdfPCell();
-                        cell.AddElement(img_dot);
-                        p = new Paragraph("Not Answered");
-                        p.Alignment = Element.ALIGN_CENTER;
-                        cell.AddElement(p);
                         cell.Border = PdfPCell.NO_BORDER;
                         table.AddCell(cell);
 
