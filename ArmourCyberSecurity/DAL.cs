@@ -142,7 +142,7 @@ namespace ArmourCyberSecurity
         {
             SqlConnection cnn = new SqlConnection(connetionString);
             cnn.Open();
-            string sql = "SELECT DISTINCT userId FROM ar_sec_users WHERE email_id = @email_id";
+            string sql = "SELECT DISTINCT userId FROM Users WHERE Username = @email_id";
             cmd = new SqlCommand(sql, cnn);
             cmd.Parameters.Add(new SqlParameter("@email_id", emailId));
             string exsists = cmd.ExecuteScalar().ToString();

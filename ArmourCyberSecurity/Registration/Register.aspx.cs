@@ -8,8 +8,6 @@ using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Net;
@@ -37,17 +35,17 @@ namespace ArmourCyberSecurity
             Guid obj = Guid.NewGuid();
             //To check whether the user is a new user or has answered Level 1
             string userId;
-            int exsists = dal.ChkLevel1User(txtEmail.Text.Trim());
-            if (exsists > 0)
-            {
-                userId = dal.GetL1UserId(txtEmail.Text.Trim());
-                Session["userId"] = userId;
-            }
-            else
-            {
+            //int exsists = dal.ChkLevel1User(txtEmail.Text.Trim());
+            //if (exsists > 0)
+            //{
+            //    userId = dal.GetL1UserId(txtEmail.Text.Trim());
+            //    Session["userId"] = userId;
+            //}
+            //else
+            //{
                 userId = obj.ToString();
                 Session["userId"] = userId;
-            }
+            //}
 
             using (SqlConnection con = new SqlConnection(connetionString))
             {
@@ -83,16 +81,16 @@ namespace ArmourCyberSecurity
                         Session["userInitial"] = txtEmail.Text.Substring(0, 2).ToUpper();
                         SendActivationEmail(userId);
                         // Add user in RDSS user table
-                        if (exsists > 0)
-                        {
-                            //Update status of Level1 user to Level 2 user, UNPAID USER
-                            dal.UpdateL1User(Session["userId"].ToString()); 
-                        }
-                        else
-                        {
+                        //if (exsists > 0)
+                        //{
+                        //    //Update status of Level1 user to Level 2 user, UNPAID USER
+                        //    dal.UpdateL1User(Session["userId"].ToString()); 
+                        //}
+                        //else
+                        //{
                             //Adding user to the DB who has not completed level 1, NEW USER 
-                            dal.SaveUserL2(txtEmail.Text.Trim(), Session["userId"].ToString());
-                        }
+                            //dal.SaveUserL2(txtEmail.Text.Trim(), Session["userId"].ToString());
+                        //}
 
                         if(txt_firstName.Text != "" && txt_lastName.Text != "")
                         {

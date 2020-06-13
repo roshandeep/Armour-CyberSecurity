@@ -1309,25 +1309,25 @@ namespace ArmourCyberSecurity
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap EMPLOYEE TRAINING.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }
@@ -3170,25 +3170,25 @@ namespace ArmourCyberSecurity
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap INCIDENT MANAGEMENT.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }
@@ -4711,25 +4711,25 @@ namespace ArmourCyberSecurity
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap CONSENT.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }
@@ -6131,25 +6131,25 @@ if (dc_text_4 == "BLUE")
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap DATA CONTROL.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }
@@ -8094,25 +8094,25 @@ if (dc_text_4 == "BLUE")
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap PRIVACY ENGINEERING.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }
@@ -8710,25 +8710,25 @@ if (dc_text_4 == "BLUE")
                         email_body = email_body + "Powered by Armour Cybersecurity 2020<br />" + Environment.NewLine;
 
 
-                        MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
-                        //MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
+                        //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", Session["L2emailId"].ToString());
+                        MailMessage mm = new MailMessage("info@privacycompliance.solutions", Session["L2emailId"].ToString());
                         mm.Subject = "Your Company's Privacy Compliance Report";
                         mm.Body = email_body;
                         mm.Attachments.Add(new Attachment(new MemoryStream(bytes), "Privacy Compliance Roadmap GLOBAL REGULATIONS.pdf"));
                         mm.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        //smtp.Host = "relay-hosting.secureserver.net";
-                        //smtp.Port = 25;
+                        //smtp.Host = "smtp.gmail.com";
+                        //smtp.Port = 587;
+                        //smtp.EnableSsl = true;
+                        smtp.Host = "relay-hosting.secureserver.net";
+                        smtp.Port = 25;
                         //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
-                        NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        NetworkCred.Password = "roshandeepsinghsaini";
-                        //NetworkCred.UserName = "info@privacycompliance.solutions";
-                        //NetworkCred.Password = "Aihub@2020";
+                        //NetworkCred.UserName = "roshandeep1995@gmail.com";
+                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        NetworkCred.UserName = "info@privacycompliance.solutions";
+                        NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
                         smtp.Send(mm);
                     }

@@ -98,17 +98,16 @@
     <script>
         (function () {
             //TESTING
-            //var stripe = Stripe('pk_test_dv7XSoJVZgSV4CiDNrYgnOUQ00KCEF6q1W');
+            var stripe = Stripe('pk_test_dv7XSoJVZgSV4CiDNrYgnOUQ00KCEF6q1W');
             //PRODUCTION
-            var stripe = Stripe('pk_live_8qcKOYqSOl23IBvb5tt1JBVx00G6JuAj3I');
+            //var stripe = Stripe('pk_live_8qcKOYqSOl23IBvb5tt1JBVx00G6JuAj3I');
             var checkoutButton = document.getElementById('checkout-button-sku_H8jWTcMkJ5uh1n');
             var userID = '<%= UserID %>';
             checkoutButton.addEventListener('click', function () {
                 // When the customer clicks on the button, redirect
                 // them to Checkout.
                 stripe.redirectToCheckout({
-                    //items: [{ sku: 'sku_H8jWTcMkJ5uh1n', quantity: 1 }],
-                    items: [{ sku: 'sku_HKMHl8UJZXCDJl', quantity: 1 }],
+                    items: [{ sku: 'sku_H8jWTcMkJ5uh1n', quantity: 1 }],
                     clientReferenceId: userID,
 
                     // Do not rely on the redirect to the successUrl for fulfilling

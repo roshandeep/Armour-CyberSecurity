@@ -172,7 +172,6 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsof
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Newtonsoft.Json.dll
-C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\SendGrid.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Stripe.net.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Net.Http.Formatting.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Runtime.CompilerServices.Unsafe.dll
@@ -199,8 +198,6 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsof
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.xml
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.WebHooks.Receivers.Stripe.xml
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\SendGrid.pdb
-C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\SendGrid.xml
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Stripe.net.pdb
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Stripe.net.xml
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\System.Net.Http.Formatting.xml

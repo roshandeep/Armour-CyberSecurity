@@ -163,7 +163,31 @@
                 color: white;
                 background: #149dcc;
             }
+
+
+        .modalPopup {
+            background-color: #FFFFFF;
+            width: 400px;
+            border: 3px solid #0DA9D0;
+            height: auto;
+            padding: 20px;
+        }
+
+            .modalPopup .header {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .modalPopup .body {
+                min-height: 50px;
+                line-height: 30px;
+                text-align: center;
+                font-weight: bold;
+            }
     </style>
+
 
     <script>
 
@@ -229,18 +253,18 @@
         </section>
 
 
-        <section class="tabs2 cid-rYwmhfTTsG" id="tabs2-x">
+<%--        <section class="tabs2 cid-rYwmhfTTsG" id="tabs2-x">
             <div class="container" style="margin-top: 5rem; padding-top: 2rem; padding-bottom: 2rem;">
                 <div class="media-container-row" style="width: max-content; margin: 0 auto;">
                     <div class="col-12" style="width: max-content;">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" CausesValidation="false" ClientIDMode="Static" />
-                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender1" TargetControlID="btn_rtn_dashbrd" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+
+                                <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
                             </li>
                             <li class="nav-item">
                                 <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link display-4" Enabled="True" />
-                                <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Report" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
                                 <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
                             </li>
                         </ul>
@@ -248,8 +272,19 @@
                     </div>
                 </div>
             </div>
-        </section>
-
+        </section>--%>
+<%--        <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+            <div style="height: 60px">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        Would you like to Save or Discard Your changes?&nbsp;
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+            <asp:Button ID="btnDiscard" runat="server" Text="Discard" OnClick="btnDiscard_Click"/>
+            <asp:Button ID="btnClose" runat="server" Text="Close" />
+        </asp:Panel>--%>
 
         <div class="row">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

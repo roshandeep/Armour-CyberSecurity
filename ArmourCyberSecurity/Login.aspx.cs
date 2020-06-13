@@ -8,8 +8,6 @@ using System.Web.Security;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.IO;

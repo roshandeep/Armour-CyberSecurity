@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SendGrid;
-using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
@@ -71,26 +69,26 @@ namespace ArmourCyberSecurity
             email_body += "Powered by Armour CyberSecurity 2020 <br />" + Environment.NewLine;
 
 
-            MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
-            //MailMessage mm = new MailMessage("info@privacycompliance.solutions", txtEmail.Text.Trim().ToString())
+            //MailMessage mm = new MailMessage("roshandeep1995@gmail.com", txtEmail.Text.Trim().ToString())
+            MailMessage mm = new MailMessage("info@privacycompliance.solutions", txtEmail.Text.Trim().ToString())
             {
                 Subject = "Password Reset",
                 Body = email_body,
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            //smtp.Host = "relay-hosting.secureserver.net";
-            //smtp.Port = 25;
+            smtp.Host = "relay-hosting.secureserver.net";
+            smtp.Port = 25;
             //smtp.EnableSsl = true;
 
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
+            //smtp.Host = "smtp.gmail.com";
+            //smtp.Port = 587;
+            //smtp.EnableSsl = true;
             NetworkCredential NetworkCred = new NetworkCredential();
-            //NetworkCred.UserName = "info@privacycompliance.solutions";
-            //NetworkCred.Password = "Aihub@2020";
-            NetworkCred.UserName = "roshandeep1995@gmail.com";
-            NetworkCred.Password = "roshandeepsinghsaini";
+            NetworkCred.UserName = "info@privacycompliance.solutions";
+            NetworkCred.Password = "Aihub@2020";
+            //NetworkCred.UserName = "roshandeep1995@gmail.com";
+            //NetworkCred.Password = "roshandeepsinghsaini";
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
 

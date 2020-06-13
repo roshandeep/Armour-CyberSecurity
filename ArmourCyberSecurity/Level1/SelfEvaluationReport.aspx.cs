@@ -61,16 +61,16 @@ namespace ArmourCyberSecurity
                 lastname = string.Empty;
             }
             //Check if user is premium user and already had a level2 Id
-            int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
-            if (premium > 0)
-            {
-                string L2userId = dal.GetL2UserId(Session["user_mail"].ToString());
-                dal.UpdateL2User(L2userId);
-            }
-            else
-            {
+            //int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
+            //if (premium > 0)
+            //{
+            //    string L2userId = dal.GetL2UserId(Session["user_mail"].ToString());
+            //    dal.UpdateL2User(L2userId);
+            //}
+            //else
+            //{
                 dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), firstName, lastname);
-            }
+            //}
             CreatePdf(Convert.ToInt32(Session["overall"]), Convert.ToInt32(Session["pcq"]), Convert.ToInt32(Session["rrq"]), Convert.ToInt32(Session["peq"]), Convert.ToInt32(Session["dcq"]), Convert.ToInt32(Session["cq"]), Convert.ToInt32(Session["irq"]), Session["overall_cmt"].ToString(), Session["pcq_cmt"].ToString(), Session["rrq_cmt"].ToString(), Session["peq_cmt"].ToString(), Session["dcq_cmt"].ToString(), Session["cq_cmt"].ToString(), Session["irq_cmt"].ToString(), Session["overall_status"].ToString(), Session["pcq_status"].ToString(), Session["rrq_status"].ToString(), Session["peq_status"].ToString(), Session["dcq_status"].ToString(), Session["cq_status"].ToString(), Session["irq_status"].ToString());
         }
 

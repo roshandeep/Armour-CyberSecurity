@@ -49,6 +49,39 @@
             }
         }
     </script>
+        <section class="tabs2 cid-rYwmhfTTsG" id="tabs2-x" style="width: 100%;">
+        <div class="container" style="margin-top: 6rem; padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="media-container-row" style="width: max-content; margin: 0 auto;">
+                <div class="col-12" style="width: max-content;">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <asp:Button ID="btn_rtn_dashbrd" runat="server" Text="Return To Dashboard" OnClick="btn_rtn_dashbrd_Click" CssClass="nav-link link display-4" Enabled="True" CausesValidation="false" ClientIDMode="Static" />
+
+                            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btn_rtn_dashbrd" CancelControlID="imgbtnbackground" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
+                        </li>
+                        <li class="nav-item" role="tablist">
+                            <asp:Button ID="btn_Report" runat="server" Text="Generate Report" OnClick="btn_Report_Click" CssClass="nav-link link display-4" Enabled="True" ClientIDMode="Static" />
+                            <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+               <div style="text-align: right;">
+            <asp:ImageButton ID="imgbtnbackground" runat="server" ImageUrl="~/images/RedCross.png" Style="display: inline-block; width: 30px; height: 30px;" />
+        </div>
+        <div style="height: 60px">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    Would you like to Save or Discard Your changes?&nbsp;
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+        <asp:Button ID="btnDiscard" runat="server" Text="Discard" OnClick="btnDiscard_Click" />
+    </asp:Panel>
     <div style="width: 90%; margin: 0 auto; padding-top: 3rem;">
         <br />
         <div style="padding-left: 2rem;">
@@ -188,7 +221,7 @@
                 </div>
                 <div class="col-sm-4">
                     <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" ClientIDMode="Static" />
-                    <asp:ConfirmButtonExtender ID="ConfirmButtonExtender2" TargetControlID="btn_Next" ConfirmText="Press OK if you have saved your changes or if you wish to proceed without saving." runat="server"></asp:ConfirmButtonExtender>
+                    
                 </div>
                 <div class="col-sm-2"></div>
             </div>
