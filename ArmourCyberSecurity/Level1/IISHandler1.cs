@@ -13,6 +13,8 @@ using Stripe.Checkout;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 namespace ArmourCyberSecurity
 {
@@ -153,7 +155,31 @@ namespace ArmourCyberSecurity
             {
                 //handle error and tell Stripe that a fault occurred
                 context.Response.ContentType = "text/plain";
-                context.Response.StatusCode = 301;  //Let Stripe know that this failed
+                context.Response.StatusCode = 305;  //Let Stripe know that this failed
+                context.Response.StatusDescription = e.Message + " | " + e.Source;
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Source);
+                MailMessage mm = new MailMessage("info@privacycompliance.solutions", "tyler.daniels@dcmail.ca")
+                {
+                    Subject = "Cyber Armour Exception",
+                    Body = "Exception: " + e.Message + "\n" + "Source: " + e.Source + "\n" + "Stack Trace: " + e.StackTrace + "\n"
+                    + "Help Link: " + e.HelpLink + "\n" + "Target Site: " + e.TargetSite,
+                    IsBodyHtml = true
+                };
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "relay-hosting.secureserver.net";
+                smtp.Port = 25;
+                //smtp.EnableSsl = true;
+                //smtp.Host = "smtp.gmail.com";
+                //smtp.Port = 587;
+                //smtp.EnableSsl = true;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                NetworkCredential NetworkCred = new NetworkCredential();
+                NetworkCred.UserName = "info@privacycompliance.solutions";
+                NetworkCred.Password = "Aihub@2020";
+                smtp.Credentials = NetworkCred;
+                smtp.Send(mm);
             }
 
         }
