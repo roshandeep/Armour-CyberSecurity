@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArmourCyberSecurity.Registration
+namespace ArmourCyberSecurity.Level1
 {
 
 
-    public partial class PasswordResetCodeCheck
+    public partial class Admin
     {
 
         /// <summary>
@@ -24,12 +24,21 @@ namespace ArmourCyberSecurity.Registration
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ltMessage control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltMessage;
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// userGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView userGrid;
     }
 }

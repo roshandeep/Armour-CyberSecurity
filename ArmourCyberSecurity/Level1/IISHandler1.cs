@@ -160,7 +160,7 @@ namespace ArmourCyberSecurity
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
                 Console.WriteLine(e.Source);
-                MailMessage mm = new MailMessage("info@privacycompliance.solutions", "tyler.daniels@dcmail.ca")
+                MailMessage mm = new MailMessage("info@privacycompliance.solutions", "tjdaniels1212@gmail.com")
                 {
                     Subject = "Cyber Armour Exception",
                     Body = "Exception: " + e.Message + "\n" + "Source: " + e.Source + "\n" + "Stack Trace: " + e.StackTrace + "\n"
@@ -180,6 +180,33 @@ namespace ArmourCyberSecurity
                 NetworkCred.Password = "Aihub@2020";
                 smtp.Credentials = NetworkCred;
                 smtp.Send(mm);
+
+
+
+
+                MailMessage mm2 = new MailMessage("roshandeep1995@gmail.com", "tjdaniels1212@gmail.com")
+                {
+                    Subject = "Cyber Armour Exception",
+                    Body = "Exception: " + e.Message + "\n" + "Source: " + e.Source + "\n" + "Stack Trace: " + e.StackTrace + "\n"
+                    + "Help Link: " + e.HelpLink + "\n" + "Target Site: " + e.TargetSite,
+                    IsBodyHtml = true
+                };
+                SmtpClient smtp2 = new SmtpClient();
+                //smtp.Host = "relay-hosting.secureserver.net";
+                //smtp.Port = 25;
+                //smtp.EnableSsl = true;
+
+                smtp2.Host = "smtp.gmail.com";
+                smtp2.Port = 587;
+                smtp2.EnableSsl = true;
+                smtp2.DeliveryMethod = SmtpDeliveryMethod.Network;
+                NetworkCredential NetworkCred2 = new NetworkCredential();
+                //NetworkCred.UserName = "info@privacycompliance.solutions";
+                //NetworkCred.Password = "Aihub@2020";
+                NetworkCred2.UserName = "roshandeep1995@gmail.com";
+                NetworkCred2.Password = "roshandeepsinghsaini";
+                smtp2.Credentials = NetworkCred;
+                smtp2.Send(mm);
             }
 
         }

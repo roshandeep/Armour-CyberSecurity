@@ -26,6 +26,10 @@ namespace ArmourCyberSecurity
 
         protected void btn_return_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirect to the Home page/Landing page
+             */
+
             Response.Redirect("~/LeveL1/LandingPage.aspx", false);
         }
 
@@ -41,6 +45,10 @@ namespace ArmourCyberSecurity
 
         protected void btnHide_Click(object sender, EventArgs e)
         {
+            /**
+             * A Pop Up takes in the Email Id before the user can view the report
+             */
+
             Session["user_mail"] = txt_EmalId.Text.ToString();
             //For testing use this
             //Session["user_mail"] = "roshandeep1995@gmail.com";
@@ -60,23 +68,20 @@ namespace ArmourCyberSecurity
             {
                 lastname = string.Empty;
             }
-            //Check if user is premium user and already had a level2 Id
-            //int premium = dal.ChkLevel2User(Session["user_mail"].ToString());
-            //if (premium > 0)
-            //{
-            //    string L2userId = dal.GetL2UserId(Session["user_mail"].ToString());
-            //    dal.UpdateL2User(L2userId);
-            //}
-            //else
-            //{
-                dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), firstName, lastname);
-            //}
+
+            dal.SaveUserL1(Session["user_mail"].ToString(), Session["userIdL1"].ToString(), firstName, lastname);
+            
             CreatePdf(Convert.ToInt32(Session["overall"]), Convert.ToInt32(Session["pcq"]), Convert.ToInt32(Session["rrq"]), Convert.ToInt32(Session["peq"]), Convert.ToInt32(Session["dcq"]), Convert.ToInt32(Session["cq"]), Convert.ToInt32(Session["irq"]), Session["overall_cmt"].ToString(), Session["pcq_cmt"].ToString(), Session["rrq_cmt"].ToString(), Session["peq_cmt"].ToString(), Session["dcq_cmt"].ToString(), Session["cq_cmt"].ToString(), Session["irq_cmt"].ToString(), Session["overall_status"].ToString(), Session["pcq_status"].ToString(), Session["rrq_status"].ToString(), Session["peq_status"].ToString(), Session["dcq_status"].ToString(), Session["cq_status"].ToString(), Session["irq_status"].ToString());
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /**
+             * Display the Web layout of the Self assessment Report in the background
+             * A Popup appears before the user can view the report in the background.
+             * A Email Id is required to view the report.
+             */
             if (!this.IsPostBack)
             {
                 ModalPopupExtender1.Show();
@@ -86,6 +91,11 @@ namespace ArmourCyberSecurity
 
         public void DisplayReport()
         {
+            /**
+             * Display the Web layout of the Self assessment Report
+             * Scoring and the Calculations done as per Level 1 Scoring sheet
+             */
+
             DataTable dt = new DataTable();
             dt = GetReport();
 
@@ -513,6 +523,10 @@ namespace ArmourCyberSecurity
 
         private void CreatePdf(int overall, int pcq, int rrq, int peq, int dcq, int cq, int irq, string overall_cmt, string pcq_cmt, string rrq_cmt, string peq_cmt, string dcq_cmt, string cq_cmt, string irq_cmt, string overall_status, string pcq_status, string rrq_status, string peq_status, string dcq_status, string cq_status, string irq_status)
         {
+            /**
+             * Create a PDF of the Self assessment Report and Email it to the Email Id entered.
+             * Scoring and the Calculations done as per Level 1 Scoring sheet
+             */
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -1190,7 +1204,10 @@ namespace ArmourCyberSecurity
         }
 
         private static void DrawLine(PdfWriter writer, float x1, float y1, float x2, float y2, BaseColor color)
-        {
+        {            
+            /**
+             * Function used to draw the Borders on the PDF Report
+             */
             PdfContentByte contentByte = writer.DirectContent;
             contentByte.SetColorStroke(color);
             contentByte.MoveTo(x1, y1);

@@ -150,6 +150,7 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\AspNet.S
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\BouncyCastle.Crypto.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Common.Logging.Core.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Common.Logging.dll
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Elmah.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\itext.barcodes.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\itext.forms.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\itext.io.dll
@@ -209,8 +210,8 @@ C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Newtonso
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Antlr3.Runtime.pdb
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csprojAssemblyReference.cache
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csproj.CoreCompileInputs.cache
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csproj.CopyComplete
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.dll
 C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.pdb
-C:\Users\rosha\source\repos\ArmourCyberSecurity\ArmourCyberSecurity\obj\Debug\ArmourCyberSecurity.csprojAssemblyReference.cache

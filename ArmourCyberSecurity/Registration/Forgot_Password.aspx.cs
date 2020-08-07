@@ -21,7 +21,13 @@ namespace ArmourCyberSecurity
         {
 
         }
-
+        
+        /// <summary>
+        /// This function queries the DB for the user's ID based on their given email,
+        /// then sends that user ID to the PasswordResetEmail function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Forgot_Password_Click(object sender, EventArgs e)
         {
             string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
@@ -58,7 +64,11 @@ namespace ArmourCyberSecurity
             
         }
 
-
+        /// <summary>
+        /// This function creates a new password reset guid and appends it to a url, and then sends that url to the user via email.
+        /// The guid is then added to the database.
+        /// </summary>
+        /// <param name="userId"></param>
         protected void PasswordResetEmail(string userId)
         {
             //string constr = @"Server=localhost\SQLEXPRESS01;Database=CyberArmourRoshan;Trusted_Connection=True;";
@@ -77,18 +87,18 @@ namespace ArmourCyberSecurity
                 IsBodyHtml = true
             };
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "relay-hosting.secureserver.net";
-            smtp.Port = 25;
+            //smtp.Host = "relay-hosting.secureserver.net";
+            //smtp.Port = 25;
             //smtp.EnableSsl = true;
 
-            //smtp.Host = "smtp.gmail.com";
-            //smtp.Port = 587;
-            //smtp.EnableSsl = true;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "info@privacycompliance.solutions";
-            NetworkCred.Password = "Aihub@2020";
-            //NetworkCred.UserName = "roshandeep1995@gmail.com";
-            //NetworkCred.Password = "roshandeepsinghsaini";
+            //NetworkCred.UserName = "info@privacycompliance.solutions";
+            //NetworkCred.Password = "Aihub@2020";
+            NetworkCred.UserName = "roshandeep1995@gmail.com";
+            NetworkCred.Password = "roshandeepsinghsaini";
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
 

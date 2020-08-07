@@ -12,6 +12,13 @@ namespace ArmourCyberSecurity
     public partial class CustomRoadmapDashboard : System.Web.UI.Page
     {
         string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
+
+        /**
+         * The CustomRoadmapDashboard contains the six Section to which the user can navigate.
+         * Before the dashboard is displayed it checks whether the user has paid and whether the payment is successfully received from Users table 'Paymentvalidated column'.
+         * Displays the user initials if the Session["userInitial"] contains it after successful Login. 
+         */
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["paid"] != null)

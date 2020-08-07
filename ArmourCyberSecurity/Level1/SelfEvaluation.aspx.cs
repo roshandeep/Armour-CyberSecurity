@@ -31,6 +31,10 @@ namespace ArmourCyberSecurity
 
         private void SaveAnswers(DataTable dt)
         {
+            /**
+             * Saves the current state of the Questionnaire for the user.
+             * Save responses individally in a loop
+             */
             List<string> ansText = new List<string>();
             DAL dal = new DAL();
             Guid obj = Guid.NewGuid();
@@ -260,6 +264,11 @@ namespace ArmourCyberSecurity
 
         private void LoadQuestionnaire()
         {
+            /**
+             * Load the Level1 questions from the DB
+             * Iterate over the controls and populate the questions.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel1Questions();
@@ -388,6 +397,10 @@ namespace ArmourCyberSecurity
 
         private void LoadRegions(CheckBoxList checkBoxList)
         {
+            /**
+             * Load tthe list of region which are within the scope for the the Self assessment
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadRegion();
@@ -400,6 +413,10 @@ namespace ArmourCyberSecurity
 
         protected void chkbxAns7_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /**
+             * The Business logic for the Reflexive Questions As per Level 1 Scoring Sheet 
+             */
+
             foreach (ListItem item in chkbxAns7.Items)
             {
                 if (item.Selected)
@@ -548,6 +565,10 @@ namespace ArmourCyberSecurity
 
         protected void chkbxAns6_SelectedIndexChanged1(object sender, EventArgs e)
         {
+            /**
+             * The Business logic for the Reflexive Questions As per Level 1 Scoring Sheet 
+             */
+
             foreach (ListItem item in chkbxAns6.Items)
             {
                 if (item.Selected)

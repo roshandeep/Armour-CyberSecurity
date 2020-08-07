@@ -8,6 +8,9 @@ using System.Web.UI.WebControls;
 
 namespace ArmourCyberSecurity.Payment
 {
+    /*
+     * THIS PAGE IS NOT CURRENTLY IN USE
+     */
     public partial class Stripe : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

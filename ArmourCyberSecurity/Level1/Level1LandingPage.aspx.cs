@@ -15,7 +15,12 @@ namespace ArmourCyberSecurity.Level1
         }
 
         protected void selfAssessment_Click(object sender, EventArgs e)
-        {
+        {  
+            /**
+             * The current page displays the instructions for the self assessment
+             * Redirect to the Self Assessment Page
+             */
+
             Response.Redirect("~/Level1/SelfEvaluation.aspx", false);
         }
     }

@@ -11,6 +11,10 @@ namespace ArmourCyberSecurity
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /**
+             * Display the user credentials from the session
+             */
+
             if (Session["userInitial"] != null)
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
@@ -20,7 +24,10 @@ namespace ArmourCyberSecurity
 
         protected void btn_questionnaire_Click(object sender, EventArgs e)
         {
-            
+            /**
+             * Check if the User is a paid member then Redirect to the Custom Roadmap Dashboard page
+             * Else Proceed to the payment page
+             */
 
             if (Session["PremiumStatus"] != null)
             {

@@ -17,19 +17,28 @@ namespace ArmourCyberSecurity.Registration
         
         string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
 
+        /// <summary>
+        /// This function checks the "valid" session variable and confirms it's validity,
+        /// and then updates the users password.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ResetClick(object sender, EventArgs e)
         {
             if (bool.TryParse(Session["valid"].ToString(), out bool valid))
             {
                 if (valid)
                 {
+                    //grab userID from session variable
                     string userID = Session["userID"].ToString();
-                    //string fpcode = Session["fpcode"].ToString();
+
+                    //generate new hash and salt
                     HashSalt hashSalt = GenerateSaltedHash(16, txtPassword.Text.Trim().ToString());
                     using (SqlConnection con = new SqlConnection(connetionString))
                     {
                         using (SqlDataAdapter sda = new SqlDataAdapter())
                         {
+                            //store newly hashed password and salt in DB
                             using (SqlCommand update = new SqlCommand("UPDATE Users SET Password = @Password, Salt = @Salt WHERE userId = @userId"))
                             {
                                 update.CommandType = CommandType.Text;
@@ -62,13 +71,20 @@ namespace ArmourCyberSecurity.Registration
         }
 
 
-
+        /// <summary>
+        /// When this page loads, we capture the forgot password code passed via URL query string. We then compare it to the guid stored in the DB.
+        /// After successfully finding it, we delete it from the DB.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+                //check URL query string for valid forgot password guid
                 string forgot_password_code = !string.IsNullOrEmpty(Request.QueryString["ForgotPasswordCode"]) ? Request.QueryString["ForgotPasswordCode"] : Guid.Empty.ToString();
-                Session["fpcode"] = forgot_password_code;
+                //not sure if this session variable is currently used anywhere.
+                Session["fpcode"] = forgot_password_code; 
                 using (SqlConnection con = new SqlConnection(connetionString))
                 {
                     using (SqlCommand command = new SqlCommand("SELECT userId FROM ForgotPassword WHERE ForgotPasswordCode = @fpcode"))
@@ -104,7 +120,7 @@ namespace ArmourCyberSecurity.Registration
                             if (rowsAffected == 1)
                             {
                                 //Response.Redirect("~/Login.aspx", false);
-                                Session["valid"] = true;
+                                Session["valid"] = true; //this session is used in the ResetClick function
                             }
                             else
                             {
@@ -116,7 +132,12 @@ namespace ArmourCyberSecurity.Registration
 
             }
         }
-
+        /// <summary>
+        /// This function is deprecated and is currently unused.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         bool ValidateUser(string user, string pass)
         {
 
@@ -149,19 +170,34 @@ namespace ArmourCyberSecurity.Registration
 
             }
         }
-
+        /// <summary>
+        /// This function is used to verify the validity of the entered password
+        /// </summary>
+        /// <param name="enteredPassword"></param>
+        /// <param name="storedHash"></param>
+        /// <param name="storedSalt"></param>
+        /// <returns></returns>
         public static bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
         {
             var saltBytes = Convert.FromBase64String(storedSalt);
             var rfc2898DeriveBytes = new Rfc2898DeriveBytes(enteredPassword, saltBytes, 10000);
             return Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(256)) == storedHash;
         }
+        /// <summary>
+        /// HashSalt class for hashing and salting
+        /// </summary>
         public class HashSalt
         {
             public string Hash { get; set; }
             public string Salt { get; set; }
         }
 
+        /// <summary>
+        /// Method for generating salted hash.
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static HashSalt GenerateSaltedHash(int size, string password)
         {
             var saltBytes = new byte[size];

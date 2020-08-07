@@ -13,6 +13,10 @@ namespace ArmourCyberSecurity
     {
         string userId = string.Empty;
 
+        /**
+         * Section 1 Global Regulations
+         */
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["PremiumStatus"] == null)
@@ -41,6 +45,11 @@ namespace ArmourCyberSecurity
 
         private void LoadPreviousState()
         {
+            /**
+             * Load the answers if the the user has visited this section before.
+             * Get the answers form DB and populate the fields.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadSectionState(1, userId);
@@ -90,6 +99,10 @@ namespace ArmourCyberSecurity
 
         private void GetUserId()
         {
+            /**
+             * Get the User Id for the loggedIn user. Level 2 userId for the Premium user 
+             */
+
             DAL dal = new DAL();
             //L2emailId comes from the registration page to login page to L2 Questionnaire
             string emailId = Session["L2emailId"].ToString();
@@ -104,6 +117,11 @@ namespace ArmourCyberSecurity
 
         private void LoadQuestionnaire()
         {
+            /**
+             * Load the Level2 questions for Section 1 part 1 
+             * Iterate over the controls and populate the questions.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -160,6 +178,10 @@ namespace ArmourCyberSecurity
 
         private void LoadRegions(CheckBoxList checkBoxList)
         {
+            /**
+             * Section 1 Part 1 Displays the list of countries which are are in scope for the assessment from the DB
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadRegionL2();
@@ -181,6 +203,11 @@ namespace ArmourCyberSecurity
 
         private void SaveAnswers(DataTable dt)
         {
+            /**
+             * Saves the current state of the Questionnaire for the user.
+             * The values of the answered questions are saved and and Emty string string/default value is store for the unasnwered questions in the Section
+             */
+
             List<string> ansText = new List<string>();
             DAL dal = new DAL();
 
@@ -249,6 +276,10 @@ namespace ArmourCyberSecurity
 
         public void SetDeafaults(DataTable dt, string userId, string question_type, int stagesCompleted)
         {
+            /**
+             * Sets defaults values for the unanswered questions of the section and all sub sections of the respective section.
+             */
+
             string quesType = string.Empty, answerWt = string.Empty, answer = string.Empty;
             int quesId, secQuesId;
 
@@ -274,6 +305,10 @@ namespace ArmourCyberSecurity
 
         protected void btn_Next_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirects to the next subsection of the respective section while saving the current changes.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -285,6 +320,10 @@ namespace ArmourCyberSecurity
 
         protected void btnDiscard_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirects to the Customroadmap Dashboard page from the Popup Menu
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -296,6 +335,10 @@ namespace ArmourCyberSecurity
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirects to the Customroadmap Dashboard page From the Popup Menu
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -307,6 +350,10 @@ namespace ArmourCyberSecurity
 
         protected void btn_Report_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirects to the Customroadmap Report page to display the partial/complete result of the Section's assessment.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();
@@ -317,6 +364,10 @@ namespace ArmourCyberSecurity
 
         protected void btn_rtn_dashbrd_Click(object sender, EventArgs e)
         {
+            /**
+             * Redirects to the Customroadmap Dashboard page from the master menu
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.LoadLevel2Questions();

@@ -28,6 +28,12 @@ namespace ArmourCyberSecurity
 
         }
 
+        /// <summary>
+        /// Function for registering user. We hash and salt the user's password,
+        /// generate a new GUID for user ID, and store all values in the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void RegisterUser(object sender, EventArgs e)
         {
             HashSalt hashSalt = GenerateSaltedHash(16, txtPassword.Text.Trim());
@@ -53,6 +59,7 @@ namespace ArmourCyberSecurity
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
+                        //We're using our "Insert_User" stored procedure from the database, which includes some detection for already used usernames and emails.
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@UserID", userId);
                         cmd.Parameters.AddWithValue("@Username", txtEmail.Text.Trim());
@@ -67,6 +74,10 @@ namespace ArmourCyberSecurity
                 }
                 string message = string.Empty;
                 bool registered = false;
+                
+                //result contains the output of our Insert_User stored procedure.
+                //if result is -1, username already exists.
+                //if result is -2, email already exists.
                 switch (result)
                 {
                     case -1:
@@ -126,6 +137,7 @@ namespace ArmourCyberSecurity
                         registered = true;
                         break;
                 }
+                //crude pop up for registration confirmation
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
                 if (registered == true)
                 {
@@ -135,10 +147,17 @@ namespace ArmourCyberSecurity
             }
         }
 
-
+        /// <summary>
+        /// Function for sending activation email. This is nearly identical to the PasswordResetEmail function in Reset_Password.aspx.
+        /// </summary>
+        /// <param name="userId"></param>
         private void SendActivationEmail(string userId)
         {
+            //create activation code as new Guid
             string activationCode = Guid.NewGuid().ToString();
+
+            //build email which will contain activation code in supplied URL
+
             string emailAddress = txtEmail.Text.Trim();
             string username = txtEmail.Text.Trim().ToString();
             string email_body = "Hello, " + username + Environment.NewLine;
@@ -170,6 +189,9 @@ namespace ArmourCyberSecurity
             //NetworkCred.Password = "roshandeepsinghsaini";
             smtp.Credentials = NetworkCred;
             smtp.Send(mm);
+
+            //insert activation code into DB
+
             using (SqlConnection con = new SqlConnection(connetionString))
             {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO UserActivation VALUES(@UserId, @ActivationCode)"))
@@ -187,13 +209,20 @@ namespace ArmourCyberSecurity
                 }
             }
         }
-
+        /// <summary>
+        /// Class for hashing and salting passwords.
+        /// </summary>
         public class HashSalt
         {
             public string Hash { get; set; }
             public string Salt { get; set; }
         }
-
+        /// <summary>
+        /// Method for generating hash and salt
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static HashSalt GenerateSaltedHash(int size, string password)
         {
             var saltBytes = new byte[size];

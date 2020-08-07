@@ -44,6 +44,13 @@ namespace ArmourCyberSecurity
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /**
+             * Get the user Id from session of the user requesting the assessment report
+             * Display the user credentials in the navbar
+             * Initiall hide all the Report templates for all the sections.
+             * The Section from which the user is redirected only that part of the report is made visible.
+             */
+
             GetUserId();
             if (Session["userInitial"] != null)
             {
@@ -65,11 +72,19 @@ namespace ArmourCyberSecurity
 
         protected void btn_dashboard_Click(object sender, EventArgs e)
         {
+            /**
+             * Return to the CustomRoadmap Dashboard
+             */
+
             Response.Redirect("~/CustomRoadmapDashboard.aspx", false);
         }
 
         private void GetUserId()
         {
+            /**
+             * Get the user email id from from userId 
+             */
+
             DAL dal = new DAL();
             string emailId = Session["L2emailId"].ToString();
             userId = dal.GetUserId(emailId);
@@ -77,6 +92,11 @@ namespace ArmourCyberSecurity
 
         private void DisplayReport()
         {
+            /**
+             * Determine from which section did the user arrive to see the report.
+             * That specific section section is made visible to te user.
+             */
+
             if (Request.UrlReferrer.AbsoluteUri != null)
             {
                 string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
@@ -120,6 +140,10 @@ namespace ArmourCyberSecurity
 
         private void EmployeeTrainingReport()
         {
+            /**
+             * Display Web View of report for Section 6 as per the Level 2 Report 6 Employee Training Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
@@ -201,6 +225,10 @@ namespace ArmourCyberSecurity
 
         private void CreateEmployeeTrainingPdf()
         {
+            /**
+             * Create a PDF for Section 6 as per the Level 2 Report 6 Employee Training Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -1337,6 +1365,10 @@ namespace ArmourCyberSecurity
 
         private void IncidentManagementReport()
         {
+            /**
+             * Display Web View of report for Section 5 as per the Level 2 Report 5 Incident Management Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
@@ -1535,6 +1567,10 @@ namespace ArmourCyberSecurity
 
         private void CreateIncidentManagementPdf()
         {
+            /**
+             * Create a PDF for Section 1 as per the Level 2 Report 5 Incident Management Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -3198,6 +3234,10 @@ namespace ArmourCyberSecurity
 
         private void ConsentReport()
         {
+            /**
+             * Display Web View of report for Section 4 as per the Level 2 Report 4 Consent Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt_links = new DataTable();
             dt_links = dal.GetLinks(userId);
@@ -3327,6 +3367,10 @@ namespace ArmourCyberSecurity
 
         private void CreateConsentPdf()
         {
+            /**
+             * Create a PDF for Section 4 as per the Level 2 Report 4 Consent Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -4739,6 +4783,10 @@ namespace ArmourCyberSecurity
 
         private void DataControlReport()
         {
+            /**
+             * Display Web View of report for Section 3 as per the Level 2 Report 3 Data Control Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             DataTable dt_links = new DataTable();
@@ -5125,6 +5173,10 @@ namespace ArmourCyberSecurity
 
         private void CreateDataControlPdf()
         {
+            /**
+             * Create PDF for Section 3 as per the Level 2 Report 3 Data Control Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -6159,6 +6211,10 @@ if (dc_text_4 == "BLUE")
 
         private void PrivacyEngineeringReport()
         {
+            /**
+             * Display Web View of report for Section 2 as per the Level 2 Report 2 Privacy Engineering Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
@@ -6411,6 +6467,10 @@ if (dc_text_4 == "BLUE")
 
         private void CreatePrivacyEngineeringPdf()
         {
+            /**
+             * Create a PDF for Section 2 as per the Level 2 Report 2 Pricvacy Engineering Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -8122,6 +8182,10 @@ if (dc_text_4 == "BLUE")
 
         private void GlobalRegulationsReport()
         {
+            /**
+             * Display Web View of report for Section 1 as per the Level 2 Report 1 Global Reglation Doc shared
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.GetLevel2Report(userId);
@@ -8293,6 +8357,10 @@ if (dc_text_4 == "BLUE")
 
         private void CreateGlobalRegulationsPdf()
         {
+            /**
+             * Create a PDF for Section 1 as per the Level 2 Report 1 Global Reglation Doc shared
+             */
+
             PdfPTable table = null;
             Phrase phrase = null;
             PdfPCell cell = null;
@@ -8738,6 +8806,10 @@ if (dc_text_4 == "BLUE")
 
         private void FillDPODetails(String userId)
         {
+            /**
+             * Format the Data Protection Officer Info to be displayed
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.FillDPADetails(userId);
@@ -8759,6 +8831,10 @@ if (dc_text_4 == "BLUE")
 
         private void FillDPADetails(String userId)
         {
+            /**
+             * Format the each of the comma separated URL's to be displayed in individual line.
+             */
+
             DAL dal = new DAL();
             DataTable dt = new DataTable();
             dt = dal.FillDPALinks(userId);
@@ -8771,12 +8847,22 @@ if (dc_text_4 == "BLUE")
 
         private string getLeftString(string str)
         {
+            /**
+             * Specific Parts of the coments in the Report need to be Bold.
+             * The Function return the part of the string before the Bold Characters
+             */
+
             string result = str.Substring(0, str.IndexOf("<"));
             return result;
         }
 
         private string getMiddleString(string str)
         {
+            /**
+             * Specific Parts of the coments in the Report need to be Bold.
+             * The Function return the part of the string which are supposed to be Bold Characters
+             */
+
             int start = str.IndexOf("<b>") + "<b>".Length;
             int end = str.IndexOf("</b>") - start;
             string result = str.Substring(start, end);
@@ -8785,6 +8871,11 @@ if (dc_text_4 == "BLUE")
 
         private string getRightString(string str)
         {
+            /**
+             * Specific Parts of the coments in the Report need to be Bold.
+             * The Function return the part of the string after the Bold Characters
+             */
+
             string result = str.Substring(str.LastIndexOf(">") + 1);
             return result;
         }
@@ -8802,6 +8893,10 @@ if (dc_text_4 == "BLUE")
 
     public class Level2Footer : PdfPageEventHelper
     {
+        /**
+         * Create a footer on the PDF version of the report
+         */
+
         public override void OnEndPage(PdfWriter writer, Document document)
         {
             base.OnEndPage(writer, document);
