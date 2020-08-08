@@ -532,5 +532,102 @@ namespace ArmourCyberSecurity
             cnn.Close();
             return ds.Tables[0];
         }
+
+        public int CalulateProgress(int section, string userId)
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            int percentage_complete = 0;
+            if (section > 1)
+            {
+                string sql = @"SELECT CAST(
+		                            (CAST(
+		                            (SELECT COUNT(*)
+			                            FROM ar_sec_User_Feedback_Collection_Level2
+			                            WHERE userid = @userId
+			                            AND stagesCompleted = @section AND ans_Text <> '--SELECT--') AS FLOAT) / 
+		                            CAST(
+		                            (SELECT COUNT(*) 
+			                            FROM ar_sec_Feedback_Questions_level2
+			                            WHERE section = @section) AS FLOAT))*100.0 AS INT) 
+	                        AS percentage_complete";
+
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.Add(new SqlParameter("@section", section));
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                percentage_complete = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            else if(section==1)
+            {
+                string sql1 = @"SELECT DISTINCT selected_countries = STUFF(
+                                                     (SELECT ' ' + COALESCE(ans_Text, ' ') FROM ar_sec_User_Feedback_Collection_Level2
+					                                    WHERE userid = @userId
+					                                    AND stagesCompleted = @section and sec_ref_id IN (1,2)
+					                                    FOR XML PATH ('')), 1, 1, '') 
+                                    FROM ar_sec_User_Feedback_Collection_Level2
+                                    WHERE userid = @userId
+                                    AND stagesCompleted = @section";
+
+                cmd = new SqlCommand(sql1, cnn);
+                cmd.Parameters.Add(new SqlParameter("@section", section));
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                object nullcheck = cmd.ExecuteScalar();
+                string countryList = string.Empty;
+                if(nullcheck != null)
+                {
+                    countryList = cmd.ExecuteScalar().ToString();
+                }
+                else
+                {
+                    countryList = "";
+                }
+                percentage_complete = CalulateProgressHelper(countryList, section, userId);
+            }
+            cnn.Close();
+            return percentage_complete;
+        }
+
+        public int CalulateProgressHelper(string countryList, int section, string userId)
+        {
+            int counter = 0;
+            if (!countryList.Contains("Canada"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("Europe"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("Brazil"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("California"))
+            {
+                ++counter;
+            }
+
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            string sql1 = @"SELECT COUNT(*) FROM ar_sec_Feedback_Questions_level2 WHERE section = @section";
+            cmd = new SqlCommand(sql1, cnn);
+            cmd.Parameters.Add(new SqlParameter("@section", section));
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int quesCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+            string sql2 = @"SELECT COUNT(*)
+			                FROM ar_sec_User_Feedback_Collection_Level2
+			                WHERE userid = @userId
+			                AND stagesCompleted = @section AND ans_Text <> '--SELECT--' ";
+            cmd = new SqlCommand(sql2, cnn);
+            cmd.Parameters.Add(new SqlParameter("@section", section));
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int ansCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+            int percentage_complete = (int)(ansCount * 100 / (quesCount - (counter * 2)));
+
+            cnn.Close();
+            return percentage_complete;
+        }
     }
 }

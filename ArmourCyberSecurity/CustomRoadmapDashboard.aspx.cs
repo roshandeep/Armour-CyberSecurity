@@ -55,6 +55,43 @@ namespace ArmourCyberSecurity
             {
                 lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
+
+            string userId = Session["userID"].ToString();
+            CalulateProgress(userId);
+        }
+
+        protected void CalulateProgress(string userId)
+        {
+            DAL dal = new DAL();
+            int section1 = dal.CalulateProgress(1, userId);
+            progress_barSection1.Attributes.Add("style", "width :" + section1 + "%");
+            progress_barSection1.Attributes.Add("aria-valuenow", section1.ToString());
+            sec1_score.InnerHtml = section1.ToString() + "%";
+
+            int section2 = dal.CalulateProgress(2, userId);
+            progress_barSection2.Attributes.Add("style", "width :" + section2 + "%");
+            progress_barSection2.Attributes.Add("aria-valuenow", section2.ToString());
+            sec2_score.InnerHtml = section2.ToString() + "%";
+
+            int section3 = dal.CalulateProgress(3, userId);
+            progress_barSection3.Attributes.Add("style", "width :" + section3 + "%");
+            progress_barSection3.Attributes.Add("aria-valuenow", section3.ToString());
+            sec3_score.InnerHtml = section3.ToString() + "%";
+
+            int section4 = dal.CalulateProgress(4, userId);
+            progress_barSection4.Attributes.Add("style", "width :" + section4 + "%");
+            progress_barSection4.Attributes.Add("aria-valuenow", section4.ToString());
+            sec4_score.InnerHtml = section4.ToString() + "%";
+
+            int section5 = dal.CalulateProgress(5, userId);
+            progress_barSection5.Attributes.Add("style", "width :" + section5 + "%");
+            progress_barSection5.Attributes.Add("aria-valuenow", section5.ToString());
+            sec5_score.InnerHtml = section5.ToString() + "%";
+
+            int section6 = dal.CalulateProgress(6, userId);
+            progress_barSection6.Attributes.Add("style", "width :" + section6 + "%");
+            progress_barSection6.Attributes.Add("aria-valuenow", section6.ToString());
+            sec6_score.InnerHtml = section6.ToString() + "%";
         }
 
         protected void btn_Sec1_Click(object sender, EventArgs e)

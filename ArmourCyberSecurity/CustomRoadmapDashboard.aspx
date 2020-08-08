@@ -53,7 +53,18 @@
                 color: white;
                 background: #149dcc;
             }
+
+        .progress-bar {
+            background-color: #28a745 !important;
+            font-size: larger;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -110,30 +121,72 @@
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec1" runat="server" Text="Global Regulations" OnClick="btn_Sec1_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
                         </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection1" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec1_score"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="media-container-column col-12 col-lg-3 col-md-6">
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec2" runat="server" Text="Privacy Engineering" OnClick="btn_Sec2_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
+                        </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection2" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec2_score"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="media-container-column col-12 col-lg-3 col-md-6">
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec3" runat="server" Text="Data Control" OnClick="btn_Sec3_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
                         </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection3" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec3_score"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="media-container-column col-12 col-lg-3 col-md-6">
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec4" runat="server" Text="Consent" OnClick="btn_Sec4_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
+                        </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection4" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec4_score"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="media-container-column col-12 col-lg-3 col-md-6">
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec5" runat="server" Text="Incident Management" OnClick="btn_Sec5_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
                         </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection5" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec5_score"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="media-container-column col-12 col-lg-3 col-md-6">
                         <div class="mbr-section-btn align-left py-4">
                             <asp:Button ID="btn_Sec6" runat="server" Text="Employee Training" OnClick="btn_Sec6_Click" CausesValidation="false" CssClass="btn btn-white-outline display-4" />
+                        </div>
+                        <div class="mbr-section-btn align-left py-4">
+                            <div class="progress progress-striped active">
+                                <div id="progress_barSection6" class="progress-bar progress-bar-animated progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" runat="server" style="width: 70%">
+                                    <span runat="server" id="sec6_score"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
