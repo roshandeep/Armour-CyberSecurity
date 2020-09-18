@@ -31,33 +31,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.Label lbl_userinit;
         
         /// <summary>
-        /// div_SignOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_SignOut;
-        
-        /// <summary>
-        /// btn_signout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btn_signout;
-        
-        /// <summary>
-        /// btn_Sec1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec1;
-        
-        /// <summary>
         /// progress_barSection1 control.
         /// </summary>
         /// <remarks>
@@ -74,15 +47,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec1_score;
-        
-        /// <summary>
-        /// btn_Sec2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec2;
         
         /// <summary>
         /// progress_barSection2 control.
@@ -103,15 +67,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec2_score;
         
         /// <summary>
-        /// btn_Sec3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec3;
-        
-        /// <summary>
         /// progress_barSection3 control.
         /// </summary>
         /// <remarks>
@@ -128,15 +83,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec3_score;
-        
-        /// <summary>
-        /// btn_Sec4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec4;
         
         /// <summary>
         /// progress_barSection4 control.
@@ -157,15 +103,6 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec4_score;
         
         /// <summary>
-        /// btn_Sec5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec5;
-        
-        /// <summary>
         /// progress_barSection5 control.
         /// </summary>
         /// <remarks>
@@ -182,15 +119,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec5_score;
-        
-        /// <summary>
-        /// btn_Sec6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Sec6;
         
         /// <summary>
         /// progress_barSection6 control.

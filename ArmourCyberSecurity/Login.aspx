@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="Content/login.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <title>Login Page</title>
@@ -44,7 +45,7 @@
         {
             Login1.HelpPageText = "Help with logging in...";
         }
-</script>
+    </script>
     <script>
         $(".txtb input").on("focus", function () {
             $(this).addClass("focus");
@@ -60,7 +61,7 @@
             width: 100%;
             height: 50px;
             border: none;
-            background: linear-gradient(120deg,#3498db,#224ee3,#3498db);
+            background: #0a2044;
             background-size: 200%;
             color: #fff;
             outline: none;
@@ -82,36 +83,8 @@
     </style>
 </head>
 <body>
-    <section class="menu cid-rSx8XQK5A7" once="menu" id="menu1-8">
-        <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-            <div class="menu-logo">
-                <div class="navbar-brand">
-                    <span class="navbar-logo">
-                        <a href="Level1/LandingPage.aspx">
-                            <img src="Level1/assets/images/Logo.png" alt="Armour Logo" style="height: 3.8rem;">
-                        </a>
-                    </span>
-                    <span class="navbar-caption-wrap">
-                        <a class="navbar-caption text-white display-4" href="Level1/LandingPage.aspx">Privacy Compliance Solutions
-                        </a>
-                    </span>
-                </div>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                    <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="Level1/LandingPage#form4-k">Contact Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="Level1/LandingPage#testimonials1-5">About Us
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <form id="form1" runat="server" class="login-form" style="height: 560px; padding-top: 20px; padding-bottom: 30px;">
+
+    <form id="form1" runat="server" class="login-form authincation-content" style="height: 560px; padding-top: 20px; padding-bottom: 30px;">
         <img src="images/newLogo.png" style="width: 62px; margin-left: 7rem; border-radius: 20%;" />
         <h1 style="margin-bottom: 0px;">Login</h1>
         <div>
@@ -133,7 +106,7 @@
 
                                     <tr>
                                         <td class="txtb">
-                                            <asp:TextBox runat="server" ID="UserName" placeholder="Username"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" placeholder="Username"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -143,7 +116,7 @@
                                     </tr>
                                     <tr>
                                         <td class="txtb">
-                                            <asp:TextBox runat="server" TextMode="Password" ID="Password" placeholder="Password"></asp:TextBox>
+                                            <asp:TextBox runat="server" TextMode="Password" ID="Password" CssClass="form-control" placeholder="Password"></asp:TextBox>
 
                                         </td>
                                     </tr>
@@ -195,45 +168,6 @@
         </div>
 
     </form>
-    <section once="footers" class="cid-rSxbAyIsnT" id="footer7-e" style="position: absolute; top: 90%; width: 100%;">
-        <div class="container">
-            <div class="media-container-row align-center mbr-white">
-                <div class="row row-links">
-                </div>
-                <div class="row social-row">
-                    <div class="social-list align-right pb-2">
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="#" target="_blank">
-                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row-copirayt">
-                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                        © Copyright 2020 Armour Cyber Security
-                        <br>
-                        All Rights Reserved<br>
-                        <a href="PrivacyCompliancePolicy.aspx">Privacy Policy</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 </body>
 </html>

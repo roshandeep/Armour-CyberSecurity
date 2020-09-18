@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
-namespace ArmourCyberSecurity
+namespace ArmourCyberSecurity.Level1
 {
     public partial class SelfEvaluation : System.Web.UI.Page
     {
@@ -51,7 +51,7 @@ namespace ArmourCyberSecurity
                     
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                        var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
                         {
                             quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -77,7 +77,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["ctrl_type"].ToString() == "chkbx4")
                     {
-                        var chkbx = ((CheckBoxList)FindControl("chkbxAns" + row["question_id"].ToString()));
+                        var chkbx = ((CheckBoxList)this.Master.FindControl("Body").FindControl("chkbxAns" + row["question_id"].ToString()));
                         if (chkbx != null)
                         {
                             quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -100,7 +100,7 @@ namespace ArmourCyberSecurity
                     else
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                        var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
                         {
                             quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -124,7 +124,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Regional Fines")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -147,7 +147,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Privacy Engineering")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -170,7 +170,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Data Control")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -193,7 +193,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Consent")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -216,7 +216,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Incident Response")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -239,7 +239,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Employee Training")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         quesId = Convert.ToInt32(row["question_id"].ToString());
@@ -275,7 +275,7 @@ namespace ArmourCyberSecurity
 
             foreach (DataRow row in dt.Rows)
             {
-                var label = ((Label)FindControl("lblQues" + row["question_id"].ToString()));
+                var label = ((Label)this.Master.FindControl("Body").FindControl("lblQues" + row["question_id"].ToString()));
                 if (label != null)
                 {
                     label.Text = row["question"].ToString();
@@ -285,7 +285,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                        var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
                         {
                             ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -300,7 +300,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["ctrl_type"].ToString() == "chkbx4")
                     {
-                        var chkbx = ((CheckBoxList)FindControl("chkbxAns" + row["question_id"].ToString()));
+                        var chkbx = ((CheckBoxList)this.Master.FindControl("Body").FindControl("chkbxAns" + row["question_id"].ToString()));
                         if (chkbx != null)
                         {
                             LoadRegions(chkbx);
@@ -309,7 +309,7 @@ namespace ArmourCyberSecurity
                     else
                     if (row["ctrl_type"].ToString() == "dd4")
                     {
-                        var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                        var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                         if (ddl != null)
                         {
                             ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -322,7 +322,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Regional Fines")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -334,7 +334,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Privacy Engineering")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -346,7 +346,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Data Control")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -358,7 +358,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Consent")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -370,7 +370,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Incident Response")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));
@@ -382,7 +382,7 @@ namespace ArmourCyberSecurity
                 else
                 if (row["question_type"].ToString() == "Employee Training")
                 {
-                    var ddl = ((DropDownList)FindControl("ddlAns" + row["question_id"].ToString()));
+                    var ddl = ((DropDownList)this.Master.FindControl("Body").FindControl("ddlAns" + row["question_id"].ToString()));
                     if (ddl != null)
                     {
                         ddl.Items.Add(new ListItem("YES", row["question_wt_yes"].ToString()));

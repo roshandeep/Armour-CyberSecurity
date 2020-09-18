@@ -70,15 +70,6 @@ namespace ArmourCyberSecurity
             }
         }
 
-        protected void btn_dashboard_Click(object sender, EventArgs e)
-        {
-            /**
-             * Return to the CustomRoadmap Dashboard
-             */
-
-            Response.Redirect("~/CustomRoadmapDashboard.aspx", false);
-        }
-
         private void GetUserId()
         {
             /**

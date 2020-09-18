@@ -1,0 +1,98 @@
+.page-titles {
+    padding: 0.9375rem 1.25rem;
+    background: #fff;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+    .page-titles h4 {
+        margin-bottom: 0;
+        margin-top: 0;
+        color: #000000;
+        font-size: 1.25rem;
+    }
+
+    .page-titles .breadcrumb {
+        margin-bottom: 0;
+        padding: 0;
+        background: transparent;
+    }
+
+    .page-titles .justify-content-sm-end {
+        align-items: center;
+    }
+
+.logo {
+    max-width: 30px;
+}
+
+.shadow {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+
+.sw-theme-arrows > .nav .nav-link.active {
+    color: #fff;
+    border-color: #0a2044;
+    background: #0a2044;
+    cursor: pointer;
+}
+
+    .sw-theme-arrows > .nav .nav-link.active::after {
+        border-left-color: #0a2044;
+    }
+
+.sw-theme-arrows .toolbar > .btn {
+    color: #fff;
+    background-color: #0a2044;
+    border: 1px solid #0a2044;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    font-weight: 400;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0a2044;
+    border-color: #0a2044;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: checkbox;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+.lblscore{
+    font-weight: bold;
+}
+
+.authincation-content {
+    background: #fff;
+    box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+    border-radius: 5px;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.auth-form {
+    padding: 50px 50px;
+}
+
+#lbl_userinit{
+    display: none !important;
+}
+
+#Body_lbl_userinit{
+    display: none;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #0a2044 !important;
+}

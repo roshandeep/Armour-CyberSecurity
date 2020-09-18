@@ -15,7 +15,7 @@ using System.Text;
 using iTextSharp.tool.xml;
 using Image = iTextSharp.text.Image;
 
-namespace ArmourCyberSecurity
+namespace ArmourCyberSecurity.Level1
 {
     public partial class SelfEvaluationReport : System.Web.UI.Page
     {
