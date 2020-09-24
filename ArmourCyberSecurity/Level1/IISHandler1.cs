@@ -204,7 +204,7 @@ namespace ArmourCyberSecurity
                 //NetworkCred.UserName = "info@privacycompliance.solutions";
                 //NetworkCred.Password = "Aihub@2020";
                 NetworkCred2.UserName = "roshandeep1995@gmail.com";
-                NetworkCred2.Password = "roshandeepsinghsaini";
+                NetworkCred2.Password = "topjudkygkcytwni";
                 smtp2.Credentials = NetworkCred;
                 smtp2.Send(mm);
             }

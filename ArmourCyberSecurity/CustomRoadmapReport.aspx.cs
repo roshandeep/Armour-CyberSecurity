@@ -1343,7 +1343,7 @@ namespace ArmourCyberSecurity
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
@@ -3211,7 +3211,7 @@ namespace ArmourCyberSecurity
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
@@ -4759,7 +4759,7 @@ namespace ArmourCyberSecurity
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
@@ -6186,7 +6186,7 @@ if (dc_text_4 == "BLUE")
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
@@ -8156,7 +8156,7 @@ if (dc_text_4 == "BLUE")
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
@@ -8779,7 +8779,7 @@ if (dc_text_4 == "BLUE")
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;

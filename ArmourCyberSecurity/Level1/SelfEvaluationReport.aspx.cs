@@ -1193,7 +1193,7 @@ namespace ArmourCyberSecurity.Level1
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
-                        //NetworkCred.Password = "roshandeepsinghsaini";
+                        //NetworkCred.Password = "topjudkygkcytwni";
                         NetworkCred.UserName = "info@privacycompliance.solutions";
                         NetworkCred.Password = "Aihub@2020";
                         smtp.Credentials = NetworkCred;
