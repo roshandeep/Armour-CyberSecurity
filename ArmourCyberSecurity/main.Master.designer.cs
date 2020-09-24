@@ -10,123 +10,96 @@
 namespace ArmourCyberSecurity {
     
     
-    public partial class CustomRoadmapDashboard {
+    public partial class main {
         
         /// <summary>
-        /// lbl_userinit control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_userinit;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// progress_barSection1 control.
+        /// hlDashboard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection1;
+        protected global::System.Web.UI.WebControls.HyperLink hlDashboard;
         
         /// <summary>
-        /// sec1_score control.
+        /// hlGlobalRegulations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec1_score;
+        protected global::System.Web.UI.WebControls.HyperLink hlGlobalRegulations;
         
         /// <summary>
-        /// progress_barSection2 control.
+        /// hlPrivacyEngineering control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection2;
+        protected global::System.Web.UI.WebControls.HyperLink hlPrivacyEngineering;
         
         /// <summary>
-        /// sec2_score control.
+        /// hlDataControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec2_score;
+        protected global::System.Web.UI.WebControls.HyperLink hlDataControl;
         
         /// <summary>
-        /// progress_barSection3 control.
+        /// hlConsent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection3;
+        protected global::System.Web.UI.WebControls.HyperLink hlConsent;
         
         /// <summary>
-        /// sec3_score control.
+        /// hlIncidentManagement control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec3_score;
+        protected global::System.Web.UI.WebControls.HyperLink hlIncidentManagement;
         
         /// <summary>
-        /// progress_barSection4 control.
+        /// hlEmployeeTraining control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection4;
+        protected global::System.Web.UI.WebControls.HyperLink hlEmployeeTraining;
         
         /// <summary>
-        /// sec4_score control.
+        /// Body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec4_score;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Body;
         
         /// <summary>
-        /// progress_barSection5 control.
+        /// footer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection5;
-        
-        /// <summary>
-        /// sec5_score control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec5_score;
-        
-        /// <summary>
-        /// progress_barSection6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl progress_barSection6;
-        
-        /// <summary>
-        /// sec6_score control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sec6_score;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder footer;
     }
 }

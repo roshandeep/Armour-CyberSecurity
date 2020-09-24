@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Section2Part3.aspx.cs" Inherits="ArmourCyberSecurity.Section2Part3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Section2Part3.aspx.cs" Inherits="ArmourCyberSecurity.Section2Part3" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
 
-
-    <form runat="server">
 
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
@@ -11,30 +9,14 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Privacy Engineering</h1>
             <div class="flex-column">
-                <asp:LinkButton ID="btn_rtn_dashbrd" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_rtn_dashbrd_Click" Enabled="True" ClientIDMode="Static">
+                <asp:LinkButton ID="btn_rtn_dashbrd" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_rtn_dashbrd_Click" Enabled="True" data-toggle="modal" data-target="#modalExit" ClientIDMode="Static">
 <i class="fas fa-fw fa-tachometer-alt text-white-50"></i> Dashboard</asp:LinkButton>
                 <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
                 <asp:LinkButton ID="btn_Report" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_Report_Click" Enabled="True" ClientIDMode="Static">
 <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</asp:LinkButton>
             </div>
-
-            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btn_rtn_dashbrd" CancelControlID="imgbtnbackground" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
         </div>
 
-        <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
-            <div style="text-align: right;">
-                <asp:ImageButton ID="imgbtnbackground" runat="server" ImageUrl="~/images/RedCross.png" Style="display: inline-block; width: 30px; height: 30px;" />
-            </div>
-            <div style="height: 60px">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        Would you like to Save or Discard Your changes?&nbsp;
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </div>
-            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
-            <asp:Button ID="btnDiscard" runat="server" Text="Discard" OnClick="btnDiscard_Click" />
-        </asp:Panel>
 
 
         <div class="card shadow h-100">
@@ -129,7 +111,6 @@
             <asp:Button ID="btn_Next" runat="server" Text="Next" OnClick="btn_Next_Click" CssClass="btn btn-primary" ClientIDMode="Static" />
 
         </div>
-    </form>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="footer" runat="server">

@@ -15,7 +15,7 @@ namespace ArmourCyberSecurity.Payment
         {
             if (Session["userInitial"] != null)
             {
-                lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
+                //lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
             }
 
             if(Session["userID"] != null)

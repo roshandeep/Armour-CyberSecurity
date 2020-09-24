@@ -3,20 +3,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <form id="form1" runat="server">
 
-        <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
+    <asp:Label ID="lbl_userinit" runat="server" Text="" CssClass="nav-link link text-white display-4" ForeColor="#0795d6" />
 
-        <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        </div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    </div>
 
-        <div class="row">
+    <div class="row">
 
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section1">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -38,10 +38,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section2">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -63,10 +65,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section3">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -88,15 +92,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </a>
         </div>
 
-        <div class="row">
+    </div>
+
+    <div class="row">
 
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section4">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -118,10 +124,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section5">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -143,10 +151,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-4 mb-4">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-4 mb-4">
+            <a href="section6">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -168,16 +178,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </a>
         </div>
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <p class="lead text-muted">No more information to show.</p>
-            </div>
-        </section>
+    </div>
 
-    </form>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <p class="lead text-muted">No more information to show.</p>
+        </div>
+    </section>
 </asp:Content>
 

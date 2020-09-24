@@ -13,15 +13,6 @@ namespace ArmourCyberSecurity {
     public partial class CustomRoadmapReport {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// lbl_userinit control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace ArmourCyberSecurity {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_userinit;
-        
-        /// <summary>
-        /// Logo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Logo;
         
         /// <summary>
         /// divGlobalRegulations control.

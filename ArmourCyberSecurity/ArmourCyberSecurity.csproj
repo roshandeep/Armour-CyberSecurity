@@ -2478,6 +2478,9 @@
       <DependentUpon>main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="main.Master.designer.cs">
+      <DependentUpon>main.Master</DependentUpon>
+    </Compile>
     <Compile Include="Payment\Charge.aspx.cs">
       <DependentUpon>Charge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -4,17 +4,23 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Favicon icon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../Content/signup.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../Level1/assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="../Level1/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Level1/assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../Level1/assets/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="../Level1/assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="../Level1/assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="../Level1/assets/tether/tether.min.css">
-    <link rel="stylesheet" href="../Level1/assets/theme/css/style.css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register | Privacy Compliance Solutions</title>
+    <!-- Custom fonts for this template-->
+    <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../../assets/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../../assets/css/style.css" rel="stylesheet">
 
     <style>
         .btn-primary, .btn-primary:active {
@@ -35,14 +41,14 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6 text-center justify-content-center">
+                <div class="col-md-6 text-center justify-content-center pt-3">
                     <div class="authincation-content">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <img src="../Level1/assets/images/Logo.png" style="width: 58px;" />
                                     <br />
-                                    <h2>Sign up</h2>
+                                    <h1 style="color: #000;">Sign up</h1>
                                     <br />
                                     <div class="form-group">
                                         <div class="row">
@@ -104,7 +110,7 @@
                                     </div>
                                     <br />
                                     <div class="row">
-                                        <asp:Button Text="Submit" runat="server" OnClick="RegisterUser" class="btn btn-primary logbtn" />
+                                        <asp:Button Text="Submit" runat="server" OnClick="RegisterUser" class="btn btn-primary btn-lg btn-block" />
                                     </div>
                                 </div>
 
@@ -125,19 +131,15 @@
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="../Level1/assets/web/assets/jquery/jquery.min.js"></script>
-<script src="../Level1/assets/popper/popper.min.js"></script>
-<script src="../Level1/assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="../Level1/assets/tether/tether.min.js"></script>
-<script src="../Level1/assets/smoothscroll/smooth-scroll.js"></script>
-<script src="../Level1/assets/dropdown/js/nav-dropdown.js"></script>
-<script src="../Level1/assets/dropdown/js/navbar-dropdown.js"></script>
-<script src="../Level1/assets/touchswipe/jquery.touch-swipe.min.js"></script>
-<script src="../Level1/assets/theme/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+<!-- Core plugin JavaScript-->
+<script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../assets/js/sb-admin-2.min.js"></script>
 <script>
     $(".txtb input").on("focus", function () {
         $(this).addClass("focus");

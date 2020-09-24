@@ -91,37 +91,37 @@ namespace ArmourCyberSecurity
             if (Request.UrlReferrer.AbsoluteUri != null)
             {
                 string previousPage = Path.GetFileName(Request.UrlReferrer.AbsolutePath);
-                if (previousPage.Contains("Section1"))
+                if (previousPage.ToLower().Contains("section1"))
                 {
                     divGlobalRegulations.Visible = true;
                     GlobalRegulationsReport(); //Done
                 }
                 else
-                if (previousPage.Contains("Section2"))
+                if (previousPage.ToLower().Contains("section2"))
                 {
                     divPrivacyEngineering.Visible = true;
                     PrivacyEngineeringReport();
                 }
                 else
-                if (previousPage.Contains("Section3"))
+                if (previousPage.ToLower().Contains("section3"))
                 {
                     divDataControl.Visible = true;
                     DataControlReport();//Done
                 }
                 else
-                if (previousPage.Contains("Section4"))
+                if (previousPage.ToLower().Contains("section4"))
                 {
                     divConsent.Visible = true;
                     ConsentReport(); //Done
                 }
                 else
-                if (previousPage.Contains("Section5"))
+                if (previousPage.ToLower().Contains("section5"))
                 {
                     divIncidentManagement.Visible = true;
                     IncidentManagementReport();
                 }
                 else
-                if (previousPage.Contains("Section6"))
+                if (previousPage.ToLower().Contains("section6"))
                 {
                     divEmployeeTraining.Visible = true;
                     EmployeeTrainingReport(); //Done
@@ -147,7 +147,7 @@ namespace ArmourCyberSecurity
                 {
                     if (row["question_type"].ToString() == "Privacy Policy" && row["stagesCompleted"].ToString() == "6")
                     {
-                        var img = (System.Web.UI.WebControls.Image)FindControl("img_" + row["sec_ref_id"].ToString());
+                        var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_" + row["sec_ref_id"].ToString());
                         if (row["ans_Text"].ToString() == "YES")
                         {
                             img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -1340,7 +1340,6 @@ namespace ArmourCyberSecurity
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
@@ -1379,7 +1378,7 @@ namespace ArmourCyberSecurity
                             {
                                 if (Convert.ToInt32(row["sec_ref_id"]) == i)
                                 {
-                                    var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
+                                    var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_im_" + row["sec_ref_id"].ToString());
                                     if (row["ans_Text"].ToString() == "YES")
                                     {
                                         img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -1410,7 +1409,7 @@ namespace ArmourCyberSecurity
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_im_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_im_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -3209,7 +3208,6 @@ namespace ArmourCyberSecurity
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
@@ -3245,7 +3243,7 @@ namespace ArmourCyberSecurity
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_c_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_c_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -3274,7 +3272,7 @@ namespace ArmourCyberSecurity
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_c_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_c_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -4758,7 +4756,6 @@ namespace ArmourCyberSecurity
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
@@ -4887,7 +4884,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "2")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -4914,7 +4911,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "3")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -4941,7 +4938,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "4")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -4968,7 +4965,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "5")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -4995,7 +4992,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "6")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -5022,7 +5019,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "9")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -5049,7 +5046,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "11")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -5076,7 +5073,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "12")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -5103,7 +5100,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "13")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -5130,7 +5127,7 @@ namespace ArmourCyberSecurity
                         else
                         if (row["sec_ref_id"].ToString() == "14")
                         {
-                            var img = (System.Web.UI.WebControls.Image)FindControl("img_dc_" + row["sec_ref_id"].ToString());
+                            var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_dc_" + row["sec_ref_id"].ToString());
                             if (row["ans_Text"].ToString() == "YES")
                             {
                                 img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -6186,7 +6183,6 @@ if (dc_text_4 == "BLUE")
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
@@ -6241,7 +6237,7 @@ if (dc_text_4 == "BLUE")
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -6290,7 +6286,7 @@ if (dc_text_4 == "BLUE")
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -6320,7 +6316,7 @@ if (dc_text_4 == "BLUE")
                         {
                             if (Convert.ToInt32(row["sec_ref_id"]) == i)
                             {
-                                var img = (System.Web.UI.WebControls.Image)FindControl("img_pe_" + row["sec_ref_id"].ToString());
+                                var img = (System.Web.UI.WebControls.Image)this.Master.FindControl("Body").FindControl("img_pe_" + row["sec_ref_id"].ToString());
                                 if (row["ans_Text"].ToString() == "YES")
                                 {
                                     img.ImageUrl = Page.ResolveUrl("~/images/GreenTick.png");
@@ -8157,7 +8153,6 @@ if (dc_text_4 == "BLUE")
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";
@@ -8781,7 +8776,6 @@ if (dc_text_4 == "BLUE")
                         //smtp.EnableSsl = true;
                         smtp.Host = "relay-hosting.secureserver.net";
                         smtp.Port = 25;
-                        //smtp.EnableSsl = true;
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         NetworkCredential NetworkCred = new NetworkCredential();
                         //NetworkCred.UserName = "roshandeep1995@gmail.com";

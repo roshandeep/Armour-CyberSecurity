@@ -9,7 +9,6 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Privacy Compliance Assessment</h1>
     </div>
-    <form id="form1" runat="server">
 
         <div id="sec1Div">
             <div class="card shadow h-100">
@@ -406,11 +405,6 @@
             <br />
             <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" CssClass="btn btn-primary" />
         </div>
-
-
-
-
-    </form>
 
 </asp:Content>
 

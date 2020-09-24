@@ -1,38 +1,45 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Section1Part3.aspx.cs" Inherits="ArmourCyberSecurity.Section1Part3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="Section1Part3.aspx.cs" Inherits="ArmourCyberSecurity.Section1Part3" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
 
-    <form runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
 
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Global Regulations</h1>
             <div class="flex-column">
-                <asp:LinkButton ID="btn_rtn_dashbrd" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_rtn_dashbrd_Click" Enabled="True" ClientIDMode="Static">
+                <asp:LinkButton ID="btn_rtn_dashbrd" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_rtn_dashbrd_Click" data-toggle="modal" data-target="#modalExit" Enabled="True" ClientIDMode="Static">
 <i class="fas fa-fw fa-tachometer-alt text-white-50"></i> Dashboard</asp:LinkButton>
                 <asp:Label ID="lbl_warning" runat="server" Text="" ForeColor="Red" />
                 <asp:LinkButton ID="btn_Report" runat="server" CssClass="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" OnClick="btn_Report_Click" Enabled="True" ClientIDMode="Static">
 <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</asp:LinkButton>
             </div>
 
-            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btn_rtn_dashbrd" CancelControlID="imgbtnbackground" BackgroundCssClass="modalBackground"></asp:ModalPopupExtender>
         </div>
 
-        <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
-            <div style="text-align: right;">
-                <asp:ImageButton ID="imgbtnbackground" runat="server" ImageUrl="~/images/RedCross.png" Style="display: inline-block; width: 30px; height: 30px;" />
+     <div id="modalExit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            Would you like to Save or Discard Your changes?&nbsp;
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnDiscard" CssClass="btn btn-secondary" runat="server" Text="Discard" OnClick="btnDiscard_Click" />
+                    <asp:Button ID="btnSave" CssClass="btn btn-primary" runat="server" Text="Save" OnClick="btnSave_Click" />
+                </div>
             </div>
-            <div style="height: 60px">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        Would you like to Save or Discard Your changes?&nbsp;
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </div>
-            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
-            <asp:Button ID="btnDiscard" runat="server" Text="Discard" OnClick="btnDiscard_Click" />
-        </asp:Panel>
+        </div>
+    </div>
 
         <div class="card shadow h-100">
             <div class="card-body">
@@ -130,7 +137,6 @@
             <asp:Button ID="btn_Previous" runat="server" Text="Previous" CssClass="btn btn-primary" OnClick="btn_Previous_Click" ClientIDMode="Static" />
         </div>
 
-    </form>
 
 </asp:Content>
 
