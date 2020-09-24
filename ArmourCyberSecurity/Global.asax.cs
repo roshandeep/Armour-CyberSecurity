@@ -25,10 +25,6 @@ namespace ArmourCyberSecurity
 
         void Application_BeginRequest(object sender, EventArgs e)
         {
-            if (Request.AppRelativeCurrentExecutionFilePath == "~/")
-            {
-                Response.Redirect("~/Level1/LandingPage.aspx");
-            }
 
         }
 
