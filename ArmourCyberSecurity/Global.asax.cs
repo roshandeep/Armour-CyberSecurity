@@ -1,13 +1,9 @@
 ﻿using Stripe;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 
 namespace ArmourCyberSecurity
 {
@@ -25,7 +21,10 @@ namespace ArmourCyberSecurity
 
         void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            if (Request.AppRelativeCurrentExecutionFilePath == "~/")
+            {
+                Response.Redirect("~/Level1/LandingPage.aspx");
+            }
         }
 
     }
