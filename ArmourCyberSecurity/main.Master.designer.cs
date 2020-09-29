@@ -85,6 +85,15 @@ namespace ArmourCyberSecurity {
         protected global::System.Web.UI.WebControls.HyperLink hlEmployeeTraining;
         
         /// <summary>
+        /// hlRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlRegister;
+        
+        /// <summary>
         /// Body control.
         /// </summary>
         /// <remarks>

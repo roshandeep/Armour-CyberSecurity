@@ -16,7 +16,7 @@ namespace ArmourCyberSecurity.Level1
             {
                 FormsAuthentication.SignOut();
                 Session.Clear();
-                Response.Redirect("~/Level1/LandingPage.aspx", true);
+                Response.Redirect("~/Login.aspx", true);
             }
         }
     }

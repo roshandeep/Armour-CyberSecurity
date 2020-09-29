@@ -46,67 +46,75 @@ namespace ArmourCyberSecurity
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (ValidateUser(Login1.UserName.Trim().ToString(), Login1.Password.Trim().ToString()))
+            try
             {
-                using (SqlConnection con = new SqlConnection(connetionString))
+                if (ValidateUser(Login1.UserName.Trim().ToString(), Login1.Password.Trim().ToString()))
                 {
-                    Session["L2emailId"] = Login1.UserName;
-                    using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail, userId, PaymentValidated FROM Users WHERE Email = @Email"))
+                    using (SqlConnection con = new SqlConnection(connetionString))
                     {
-                        command.Parameters.AddWithValue("@Email", Login1.UserName.Trim().ToString());
-                        command.Connection = con;
-                        con.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-                        if (reader.Read())
+                        Session["L2emailId"] = Login1.UserName;
+                        using (SqlCommand command = new SqlCommand("SELECT ConfirmedEmail, userId, PaymentValidated FROM Users WHERE Email = @Email"))
                         {
-                            bool verifiedEmail = Convert.ToBoolean(reader["ConfirmedEmail"]);
-                            Session["UserID"] = reader["userId"].ToString();
-                            if (verifiedEmail == true)
+                            command.Parameters.AddWithValue("@Email", Login1.UserName.Trim().ToString());
+                            command.Connection = con;
+                            con.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.Read())
                             {
-                                Session["UserSession"] = "1";
-                                Session["userInitial"] = Login1.UserName.Substring(0,2).ToUpper();
-                                Boolean.TryParse(reader["PaymentValidated"].ToString(), out bool premiumStatus);
-                                Session["PremiumStatus"] = premiumStatus.ToString();
-                                con.Close();
-                                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
-
-                                if (Session["PremiumStatus"].ToString() == "True")
+                                bool verifiedEmail = Convert.ToBoolean(reader["ConfirmedEmail"]);
+                                Session["UserID"] = reader["userId"].ToString();
+                                if (verifiedEmail == true)
                                 {
-                                    Response.Redirect("~/CustomRoadmapDashboard", true);
-                                }
+                                    Session["UserSession"] = "1";
+                                    Session["userInitial"] = Login1.UserName.Substring(0, 2).ToUpper();
+                                    Boolean.TryParse(reader["PaymentValidated"].ToString(), out bool premiumStatus);
+                                    Session["PremiumStatus"] = premiumStatus.ToString();
+                                    con.Close();
+                                    FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
 
-
-                                if (Session["RegisterRedirection"] != null)
-                                {
-                                    if (Session["RegisterRedirection"].ToString() == "Registration")
+                                    if (Session["PremiumStatus"].ToString() == "True")
                                     {
-                                        Session["RegisterRedirection"] = null;
-                                        Response.Redirect("~/Payment/Checkout.aspx", true);
+                                        Response.Redirect("~/CustomRoadmapDashboard", true);
                                     }
+
+
+                                    if (Session["RegisterRedirection"] != null)
+                                    {
+                                        if (Session["RegisterRedirection"].ToString() == "Registration")
+                                        {
+                                            Session["RegisterRedirection"] = null;
+                                            Response.Redirect("~/Payment/Checkout.aspx", true);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Response.Redirect("~/Level1/LandingPage.aspx", true);
+                                    }
+
                                 }
                                 else
                                 {
-                                    Response.Redirect("~/Level1/LandingPage.aspx", true);
+                                    Login1.FailureText = "This email is not verified. Please check your inbox for a confirmation email.";
                                 }
-                               
                             }
                             else
                             {
-                                Login1.FailureText = "This email is not verified. Please check your inbox for a confirmation email.";
+                                //username not found, which is impossible here
+                                Login1.FailureText += "This should never happen";
                             }
                         }
-                        else
-                        {
-                            //username not found, which is impossible here
-                            Login1.FailureText += "This should never happen";
-                        }
+                        con.Close();
                     }
-                    con.Close();
+                }
+                else
+                {
+                    Login1.FailureText = "Credentials do not match our records.";
                 }
             }
-            else
+            catch(Exception ex)
             {
                 Login1.FailureText = "Credentials do not match our records.";
+                Response.Write("Credentials do not match our records." + ex.Message);
             }
         }
 
