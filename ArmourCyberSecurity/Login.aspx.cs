@@ -88,7 +88,14 @@ namespace ArmourCyberSecurity
                                     }
                                     else
                                     {
-                                        Response.Redirect("~/Level1/LandingPage.aspx", true);
+                                        if (Session["PremiumStatus"].ToString() == "True")
+                                        {
+                                            Response.Redirect("~/CustomRoadmapDashboard", true);
+                                        }
+                                        else
+                                        {
+                                            Response.Redirect("~/Payment/Checkout.aspx", true);
+                                        }
                                     }
 
                                 }
@@ -143,7 +150,6 @@ namespace ArmourCyberSecurity
                     conn.Close();
                     return false;
                 }
-               
             }
         }
 

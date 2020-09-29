@@ -23,7 +23,7 @@ namespace ArmourCyberSecurity
         {
             if (Request.AppRelativeCurrentExecutionFilePath == "~/")
             {
-                Response.Redirect("~/Level1/LandingPage.aspx");
+                Response.Redirect("~/Login.aspx");
             }
         }
 

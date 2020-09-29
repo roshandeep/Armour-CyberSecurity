@@ -30,7 +30,7 @@ namespace ArmourCyberSecurity.Level1
              * Redirect to the Home page/Landing page
              */
 
-            Response.Redirect("~/LeveL1/LandingPage.aspx", false);
+            Response.Redirect("https://privacycompliance.solutions/#roadmap", false);
         }
 
         string firstName = string.Empty, lastname = string.Empty;
