@@ -17,8 +17,8 @@ namespace ArmourCyberSecurity
 
             if (Session["userInitial"] != null)
             {
-                lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
-                div_SignOut.Visible = true;
+               // lbl_userinit.Text = "Logged in as : " + Session["userInitial"].ToString();
+                //div_SignOut.Visible = true;
             }
         }
 

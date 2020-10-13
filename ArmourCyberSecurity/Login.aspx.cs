@@ -44,6 +44,7 @@ namespace ArmourCyberSecurity
                 }
             }
         }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -107,7 +108,7 @@ namespace ArmourCyberSecurity
                             else
                             {
                                 //username not found, which is impossible here
-                                Login1.FailureText += "This should never happen";
+                                Login1.FailureText = "This should never happen";
                             }
                         }
                         con.Close();

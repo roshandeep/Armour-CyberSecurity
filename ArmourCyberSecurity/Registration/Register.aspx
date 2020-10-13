@@ -53,11 +53,11 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col">
-                                                <asp:TextBox ID="txt_firstName" runat="server" CssClass="form-control" placeholder="First Name" />
+                                                <asp:TextBox ID="txt_firstName" runat="server" CssClass="form-control" placeholder="First Name*" />
                                                 <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txt_firstName" runat="server" />
                                             </div>
                                             <div class="col">
-                                                <asp:TextBox ID="txt_lastName" runat="server" placeholder="Last Name" CssClass="form-control" />
+                                                <asp:TextBox ID="txt_lastName" runat="server" placeholder="Last Name*" CssClass="form-control" />
                                                 <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txt_lastName" runat="server" />
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col">
-                                                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" placeholder="Enter Email ID" />
+                                                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" placeholder="Enter Email ID*" />
                                                 <asp:RequiredFieldValidator ErrorMessage="Required" Display="Dynamic" ForeColor="Red"
                                                     ControlToValidate="txtEmail" runat="server" />
                                                 <asp:RegularExpressionValidator runat="server" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -75,7 +75,7 @@
                                                 <asp:Literal runat="server" ID="FailureText" EnableViewState="False"></asp:Literal>
                                             </div>
                                             <div class="col">
-                                                <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="Phone Number" CssClass="form-control" />
+                                                <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="Phone Number*" CssClass="form-control" />
                                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_phoneNumber" ErrorMessage="Enter 10 digit Phone Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                                             </div>
                                         </div>
@@ -85,11 +85,11 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col">
-                                                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password" />
+                                                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password*" />
                                                 <asp:RequiredFieldValidator ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtPassword" runat="server" Display="Dynamic" />
                                             </div>
                                             <div class="col">
-                                                <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password" />
+                                                <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password*" />
                                                 <asp:CompareValidator ErrorMessage="Passwords do not match." ForeColor="Red" ControlToCompare="txtPassword"
                                                     ControlToValidate="txtConfirmPassword" runat="server" />
                                             </div>

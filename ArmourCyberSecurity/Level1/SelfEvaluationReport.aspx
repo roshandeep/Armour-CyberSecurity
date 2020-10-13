@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SelfEvaluationReport.aspx.cs" Inherits="ArmourCyberSecurity.Level1.SelfEvaluationReport" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SelfEvaluationReport.aspx.cs" Inherits="ArmourCyberSecurity.Level1.SelfEvaluationReport" EnableEventValidation="false"%>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="col-md-6">
                 <asp:Panel ID="pnlPopup" runat="server" CssClass="card" Style="display: none">
-                    <h5 class="card-header">Register</h5>
+                    <h5 class="card-header">Get Your Report Instantly</h5>
                     <div class="card-body">
                         <div class="text-center">
                             <img src="../images/newLogo.png" style="width: 58px;">
@@ -84,7 +84,7 @@
 
         <div class="card shadow h-100 mt-2">
             <div class="card-body">
-                <h5 class="card-header">Overall Score – Are you privacy regulation compliant?</h5>
+                <h5 class="card-header bg-dark text-light">Overall Score – Are you privacy regulation compliant?</h5>
                 <br />
                 <div class="container">
                     <div class="form-group row">
@@ -95,7 +95,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>
@@ -108,7 +110,7 @@
                 </div>
                 <br />
                 <%--Privacy Culture Questions--%>
-                <h5 class="card-header">Privacy Culture Questions</h5>
+                <h5 class="card-header bg-dark text-light">Privacy Culture Questions</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -136,7 +138,7 @@
                 </div>
                 <br />
                 <%-- Regional Specific Questions --%>
-                <h5 class="card-header">Regional Specific Questions</h5>
+                <h5 class="card-header bg-dark text-light">Regional Specific Questions</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -151,7 +153,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_rsq_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_rsq_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>
@@ -165,7 +169,7 @@
 
                 <br />
                 <%--Privacy Engineering--%>
-                <h5 class="card-header">Privacy Engineering</h5>
+                <h5 class="card-header bg-dark text-light">Privacy Engineering</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -182,7 +186,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_peq_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_peq_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>
@@ -196,7 +202,7 @@
 
                 <br />
                 <%--Data Control--%>
-                <h5 class="card-header">Data Control</h5>
+                <h5 class="card-header bg-dark text-light">Data Control</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -212,7 +218,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_dcq_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_dcq_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>
@@ -227,7 +235,7 @@
                 <br />
 
                 <%--Consent--%>
-                <h5 class="card-header">Consent</h5>
+                <h5 class="card-header bg-dark text-light">Consent</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -244,7 +252,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_cq_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_cq_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>
@@ -259,7 +269,7 @@
                 <br />
 
                 <%-- Incident Response Questions--%>
-                <h5 class="card-header">Incident Response Questions</h5>
+                <h5 class="card-header bg-dark text-light">Incident Response Questions</h5>
                 <br />
                 <div class="container">
                     <div class="row">
@@ -276,7 +286,9 @@
                             </div>
                             <br />
                             <div class="row text-center">
-                                <asp:Label ID="lbl_irq_score" CssClass="lblscore" runat="server" Text="" />
+                                <strong>
+                                    <asp:Label ID="lbl_irq_score" CssClass="lblscore" runat="server" Text="" />
+                                </strong>
                             </div>
 
                         </div>

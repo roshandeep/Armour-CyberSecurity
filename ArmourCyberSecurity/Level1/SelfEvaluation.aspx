@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SelfEvaluation.aspx.cs" Inherits="ArmourCyberSecurity.Level1.SelfEvaluation" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SelfEvaluation.aspx.cs" Inherits="ArmourCyberSecurity.Level1.SelfEvaluation" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -443,8 +443,56 @@
         });
 
         $(document).on('click', '[id*=btn_section2]', function () {
-            $("#sec2Div").slideUp(1000);
-            $("#sec3Div").slideDown(1000);
+            var v8 = document.getElementById("<%=ddlAns8.ClientID%>");
+            var v9 = document.getElementById("<%=ddlAns9.ClientID%>");
+            var v10 = document.getElementById("<%=ddlAns10.ClientID%>");
+            var v11 = document.getElementById("<%=ddlAns11.ClientID%>");
+            var v12 = document.getElementById("<%=ddlAns12.ClientID%>");
+            var v13 = document.getElementById("<%=ddlAns13.ClientID%>");
+            var v14 = document.getElementById("<%=ddlAns14.ClientID%>");
+            var v15 = document.getElementById("<%=ddlAns15.ClientID%>");
+            var pass = true;
+            //alert(v10.length + v10.options[v10.selectedIndex].value + pass);
+            if (v8 != null && v8.length > 0 && v8.options[v8.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v9 != null && v9.length > 0 && v9.options[v9.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v10 != null && v10.length > 0 && v10.options[v10.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v11 != null && v11.length > 0 && v11.options[v11.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v12 != null && v12.length > 0 && v12.options[v12.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v13 != null && v13.length > 0 && v13.options[v13.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v14 != null && v14.length > 0 && v14.options[v14.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (v15 != null && v15.length > 0 && v15.options[v15.selectedIndex].value == '-1') {
+                pass = pass & false;
+                
+            }
+            if (pass) {
+                $("#sec2Div").slideUp(1000);
+                $("#sec3Div").slideDown(1000);
+            }
+            else {
+                alert("Fill in all the questions before moving ahead");
+            }
+            
         });
 
         $(document).on('click', '[id*=btn_section3]', function () {
