@@ -11,7 +11,7 @@
     <div class="card shadow h-100">
         <div class="card-body">
             <div class="jumbotron">
-                <h1 class="display-4">Welcome To Self Assessment</h1>
+                <h1>Welcome To Self Assessment</h1>
                 <p class="lead">
                     <strong>Welcome to Your Free Privacy Regulation Compliance Assessment.</strong><br />
                     In only 10 minutes you will have a personalized report on how your company ranks in terms of being compliant with global privacy regulations. Learn where you are prepared, and where you need to focus your resources to get to full compliance." 

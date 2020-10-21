@@ -91,7 +91,7 @@
                         <asp:Label ID="lbl_overall" runat="server" Text="" />
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_overall" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_overall" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -121,7 +121,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_pcq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_pcq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -149,7 +149,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_rsq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_rsq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -182,7 +182,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_peq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_peq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -214,7 +214,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_dcq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_dcq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -248,7 +248,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_cq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_cq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">
@@ -282,7 +282,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <div class="row text-center">
-                                <asp:Image ID="img_irq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto" />
+                                <asp:Image ID="img_irq" runat="server" ImageAlign="Middle" Style="width: 200px;" CssClass="mx-auto img-fluid" />
                             </div>
                             <br />
                             <div class="row text-center">

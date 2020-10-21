@@ -10,7 +10,7 @@
 <div class="card shadow h-100">
     <div class="card-body">
         <div class="jumbotron">
-            <h1 class="display-4">Welcome&nbsp;</h1>
+            <h1>Welcome&nbsp;</h1>
             <h3>Heading of the text</h3>
             <p class="lead">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. Ut porta nulla ac dapibus convallis. 
