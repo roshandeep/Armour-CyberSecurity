@@ -91,18 +91,6 @@ namespace ArmourCyberSecurity
                         Session["L2emailId"] = txtEmail.Text.Trim();
                         Session["userInitial"] = txtEmail.Text.Substring(0, 2).ToUpper();
                         SendActivationEmail(userId);
-                        // Add user in RDSS user table
-                        //if (exsists > 0)
-                        //{
-                        //    //Update status of Level1 user to Level 2 user, UNPAID USER
-                        //    dal.UpdateL1User(Session["userId"].ToString()); 
-                        //}
-                        //else
-                        //{
-                            //Adding user to the DB who has not completed level 1, NEW USER 
-                            //dal.SaveUserL2(txtEmail.Text.Trim(), Session["userId"].ToString());
-                        //}
-
                         if(txt_firstName.Text != "" && txt_lastName.Text != "")
                         {
                             string phoneNo, industry, country;

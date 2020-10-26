@@ -10,401 +10,401 @@
         <h1 class="h3 mb-0 text-gray-800">Privacy Compliance Assessment</h1>
     </div>
 
-        <div id="sec1Div">
-            <div class="card shadow h-100">
+    <div id="sec1Div">
+        <div class="card shadow h-100">
 
-                <div class="card-body">
-                    <h5 class="card-header">Privacy Culture</h5>
-                    <br />
-                    <div class="container">
+            <div class="card-body">
+                <h5 class="card-header">Privacy Culture</h5>
+                <br />
+                <div class="container">
 
-                        <div class="form-group row">
+                    <div class="form-group row">
 
-                            <asp:Label ID="lblQues1" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns1" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-
-                            <asp:Label ID="lblQues2" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns2" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns2" ControlToValidate="ddlAns2" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-
-                            <asp:Label ID="lblQues3" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns3" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-
-                            <asp:Label ID="lblQues4" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns4" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-
-                            <asp:Label ID="lblQues5" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns5" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-
+                        <asp:Label ID="lblQues1" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns1" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns1" ControlToValidate="ddlAns1" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                         </div>
 
                     </div>
-                    <br />
 
-                    <h5 class="card-header">Regional Specific</h5>
-                    <br />
-                    <div class="container">
-                        <asp:Label ID="lblQues6" runat="server" Text="" />
-                        <asp:CheckBoxList ID="chkbxAns6" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns6_SelectedIndexChanged1" RepeatDirection="Horizontal">
-                        </asp:CheckBoxList>
-                        <asp:CustomValidator runat="server" ID="cvDemoList" ClientValidationFunction="ValidateDemoList" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
-                        <br />
+                    <div class="form-group row">
 
-                        <asp:Label ID="lblQues7" runat="server" Text="" />
-                        <asp:CheckBoxList ID="chkbxAns7" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns7_SelectedIndexChanged" RepeatDirection="Horizontal">
-                        </asp:CheckBoxList>
-                        <asp:CustomValidator runat="server" ID="cvDemoList2" ClientValidationFunction="ValidateDemoList2" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
+                        <asp:Label ID="lblQues2" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns2" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns2" ControlToValidate="ddlAns2" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+
                     </div>
+
+                    <div class="form-group row">
+
+                        <asp:Label ID="lblQues3" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns3" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns3" ControlToValidate="ddlAns3" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+
+                        <asp:Label ID="lblQues4" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns4" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns4" ControlToValidate="ddlAns4" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+
+                        <asp:Label ID="lblQues5" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns5" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns5" ControlToValidate="ddlAns5" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+
+                    </div>
+
+                </div>
+                <br />
+
+                <h5 class="card-header">Regional Specific</h5>
+                <br />
+                <div class="container">
+                    <asp:Label ID="lblQues6" runat="server" Text="" />
+                    <asp:CheckBoxList ID="chkbxAns6" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns6_SelectedIndexChanged1" RepeatDirection="Horizontal">
+                    </asp:CheckBoxList>
+                    <asp:CustomValidator runat="server" ID="cvDemoList" ClientValidationFunction="ValidateDemoList" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
+                    <br />
+
+                    <asp:Label ID="lblQues7" runat="server" Text="" />
+                    <asp:CheckBoxList ID="chkbxAns7" runat="server" ClientIDMode="Static" AutoPostBack="True" OnSelectedIndexChanged="chkbxAns7_SelectedIndexChanged" RepeatDirection="Horizontal">
+                    </asp:CheckBoxList>
+                    <asp:CustomValidator runat="server" ID="cvDemoList2" ClientValidationFunction="ValidateDemoList2" ErrorMessage="* Required" ForeColor="Red"></asp:CustomValidator>
                 </div>
             </div>
-
-            <br />
-            <asp:Button ID="btn_section1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false; Validate();" CssClass="btn btn-primary" />
         </div>
 
+        <br />
+        <asp:Button ID="btn_section1" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false; Validate();" CssClass="btn btn-primary" />
+    </div>
 
-        <div id='sec2Div'>
 
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="card-header">Regional Specific</h5>
-                    <br />
-                    <div class="container">
-                        <div id="Ques8Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns8" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
+    <div id='sec2Div'>
 
-                        <div id="Ques9Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns9" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="Ques10Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns10" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="Ques11Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues11" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns11" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns11" ControlToValidate="ddlAns11" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <br />
-
-                    <h5 class="card-header">Regional Fines</h5>
-                    <br />
-                    <div class="container">
-
-                        <div id="Ques12Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues12" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns12" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns12" ControlToValidate="ddlAns12" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="Ques13Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns13" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="Ques14Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues14" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns14" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="Ques15Div" runat="server">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns15" Visible="false" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h5 class="card-header">Regional Specific</h5>
+                <br />
+                <div class="container">
+                    <div id="Ques8Div" runat="server">
+                        <div class="form-group row">
+                            <asp:Label ID="lblQues8" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
+                            <div class="col">
+                                <asp:DropDownList runat="server" ID="ddlAns8" Visible="false" CssClass="form-control">
+                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns8" ControlToValidate="ddlAns8" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                             </div>
                         </div>
                     </div>
+
+                    <div id="Ques9Div" runat="server">
+                        <div class="form-group row">
+                            <asp:Label ID="lblQues9" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
+                            <div class="col">
+                                <asp:DropDownList runat="server" ID="ddlAns9" Visible="false" CssClass="form-control">
+                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns9" ControlToValidate="ddlAns9" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Ques10Div" runat="server">
+                        <div class="form-group row">
+                            <asp:Label ID="lblQues10" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
+                            <div class="col">
+                                <asp:DropDownList runat="server" ID="ddlAns10" Visible="false" CssClass="form-control">
+                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns10" ControlToValidate="ddlAns10" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Ques11Div" runat="server">
+                        <div class="form-group row">
+                            <asp:Label ID="lblQues11" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
+                            <div class="col">
+                                <asp:DropDownList runat="server" ID="ddlAns11" Visible="false" CssClass="form-control">
+                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns11" ControlToValidate="ddlAns11" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
 
-            <br />
+                <br />
 
-            <asp:Button ID="btn_section2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" CssClass="btn btn-primary" />
-        </div>
+                <h5 class="card-header">Regional Fines</h5>
+                <br />
+                <div class="container">
 
-
-
-        <div id='sec3Div'>
-
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="card-header">Privacy Engineering</h5>
-                    <br />
-                    <div class="container">
-
+                    <div id="Ques12Div" runat="server">
                         <div class="form-group row">
-                            <asp:Label ID="lblQues16" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                            <asp:Label ID="lblQues12" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
                             <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns16" CssClass="form-control">
+                                <asp:DropDownList runat="server" ID="ddlAns12" Visible="false" CssClass="form-control">
                                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns12" ControlToValidate="ddlAns12" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues17" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns17" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns17" ControlToValidate="ddlAns17" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues18" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns18" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns18" ControlToValidate="ddlAns18" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues19" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns19" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns19" ControlToValidate="ddlAns19" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues20" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns20" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns20" ControlToValidate="ddlAns20" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues21" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns21" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                    </div>
-                    <br />
-                    <h5 class="card-header">Data Control</h5>
-                    <br />
-                    <div class="container">
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues22" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns22" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div runat="server" id="Ques23Div">
-                            <div class="form-group row">
-                                <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
-                                <div class="col">
-                                    <asp:DropDownList runat="server" ID="ddlAns23" Visible="false" Style="margin-top: -25px;" CssClass="form-control">
-                                        <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <br />
-            <asp:Button ID="btn_section3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" CssClass="btn btn-primary" />
-        </div>
-
-
-
-        <div id='sec4Div'>
-
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="card-header">Consent</h5>
-                    <br />
-                    <div class="container">
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues24" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns24" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns24" ControlToValidate="ddlAns24" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues25" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns25" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns25" ControlToValidate="ddlAns25" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
                     </div>
 
-                    <h5 class="card-header">Incident Response</h5>
-                    <br />
-                    <div class="container">
+                    <div id="Ques13Div" runat="server">
                         <div class="form-group row">
-                            <asp:Label ID="lblQues26" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                            <asp:Label ID="lblQues13" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
                             <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns26" CssClass="form-control">
+                                <asp:DropDownList runat="server" ID="ddlAns13" Visible="false" CssClass="form-control">
                                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns26" ControlToValidate="ddlAns26" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns13" ControlToValidate="ddlAns13" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                             </div>
                         </div>
+                    </div>
 
+                    <div id="Ques14Div" runat="server">
                         <div class="form-group row">
-                            <asp:Label ID="lblQues27" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                            <asp:Label ID="lblQues14" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
                             <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns27" CssClass="form-control">
+                                <asp:DropDownList runat="server" ID="ddlAns14" Visible="false" CssClass="form-control">
                                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns27" ControlToValidate="ddlAns27" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns14" ControlToValidate="ddlAns14" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                             </div>
                         </div>
+                    </div>
 
+                    <div id="Ques15Div" runat="server">
                         <div class="form-group row">
-                            <asp:Label ID="lblQues28" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                            <asp:Label ID="lblQues15" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
                             <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns28" CssClass="form-control">
+                                <asp:DropDownList runat="server" ID="ddlAns15" Visible="false" CssClass="form-control">
                                     <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns28" ControlToValidate="ddlAns28" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <asp:Label ID="lblQues29" runat="server" Text="" CssClass="col-md-7 col-form-label" />
-                            <div class="col">
-                                <asp:DropDownList runat="server" ID="ddlAns29" CssClass="form-control">
-                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator runat="server" ID="reqAns29" ControlToValidate="ddlAns29" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns15" ControlToValidate="ddlAns15" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br />
-            <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" CssClass="btn btn-primary" />
         </div>
+
+        <br />
+
+        <asp:Button ID="btn_section2" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" CssClass="btn btn-primary" />
+    </div>
+
+
+
+    <div id='sec3Div'>
+
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h5 class="card-header">Privacy Engineering</h5>
+                <br />
+                <div class="container">
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues16" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns16" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns16" ControlToValidate="ddlAns16" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues17" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns17" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns17" ControlToValidate="ddlAns17" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues18" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns18" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns18" ControlToValidate="ddlAns18" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues19" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns19" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns19" ControlToValidate="ddlAns19" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues20" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns20" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns20" ControlToValidate="ddlAns20" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues21" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns21" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns21" ControlToValidate="ddlAns21" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+                <h5 class="card-header">Data Control</h5>
+                <br />
+                <div class="container">
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues22" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns22" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns22" ControlToValidate="ddlAns22" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div runat="server" id="Ques23Div">
+                        <div class="form-group row">
+                            <asp:Label ID="lblQues23" runat="server" Text="" Visible="false" CssClass="col-md-7 col-form-label" />
+                            <div class="col">
+                                <asp:DropDownList runat="server" ID="ddlAns23" Visible="false" Style="margin-top: -25px;" CssClass="form-control">
+                                    <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator runat="server" ID="reqAns23" ControlToValidate="ddlAns23" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <asp:Button ID="btn_section3" runat="server" Text="Next" ClientIDMode="Static" OnClientClick="return false;" CssClass="btn btn-primary" />
+    </div>
+
+
+
+    <div id='sec4Div'>
+
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h5 class="card-header">Consent</h5>
+                <br />
+                <div class="container">
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues24" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns24" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns24" ControlToValidate="ddlAns24" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues25" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns25" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns25" ControlToValidate="ddlAns25" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <h5 class="card-header">Incident Response</h5>
+                <br />
+                <div class="container">
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues26" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns26" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns26" ControlToValidate="ddlAns26" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues27" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns27" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns27" ControlToValidate="ddlAns27" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues28" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns28" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns28" ControlToValidate="ddlAns28" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <asp:Label ID="lblQues29" runat="server" Text="" CssClass="col-md-7 col-form-label" />
+                        <div class="col">
+                            <asp:DropDownList runat="server" ID="ddlAns29" CssClass="form-control">
+                                <asp:ListItem Text="--SELECT--" Value="-1" Selected="True"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator runat="server" ID="reqAns29" ControlToValidate="ddlAns29" ErrorMessage="* Required" ForeColor="Red" InitialValue="-1" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <asp:Button ID="btn_Submit" runat="server" Text="Finish" OnClick="btn_Submit_Click" CssClass="btn btn-primary" />
+    </div>
 
 </asp:Content>
 
@@ -455,35 +455,35 @@
             //alert(v10.length + v10.options[v10.selectedIndex].value + pass);
             if (v8 != null && v8.length > 0 && v8.options[v8.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v9 != null && v9.length > 0 && v9.options[v9.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v10 != null && v10.length > 0 && v10.options[v10.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v11 != null && v11.length > 0 && v11.options[v11.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v12 != null && v12.length > 0 && v12.options[v12.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v13 != null && v13.length > 0 && v13.options[v13.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v14 != null && v14.length > 0 && v14.options[v14.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (v15 != null && v15.length > 0 && v15.options[v15.selectedIndex].value == '-1') {
                 pass = pass & false;
-                
+
             }
             if (pass) {
                 $("#sec2Div").slideUp(1000);
@@ -492,7 +492,7 @@
             else {
                 alert("Fill in all the questions before moving ahead");
             }
-            
+
         });
 
         $(document).on('click', '[id*=btn_section3]', function () {
@@ -543,6 +543,35 @@
             }
             args.IsValid = false;
         }
+
+        window.onload = function () {
+            var scrollY = parseInt('<%=Request.Form["scrollY"] %>');
+            if (!isNaN(scrollY)) {
+                window.scrollTo(0, scrollY);
+            }
+        };
+        window.onscroll = function () {
+            var scrollY = document.body.scrollTop;
+            if (scrollY == 0) {
+                if (window.pageYOffset) {
+                    scrollY = window.pageYOffset;
+                }
+                else {
+                    scrollY = (document.body.parentElement) ? document.body.parentElement.scrollTop : 0;
+                }
+            }
+            if (scrollY > 0) {
+                var input = document.getElementById("scrollY");
+                if (input == null) {
+                    input = document.createElement("input");
+                    input.setAttribute("type", "hidden");
+                    input.setAttribute("id", "scrollY");
+                    input.setAttribute("name", "scrollY");
+                    document.forms[0].appendChild(input);
+                }
+                input.value = scrollY;
+            }
+        };
     </script>
 
 </asp:Content>
