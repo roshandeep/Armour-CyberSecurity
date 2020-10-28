@@ -109,6 +109,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script>
 
+        $('#chkbxAns1').addClass('table-responsive-sm');
+        $('#chkbxAns2').addClass('table-responsive-sm');
+
         function ValidateDemoList(source, args) {
             var chkListModules = document.getElementById('<%= chkbxAns1.ClientID %>');
             var chkListinputs = chkListModules.getElementsByTagName("input");
