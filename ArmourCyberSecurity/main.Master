@@ -96,6 +96,12 @@
                             <span>Register</span>
                     </asp:HyperLink>
                 </li>
+                <li class="nav-item">
+                    <asp:HyperLink ID="hlAdmin" CssClass="nav-link" NavigateUrl="/level1/admin" runat="server">
+                         <i class="fas fa-fw fa-folder"></i>
+                            <span>Admin</span>
+                    </asp:HyperLink>
+                </li>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">

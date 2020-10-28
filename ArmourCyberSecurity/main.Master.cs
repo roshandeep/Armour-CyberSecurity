@@ -12,6 +12,25 @@ namespace ArmourCyberSecurity
         protected void Page_Load(object sender, EventArgs e)
         {
             DisableMenu();
+            AdminCheck();
+        }
+
+        private void AdminCheck()
+        {
+            try
+            {
+                if(Session["UserSession"] != null)
+                {
+                    if(Session["AdminUser"] != null && Convert.ToBoolean(Session["AdminUser"]) == true)
+                    {
+                        hlAdmin.Visible = true;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         private void DisableMenu()
@@ -31,6 +50,8 @@ namespace ArmourCyberSecurity
                     hlEmployeeTraining.Visible = false;
 
                     hlRegister.Visible = true;
+
+                    hlAdmin.Visible = false;
                 }
                 else
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
@@ -8,7 +9,7 @@ namespace ArmourCyberSecurity.Level1
 {
     public partial class Admin : System.Web.UI.Page
     {
-        readonly SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString);
+        string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Visible = false;
@@ -20,6 +21,7 @@ namespace ArmourCyberSecurity.Level1
 
         private void Refresh_Data()
         {
+            SqlConnection conn = new SqlConnection(connetionString);
             try
             {
                 DataTable dataTable = new DataTable();
@@ -36,8 +38,9 @@ namespace ArmourCyberSecurity.Level1
                 dataTable.Columns.Add("industry");
                 dataTable.Columns.Add("country");
                 dataTable.Columns.Add("phoneNo");
+                dataTable.Columns.Add("selfAssessmentComplete");
                 dataTable.Columns.Add("PaymentValidated");
-
+                dataTable.Columns.Add("PercentageCompleted");
 
                 while (rdr.Read())
                 {
@@ -49,7 +52,9 @@ namespace ArmourCyberSecurity.Level1
                     row["industry"] = rdr["industry"];
                     row["country"] = rdr["country"];
                     row["phoneNo"] = rdr["phoneNo"];
+                    row["selfAssessmentComplete"] = SelfAssessmentCheck(rdr["Email"].ToString());
                     row["PaymentValidated"] = rdr["PaymentValidated"];
+                    row["PercentageCompleted"] = CalculateTotalPercent(rdr["userId"].ToString());
                     dataTable.Rows.Add(row);
                 }
 
@@ -96,8 +101,134 @@ namespace ArmourCyberSecurity.Level1
             }
         }
 
+        private bool SelfAssessmentCheck(string emailId)
+        {
+            SqlConnection conn = new SqlConnection(connetionString);
+            conn.Open();
+            SqlCommand cmd;
+            string sql = "SELECT COUNT(*) FROM ar_sec_users WHERE email_id = @email_Id";
+            cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            if (count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private object CalculateTotalPercent(string userId)
+        {
+            int sum = 0;
+            for(int section = 1; section <= 6; section++)
+            {
+                sum = CalculatePercent(userId, section) + sum;
+            }
+            return sum / 6;
+        }
+
+        protected int CalculatePercent(string userId, int section)
+        {
+            SqlConnection conn = new SqlConnection(connetionString);
+            conn.Open();
+            SqlCommand cmd;
+            int percentage_complete = 0;
+            if (section > 1)
+            {
+                string sql = @"SELECT CAST(
+		                        (CAST(
+		                        (SELECT COUNT(*)
+			                        FROM ar_sec_User_Feedback_Collection_Level2
+			                        WHERE userid = @userId
+			                        AND stagesCompleted = @section AND ans_Text <> '--SELECT--') AS FLOAT) / 
+		                        CAST(
+		                        (SELECT COUNT(*) 
+			                        FROM ar_sec_Feedback_Questions_level2
+			                        WHERE section = @section) AS FLOAT))*100.0 AS INT) 
+	                    AS percentage_complete";
+
+                cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Add(new SqlParameter("@section", section));
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                percentage_complete = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            else if (section == 1)
+            {
+                string sql1 = @"SELECT DISTINCT selected_countries = STUFF(
+                                                    (SELECT ' ' + COALESCE(ans_Text, ' ') FROM ar_sec_User_Feedback_Collection_Level2
+					                                WHERE userid = @userId
+					                                AND stagesCompleted = @section and sec_ref_id IN (1,2)
+					                                FOR XML PATH ('')), 1, 1, '') 
+                                FROM ar_sec_User_Feedback_Collection_Level2
+                                WHERE userid = @userId
+                                AND stagesCompleted = @section";
+
+                cmd = new SqlCommand(sql1, conn);
+                cmd.Parameters.Add(new SqlParameter("@section", section));
+                cmd.Parameters.Add(new SqlParameter("@userId", userId));
+                object nullcheck = cmd.ExecuteScalar();
+                string countryList = string.Empty;
+                if (nullcheck != null)
+                {
+                    countryList = cmd.ExecuteScalar().ToString();
+                }
+                else
+                {
+                    countryList = "";
+                }
+                percentage_complete = CalulateProgressHelper(countryList, section, userId);
+            }
+            conn.Close();
+            return percentage_complete;
+
+        }
+
+        public int CalulateProgressHelper(string countryList, int section, string userId)
+        {
+            int counter = 0;
+            if (!countryList.Contains("Canada"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("Europe"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("Brazil"))
+            {
+                ++counter;
+            }
+            if (!countryList.Contains("California"))
+            {
+                ++counter;
+            }
+            SqlConnection conn = new SqlConnection(connetionString);
+            conn.Open();
+            SqlCommand cmd;
+            string sql1 = @"SELECT COUNT(*) FROM ar_sec_Feedback_Questions_level2 WHERE section = @section";
+            cmd = new SqlCommand(sql1, conn);
+            cmd.Parameters.Add(new SqlParameter("@section", section));
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int quesCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+            string sql2 = @"SELECT COUNT(*)
+			                FROM ar_sec_User_Feedback_Collection_Level2
+			                WHERE userid = @userId
+			                AND stagesCompleted = @section AND ans_Text <> '--SELECT--' ";
+            cmd = new SqlCommand(sql2, conn);
+            cmd.Parameters.Add(new SqlParameter("@section", section));
+            cmd.Parameters.Add(new SqlParameter("@userId", userId));
+            int ansCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+            int percentage_complete = (int)(ansCount * 100 / (quesCount - (counter * 2)));
+            conn.Close();
+            return percentage_complete;
+        }
+
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            SqlConnection conn = new SqlConnection(connetionString);
             GridViewRow row = userGrid.Rows[e.RowIndex];
             Label lbldeleteid = (Label)row.FindControl("lblID");
             conn.Open();
@@ -116,12 +247,10 @@ namespace ArmourCyberSecurity.Level1
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            SqlConnection conn = new SqlConnection(connetionString);
             string userid = userGrid.DataKeys[e.RowIndex].Value.ToString();
             GridViewRow row = userGrid.Rows[e.RowIndex];
             _ = (Label)row.FindControl("lblID");
-            //TextBox txtname=(TextBox)gr.cell[].control[];  
-            //TextBox textemail = (TextBox)row.Cells[0].Controls[0];
-            //TextBox textphone = (TextBox)row.Cells[1].Controls[0];
             TextBox textemail = (TextBox)row.FindControl("txtEmail");
             TextBox textFirstName = (TextBox)row.FindControl("txtFirstName");
             TextBox textLastName = (TextBox)row.FindControl("txtLastName");
@@ -129,18 +258,13 @@ namespace ArmourCyberSecurity.Level1
             TextBox textCountry = (TextBox)row.FindControl("txtCountry");
             TextBox textphone = (TextBox)row.FindControl("txtPhone");
             TextBox textPayment = (TextBox)row.FindControl("txtPaymentValidated");
-            //TextBox textc = (TextBox)row.Cells[2].Controls[0];
-            //TextBox textadd = (TextBox)row.FindControl("txtadd");  
-            //TextBox textc = (TextBox)row.FindControl("txtc");  
 
             userGrid.EditIndex = -1;
-            conn.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM detail", conn);  
+            conn.Open();  
             SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Users] SET Email='" + textemail.Text + "',phoneNo='" + textphone.Text + "'WHERE userId='" + userid + "'", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-            Refresh_Data();
-            //GridView1.DataBind();  
+            Refresh_Data();  
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -171,8 +295,6 @@ namespace ArmourCyberSecurity.Level1
                 }
                 userGrid.DataSource = dtrslt;
                 userGrid.DataBind();
-
-
             }
 
         }

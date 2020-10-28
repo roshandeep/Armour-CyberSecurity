@@ -15,13 +15,13 @@
                 <p class="lead">
                     We are excited to bring our proprietary Compliance Assessment straight to your desktop.
                     Using our specialized tool, we guide you through an in-depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future. 
-                    We look at:
-                    <span>&#8226;</span>Global Regulations that affect you and your customers
-                    <span>&#8226;</span>Privacy Engineering including Privacy by Design, and Vendor Management
-                    <span>&#8226;</span>Data Control including data subject access rights
-                    <span>&#8226;</span>Consent and Policies
-                    <span>&#8226;</span>Incident Response Management
-                    <span>&#8226;</span>Education and Employee Awareness Training
+                    We look at:<br /><br />
+                    <span>&#8226;</span>	Global Regulations that affect you and your customers<br />
+                    <span>&#8226;</span>	Privacy Engineering including Privacy by Design, and Vendor Management<br />
+                    <span>&#8226;</span>	Data Control including data subject access rights<br />
+                    <span>&#8226;</span>	Consent and Policies<br />
+                    <span>&#8226;</span>	Incident Response Management<br />
+                    <span>&#8226;</span>	Education and Employee Awareness Training<br /><br />
                     You get to run the tool on your time and divided sections allow you to get the right stakeholders for input to each set of questions.
                     The result is a custom roadmap that will set you on the right path to optimized and complete compliance.
 

@@ -8,7 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label runat="server" Text="Label"> Admin </asp:Label>
         <asp:Label ID="lblError" runat="server" Text="" Visible="false"></asp:Label>
         <asp:GridView ID="userGrid" runat="server" AllowSorting="True" AllowPaging="True" PageIndex="10" Width="80%" BorderStyle="Solid" EmptyDataText="N/A" BorderWidth="1px" BorderColor="#999999" CellPadding="5" CellSpacing="5" DataKeyNames="id"
             ForeColor="Black" GridLines="Vertical" OnSorting="GridView1_Sorting" AutoGenerateColumns="False" BackColor="White" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting"
@@ -69,12 +68,28 @@
                         <asp:Label ID="lblPhone" runat="server" Text='<%# Bind("phoneNo") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField HeaderText="Self Assessment Status" SortExpression="selfAssessmentComplete">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtselfAssessmentComplete" runat="server" Text='<%# Bind("selfAssessmentComplete") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblselfAssessmentComplete" runat="server" Text='<%# Bind("selfAssessmentComplete") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Paid User" SortExpression="PaymentValidated">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtPaymentValidated" runat="server" Text='<%# Bind("PaymentValidated") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblPaymentValidated" runat="server" Text='<%# Bind("PaymentValidated") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Custom RoadMap Percentage Complete" SortExpression="PercentageCompleted">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtPercentageCompleted" runat="server" Text='<%# Bind("PercentageCompleted") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblPercentageCompleted" runat="server" Text='<%# Bind("PercentageCompleted") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:CommandField ShowEditButton="true" />

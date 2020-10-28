@@ -68,6 +68,7 @@ namespace ArmourCyberSecurity
                                     Session["userInitial"] = Login1.UserName.Substring(0, 2).ToUpper();
                                     Boolean.TryParse(reader["PaymentValidated"].ToString(), out bool premiumStatus);
                                     Session["PremiumStatus"] = premiumStatus.ToString();
+                                    CheckIfAdmin(reader["userId"].ToString());
                                     con.Close();
                                     FormsAuthentication.RedirectFromLoginPage(Login1.UserName, true);
 
@@ -124,8 +125,17 @@ namespace ArmourCyberSecurity
             }
         }
 
-
-
+        private void CheckIfAdmin(string userId)
+        {
+            if(userId == "3e0e822c-3877-4745-9c6a-e4b53e1c1fa3" || userId == "ce4c995e-3758-485e-9c6c-d97ef0393a45")
+            {
+                Session["AdminUser"] = true;
+            }
+            else
+            {
+                Session["AdminUser"] = false;
+            }
+        }
 
         bool ValidateUser(string user, string pass)
         {
