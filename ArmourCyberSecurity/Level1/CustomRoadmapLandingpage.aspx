@@ -10,7 +10,7 @@
     <div class="card shadow h-100">
         <div class="card-body">
             <div class="jumbotron">
-                <h1 class="display-4">Welcome&nbsp;</h1>
+            <h2>Welcome&nbsp;</h2>
                 <h3>Compliance Roadmap Coming Soon!</h3>
                 <p class="lead">
                     We are excited to bring our proprietary Compliance Assessment straight to your desktop.
@@ -27,7 +27,7 @@
 
                     Sign up today and be a part of our first access VIP group.
                 </p>
-                <asp:Button ID="btn_questionnaire" runat="server" Text="Take Me To Questionnaire" CssClass="btn btn-primary btn-lg" OnClick="btn_questionnaire_Click"></asp:Button>
+                <asp:Button ID="btn_questionnaire" runat="server" Text="Take Me To Questionnaire" CssClass="btn btn-primary btn-lg" OnClick="btn_questionnaire_Click" Enabled="false"></asp:Button>
             </div>
             <div class="row py-3">
                 <div class="container">
