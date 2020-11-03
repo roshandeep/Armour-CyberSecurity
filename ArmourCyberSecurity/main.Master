@@ -47,7 +47,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <asp:HyperLink ID="hlDashboard" CssClass="nav-link" NavigateUrl="/CustomRoadmapDashboard" runat="server">
+                    <asp:HyperLink ID="hlDashboard" CssClass="nav-link" NavigateUrl="https://privacycompliance.solutions/" runat="server">
                          <i class="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                     </asp:HyperLink>

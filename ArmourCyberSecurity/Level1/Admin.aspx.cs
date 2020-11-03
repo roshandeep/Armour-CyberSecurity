@@ -110,10 +110,17 @@ namespace ArmourCyberSecurity.Level1
             conn.Open();
             SqlCommand cmd;
             string sql = @"SELECT TOP 1 ISNULL(CONVERT(VARCHAR, date_created, 101), 'NOT FOUND')  
-                            FROM ar_sec_users WHERE email_id = @email_Id ORDER BY date_created ASC";
+                            FROM ar_sec_users WHERE email_id = @email_Id ORDER BY date_created DESC";
             cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
-            selfAssessment_Date = cmd.ExecuteScalar().ToString();
+            if (cmd.ExecuteScalar() == null)
+            {
+                selfAssessment_Date = "NOT FOUND";
+            }
+            else
+            {
+                selfAssessment_Date = cmd.ExecuteScalar().ToString();
+            }
             conn.Close();
             return selfAssessment_Date;
         }
