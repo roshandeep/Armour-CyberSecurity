@@ -39,6 +39,7 @@ namespace ArmourCyberSecurity.Level1
                 dataTable.Columns.Add("country");
                 dataTable.Columns.Add("phoneNo");
                 dataTable.Columns.Add("selfAssessmentComplete");
+                dataTable.Columns.Add("selfAssessmentDate");
                 dataTable.Columns.Add("PaymentValidated");
                 dataTable.Columns.Add("PercentageCompleted");
 
@@ -53,6 +54,7 @@ namespace ArmourCyberSecurity.Level1
                     row["country"] = rdr["country"];
                     row["phoneNo"] = rdr["phoneNo"];
                     row["selfAssessmentComplete"] = SelfAssessmentCheck(rdr["Email"].ToString());
+                    row["selfAssessmentDate"] = GetSelfAssessmentDate(rdr["Email"].ToString());
                     row["PaymentValidated"] = rdr["PaymentValidated"];
                     row["PercentageCompleted"] = CalculateTotalPercent(rdr["userId"].ToString());
                     dataTable.Rows.Add(row);
@@ -99,6 +101,21 @@ namespace ArmourCyberSecurity.Level1
                 lblError.Text = "An error occurred when calling database. Please alert site admin to this issue.";
                 lblError.Visible = true;
             }
+        }
+
+        private string GetSelfAssessmentDate(string emailId)
+        {
+            string selfAssessment_Date = "";
+            SqlConnection conn = new SqlConnection(connetionString);
+            conn.Open();
+            SqlCommand cmd;
+            string sql = @"SELECT TOP 1 ISNULL(CONVERT(VARCHAR, date_created, 101), 'NOT FOUND')  
+                            FROM ar_sec_users WHERE email_id = @email_Id ORDER BY date_created ASC";
+            cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add(new SqlParameter("@email_Id", emailId));
+            selfAssessment_Date = cmd.ExecuteScalar().ToString();
+            conn.Close();
+            return selfAssessment_Date;
         }
 
         private bool SelfAssessmentCheck(string emailId)

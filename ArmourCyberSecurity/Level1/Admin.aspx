@@ -76,6 +76,14 @@
                         <asp:Label ID="lblselfAssessmentComplete" runat="server" Text='<%# Bind("selfAssessmentComplete") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField HeaderText="Self Assessment Date Completed" SortExpression="selfAssessmentDate">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtselfAssessmentDate" runat="server" Text='<%# Bind("selfAssessmentDate") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblselfAssessmentDate" runat="server" Text='<%# Bind("selfAssessmentDate") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Paid User" SortExpression="PaymentValidated">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtPaymentValidated" runat="server" Text='<%# Bind("PaymentValidated") %>'></asp:TextBox>

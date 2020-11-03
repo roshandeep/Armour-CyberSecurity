@@ -11,9 +11,9 @@
     <div class="card shadow h-100">
         <div class="card-body">
             <div class="jumbotron">
-                <h2>Welcome To Self Assessment</h2>
+                <h2>Welcome to Your Free Privacy Regulation Compliance Assessment.</h2>
                 <p class="lead">
-                    <strong>Welcome to Your Free Privacy Regulation Compliance Assessment.</strong><br />
+                    <%--<strong>Welcome to Your Free Privacy Regulation Compliance Assessment.</strong><br />--%>
                     In only 10 minutes you will have a personalized report on how your company ranks in terms of being compliant with global privacy regulations. Learn where you are prepared, and where you need to focus your resources to get to full compliance." 
                 </p>
                 <asp:Button ID="selfAssessment" runat="server" Text="Take Me To Questionnaire" CssClass="btn btn-primary btn-lg" OnClick="selfAssessment_Click"></asp:Button>

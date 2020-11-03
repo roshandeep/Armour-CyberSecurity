@@ -37,16 +37,17 @@
                             <div class="card-header bg-dark" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left text-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;This is a accordion Title 1
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;How do I get started?
                                     </button>
                                 </h2>
                             </div>
 
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. 
-                                    Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, 
-                                    sagittis purus. Nunc auctor gravida magna, sed efficitur tortor tristique quis.
+                                    To begin your in-depth assessment, you will need to register an account.
+                                    Tip: Carefully select an email and password that will be used to access your dashboard. Keep in mind that you may want to share the access code with others in your company. This email is also where PDF copies of the reports are sent.
+                                    Part of your registration includes payment. This will give you instant and full access to the tool.
+                                    You will be brought to the dashboard where you can select a section and begin to fill out the answers. You may do the sections in any order. You may also choose to partially fill out a section. Depending on the size of your company, you may need to bring in other stakeholders to answer the questions. Take your time. There is no limit on how long you take to fill it out.
                                 </div>
                             </div>
                         </div>
@@ -54,15 +55,14 @@
                             <div class="card-header bg-dark" id="headingTwo">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left collapsed text-light" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;This is a accordion Title 2
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;How do I generate my custom report?
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. 
-                                    Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, 
-                                    sagittis purus. Nunc auctor gravida magna, sed efficitur tortor tristique quis.
+                                    Reports are generated per section. You can choose to partially or completely fill out the section before you generate the report. You can also generate the report as many times as you want.
+                                    When you are ready, select the 'generate report' button. A copy of the report will appear on your screen. A second PDF copy will be sent to your registration email.
                                 </div>
                             </div>
                         </div>
@@ -70,15 +70,27 @@
                             <div class="card-header bg-dark" id="headingThree">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left collapsed text-light" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;This is a accordion Title 3
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Who can access the dashboard?
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. 
-                                    Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, 
-                                    sagittis purus. Nunc auctor gravida magna, sed efficitur tortor tristique quis.
+                                    The dashboard is access using the email and password you set in the registration. In some companies, a designated individual collects the report answers and fills out all of the assessment. In others, a single email and password is used by multiple stakeholders to fill out various sections. All changes can be saved and the reports can be run at any time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-dark" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed text-light" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;How many times can I access the report?
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    There is no limit on the number of times you can generate the report. You may also generate partially complete sections.
                                 </div>
                             </div>
                         </div>

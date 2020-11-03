@@ -75,7 +75,7 @@
                                                 <asp:Literal runat="server" ID="FailureText" EnableViewState="False"></asp:Literal>
                                             </div>
                                             <div class="col">
-                                                <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="Phone Number*" CssClass="form-control" />
+                                                <asp:TextBox ID="txt_phoneNumber" runat="server" placeholder="Phone Number" CssClass="form-control" />
                                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_phoneNumber" ErrorMessage="Enter 10 digit Phone Number" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                                             </div>
                                         </div>
