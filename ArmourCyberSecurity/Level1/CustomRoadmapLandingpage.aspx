@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/main.Master" CodeBehind="CustomRoadmapLandingpage.aspx.cs" Inherits="ArmourCyberSecurity.CustomRoadmapLandingpage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/main.Master" CodeBehind="CustomRoadmapLandingpage.aspx.cs" Inherits="ArmourCyberSecurity.CustomRoadmapLandingpage" EnableEventValidation="false"%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
@@ -10,24 +10,53 @@
     <div class="card shadow h-100">
         <div class="card-body">
             <div class="jumbotron">
-            <h2>Welcome&nbsp;</h2>
+                <h2>Welcome&nbsp;</h2>
                 <h3>Compliance Roadmap Coming Soon!</h3>
                 <p class="lead">
                     We are excited to bring our proprietary Compliance Assessment straight to your desktop.
                     Using our specialized tool, we guide you through an in-depth process examining all the steps required to not only meet compliance, but to do so efficiently and in a way that will save you money in the future. 
-                    We look at:<br /><br />
+                    We look at:<br />
+                    <br />
                     <span>&#8226;</span>	Global Regulations that affect you and your customers<br />
                     <span>&#8226;</span>	Privacy Engineering including Privacy by Design, and Vendor Management<br />
                     <span>&#8226;</span>	Data Control including data subject access rights<br />
                     <span>&#8226;</span>	Consent and Policies<br />
                     <span>&#8226;</span>	Incident Response Management<br />
-                    <span>&#8226;</span>	Education and Employee Awareness Training<br /><br />
+                    <span>&#8226;</span>	Education and Employee Awareness Training<br />
+                    <br />
                     You get to run the tool on your time and divided sections allow you to get the right stakeholders for input to each set of questions.
                     The result is a custom roadmap that will set you on the right path to optimized and complete compliance.
 
                     Sign up today and be a part of our first access VIP group.
                 </p>
                 <asp:Button ID="btn_questionnaire" runat="server" Text="Take Me To Questionnaire" CssClass="btn btn-primary btn-lg" OnClick="btn_questionnaire_Click" Enabled="false"></asp:Button>
+            </div>
+            <div class="jumbotron" data-form-type="formoid">
+
+                <input type="hidden" name="email" data-form-email="true" value="yxxyOpOo6wLgTWBqbLl1zgWO1M2zqSvxtoaFC3nBhmNmPockUbP5tS4iuEK1AzG7ukIBefUUBAF4rVl/zrg1dCQvm3r+V90peQ+y+IplzpBRHkswyz0AMnWJ43g0o5uv" />
+                <div class="row">
+                    <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                    <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                    </div>
+                </div>
+                <div class="dragArea row">
+                    <div class="col-md-6  form-group" data-for="name">
+                        <asp:TextBox id="txt_fname" runat="server" type="text" name="Firstname" placeholder="First Name" data-form-field="Name" required="required" class="form-control input display-7"/>
+                    </div>
+                    <div class="col-md-6  form-group" data-for="name">
+                        <asp:TextBox id="txt_lname" runat="server" type="text" name="Lastname" placeholder="Last Name" data-form-field="name" required="required" class="form-control input display-7"/>
+                    </div>
+                    <div data-for="email" class="col-md-12  form-group">
+                        <asp:TextBox id="txt_emailid" runat="server" type="text" name="email" placeholder="Email" data-form-field="Email" class="form-control input display-7" required="required"/>
+                    </div>
+                    <div data-for="message" class="col-md-12  form-group">
+                        <asp:TextBox id="txt_msg" runat="server" name="message" placeholder="Message" data-form-field="Message" required="required" class="form-control input display-7" />
+                    </div>
+                    <div class="col-md-12 input-group-btn  mt-2 align-center">
+                        <asp:Button ID="btn_sendmessage" runat="server" Text="SEND MESSAGE" CssClass="btn btn-primary btn-lg" OnClick="btn_sendmessage_Click"></asp:Button>
+                    </div>
+                </div>
+
             </div>
             <div class="row py-3">
                 <div class="container">
@@ -99,5 +128,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

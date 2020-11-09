@@ -38,7 +38,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/CustomRoadmapDashboard">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="https://privacycompliance.solutions/">
                     <img src="/assets/img/logo-light2.png" class="logo" alt="Privacy Compliance Solutions" />
                 </a>
 
@@ -47,7 +47,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <asp:HyperLink ID="hlDashboard" CssClass="nav-link" NavigateUrl="https://privacycompliance.solutions/" runat="server">
+                    <asp:HyperLink ID="hlDashboard" CssClass="nav-link" NavigateUrl="/CustomRoadmapDashboard" runat="server">
                          <i class="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span>
                     </asp:HyperLink>
