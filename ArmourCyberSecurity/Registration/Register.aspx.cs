@@ -17,8 +17,6 @@ namespace ArmourCyberSecurity
 {
     public partial class Register : System.Web.UI.Page
     {
-        //AWS RDS
-        //string connetionString = @"Server=armourcyber.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=ArmourCyberSecurity;User Id=admin;Password=roshandeep;";
         string connetionString = ConfigurationManager.ConnectionStrings["connetionString"].ConnectionString;
         //string connetionString = @"Data Source=184.168.47.21;Integrated Security=False;User ID=aihub2020;Connect Timeout=15;Encrypt=False;Password=armourcyber@2020;";
         DAL dal = new DAL();
@@ -41,17 +39,8 @@ namespace ArmourCyberSecurity
             Guid obj = Guid.NewGuid();
             //To check whether the user is a new user or has answered Level 1
             string userId;
-            //int exsists = dal.ChkLevel1User(txtEmail.Text.Trim());
-            //if (exsists > 0)
-            //{
-            //    userId = dal.GetL1UserId(txtEmail.Text.Trim());
-            //    Session["userId"] = userId;
-            //}
-            //else
-            //{
-                userId = obj.ToString();
-                Session["userId"] = userId;
-            //}
+            userId = obj.ToString();
+            Session["userId"] = userId;
 
             using (SqlConnection con = new SqlConnection(connetionString))
             {

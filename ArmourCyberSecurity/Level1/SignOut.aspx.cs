@@ -16,7 +16,7 @@ namespace ArmourCyberSecurity.Level1
             {
                 FormsAuthentication.SignOut();
                 Session.Clear();
-                Response.Redirect("~/Login.aspx", true);
+                Response.Redirect("https://privacycompliance.solutions/", true);
             }
         }
     }
